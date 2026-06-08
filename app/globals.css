@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-pale-canvas: #fff8f6;
+    --color-deep-forest: #00522d;
+    --color-foudre-pink: #db3c8a;
+    --color-ash-whisper: #fce5df;
+    --color-bubblegum-blush: #f29ebd;
+    --color-slate-tint: #d1cfe4;
+    --color-midnight-ink: #000000;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-pale-canvas text-deep-forest;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section {
+    @apply relative w-full;
+  }
+
+  .is-inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Pin Spacing Fix */
+.pin-spacer {
+  background: transparent !important;
+}
+
+/* Smooth Scroll Optimization */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
