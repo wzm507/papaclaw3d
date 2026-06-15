@@ -5,13 +5,15 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Card3D from '../components/Card3D'
 
-const cards = [
-  { image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop', bubble: '⚡' },
-  { image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=800&fit=crop', bubble: '🔥' },
-  { image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=800&fit=crop', bubble: '✨' },
-]
+interface HeroProps {
+  title: string
+  subtitle1: string
+  subtitle2: string
+  backgroundImage: string
+  cards: { image: string; bubble: string }[]
+}
 
-export default function Hero() {
+export default function Hero({ title, subtitle1, subtitle2, backgroundImage, cards }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const stickyRef = useRef<HTMLDivElement>(null)
   const bgImageRef = useRef<HTMLDivElement>(null)
@@ -99,7 +101,7 @@ export default function Hero() {
           style={{ willChange: 'transform' }}
         >
           <img
-            src={cards[0].image}
+            src={backgroundImage}
             alt="Background"
             className="absolute inset-0 w-full h-full object-cover"
             width={1920}
@@ -115,7 +117,7 @@ export default function Hero() {
           {/* Title */}
           <div ref={titleRef} className="relative z-20 text-center mb-8">
             <h1 className="text-display font-black text-white tracking-tight">
-              {'PAPACLAW'.split('').map((letter, i) => (
+              {title.split('').map((letter, i) => (
                 <span
                   key={i}
                   className="hero-title-line inline-block"
@@ -127,10 +129,10 @@ export default function Hero() {
             </h1>
             <div className="mt-4 space-y-2">
               <p className="hero-title-line text-heading-lg font-bold text-white/90">
-                Digital Creative Agency
+                {subtitle1}
               </p>
               <p className="hero-title-line text-heading text-foudre-pink font-medium">
-                Crafting Digital Excellence
+                {subtitle2}
               </p>
             </div>
           </div>

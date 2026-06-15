@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react'
 import Logo from './Logo'
 
-export default function Header() {
+interface HeaderProps {
+  menuItems: string[]
+  whatsappUrl: string
+}
+
+export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -31,7 +36,7 @@ export default function Header() {
         </div>
 
         <a
-          href="https://wa.me/"
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-deep-forest text-white px-4 py-2 rounded-badge text-sm font-medium hover:bg-foudre-pink transition-colors"
@@ -60,12 +65,12 @@ export default function Header() {
           </button>
 
           <nav className="space-y-4">
-            {['Accueil', 'L\'agence', 'L\'équipe', 'Projets', 'Expertises', 'Contact'].map((item, i) => (
+            {menuItems.map((item, i) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/[^a-z]/g, '')}`}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-display font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                className={`block text-heading-lg font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                 style={{
                   transitionDelay: `${150 + i * 50}ms`,
                   transitionDuration: '500ms',

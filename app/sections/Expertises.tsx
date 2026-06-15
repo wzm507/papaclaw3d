@@ -7,25 +7,13 @@ import Section3DBackground from '../components/Section3DBackground'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const expertises = [
-  {
-    icon: '👀',
-    title: 'Stratégie social media',
-    description: 'Analyse, benchmark, direction artistique, définition de stratégie',
-  },
-  {
-    icon: '📱',
-    title: 'Création de contenu',
-    description: 'Vidéo, photo, Instagram Reels, interview, corporate, studio, YouTube, TikTok',
-  },
-  {
-    icon: '📊',
-    title: 'Community management',
-    description: 'Planning éditorial, publication, Stories, modération quotidienne, reporting, gestion de projet',
-  },
-]
+interface ExpertisesProps {
+  title: string
+  subtitle: string
+  items: { icon: string; title: string; description: string }[]
+}
 
-export default function Expertises() {
+export default function Expertises({ title, subtitle, items }: ExpertisesProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
@@ -80,15 +68,15 @@ export default function Expertises() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Title */}
         <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
-          Raisonner pour mieux: résonner.
+          {title}
         </h2>
         <p className="text-body text-deep-forest/60 text-center mb-16 max-w-2xl mx-auto">
-          Notre approche combine stratégie, créativité et exécution pour donner vie à votre présence sociale.
+          {subtitle}
         </p>
 
         {/* Cards */}
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {expertises.map((expertise, i) => (
+          {items.map((expertise, i) => (
             <div
               key={i}
               className="expertise-card bg-ash-whisper rounded-content p-8 hover:shadow-xl transition-shadow duration-300 opacity-0 relative overflow-hidden group"

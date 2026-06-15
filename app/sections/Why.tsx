@@ -7,26 +7,13 @@ import Section3DBackground from '../components/Section3DBackground'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const reasons = [
-  {
-    title: 'Experts social media',
-    description: 'Près de 10 ans d\'expérience professionnelle',
-  },
-  {
-    title: 'Premium & sur-mesure',
-    description: 'Pas de forfaits standardisés, des services personnalisés',
-  },
-  {
-    title: 'Une méthode',
-    description: 'Rigueur et créativité de pair',
-  },
-  {
-    title: 'L\'humain avant tout',
-    description: 'Les relations humaines au centre de notre approche',
-  },
-]
+interface WhyProps {
+  title: string
+  subtitle: string
+  reasons: { title: string; description: string }[]
+}
 
-export default function Why() {
+export default function Why({ title, subtitle, reasons }: WhyProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
@@ -81,10 +68,10 @@ export default function Why() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Title */}
         <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
-          POURQUOI CHOISIR PAPACLAW
+          {title}
         </h2>
         <p className="text-body text-deep-forest/60 text-center mb-16 max-w-2xl mx-auto">
-          Ce qui nous différencie, c&apos;est notre façon de faire — et de faire différemment.
+          {subtitle}
         </p>
 
         {/* Cards */}

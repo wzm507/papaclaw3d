@@ -6,15 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const teamMembers = [
-  { name: 'Margaux', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=600&fit=crop' },
-  { name: 'Mathieu', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop' },
-  { name: 'Florent', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop' },
-  { name: 'Johane', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop' },
-  { name: 'Lou', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=600&fit=crop' },
-]
+interface TeamProps {
+  title: string
+  members: { name: string; image: string }[]
+}
 
-export default function Team() {
+export default function Team({ title, members }: TeamProps) {
   const [activeMember, setActiveMember] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
   const stickyRef = useRef<HTMLDivElement>(null)
@@ -53,8 +50,8 @@ export default function Team() {
             // Update active member based on scroll progress
             const progress = self.progress
             const newIndex = Math.min(
-              Math.floor(progress * teamMembers.length),
-              teamMembers.length - 1
+              Math.floor(progress * members.length),
+              members.length - 1
             )
             setActiveMember(newIndex)
           },
@@ -96,7 +93,7 @@ export default function Team() {
       >
         {/* Title */}
         <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-4 opacity-0">
-          Nous électrisons <em className="text-foudre-pink">vos réseaux,</em>
+          {title}
         </h2>
 
         {/* Chat Bubbles */}
@@ -118,7 +115,7 @@ export default function Team() {
           className="relative w-full max-w-md mx-auto aspect-[4/5] mb-6 rounded-card overflow-hidden flex-shrink-0"
           style={{ willChange: 'transform, opacity', maxHeight: '55vh' }}
         >
-          {teamMembers.map((member, i) => (
+          {members.map((member, i) => (
             <div
               key={i}
               className={`absolute inset-0 transition-all duration-500 ${
@@ -140,7 +137,7 @@ export default function Team() {
 
         {/* Member Names */}
         <div ref={buttonsRef} className="flex flex-wrap justify-center gap-3" style={{ willChange: 'transform, opacity' }}>
-          {teamMembers.map((member, i) => (
+          {members.map((member, i) => (
             <button
               key={i}
               onClick={() => setActiveMember(i)}

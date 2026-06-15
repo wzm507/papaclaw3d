@@ -7,35 +7,13 @@ import Section3DBackground from '../components/Section3DBackground'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const steps = [
-  {
-    number: '01',
-    title: 'Stratégie',
-    description: 'Analyse et définition des piliers de communication',
-  },
-  {
-    number: '02',
-    title: 'Direction artistique',
-    description: 'Révéler le DNA de la marque',
-  },
-  {
-    number: '03',
-    title: 'Création de contenu',
-    description: 'Production photo et vidéo',
-  },
-  {
-    number: '04',
-    title: 'Community management',
-    description: 'Gestion des comptes et planification des posts',
-  },
-  {
-    number: '05',
-    title: 'Reporting & learnings',
-    description: 'Rapports détaillés et ajustement de la stratégie',
-  },
-]
+interface ProcessProps {
+  title: string
+  subtitle: string
+  steps: { number: string; title: string; description: string }[]
+}
 
-export default function Process() {
+export default function Process({ title, subtitle, steps }: ProcessProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const stepsRef = useRef<HTMLDivElement>(null)
@@ -90,10 +68,10 @@ export default function Process() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Title */}
         <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
-          Nous préfèrerons cet ordre. Toujours.
+          {title}
         </h2>
         <p className="text-body text-deep-forest/60 text-center mb-16 max-w-2xl mx-auto">
-          Une méthode éprouvée, du diagnostic à l&apos;optimisation continue.
+          {subtitle}
         </p>
 
         {/* Steps */}

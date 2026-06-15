@@ -7,34 +7,13 @@ import Section3DBackground from '../components/Section3DBackground'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const faqs = [
-  {
-    question: 'Quels types de clients accompagnez-vous ?',
-    answer: 'Nous accompagnons des marques de toutes tailles, des startups aux grandes entreprises, qui souhaitent développer leur présence sur les réseaux sociaux.',
-  },
-  {
-    question: 'Quels sont vos tarifs ?',
-    answer: 'Nous proposons des solutions sur-mesure adaptées à vos besoins et votre budget. Chaque projet est unique, nous établissons un devis personnalisé après avoir compris vos objectifs.',
-  },
-  {
-    question: 'Combien de temps dure un projet type ?',
-    answer: 'La durée varie selon la complexité du projet. Une stratégie social media prend généralement 2-3 semaines, tandis qu\'un accompagnement complet se fait sur plusieurs mois.',
-  },
-  {
-    question: 'Travaillez-vous avec des influenceurs ?',
-    answer: 'Oui, nous avons un réseau d\'influenceurs dans divers domaines et pouvons organiser des campagnes de influencer marketing adaptées à votre marque.',
-  },
-  {
-    question: 'Proposez-vous la formation ?',
-    answer: 'Oui, nous proposons des formations sur mesure pour les équipes internes sur les réseaux sociaux, la création de contenu et le community management.',
-  },
-  {
-    question: 'Comment mesurez-vous les résultats ?',
-    answer: 'Nous utilisons des outils d\'analyse avancés et fournissons des rapports détaillés mensuels avec les KPIs pertinents pour votre activité.',
-  },
-]
+interface FAQProps {
+  title: string
+  subtitle: string
+  items: { question: string; answer: string }[]
+}
 
-export default function FAQ() {
+export default function FAQ({ title, subtitle, items }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -74,15 +53,15 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Title */}
         <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
-          Petites questions, grandes réponses
+          {title}
         </h2>
         <p className="text-body text-deep-forest/60 text-center mb-16">
-          Tout ce que vous devez savoir avant de vous lancer.
+          {subtitle}
         </p>
 
         {/* Accordion */}
         <div className="space-y-4">
-          {faqs.map((faq, i) => (
+          {items.map((faq, i) => (
             <div
               key={i}
               className={`rounded-content overflow-hidden transition-colors duration-300 ${openIndex === i ? 'bg-foudre-pink/10' : 'bg-white'}`}

@@ -6,34 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const projects = [
-  {
-    id: '1',
-    title: 'Yelloh! Village',
-    thumbnail: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop',
-    tags: ['Création de contenu', 'Community management'],
-  },
-  {
-    id: '2',
-    title: 'Solty Hôtel',
-    thumbnail: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-    tags: ['Stratégie social media', 'Création de contenu'],
-  },
-  {
-    id: '3',
-    title: 'Le Sac du Berger',
-    thumbnail: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
-    tags: ['Community management', 'Stratégie social media'],
-  },
-  {
-    id: '4',
-    title: 'Mamy Grand',
-    thumbnail: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop',
-    tags: ['Création de contenu', 'Stratégie social media'],
-  },
-]
+interface ProjectsProps {
+  title: string
+  items: { id: string; title: string; thumbnail: string; tags: string[] }[]
+}
 
-export default function Projects() {
+export default function Projects({ title, items }: ProjectsProps) {
   const [activeProject, setActiveProject] = useState(0)
   const [liked, setLiked] = useState<string[]>([])
   const sectionRef = useRef<HTMLElement>(null)
@@ -56,8 +34,8 @@ export default function Projects() {
             // Update active project based on scroll progress
             const progress = self.progress
             const newIndex = Math.min(
-              Math.floor(progress * projects.length),
-              projects.length - 1
+              Math.floor(progress * items.length),
+              items.length - 1
             )
             setActiveProject(newIndex)
           },
@@ -137,7 +115,7 @@ export default function Projects() {
             className="text-heading-lg font-bold text-deep-forest text-center mb-6"
             style={{ willChange: 'transform, opacity' }}
           >
-            NOUS LES RENDONS, SOCIAUX
+            {title}
           </h2>
 
           {/* Project Thumbnails */}
@@ -146,7 +124,7 @@ export default function Projects() {
             className="flex flex-wrap justify-center gap-4 mb-6"
             style={{ willChange: 'transform, opacity' }}
           >
-            {projects.map((project, i) => (
+            {items.map((project, i) => (
               <button
                 key={project.id}
                 onClick={() => setActiveProject(i)}
@@ -174,8 +152,8 @@ export default function Projects() {
           >
             <div className="relative aspect-[16/9] max-h-[45vh] rounded-content overflow-hidden mx-auto">
               <img
-                src={projects[activeProject].thumbnail}
-                alt={projects[activeProject].title}
+                src={items[activeProject].thumbnail}
+                alt={items[activeProject].title}
                 className="w-full h-full object-cover transition-transform duration-700"
                 width={800}
                 height={450}
@@ -185,10 +163,10 @@ export default function Projects() {
               {/* Project Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  {projects[activeProject].title}
+                  {items[activeProject].title}
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {projects[activeProject].tags.map((tag) => (
+                  {items[activeProject].tags.map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-badge text-white text-sm"
@@ -207,27 +185,27 @@ export default function Projects() {
 
               {/* Love Button */}
               <button
-                onClick={() => toggleLike(projects[activeProject].id)}
+                onClick={() => toggleLike(items[activeProject].id)}
                 className={`absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center text-2xl transition-all duration-300 ${
-                  liked.includes(projects[activeProject].id)
+                  liked.includes(items[activeProject].id)
                     ? 'bg-foudre-pink text-white scale-110'
                     : 'bg-white/20 backdrop-blur-sm text-white'
                 }`}
               >
-                {liked.includes(projects[activeProject].id) ? '❤️' : '🤍'}
+                {liked.includes(items[activeProject].id) ? '❤️' : '🤍'}
               </button>
             </div>
 
             {/* Navigation */}
             <div className="flex justify-center items-center gap-4 mt-4">
               <button
-                onClick={() => setActiveProject((prev) => (prev - 1 + projects.length) % projects.length)}
+                onClick={() => setActiveProject((prev) => (prev - 1 + items.length) % items.length)}
                 className="w-12 h-12 rounded-full bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink transition-colors"
               >
                 ←
               </button>
               <div className="flex gap-2">
-                {projects.map((_, i) => (
+                {items.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveProject(i)}
@@ -238,7 +216,7 @@ export default function Projects() {
                 ))}
               </div>
               <button
-                onClick={() => setActiveProject((prev) => (prev + 1) % projects.length)}
+                onClick={() => setActiveProject((prev) => (prev + 1) % items.length)}
                 className="w-12 h-12 rounded-full bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink transition-colors"
               >
                 →

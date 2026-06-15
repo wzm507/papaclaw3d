@@ -6,7 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Agency() {
+interface AgencyProps {
+  leftText: string
+  rightText: string
+  videoUrl: string
+}
+
+export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const stickyRef = useRef<HTMLDivElement>(null)
   const leftTextRef = useRef<HTMLDivElement>(null)
@@ -128,7 +134,7 @@ export default function Agency() {
             style={{ willChange: 'transform, opacity' }}
           >
             <p className="text-heading text-foudre-pink font-medium">
-              Nous sommes le courant,
+              {leftText}
             </p>
           </div>
 
@@ -140,7 +146,7 @@ export default function Agency() {
           >
             <div className="relative rounded-content overflow-hidden bg-black aspect-video">
               <iframe
-                src="https://papaclawmp-4-c12s.vercel.app/"
+                src={videoUrl}
                 className="w-full h-full"
                 allow="autoplay; fullscreen"
                 allowFullScreen
@@ -156,7 +162,7 @@ export default function Agency() {
             style={{ willChange: 'transform, opacity' }}
           >
             <p className="text-heading text-foudre-pink font-medium text-right">
-              vous êtes l&apos;histoire.
+              {rightText}
             </p>
           </div>
         </div>

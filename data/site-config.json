@@ -1,0 +1,243 @@
+{
+  "company": {
+    "name": "PAPACLAW",
+    "tagline": "Digital Creative Agency",
+    "description": "Crafting Digital Excellence - Premium Digital Solutions",
+    "whatsappUrl": "https://wa.me/",
+    "socialLinks": {
+      "Instagram": "#",
+      "TikTok": "#",
+      "Pinterest": "#",
+      "LinkedIn": "#"
+    }
+  },
+  "header": {
+    "menuItems": [
+      "Accueil",
+      "L'agence",
+      "L'équipe",
+      "Projets",
+      "Expertises",
+      "Contact"
+    ],
+    "whatsappUrl": "https://wa.me/"
+  },
+  "hero": {
+    "title": "PAPACLAW",
+    "subtitle1": "Digital Creative Agency",
+    "subtitle2": "Crafting Digital Excellence",
+    "backgroundImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop",
+    "cards": [
+      {
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop",
+        "bubble": "⚡"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=800&fit=crop",
+        "bubble": "🔥"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=800&fit=crop",
+        "bubble": "✨"
+      }
+    ]
+  },
+  "agency": {
+    "leftText": "Nous sommes le courant,",
+    "rightText": "vous êtes l'histoire.",
+    "videoUrl": "https://papaclawmp-4-c12s.vercel.app/"
+  },
+  "team": {
+    "title": "Nous électrisons vos réseaux,",
+    "members": [
+      {
+        "name": "Margaux",
+        "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=600&fit=crop"
+      },
+      {
+        "name": "Mathieu",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+      },
+      {
+        "name": "Florent",
+        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop"
+      },
+      {
+        "name": "Johane",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop"
+      },
+      {
+        "name": "Lou",
+        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=600&fit=crop"
+      }
+    ]
+  },
+  "projects": {
+    "title": "NOUS LES RENDONS, SOCIAUX",
+    "items": [
+      {
+        "id": "1",
+        "title": "Yelloh! Village",
+        "thumbnail": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
+        "tags": [
+          "Création de contenu",
+          "Community management"
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Solty Hôtel",
+        "thumbnail": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+        "tags": [
+          "Stratégie social media",
+          "Création de contenu"
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Le Sac du Berger",
+        "thumbnail": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
+        "tags": [
+          "Community management",
+          "Stratégie social media"
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Mamy Grand",
+        "thumbnail": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop",
+        "tags": [
+          "Création de contenu",
+          "Stratégie social media"
+        ]
+      }
+    ]
+  },
+  "expertises": {
+    "title": "Raisonner pour mieux: résonner.",
+    "subtitle": "Notre approche combine stratégie, créativité et exécution pour donner vie à votre présence sociale.",
+    "items": [
+      {
+        "icon": "👀",
+        "title": "Stratégie social media",
+        "description": "Analyse, benchmark, direction artistique, définition de stratégie"
+      },
+      {
+        "icon": "📱",
+        "title": "Création de contenu",
+        "description": "Vidéo, photo, Instagram Reels, interview, corporate, studio, YouTube, TikTok"
+      },
+      {
+        "icon": "📊",
+        "title": "Community management",
+        "description": "Planning éditorial, publication, Stories, modération quotidienne, reporting, gestion de projet"
+      }
+    ]
+  },
+  "process": {
+    "title": "Nous préfèrerons cet ordre. Toujours.",
+    "subtitle": "Une méthode éprouvée, du diagnostic à l'optimisation continue.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Stratégie",
+        "description": "Analyse et définition des piliers de communication"
+      },
+      {
+        "number": "02",
+        "title": "Direction artistique",
+        "description": "Révéler le DNA de la marque"
+      },
+      {
+        "number": "03",
+        "title": "Création de contenu",
+        "description": "Production photo et vidéo"
+      },
+      {
+        "number": "04",
+        "title": "Community management",
+        "description": "Gestion des comptes et planification des posts"
+      },
+      {
+        "number": "05",
+        "title": "Reporting & learnings",
+        "description": "Rapports détaillés et ajustement de la stratégie"
+      }
+    ]
+  },
+  "why": {
+    "title": "POURQUOI CHOISIR PAPACLAW",
+    "subtitle": "Ce qui nous différencie, c'est notre façon de faire — et de faire différemment.",
+    "reasons": [
+      {
+        "title": "Experts social media",
+        "description": "Près de 10 ans d'expérience professionnelle"
+      },
+      {
+        "title": "Premium & sur-mesure",
+        "description": "Pas de forfaits standardisés, des services personnalisés"
+      },
+      {
+        "title": "Une méthode",
+        "description": "Rigueur et créativité de pair"
+      },
+      {
+        "title": "L'humain avant tout",
+        "description": "Les relations humaines au centre de notre approche"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Petites questions, grandes réponses",
+    "subtitle": "Tout ce que vous devez savoir avant de vous lancer.",
+    "items": [
+      {
+        "question": "Quels types de clients accompagnez-vous ?",
+        "answer": "Nous accompagnons des marques de toutes tailles, des startups aux grandes entreprises, qui souhaitent développer leur présence sur les réseaux sociaux."
+      },
+      {
+        "question": "Quels sont vos tarifs ?",
+        "answer": "Nous proposons des solutions sur-mesure adaptées à vos besoins et votre budget. Chaque projet est unique, nous établissons un devis personnalisé après avoir compris vos objectifs."
+      },
+      {
+        "question": "Combien de temps dure un projet type ?",
+        "answer": "La durée varie selon la complexité du projet. Une stratégie social media prend généralement 2-3 semaines, tandis qu'un accompagnement complet se fait sur plusieurs mois."
+      },
+      {
+        "question": "Travaillez-vous avec des influenceurs ?",
+        "answer": "Oui, nous avons un réseau d'influenceurs dans divers domaines et pouvons organiser des campagnes de influencer marketing adaptées à votre marque."
+      },
+      {
+        "question": "Proposez-vous la formation ?",
+        "answer": "Oui, nous proposons des formations sur mesure pour les équipes internes sur les réseaux sociaux, la création de contenu et le community management."
+      },
+      {
+        "question": "Comment mesurez-vous les résultats ?",
+        "answer": "Nous utilisons des outils d'analyse avancés et fournissons des rapports détaillés mensuels avec les KPIs pertinents pour votre activité."
+      }
+    ]
+  },
+  "footer": {
+    "contactTitle": "Racontez",
+    "contactDescription": "Un mini quiz, 3 questions, moins d'une minute...",
+    "ctaText": "Lancer le quiz",
+    "socialLinks": [
+      { "name": "Instagram", "url": "https://instagram.com/" },
+      { "name": "小红书", "url": "https://www.xiaohongshu.com/" },
+      { "name": "微信视频号", "url": "#" },
+      { "name": "公众号", "url": "#" }
+    ],
+    "copyright": "© 2026 PAPACLAW, tous droits réservés.",
+    "legalLinks": [
+      {
+        "label": "CONFIDENTIALITÉ",
+        "url": "#"
+      },
+      {
+        "label": "MENTIONS LÉGALES",
+        "url": "#"
+      }
+    ],
+    "credit": "SITE PAR TROA"
+  }
+}
