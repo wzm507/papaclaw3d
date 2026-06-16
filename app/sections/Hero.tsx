@@ -109,14 +109,18 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
             loading="eager"
             style={{ transform: 'scale(1.15)' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/65" />
+          <div className="absolute inset-0 bg-deep-forest/20 mix-blend-multiply" />
         </div>
 
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 pt-24 pb-8">
           {/* Title */}
-          <div ref={titleRef} className="relative z-20 text-center mb-8">
-            <h1 className="text-display font-black text-white tracking-tight">
+          <div ref={titleRef} className="relative z-20 text-center mb-10 max-w-6xl">
+            <p className="hero-title-line editorial-kicker mb-5 text-white/80">
+              政企资源赋能 / AI务实出海
+            </p>
+            <h1 className="text-display font-bold text-white">
               {title.split('').map((letter, i) => (
                 <span
                   key={i}
@@ -127,11 +131,11 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
                 </span>
               ))}
             </h1>
-            <div className="mt-4 space-y-2">
-              <p className="hero-title-line text-heading-lg font-bold text-white/90">
+            <div className="mx-auto mt-6 max-w-4xl space-y-3 border-y border-white/25 py-5">
+              <p className="hero-title-line font-editorial text-heading font-bold text-white/95 text-balance">
                 {subtitle1}
               </p>
-              <p className="hero-title-line text-heading text-foudre-pink font-medium">
+              <p className="hero-title-line font-utility text-subheading font-semibold text-white/78">
                 {subtitle2}
               </p>
             </div>
@@ -155,7 +159,7 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
           </div>
 
           {/* Indicators */}
-          <div ref={indicatorsRef} className="flex justify-center gap-2">
+          <div ref={indicatorsRef} className="flex justify-center gap-2" aria-label="首屏3D卡片进度">
             {cards.map((_, i) => (
               <button
                 key={i}

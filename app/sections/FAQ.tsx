@@ -44,37 +44,35 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
   }
 
   return (
-    <section ref={sectionRef} className="section py-24 px-6 bg-ash-whisper relative overflow-hidden">
+    <section ref={sectionRef} className="editorial-section bg-ash-whisper">
       <Section3DBackground theme="orange" />
-      {/* 装饰背景元素 */}
-      <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-foudre-pink/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-20 w-40 h-40 rounded-full bg-bubblegum-blush/10 blur-3xl pointer-events-none" />
+      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
 
-      <div className="max-w-3xl mx-auto relative z-10">
-        {/* Title */}
-        <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
+      <div className="max-w-4xl mx-auto relative z-10">
+        <p className="editorial-kicker text-center mb-4">Standard Q&A</p>
+        <h2 ref={titleRef} className="editorial-heading text-center mb-6 opacity-0">
           {title}
         </h2>
-        <p className="text-body text-deep-forest/60 text-center mb-16">
+        <p className="editorial-body text-center mb-16 editorial-measure mx-auto">
           {subtitle}
         </p>
 
-        {/* Accordion */}
-        <div className="space-y-4">
+        <div className="border-y border-deep-forest/20">
           {items.map((faq, i) => (
             <div
               key={i}
-              className={`rounded-content overflow-hidden transition-colors duration-300 ${openIndex === i ? 'bg-foudre-pink/10' : 'bg-white'}`}
+              className={`overflow-hidden border-b border-deep-forest/15 last:border-b-0 transition-colors duration-300 ${openIndex === i ? 'bg-paper-white/85' : 'bg-transparent'}`}
             >
               <button
                 onClick={() => toggleAccordion(i)}
-                className="w-full flex items-center justify-between p-6 text-left"
+                className="w-full flex items-start justify-between gap-6 p-6 text-left md:p-7"
+                aria-expanded={openIndex === i}
               >
-                <span className={`font-medium transition-colors duration-300 ${openIndex === i ? 'text-foudre-pink' : 'text-deep-forest'}`}>
+                <span className={`font-editorial text-xl font-bold leading-snug transition-colors duration-300 ${openIndex === i ? 'text-foudre-pink' : 'text-deep-forest'}`}>
                   {faq.question}
                 </span>
                 <span
-                  className={`text-2xl transition-transform duration-300 ${openIndex === i ? 'rotate-45' : 'rotate-0'}`}
+                  className={`font-utility text-2xl leading-none transition-transform duration-300 ${openIndex === i ? 'rotate-45 text-foudre-pink' : 'rotate-0 text-deep-forest/60'}`}
                 >
                   +
                 </span>
@@ -83,7 +81,7 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
                 className={`overflow-hidden transition-all duration-500 ${openIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(.23,1,.32,1)' }}
               >
-                <p className="px-6 pb-6 text-body text-deep-forest/70">
+                <p className="editorial-body px-6 pb-7 md:px-7">
                   {faq.answer}
                 </p>
               </div>

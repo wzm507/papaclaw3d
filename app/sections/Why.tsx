@@ -59,34 +59,31 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
   }, [])
 
   return (
-    <section ref={sectionRef} className="section py-24 px-6 bg-pale-canvas relative overflow-hidden">
+    <section ref={sectionRef} className="editorial-section bg-pale-canvas">
       <Section3DBackground theme="blue" />
-      {/* 装饰背景元素 */}
-      <div className="absolute top-10 left-1/4 w-40 h-40 rounded-full bg-foudre-pink/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-56 h-56 rounded-full bg-bubblegum-blush/10 blur-3xl pointer-events-none" />
+      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Title */}
-        <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
+        <p className="editorial-kicker text-center mb-4">Why Papa Claw</p>
+        <h2 ref={titleRef} className="editorial-heading text-center mb-6 opacity-0">
           {title}
         </h2>
-        <p className="text-body text-deep-forest/60 text-center mb-16 max-w-2xl mx-auto">
+        <p className="editorial-body text-center mb-16 editorial-measure mx-auto">
           {subtitle}
         </p>
 
-        {/* Cards */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div ref={cardsRef} className="grid grid-cols-1 border border-deep-forest/20 md:grid-cols-2">
           {reasons.map((reason, i) => (
             <div
               key={i}
-              className="why-card bg-white rounded-content p-8 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 opacity-0 relative overflow-hidden group"
+              className="why-card bg-paper-white/82 p-7 md:p-9 transition-colors duration-300 opacity-0 relative overflow-hidden border-b border-deep-forest/15 md:border-r md:even:border-r-0 last:border-b-0 group"
             >
-              <div className="absolute top-0 right-0 w-20 h-20 bg-foudre-pink/5 rounded-bl-full transition-transform group-hover:scale-125" />
               <div className="relative z-10">
-                <h3 className="text-heading font-bold text-deep-forest mb-4">
+                <p className="editorial-meta mb-5">0{i + 1}</p>
+                <h3 className="font-editorial text-heading font-bold text-deep-forest mb-4">
                   {reason.title}
                 </h3>
-                <p className="text-body text-deep-forest/70">
+                <p className="editorial-body">
                   {reason.description}
                 </p>
               </div>
@@ -96,9 +93,9 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
 
         {/* 底部装饰 */}
         <div className="mt-16 flex justify-center items-center gap-4">
-          <div className="w-16 h-px bg-foudre-pink/20" />
-          <div className="w-2 h-2 rounded-full bg-foudre-pink/30" />
-          <div className="w-16 h-px bg-foudre-pink/20" />
+          <div className="w-16 h-px bg-foudre-pink/35" />
+          <div className="h-1.5 w-1.5 bg-foudre-pink/45" />
+          <div className="w-16 h-px bg-foudre-pink/35" />
         </div>
       </div>
     </section>

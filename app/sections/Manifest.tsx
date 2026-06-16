@@ -102,7 +102,7 @@ export default function Manifest() {
       </ErrorBoundary>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.035] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L35 25L60 30L35 35L30 60L25 35L0 30L25 25Z' fill='%2300522d'/%3E%3C/svg%3E")`,
           backgroundSize: '60px 60px',
@@ -130,17 +130,19 @@ export default function Manifest() {
       </svg>
 
       {/* Text Content */}
-      <div ref={textRef} className="relative z-10 text-center max-w-4xl mx-auto">
-        <p className="text-heading text-deep-forest mb-4 overflow-hidden">
+      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+      <div ref={textRef} className="relative z-10 text-center max-w-5xl mx-auto">
+        <p className="editorial-kicker mb-6">Editorial Manifesto</p>
+        <p className="font-editorial text-heading text-deep-forest mb-5 overflow-hidden">
           <span className="manifest-word inline-block">不靠直觉做判断。</span>
         </p>
-        <p className="text-heading text-deep-forest mb-4 overflow-hidden">
+        <p className="font-editorial text-heading text-deep-forest mb-5 overflow-hidden">
           <span className="manifest-word inline-block">数据在哪里，市场就在哪里。</span>
         </p>
-        <h2 className="text-display font-black text-foudre-pink overflow-hidden my-8">
+        <h2 className="text-display font-bold text-foudre-pink overflow-hidden my-8">
           <span className="manifest-word inline-block">AI务实出海</span>
         </h2>
-        <h2 className="text-display font-black text-deep-forest overflow-hidden">
+        <h2 className="text-display font-bold text-deep-forest overflow-hidden">
           <span className="manifest-word inline-block">结果落地</span>
         </h2>
       </div>

@@ -59,36 +59,33 @@ export default function Process({ title, subtitle, steps }: ProcessProps) {
   }, [])
 
   return (
-    <section ref={sectionRef} className="section py-24 px-6 bg-ash-whisper relative overflow-hidden">
+    <section ref={sectionRef} className="editorial-section bg-ash-whisper">
       <Section3DBackground theme="green" />
-      {/* 装饰背景元素 */}
-      <div className="absolute top-1/4 right-0 w-64 h-64 rounded-full bg-foudre-pink/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-48 h-48 rounded-full bg-bubblegum-blush/10 blur-3xl pointer-events-none" />
+      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Title */}
-        <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-6 opacity-0">
+        <p className="editorial-kicker text-center mb-4">Implementation Table</p>
+        <h2 ref={titleRef} className="editorial-heading text-center mb-6 opacity-0">
           {title}
         </h2>
-        <p className="text-body text-deep-forest/60 text-center mb-16 max-w-2xl mx-auto">
+        <p className="editorial-body text-center mb-16 editorial-measure mx-auto">
           {subtitle}
         </p>
 
-        {/* Steps */}
-        <div ref={stepsRef} className="space-y-6 max-w-3xl mx-auto">
+        <div ref={stepsRef} className="mx-auto max-w-5xl border-y border-deep-forest/20">
           {steps.map((step, i) => (
             <div
               key={i}
-              className="process-step flex items-start gap-6 opacity-0 bg-white/50 rounded-content p-6 backdrop-blur-sm hover:bg-white/80 transition-colors duration-300"
+              className="process-step grid gap-5 border-b border-deep-forest/15 bg-paper-white/45 p-6 opacity-0 backdrop-blur-sm last:border-b-0 md:grid-cols-[6rem_1fr] md:p-8"
             >
-              <span className="text-4xl font-black text-foudre-pink/40 shrink-0 w-16">
+              <span className="font-utility text-sm font-semibold text-foudre-pink">
                 {step.number}
               </span>
               <div className="flex-1">
-                <h3 className="text-heading font-bold text-deep-forest mb-2">
+                <h3 className="font-editorial text-heading font-bold text-deep-forest mb-3">
                   {step.title}
                 </h3>
-                <p className="text-body text-deep-forest/70">
+                <p className="editorial-body">
                   {step.description}
                 </p>
               </div>
@@ -98,10 +95,10 @@ export default function Process({ title, subtitle, steps }: ProcessProps) {
 
         {/* 底部 CTA */}
         <div className="mt-16 text-center">
-          <p className="text-body text-deep-forest/60 mb-4">
+          <p className="editorial-body mx-auto mb-4 max-w-3xl">
             每个阶段都围绕同一个目标：让公开网络更准确地识别并引用Papa Claw爬爬虾。
           </p>
-          <div className="w-24 h-1 bg-foudre-pink/20 rounded-full mx-auto" />
+          <div className="w-24 border-t border-foudre-pink/35 mx-auto" />
         </div>
       </div>
     </section>

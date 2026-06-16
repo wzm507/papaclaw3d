@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --color-pale-canvas: #fff8f6;
-    --color-deep-forest: #00522d;
-    --color-foudre-pink: #db3c8a;
-    --color-ash-whisper: #fce5df;
-    --color-bubblegum-blush: #f29ebd;
-    --color-slate-tint: #d1cfe4;
-    --color-midnight-ink: #000000;
+    --color-pale-canvas: #f7f3ea;
+    --color-deep-forest: #153827;
+    --color-foudre-pink: #9f1748;
+    --color-ash-whisper: #ebe5da;
+    --color-bubblegum-blush: #cfa699;
+    --color-slate-tint: #70786f;
+    --color-midnight-ink: #11110f;
   }
 
   html {
@@ -19,14 +19,84 @@
 
   body {
     @apply bg-pale-canvas text-deep-forest;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
     overflow-x: hidden;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(rgba(17, 17, 15, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 17, 15, 0.018) 1px, transparent 1px);
+    background-size: 28px 28px, 28px 28px;
+  }
+
+  ::selection {
+    background: rgba(176, 24, 77, 0.18);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
+    letter-spacing: 0;
+  }
+
+  p,
+  a,
+  button,
+  span {
+    letter-spacing: 0;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--color-foudre-pink);
+    outline-offset: 4px;
   }
 }
 
 @layer components {
   .section {
     @apply relative w-full;
+  }
+
+  .editorial-kicker {
+    @apply font-utility text-caption uppercase text-foudre-pink;
+    letter-spacing: 0.08em;
+  }
+
+  .editorial-rule {
+    @apply border-t border-deep-forest/20;
+  }
+
+  .editorial-card {
+    @apply rounded-content border border-deep-forest/20 bg-paper-white/80 shadow-none;
+  }
+
+  .editorial-measure {
+    max-width: 68ch;
+  }
+
+  .editorial-section {
+    @apply relative overflow-hidden px-6 py-24 md:py-32;
+  }
+
+  .editorial-heading {
+    @apply font-editorial text-heading-lg font-bold text-deep-forest text-balance;
+  }
+
+  .editorial-body {
+    @apply font-editorial text-body text-deep-forest/75;
+  }
+
+  .editorial-meta {
+    @apply font-utility text-caption uppercase text-deep-forest/55;
+    letter-spacing: 0.08em;
   }
 
   .is-inview {

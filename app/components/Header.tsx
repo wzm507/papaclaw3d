@@ -24,10 +24,10 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between">
+      <header className="fixed top-0 left-0 w-full z-50 px-5 md:px-8 py-4 flex items-center justify-between border-b border-deep-forest/18 bg-pale-canvas/88 backdrop-blur-md">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="text-deep-forest font-medium text-sm tracking-wide hover:opacity-70 transition-opacity"
+          className="min-h-11 border-y border-deep-forest/30 px-3 font-utility text-sm font-semibold text-deep-forest hover:text-foudre-pink transition-colors"
         >
           菜单
         </button>
@@ -40,7 +40,7 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-deep-forest text-white px-4 py-2 rounded-badge text-sm font-medium hover:bg-foudre-pink transition-colors"
+          className="min-h-11 inline-flex items-center border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white hover:border-foudre-pink hover:bg-foudre-pink transition-colors"
         >
           联系
         </a>
@@ -57,21 +57,21 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           style={{ transitionTimingFunction: 'cubic-bezier(.23,1,.32,1)' }}
         />
 
-        <div className="relative z-10 h-full flex flex-col justify-center px-12">
+        <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-16">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 text-deep-forest text-sm font-medium hover:opacity-70 transition-opacity"
+            className="absolute top-6 right-6 min-h-11 border-y border-deep-forest/30 px-3 font-utility text-sm font-semibold text-deep-forest hover:text-foudre-pink transition-colors"
           >
             关闭
           </button>
 
-          <nav className="space-y-4">
+          <nav className="max-w-5xl border-y border-deep-forest/20 py-8 space-y-3">
             {menuItems.map((item, i) => (
               <a
                 key={item}
                 href={`#${sectionIds[i] || 'home'}`}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-heading-lg font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                className={`block font-editorial text-4xl md:text-heading-lg font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                 style={{
                   transitionDelay: `${150 + i * 50}ms`,
                   transitionDuration: '500ms',

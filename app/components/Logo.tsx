@@ -11,11 +11,11 @@ export default function Logo() {
   const letters = ['P', 'A', 'P', 'A', 'C', 'L', 'A', 'W']
 
   return (
-    <div className="flex items-center gap-0.5">
+    <div className="flex items-center gap-0.5 border-y border-deep-forest/40 bg-pale-canvas/70 px-3 py-1.5 backdrop-blur">
       {letters.map((letter, i) => (
         <span
           key={i}
-          className="logo-letter inline-block text-2xl font-black text-deep-forest opacity-0"
+          className="logo-letter inline-block font-editorial text-2xl font-bold text-deep-forest opacity-0"
           style={{ transform: 'translateY(100px)' }}
         >
           {letter}

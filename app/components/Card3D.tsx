@@ -37,7 +37,7 @@ export default function Card3D({ image, bubble, isActive }: Card3DProps) {
         className="relative w-full h-full preserve-3d"
         style={{ perspective: '1000px' }}
       >
-        <div className="relative w-full h-full rounded-card overflow-hidden shadow-2xl">
+        <div className="relative w-full h-full rounded-card overflow-hidden border border-paper-white/70 shadow-[0_28px_90px_rgba(17,17,15,0.28)]">
           <img
             src={image}
             alt="Team member"
@@ -50,7 +50,7 @@ export default function Card3D({ image, bubble, isActive }: Card3DProps) {
 
         {bubble && (
           <div
-            className="absolute -top-4 -right-4 bg-white rounded-full px-4 py-2 shadow-lg text-lg transform scale-0 animate-bubble-in"
+            className="absolute -top-3 -right-3 border border-deep-forest/25 bg-paper-white px-4 py-2 font-utility text-sm font-semibold text-deep-forest shadow-[0_8px_24px_rgba(17,17,15,0.12)] transform scale-0 animate-bubble-in"
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
             {bubble}

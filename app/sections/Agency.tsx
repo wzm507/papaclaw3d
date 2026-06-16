@@ -117,6 +117,8 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
 
         {/* Original Background */}
         <div className="absolute inset-0 bg-ash-whisper" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+        <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/15" />
 
         {/* Red Overlay */}
         <div
@@ -126,14 +128,15 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-6 lg:grid-cols-[0.8fr_1.4fr_0.8fr]">
           {/* Left Text */}
           <div
             ref={leftTextRef}
-            className="lg:w-1/4"
+            className="max-w-xs"
             style={{ willChange: 'transform, opacity' }}
           >
-            <p className="text-heading text-foudre-pink font-medium">
+            <p className="editorial-kicker mb-3">Editorial Thesis</p>
+            <p className="font-editorial text-heading font-bold text-deep-forest text-balance">
               {leftText}
             </p>
           </div>
@@ -141,10 +144,10 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
           {/* Video Player */}
           <div
             ref={videoContainerRef}
-            className="lg:w-1/2 relative"
+            className="relative"
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="relative rounded-content overflow-hidden bg-black aspect-video">
+            <div className="relative aspect-video overflow-hidden rounded-content border border-deep-forest/25 bg-black shadow-[0_26px_80px_rgba(17,17,15,0.18)]">
               <iframe
                 src={videoUrl}
                 className="w-full h-full"
@@ -158,10 +161,10 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
           {/* Right Text */}
           <div
             ref={rightTextRef}
-            className="lg:w-1/4"
+            className="ml-auto max-w-xs"
             style={{ willChange: 'transform, opacity' }}
           >
-            <p className="text-heading text-foudre-pink font-medium text-right">
+            <p className="font-editorial text-heading font-bold text-foudre-pink text-right text-balance">
               {rightText}
             </p>
           </div>

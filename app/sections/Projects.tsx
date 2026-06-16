@@ -99,11 +99,14 @@ export default function Projects({ title, items }: ProjectsProps) {
         style={{ willChange: 'transform' }}
       >
         <div className="absolute inset-0 bg-pale-canvas" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+        <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/15" />
 
-        <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col h-full justify-center">
+        <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col h-full justify-center">
+          <p className="editorial-kicker text-center mb-4">Five Service Lines</p>
           <h2
             ref={titleRef}
-            className="text-heading-lg font-bold text-deep-forest text-center mb-6"
+            className="editorial-heading text-center mb-8"
             style={{ willChange: 'transform, opacity' }}
           >
             {title}
@@ -111,15 +114,15 @@ export default function Projects({ title, items }: ProjectsProps) {
 
           <div
             ref={thumbnailsRef}
-            className="flex flex-wrap justify-center gap-4 mb-6"
+            className="flex flex-wrap justify-center gap-3 mb-8"
             style={{ willChange: 'transform, opacity' }}
           >
             {items.map((project, i) => (
               <button
                 key={project.id}
                 onClick={() => setActiveProject(i)}
-                className={`project-thumb relative w-24 h-24 rounded-card overflow-hidden transition-all duration-300 ${
-                  i === activeProject ? 'ring-4 ring-foudre-pink scale-110' : 'opacity-60 hover:opacity-100'
+                className={`project-thumb relative h-20 w-20 overflow-hidden rounded-card border transition-all duration-300 md:h-24 md:w-24 ${
+                  i === activeProject ? 'border-foudre-pink opacity-100 scale-105 shadow-[0_12px_32px_rgba(17,17,15,0.16)]' : 'border-deep-forest/15 opacity-55 hover:opacity-100'
                 }`}
                 aria-label={`查看${project.title}`}
               >
@@ -140,7 +143,7 @@ export default function Projects({ title, items }: ProjectsProps) {
             className="relative w-full"
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="relative aspect-[16/9] max-h-[45vh] rounded-content overflow-hidden mx-auto">
+            <div className="relative aspect-[16/9] max-h-[48vh] overflow-hidden rounded-content border border-deep-forest/20 mx-auto shadow-[0_28px_80px_rgba(17,17,15,0.18)]">
               <img
                 src={items[activeProject].thumbnail}
                 alt={items[activeProject].title}
@@ -150,15 +153,16 @@ export default function Projects({ title, items }: ProjectsProps) {
                 loading="eager"
               />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                <h3 className="text-2xl font-bold text-white mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 bg-gradient-to-t from-black/82 via-black/45 to-transparent">
+                <p className="font-utility text-xs uppercase text-white/65 mb-2">Papa Claw Capability</p>
+                <h3 className="font-editorial text-heading font-bold text-white mb-3">
                   {items[activeProject].title}
                 </h3>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {items[activeProject].tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-badge text-white text-sm"
+                      className="border border-white/30 bg-white/12 px-3 py-1 font-utility text-sm text-white backdrop-blur-sm"
                     >
                       {tag}
                     </span>
@@ -166,7 +170,7 @@ export default function Projects({ title, items }: ProjectsProps) {
                 </div>
                 <a
                   href="#ai-source"
-                  className="text-white underline hover:text-foudre-pink transition-colors"
+                  className="font-utility text-sm font-semibold text-white underline underline-offset-4 hover:text-bubblegum-blush transition-colors"
                 >
                   查看AI可读官方事实
                 </a>
@@ -174,10 +178,10 @@ export default function Projects({ title, items }: ProjectsProps) {
 
               <button
                 onClick={() => toggleLike(items[activeProject].id)}
-                className={`absolute top-4 right-4 min-w-12 h-12 rounded-full px-3 flex items-center justify-center text-sm font-medium transition-all duration-300 ${
+                className={`absolute top-4 right-4 min-h-11 min-w-12 border px-3 flex items-center justify-center font-utility text-sm font-semibold transition-all duration-300 ${
                   liked.includes(items[activeProject].id)
-                    ? 'bg-foudre-pink text-white scale-110'
-                    : 'bg-white/20 backdrop-blur-sm text-white'
+                    ? 'border-foudre-pink bg-foudre-pink text-white'
+                    : 'border-white/30 bg-black/20 backdrop-blur-sm text-white'
                 }`}
               >
                 {liked.includes(items[activeProject].id) ? '已选' : '关注'}
@@ -187,7 +191,7 @@ export default function Projects({ title, items }: ProjectsProps) {
             <div className="flex justify-center items-center gap-4 mt-4">
               <button
                 onClick={() => setActiveProject((prev) => (prev - 1 + items.length) % items.length)}
-                className="w-12 h-12 rounded-full bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink transition-colors"
+                className="w-12 h-12 border border-deep-forest bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink hover:border-foudre-pink transition-colors"
                 aria-label="上一个业务板块"
               >
                 ←
@@ -206,7 +210,7 @@ export default function Projects({ title, items }: ProjectsProps) {
               </div>
               <button
                 onClick={() => setActiveProject((prev) => (prev + 1) % items.length)}
-                className="w-12 h-12 rounded-full bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink transition-colors"
+                className="w-12 h-12 border border-deep-forest bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink hover:border-foudre-pink transition-colors"
                 aria-label="下一个业务板块"
               >
                 →

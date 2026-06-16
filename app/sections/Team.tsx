@@ -91,17 +91,18 @@ export default function Team({ title, members }: TeamProps) {
         ref={stickyRef}
         className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-12 px-6 bg-ash-whisper"
       >
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
         {/* Title */}
-        <h2 ref={titleRef} className="text-heading-lg font-bold text-deep-forest text-center mb-4 opacity-0">
+        <h2 ref={titleRef} className="editorial-heading max-w-4xl text-center mb-6 opacity-0">
           {title}
         </h2>
 
         {/* Chat Bubbles */}
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center gap-3 mb-10">
           {['AI数据', '政企资源', '务实落地'].map((label, i) => (
             <div
               key={i}
-              className="bg-white rounded-full px-4 py-2 shadow-md text-sm font-medium text-deep-forest transform hover:scale-110 transition-transform"
+              className="border border-deep-forest/20 bg-paper-white px-4 py-2 font-utility text-sm font-semibold text-deep-forest transform hover:-translate-y-0.5 transition-transform"
               style={{ animationDelay: `${i * 0.2}s` }}
             >
               {label}
@@ -112,7 +113,7 @@ export default function Team({ title, members }: TeamProps) {
         {/* Team Photo */}
         <div
           ref={imageContainerRef}
-          className="relative w-full max-w-md mx-auto aspect-[4/5] mb-6 rounded-card overflow-hidden flex-shrink-0"
+          className="relative w-full max-w-md mx-auto aspect-[4/5] mb-7 rounded-card overflow-hidden flex-shrink-0 border border-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.18)]"
           style={{ willChange: 'transform, opacity', maxHeight: '55vh' }}
         >
           {members.map((member, i) => (
@@ -141,8 +142,8 @@ export default function Team({ title, members }: TeamProps) {
             <button
               key={i}
               onClick={() => setActiveMember(i)}
-              className={`px-6 py-3 rounded-badge font-medium transition-all duration-300 ${
-                i === activeMember ? 'bg-foudre-pink text-white' : 'bg-white text-deep-forest hover:bg-bubblegum-blush'
+              className={`min-h-11 border px-6 py-3 font-utility text-sm font-semibold transition-all duration-300 ${
+                i === activeMember ? 'border-foudre-pink bg-foudre-pink text-white' : 'border-deep-forest/20 bg-paper-white text-deep-forest hover:border-deep-forest'
               }`}
             >
               {member.name}

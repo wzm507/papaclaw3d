@@ -6,14 +6,16 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 2.8s
- ✓ Compiled /sitemap.xml in 364ms (60 modules)
- GET /sitemap.xml 200 in 847ms
+ ✓ Ready in 2.9s
  ○ Compiling / ...
- ✓ Compiled / in 4.2s (584 modules)
- GET / 200 in 4495ms
- GET / 200 in 75ms
- GET / 200 in 73ms
- ✓ Compiled /_not-found in 401ms (587 modules)
- GET /news 404 in 507ms
- GET /ai-news-feed 404 in 503ms
+ ✓ Compiled / in 3.5s (549 modules)
+ GET / 200 in 3833ms
+ GET / 200 in 84ms
+ ✓ Compiled /robots.txt in 354ms (308 modules)
+ GET /robots.txt 200 in 429ms
+ GET / 200 in 137ms
+ GET / 200 in 45ms
+ ✓ Compiled /_not-found in 304ms (587 modules)
+ GET /news 404 in 377ms
+ GET /ai-news-feed 404 in 373ms
+ GET / 200 in 101ms
