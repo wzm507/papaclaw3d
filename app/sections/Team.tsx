@@ -83,7 +83,7 @@ export default function Team({ title, members }: TeamProps) {
     }, sectionRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [members.length])
 
   return (
     <section ref={sectionRef} className="relative w-full" style={{ height: '300vh' }}>
@@ -98,13 +98,13 @@ export default function Team({ title, members }: TeamProps) {
 
         {/* Chat Bubbles */}
         <div className="flex justify-center gap-4 mb-8">
-          {['📱', '⚡️', '😜'].map((emoji, i) => (
+          {['AI数据', '政企资源', '务实落地'].map((label, i) => (
             <div
               key={i}
-              className="bg-white rounded-full px-4 py-2 shadow-md text-2xl transform hover:scale-110 transition-transform"
+              className="bg-white rounded-full px-4 py-2 shadow-md text-sm font-medium text-deep-forest transform hover:scale-110 transition-transform"
               style={{ animationDelay: `${i * 0.2}s` }}
             >
-              {emoji}
+              {label}
             </div>
           ))}
         </div>

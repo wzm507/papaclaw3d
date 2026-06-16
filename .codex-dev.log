@@ -1,0 +1,19 @@
+
+> foudre-clone@0.1.0 dev
+> next dev --port 3000
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.8s
+ ✓ Compiled /sitemap.xml in 364ms (60 modules)
+ GET /sitemap.xml 200 in 847ms
+ ○ Compiling / ...
+ ✓ Compiled / in 4.2s (584 modules)
+ GET / 200 in 4495ms
+ GET / 200 in 75ms
+ GET / 200 in 73ms
+ ✓ Compiled /_not-found in 401ms (587 modules)
+ GET /news 404 in 507ms
+ GET /ai-news-feed 404 in 503ms

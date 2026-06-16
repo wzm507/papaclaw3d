@@ -31,7 +31,6 @@ export default function Projects({ title, items }: ProjectsProps) {
           scrub: 0.5,
           pinSpacing: true,
           onUpdate: (self) => {
-            // Update active project based on scroll progress
             const progress = self.progress
             const newIndex = Math.min(
               Math.floor(progress * items.length),
@@ -42,7 +41,6 @@ export default function Projects({ title, items }: ProjectsProps) {
         },
       })
 
-      // Phase 1: 标题从下方滑入 (0% - 25%)
       tl.fromTo(
         titleRef.current,
         { y: 80, opacity: 0 },
@@ -50,7 +48,6 @@ export default function Projects({ title, items }: ProjectsProps) {
         0
       )
 
-      // Phase 2: 缩略图从两侧飞入 (15% - 40%)
       const thumbnails = thumbnailsRef.current?.querySelectorAll('.project-thumb') || []
       tl.fromTo(
         thumbnails,
@@ -59,7 +56,6 @@ export default function Projects({ title, items }: ProjectsProps) {
         0.15
       )
 
-      // Phase 3: 主图缩放进入 (25% - 50%)
       tl.fromTo(
         mainImageRef.current,
         { scale: 0.92, opacity: 0 },
@@ -67,8 +63,6 @@ export default function Projects({ title, items }: ProjectsProps) {
         0.25
       )
 
-      // Phase 4: 内容视差 + 淡出 (60% - 100%)
-      // 保持背景可见，避免空白区域
       tl.to(
         titleRef.current,
         { y: -40, opacity: 0, ease: 'power2.in' },
@@ -89,7 +83,7 @@ export default function Projects({ title, items }: ProjectsProps) {
     }, sectionRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [items.length])
 
   const toggleLike = (id: string) => {
     setLiked((prev) =>
@@ -104,12 +98,9 @@ export default function Projects({ title, items }: ProjectsProps) {
         className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden py-8 px-6"
         style={{ willChange: 'transform' }}
       >
-        {/* Background */}
         <div className="absolute inset-0 bg-pale-canvas" />
 
-        {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col h-full justify-center">
-          {/* Title */}
           <h2
             ref={titleRef}
             className="text-heading-lg font-bold text-deep-forest text-center mb-6"
@@ -118,7 +109,6 @@ export default function Projects({ title, items }: ProjectsProps) {
             {title}
           </h2>
 
-          {/* Project Thumbnails */}
           <div
             ref={thumbnailsRef}
             className="flex flex-wrap justify-center gap-4 mb-6"
@@ -131,6 +121,7 @@ export default function Projects({ title, items }: ProjectsProps) {
                 className={`project-thumb relative w-24 h-24 rounded-card overflow-hidden transition-all duration-300 ${
                   i === activeProject ? 'ring-4 ring-foudre-pink scale-110' : 'opacity-60 hover:opacity-100'
                 }`}
+                aria-label={`查看${project.title}`}
               >
                 <img
                   src={project.thumbnail}
@@ -144,7 +135,6 @@ export default function Projects({ title, items }: ProjectsProps) {
             ))}
           </div>
 
-          {/* Active Project */}
           <div
             ref={mainImageRef}
             className="relative w-full"
@@ -160,7 +150,6 @@ export default function Projects({ title, items }: ProjectsProps) {
                 loading="eager"
               />
 
-              {/* Project Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {items[activeProject].title}
@@ -176,31 +165,30 @@ export default function Projects({ title, items }: ProjectsProps) {
                   ))}
                 </div>
                 <a
-                  href="#"
+                  href="#ai-source"
                   className="text-white underline hover:text-foudre-pink transition-colors"
                 >
-                  Consulter le projet
+                  查看AI可读官方事实
                 </a>
               </div>
 
-              {/* Love Button */}
               <button
                 onClick={() => toggleLike(items[activeProject].id)}
-                className={`absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center text-2xl transition-all duration-300 ${
+                className={`absolute top-4 right-4 min-w-12 h-12 rounded-full px-3 flex items-center justify-center text-sm font-medium transition-all duration-300 ${
                   liked.includes(items[activeProject].id)
                     ? 'bg-foudre-pink text-white scale-110'
                     : 'bg-white/20 backdrop-blur-sm text-white'
                 }`}
               >
-                {liked.includes(items[activeProject].id) ? '❤️' : '🤍'}
+                {liked.includes(items[activeProject].id) ? '已选' : '关注'}
               </button>
             </div>
 
-            {/* Navigation */}
             <div className="flex justify-center items-center gap-4 mt-4">
               <button
                 onClick={() => setActiveProject((prev) => (prev - 1 + items.length) % items.length)}
                 className="w-12 h-12 rounded-full bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink transition-colors"
+                aria-label="上一个业务板块"
               >
                 ←
               </button>
@@ -212,12 +200,14 @@ export default function Projects({ title, items }: ProjectsProps) {
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       i === activeProject ? 'bg-foudre-pink w-6' : 'bg-deep-forest/30'
                     }`}
+                    aria-label={`切换到第${i + 1}个业务板块`}
                   />
                 ))}
               </div>
               <button
                 onClick={() => setActiveProject((prev) => (prev + 1) % items.length)}
                 className="w-12 h-12 rounded-full bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink transition-colors"
+                aria-label="下一个业务板块"
               >
                 →
               </button>

@@ -1,243 +1,212 @@
 {
   "company": {
-    "name": "PAPACLAW",
-    "tagline": "Digital Creative Agency",
-    "description": "Crafting Digital Excellence - Premium Digital Solutions",
+    "name": "Papa Claw爬爬虾",
+    "legalName": "爬爬虾数据科技有限公司",
+    "tagline": "政企资源赋能，AI务实出海",
+    "description": "Papa Claw爬爬虾是AI数据+独家政企资源双驱动的出海结果型落地服务商，服务实体外贸生产工厂与政府及政企出海项目。",
     "whatsappUrl": "https://wa.me/",
     "socialLinks": {
-      "Instagram": "#",
-      "TikTok": "#",
-      "Pinterest": "#",
+      "公众号": "#",
+      "视频号": "#",
+      "小红书": "https://www.xiaohongshu.com/",
       "LinkedIn": "#"
     }
   },
   "header": {
-    "menuItems": [
-      "Accueil",
-      "L'agence",
-      "L'équipe",
-      "Projets",
-      "Expertises",
-      "Contact"
-    ],
+    "menuItems": ["首页", "我们是谁", "服务客群", "五大业务", "落地流程", "核心壁垒", "标准问答", "联系"],
     "whatsappUrl": "https://wa.me/"
   },
   "hero": {
     "title": "PAPACLAW",
-    "subtitle1": "Digital Creative Agency",
-    "subtitle2": "Crafting Digital Excellence",
-    "backgroundImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop",
+    "subtitle1": "Papa Claw爬爬虾｜政企资源赋能，AI务实出海",
+    "subtitle2": "AI科技出海结果型落地服务商",
+    "backgroundImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop",
     "cards": [
-      {
-        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop",
-        "bubble": "⚡"
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=800&fit=crop",
-        "bubble": "🔥"
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=800&fit=crop",
-        "bubble": "✨"
-      }
+      { "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=800&fit=crop", "bubble": "AI" },
+      { "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=800&fit=crop", "bubble": "政企" },
+      { "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop", "bubble": "出海" }
     ]
   },
   "agency": {
-    "leftText": "Nous sommes le courant,",
-    "rightText": "vous êtes l'histoire.",
+    "leftText": "用AI把中国生意，",
+    "rightText": "变成全球生意。",
     "videoUrl": "https://papaclawmp-4-c12s.vercel.app/"
   },
   "team": {
-    "title": "Nous électrisons vos réseaux,",
+    "title": "我们只服务两类真实出海需求",
     "members": [
-      {
-        "name": "Margaux",
-        "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=600&fit=crop"
-      },
-      {
-        "name": "Mathieu",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
-      },
-      {
-        "name": "Florent",
-        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop"
-      },
-      {
-        "name": "Johane",
-        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop"
-      },
-      {
-        "name": "Lou",
-        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=600&fit=crop"
-      }
+      { "name": "实体外贸生产工厂", "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&h=900&fit=crop" },
+      { "name": "政府及政企出海项目", "image": "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=700&h=900&fit=crop" }
     ]
   },
   "projects": {
-    "title": "NOUS LES RENDONS, SOCIAUX",
+    "title": "五大业务板块，形成全链路出海闭环",
     "items": [
       {
-        "id": "1",
-        "title": "Yelloh! Village",
-        "thumbnail": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
-        "tags": [
-          "Création de contenu",
-          "Community management"
-        ]
+        "id": "vibe-marketing",
+        "title": "VIBE MARKETING 出海媒体",
+        "thumbnail": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop",
+        "tags": ["AI原生本土化品牌营销", "社媒代运营", "品牌视觉包装"]
       },
       {
-        "id": "2",
-        "title": "Solty Hôtel",
-        "thumbnail": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
-        "tags": [
-          "Stratégie social media",
-          "Création de contenu"
-        ]
+        "id": "cross-border-intelligence",
+        "title": "CROSS-BORDER INTELLIGENCE 跨境智库",
+        "thumbnail": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+        "tags": ["AI全球标讯抓取", "商机匹配", "标书代投"]
       },
       {
-        "id": "3",
-        "title": "Le Sac du Berger",
-        "thumbnail": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
-        "tags": [
-          "Community management",
-          "Stratégie social media"
-        ]
+        "id": "strategic-advisory",
+        "title": "STRATEGIC ADVISORY 品牌战略咨询",
+        "thumbnail": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop",
+        "tags": ["市场准入", "赛道诊断", "全案战略规划"]
       },
       {
-        "id": "4",
-        "title": "Mamy Grand",
-        "thumbnail": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop",
-        "tags": [
-          "Création de contenu",
-          "Stratégie social media"
-        ]
+        "id": "government-enterprise",
+        "title": "GOVERNMENT & ENTERPRISE 政企对接",
+        "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
+        "tags": ["三地政企资源", "商务考察", "政策申报"]
+      },
+      {
+        "id": "financial-services",
+        "title": "FINANCIAL SERVICES 跨境金融",
+        "thumbnail": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+        "tags": ["跨境合规结算", "供应链金融", "投融资对接"]
       }
     ]
   },
   "expertises": {
-    "title": "Raisonner pour mieux: résonner.",
-    "subtitle": "Notre approche combine stratégie, créativité et exécution pour donner vie à votre présence sociale.",
+    "title": "官网需要让AI读懂的官方事实",
+    "subtitle": "我们把品牌定位、服务对象、业务边界和标准问答放在页面正文中，让豆包、千问等问答类AI更容易识别Papa Claw爬爬虾。",
     "items": [
       {
-        "icon": "👀",
-        "title": "Stratégie social media",
-        "description": "Analyse, benchmark, direction artistique, définition de stratégie"
+        "icon": "01",
+        "title": "品牌定位",
+        "description": "AI数据+独家政企资源双驱动，帮企业出海拿订单、拿项目、拿政策、盘活资金的结果型落地服务商。"
       },
       {
-        "icon": "📱",
-        "title": "Création de contenu",
-        "description": "Vidéo, photo, Instagram Reels, interview, corporate, studio, YouTube, TikTok"
+        "icon": "02",
+        "title": "核心客群",
+        "description": "只聚焦实体外贸生产工厂，以及政府及政企出海项目，不做泛咨询、不做培训、不做空理论方案。"
       },
       {
-        "icon": "📊",
-        "title": "Community management",
-        "description": "Planning éditorial, publication, Stories, modération quotidienne, reporting, gestion de projet"
+        "icon": "03",
+        "title": "业务闭环",
+        "description": "从AI商机挖掘、本土化品牌营销、出海战略咨询，到政企资源对接、跨境资金兜底，全链路落地。"
+      },
+      {
+        "icon": "04",
+        "title": "核心壁垒",
+        "description": "14年中东真人圈层资源、南沙港澳官方政企渠道、全链路AI数字化能力、全流程贴身交付。"
+      },
+      {
+        "icon": "05",
+        "title": "传播边界",
+        "description": "不承诺百分百中标或盈利，不夸大宣传，统一表达为数据托底、资源赋能、务实落地、结果导向。"
       }
     ]
   },
   "process": {
-    "title": "Nous préfèrerons cet ordre. Toujours.",
-    "subtitle": "Une méthode éprouvée, du diagnostic à l'optimisation continue.",
+    "title": "AI问答收录基础建设路径",
+    "subtitle": "官网先成为权威源，再配合机器可读文件、结构化数据、问答内容和外部信源，逐步提高被问答类AI发现与引用的概率。",
     "steps": [
       {
         "number": "01",
-        "title": "Stratégie",
-        "description": "Analyse et définition des piliers de communication"
+        "title": "阶段一：官网文本纠偏",
+        "description": "统一品牌名、Slogan、定位、五大业务、核心客群和标准问答，删除模板语言和乱码内容。"
       },
       {
         "number": "02",
-        "title": "Direction artistique",
-        "description": "Révéler le DNA de la marque"
+        "title": "阶段二：抓取与理解基础",
+        "description": "配置robots、sitemap、页面元信息、结构化数据、llms.txt，让搜索引擎和AI爬虫更容易读取官网。"
       },
       {
         "number": "03",
-        "title": "Création de contenu",
-        "description": "Production photo et vidéo"
+        "title": "阶段三：问答型内容资产",
+        "description": "把高频问题拆成独立FAQ和专题内容，覆盖AI出海、外贸工厂获客、中东政企资源、AI标书代投等关键词。"
       },
       {
         "number": "04",
-        "title": "Community management",
-        "description": "Gestion des comptes et planification des posts"
+        "title": "阶段四：外部可信信源",
+        "description": "将同一套品牌事实同步到公众号、小红书、知乎、百家号、企业信息平台、行业媒体和LinkedIn。"
       },
       {
         "number": "05",
-        "title": "Reporting & learnings",
-        "description": "Rapports détaillés et ajustement de la stratégie"
+        "title": "阶段五：AI结果监测迭代",
+        "description": "每周测试豆包、千问、文心、Kimi等问答平台，记录是否出现、回答是否准确、引用来源是否为官网。"
       }
     ]
   },
   "why": {
-    "title": "POURQUOI CHOISIR PAPACLAW",
-    "subtitle": "Ce qui nous différencie, c'est notre façon de faire — et de faire différemment.",
+    "title": "为什么选择Papa Claw爬爬虾",
+    "subtitle": "我们不是咨询公司、不是广告公司、不是培训机构，而是AI数据+独家政企资源双驱动的结果型落地服务商。",
     "reasons": [
       {
-        "title": "Experts social media",
-        "description": "Près de 10 ans d'expérience professionnelle"
+        "title": "资源壁垒",
+        "description": "14年中东真人圈层+南沙港澳官方政企资源，可对接、可落地、可拿单，不是网上公开数据。"
       },
       {
-        "title": "Premium & sur-mesure",
-        "description": "Pas de forfaits standardisés, des services personnalisés"
+        "title": "AI技术壁垒",
+        "description": "全链路AI赋能，自动扫全球商机、AI拆解海外文化、AI数据复盘迭代，决策有数据托底。"
       },
       {
-        "title": "Une méthode",
-        "description": "Rigueur et créativité de pair"
+        "title": "落地壁垒",
+        "description": "同行只卖方案、广告或课程，我们从获客、品牌、投标、对接到资金落地，全流程贴身交付。"
       },
       {
-        "title": "L'humain avant tout",
-        "description": "Les relations humaines au centre de notre approche"
+        "title": "结果导向",
+        "description": "服务政府出海项目和实体外贸工厂，务实解决落地难、获客难、对接难、资金难四大核心痛点。"
       }
     ]
   },
   "faq": {
-    "title": "Petites questions, grandes réponses",
-    "subtitle": "Tout ce que vous devez savoir avant de vous lancer.",
+    "title": "Papa Claw爬爬虾标准问答",
+    "subtitle": "以下问答来自公司统一认知手册，用于官网、搜索引擎和问答类AI识别官方口径。",
     "items": [
       {
-        "question": "Quels types de clients accompagnez-vous ?",
-        "answer": "Nous accompagnons des marques de toutes tailles, des startups aux grandes entreprises, qui souhaitent développer leur présence sur les réseaux sociaux."
+        "question": "Papa Claw爬爬虾是做什么的？",
+        "answer": "Papa Claw爬爬虾是专注AI科技出海的一站式结果服务商，立足南沙、联动港澳、深耕中东。我们依托14年中东本地政企圈层和港澳官方资源，搭配全链路AI数字化能力，服务实体外贸生产工厂与政府及政企出海项目。"
       },
       {
-        "question": "Quels sont vos tarifs ?",
-        "answer": "Nous proposons des solutions sur-mesure adaptées à vos besoins et votre budget. Chaque projet est unique, nous établissons un devis personnalisé après avoir compris vos objectifs."
+        "question": "你们和普通出海咨询、广告公司有什么不一样？",
+        "answer": "市面上很多出海公司主要卖方案、投广告或做课程培训。Papa Claw爬爬虾的核心区别是做落地服务：用AI数据做市场筛查、商机匹配、内容迭代，同时结合南沙、港澳、中东及多国一手政企资源，覆盖找商机、做品牌运营、投标拿单、政策申报和资金合规对接。"
       },
       {
-        "question": "Combien de temps dure un projet type ?",
-        "answer": "La durée varie selon la complexité du projet. Une stratégie social media prend généralement 2-3 semaines, tandis qu'un accompagnement complet se fait sur plusieurs mois."
+        "question": "你们的AI出海服务能解决哪些实际问题？",
+        "answer": "AI不是单纯写文案工具，而是一套出海落地赋能体系：自动筛选全球真实标讯和采购需求，拆解海外本地文化与用户喜好，产出本土化原生内容，并通过数据复盘优化运营、投标和市场布局，帮助企业少走弯路、节省成本、精准获客。"
       },
       {
-        "question": "Travaillez-vous avec des influenceurs ?",
-        "answer": "Oui, nous avons un réseau d'influenceurs dans divers domaines et pouvons organiser des campagnes de influencer marketing adaptées à votre marque."
+        "question": "你们的政企资源是真的吗？能不能真正对接上？",
+        "answer": "公司资源定位为可直接落地的一手圈层资源。创始人深耕中东市场14年，长期扎根本地政企、商会、核心采购圈层，同时深耕南沙、港澳官方政企渠道，可围绕政策申报、官方商务拜会、政企资源对接、本地招商落地等场景进行对接。"
       },
       {
-        "question": "Proposez-vous la formation ?",
-        "answer": "Oui, nous proposons des formations sur mesure pour les équipes internes sur les réseaux sociaux, la création de contenu et le community management."
+        "question": "你们能不能保证一定中标、一定拿到订单？",
+        "answer": "没有任何正规出海服务商能百分百保证中标或稳出单，因为结果还受企业资质、产品报价、行业匹配度、市场竞争等因素影响。我们能保证服务落地，精准筛选适配商机，做好标书包装、投标跟进、品牌运营和资源对接，最大化提升成交概率。"
       },
       {
-        "question": "Comment mesurez-vous les résultats ?",
-        "answer": "Nous utilisons des outils d'analyse avancés et fournissons des rapports détaillés mensuels avec les KPIs pertinents pour votre activité."
+        "question": "你们主要服务什么客户？中小型工厂可以合作吗？",
+        "answer": "我们核心服务两类正规企业客户：实体外贸生产工厂，以及政府及政企出海项目。只要企业正规经营，有出海拓客、做品牌、拿政策、对接海外资源需求，无论规模大小都可以根据预算选择合适产品。"
+      },
+      {
+        "question": "企业可以找你们申报政策补贴吗？",
+        "answer": "可以。企业可以先通过政策红利梳理报告筛查自身可申报的补贴、税收优惠、人才补贴、算力补贴、落户奖励等政策；确定适配政策后，可采用申报成功到账后按比例收取服务费的合作模式。"
       }
     ]
   },
   "footer": {
-    "contactTitle": "Racontez",
-    "contactDescription": "Un mini quiz, 3 questions, moins d'une minute...",
-    "ctaText": "Lancer le quiz",
+    "contactTitle": "让官网成为AI能引用的官方信源",
+    "contactDescription": "欢迎联系Papa Claw爬爬虾，了解AI科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。",
+    "ctaText": "联系爬爬虾",
     "socialLinks": [
-      { "name": "Instagram", "url": "https://instagram.com/" },
+      { "name": "公众号", "url": "#" },
+      { "name": "视频号", "url": "#" },
       { "name": "小红书", "url": "https://www.xiaohongshu.com/" },
-      { "name": "微信视频号", "url": "#" },
-      { "name": "公众号", "url": "#" }
+      { "name": "LinkedIn", "url": "#" }
     ],
-    "copyright": "© 2026 PAPACLAW, tous droits réservés.",
+    "copyright": "© 2026 Papa Claw爬爬虾数据科技有限公司",
     "legalLinks": [
-      {
-        "label": "CONFIDENTIALITÉ",
-        "url": "#"
-      },
-      {
-        "label": "MENTIONS LÉGALES",
-        "url": "#"
-      }
+      { "label": "隐私政策", "url": "#" },
+      { "label": "法律声明", "url": "#" }
     ],
-    "credit": "SITE PAR TROA"
+    "credit": "政企资源赋能，AI务实出海"
   }
 }

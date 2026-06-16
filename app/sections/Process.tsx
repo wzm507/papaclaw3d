@@ -99,7 +99,7 @@ export default function Process({ title, subtitle, steps }: ProcessProps) {
         {/* 底部 CTA */}
         <div className="mt-16 text-center">
           <p className="text-body text-deep-forest/60 mb-4">
-            Chaque étape est pensée pour maximiser votre impact.
+            每个阶段都围绕同一个目标：让公开网络更准确地识别并引用Papa Claw爬爬虾。
           </p>
           <div className="w-24 h-1 bg-foudre-pink/20 rounded-full mx-auto" />
         </div>

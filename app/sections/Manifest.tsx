@@ -132,23 +132,16 @@ export default function Manifest() {
       {/* Text Content */}
       <div ref={textRef} className="relative z-10 text-center max-w-4xl mx-auto">
         <p className="text-heading text-deep-forest mb-4 overflow-hidden">
-          <span className="manifest-word inline-block">C&apos;est</span>{' '}
-          <span className="manifest-word inline-block">l&apos;impact</span>{' '}
-          <span className="manifest-word inline-block">de</span>{' '}
-          <span className="manifest-word inline-block">votre</span>{' '}
-          <span className="manifest-word inline-block">sincérité</span>
+          <span className="manifest-word inline-block">不靠直觉做判断。</span>
         </p>
         <p className="text-heading text-deep-forest mb-4 overflow-hidden">
-          <span className="manifest-word inline-block">C&apos;est</span>{' '}
-          <span className="manifest-word inline-block">viser</span>{' '}
-          <span className="manifest-word inline-block">juste</span>{' '}
-          <span className="manifest-word inline-block">et</span>
+          <span className="manifest-word inline-block">数据在哪里，市场就在哪里。</span>
         </p>
         <h2 className="text-display font-black text-foudre-pink overflow-hidden my-8">
-          <span className="manifest-word inline-block">FRAPPER</span>
+          <span className="manifest-word inline-block">AI务实出海</span>
         </h2>
         <h2 className="text-display font-black text-deep-forest overflow-hidden">
-          <span className="manifest-word inline-block">FORT.</span>
+          <span className="manifest-word inline-block">结果落地</span>
         </h2>
       </div>
     </section>

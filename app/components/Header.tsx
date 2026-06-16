@@ -11,6 +11,7 @@ interface HeaderProps {
 export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const sectionIds = ['home', 'about', 'audience', 'services', 'process', 'advantages', 'faq', 'contact']
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +29,7 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           onClick={() => setIsMenuOpen(true)}
           className="text-deep-forest font-medium text-sm tracking-wide hover:opacity-70 transition-opacity"
         >
-          Menu
+          菜单
         </button>
 
         <div className={`transition-all duration-500 ${isScrolled ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}`}>
@@ -41,7 +42,7 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           rel="noopener noreferrer"
           className="bg-deep-forest text-white px-4 py-2 rounded-badge text-sm font-medium hover:bg-foudre-pink transition-colors"
         >
-          WhatsApp
+          联系
         </a>
       </header>
 
@@ -61,14 +62,14 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
             onClick={() => setIsMenuOpen(false)}
             className="absolute top-6 right-6 text-deep-forest text-sm font-medium hover:opacity-70 transition-opacity"
           >
-            Fermer
+            关闭
           </button>
 
           <nav className="space-y-4">
             {menuItems.map((item, i) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase().replace(/[^a-z]/g, '')}`}
+                href={`#${sectionIds[i] || 'home'}`}
                 onClick={() => setIsMenuOpen(false)}
                 className={`block text-heading-lg font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                 style={{
