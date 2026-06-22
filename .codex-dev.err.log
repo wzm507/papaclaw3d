@@ -1,0 +1,69 @@
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (E:\工作\papaclaw\.next\server\webpack-runtime.js:33:42)
+    at JSON.parse (<anonymous>)
+digest: "1971304566"
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (E:\工作\papaclaw\.next\server\webpack-runtime.js:33:42)
+    at require (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (E:\工作\papaclaw\.next\server\webpack-runtime.js:33:42)
+    at require (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (E:\工作\papaclaw\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581) {
+  page: '/news'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\vendor-chunks\lenis.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lenis' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\lenis.js', but to 'Error: Can't resolve './vendor-chunks/lenis' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lenis (expected E:\工作\papaclaw\.next\server\vendor-chunks\lenis.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\page.js
+<w>  at file E:\工作\papaclaw\.next\server\app\page.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/gsap' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\gsap.js', but to 'Error: Can't resolve './vendor-chunks/gsap' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/gsap (expected E:\工作\papaclaw\.next\server\vendor-chunks\gsap.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\page.js
+<w>  at file E:\工作\papaclaw\.next\server\app\page.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
