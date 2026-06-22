@@ -89,20 +89,20 @@ export default function Team({ title, members }: TeamProps) {
     <section ref={sectionRef} className="relative w-full" style={{ height: '300vh' }}>
       <div
         ref={stickyRef}
-        className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-12 px-6 bg-ash-whisper"
+        className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-ash-whisper px-5 pb-8 pt-24 md:px-6 md:pb-10 md:pt-24"
       >
         <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
         {/* Title */}
-        <h2 ref={titleRef} className="editorial-heading max-w-4xl text-center mb-6 opacity-0">
+        <h2 ref={titleRef} className="text-safe mx-auto mb-5 max-w-[13ch] text-center font-editorial text-[clamp(2.35rem,5.4vw,4.9rem)] font-bold leading-[0.98] text-deep-forest opacity-0 md:max-w-[14ch]">
           {title}
         </h2>
 
         {/* Chat Bubbles */}
-        <div className="flex justify-center gap-3 mb-10">
+        <div className="mb-6 flex max-w-full flex-wrap justify-center gap-3 md:mb-8">
           {['AI数据', '政企资源', '务实落地'].map((label, i) => (
             <div
               key={i}
-              className="border border-deep-forest/20 bg-paper-white px-4 py-2 font-utility text-sm font-semibold text-deep-forest transform hover:-translate-y-0.5 transition-transform"
+              className="border border-deep-forest/20 bg-paper-white px-4 py-2 font-utility text-sm font-semibold text-deep-forest transition-transform hover:-translate-y-0.5"
               style={{ animationDelay: `${i * 0.2}s` }}
             >
               {label}
@@ -113,8 +113,8 @@ export default function Team({ title, members }: TeamProps) {
         {/* Team Photo */}
         <div
           ref={imageContainerRef}
-          className="relative w-full max-w-md mx-auto aspect-[4/5] mb-7 rounded-card overflow-hidden flex-shrink-0 border border-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.18)]"
-          style={{ willChange: 'transform, opacity', maxHeight: '55vh' }}
+          className="relative mx-auto mb-5 aspect-[4/5] w-full max-w-sm flex-shrink overflow-hidden rounded-card border border-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.18)] md:max-w-md"
+          style={{ willChange: 'transform, opacity', maxHeight: '42vh' }}
         >
           {members.map((member, i) => (
             <div
@@ -137,12 +137,12 @@ export default function Team({ title, members }: TeamProps) {
         </div>
 
         {/* Member Names */}
-        <div ref={buttonsRef} className="flex flex-wrap justify-center gap-3" style={{ willChange: 'transform, opacity' }}>
+        <div ref={buttonsRef} className="flex max-w-3xl flex-wrap justify-center gap-3" style={{ willChange: 'transform, opacity' }}>
           {members.map((member, i) => (
             <button
               key={i}
               onClick={() => setActiveMember(i)}
-              className={`min-h-11 border px-6 py-3 font-utility text-sm font-semibold transition-all duration-300 ${
+              className={`text-safe min-h-11 border px-5 py-3 font-utility text-sm font-semibold leading-tight transition-all duration-300 md:px-6 ${
                 i === activeMember ? 'border-foudre-pink bg-foudre-pink text-white' : 'border-deep-forest/20 bg-paper-white text-deep-forest hover:border-deep-forest'
               }`}
             >

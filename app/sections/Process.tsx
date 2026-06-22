@@ -17,6 +17,16 @@ export default function Process({ title, subtitle, steps }: ProcessProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const stepsRef = useRef<HTMLDivElement>(null)
+  const stageOverrides: Record<string, { title: string; description: string }> = {
+    '03': {
+      title: '阶段三：新闻中心与问答型内容资产',
+      description: '新增官网新闻中心，承接“凯勒斐KLF”公众号已发布文章；每篇文章生成独立新闻详情页、AI摘要、关键词、FAQ和结构化数据，让豆包、千问、Kimi等问答类AI能读取官网上的最新官方内容。',
+    },
+    '04': {
+      title: '阶段四：公众号自动同步与外部可信信源',
+      description: '通过微信公众号官方接口、Vercel Cron、Vercel KV和OpenAI文本优化流程，每天北京时间00:00自动抓取公众号文章，清洗为官网可索引文本，并同步到sitemap、llms文件和AI新闻feed。',
+    },
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -73,24 +83,28 @@ export default function Process({ title, subtitle, steps }: ProcessProps) {
         </p>
 
         <div ref={stepsRef} className="mx-auto max-w-5xl border-y border-deep-forest/20">
-          {steps.map((step, i) => (
-            <div
-              key={i}
-              className="process-step grid gap-5 border-b border-deep-forest/15 bg-paper-white/45 p-6 opacity-0 backdrop-blur-sm last:border-b-0 md:grid-cols-[6rem_1fr] md:p-8"
-            >
-              <span className="font-utility text-sm font-semibold text-foudre-pink">
-                {step.number}
-              </span>
-              <div className="flex-1">
-                <h3 className="font-editorial text-heading font-bold text-deep-forest mb-3">
-                  {step.title}
-                </h3>
-                <p className="editorial-body">
-                  {step.description}
-                </p>
+          {steps.map((step, i) => {
+            const displayStep = stageOverrides[step.number] ? { ...step, ...stageOverrides[step.number] } : step
+
+            return (
+              <div
+                key={i}
+                className="process-step grid gap-5 border-b border-deep-forest/15 bg-paper-white/45 p-6 opacity-0 backdrop-blur-sm last:border-b-0 md:grid-cols-[6rem_1fr] md:p-8"
+              >
+                <span className="font-utility text-sm font-semibold text-foudre-pink">
+                  {displayStep.number}
+                </span>
+                <div className="flex-1">
+                  <h3 className="font-editorial text-heading font-bold text-deep-forest mb-3">
+                    {displayStep.title}
+                  </h3>
+                  <p className="editorial-body">
+                    {displayStep.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* 底部 CTA */}

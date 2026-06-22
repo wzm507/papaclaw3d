@@ -25,9 +25,9 @@ const config: Config = {
         utility: ['Inter', 'Arial', 'PingFang SC', 'Microsoft YaHei', 'sans-serif'],
       },
       fontSize: {
-        'display': ['clamp(4.25rem, 12vw, 10rem)', { lineHeight: '0.86' }],
-        'heading-lg': ['clamp(2.35rem, 5vw, 4.9rem)', { lineHeight: '0.98' }],
-        'heading': ['clamp(1.65rem, 3vw, 2.65rem)', { lineHeight: '1.08' }],
+        'display': ['clamp(3rem, 10vw, 8.25rem)', { lineHeight: '0.86' }],
+        'heading-lg': ['clamp(2.1rem, 4.4vw, 4.15rem)', { lineHeight: '1.02' }],
+        'heading': ['clamp(1.5rem, 2.6vw, 2.35rem)', { lineHeight: '1.12' }],
         'subheading': ['clamp(1.125rem, 1.7vw, 1.45rem)', { lineHeight: '1.55' }],
         'body': ['1rem', { lineHeight: '1.85' }],
         'caption': ['0.75rem', { lineHeight: '1.45' }],

@@ -39,6 +39,8 @@
   h3 {
     font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
     letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   p,
@@ -46,6 +48,7 @@
   button,
   span {
     letter-spacing: 0;
+    overflow-wrap: anywhere;
   }
 
   button,
@@ -88,10 +91,15 @@
 
   .editorial-heading {
     @apply font-editorial text-heading-lg font-bold text-deep-forest text-balance;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .editorial-body {
     @apply font-editorial text-body text-deep-forest/75;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .editorial-meta {
@@ -108,6 +116,16 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .text-safe {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .perspective-1000 {

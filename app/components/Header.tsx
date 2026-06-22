@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 
 interface HeaderProps {
@@ -9,9 +10,22 @@ interface HeaderProps {
 }
 
 export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const sectionIds = ['home', 'about', 'audience', 'services', 'process', 'advantages', 'faq', 'contact']
+  const sectionIds = ['home', 'about', 'audience', 'services', 'advantages', 'news', 'faq', 'contact']
+  const menuWithoutProcess = menuItems.filter((item) => !item.includes('落地流程') && !item.includes('路径'))
+  const normalizedMenuItems = menuWithoutProcess.some((item) => item.includes('新闻'))
+    ? menuWithoutProcess
+    : [...menuWithoutProcess.slice(0, 5), '新闻动态', ...menuWithoutProcess.slice(5)]
+  const homePrefix = pathname === '/' ? '' : '/'
+  const hrefFor = (item: string, index: number) => {
+    if (item.includes('新闻')) {
+      return '/news'
+    }
+
+    return `${homePrefix}#${sectionIds[index] || 'home'}`
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,10 +80,10 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           </button>
 
           <nav className="max-w-5xl border-y border-deep-forest/20 py-8 space-y-3">
-            {menuItems.map((item, i) => (
+            {normalizedMenuItems.map((item, i) => (
               <a
                 key={item}
-                href={`#${sectionIds[i] || 'home'}`}
+                href={hrefFor(item, i)}
                 onClick={() => setIsMenuOpen(false)}
                 className={`block font-editorial text-4xl md:text-heading-lg font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                 style={{

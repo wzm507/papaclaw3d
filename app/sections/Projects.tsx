@@ -102,11 +102,11 @@ export default function Projects({ title, items }: ProjectsProps) {
         <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
         <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/15" />
 
-        <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col h-full justify-center">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-center">
           <p className="editorial-kicker text-center mb-4">Five Service Lines</p>
           <h2
             ref={titleRef}
-            className="editorial-heading text-center mb-8"
+            className="text-safe mx-auto mb-6 max-w-[14ch] text-center font-editorial text-[clamp(2.1rem,4.6vw,4.3rem)] font-bold leading-[1.02] text-deep-forest md:max-w-[16ch]"
             style={{ willChange: 'transform, opacity' }}
           >
             {title}
@@ -114,7 +114,7 @@ export default function Projects({ title, items }: ProjectsProps) {
 
           <div
             ref={thumbnailsRef}
-            className="flex flex-wrap justify-center gap-3 mb-8"
+            className="mb-6 flex flex-wrap justify-center gap-3"
             style={{ willChange: 'transform, opacity' }}
           >
             {items.map((project, i) => (
@@ -153,16 +153,16 @@ export default function Projects({ title, items }: ProjectsProps) {
                 loading="eager"
               />
 
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 bg-gradient-to-t from-black/82 via-black/45 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/82 via-black/45 to-transparent p-5 md:p-7">
                 <p className="font-utility text-xs uppercase text-white/65 mb-2">Papa Claw Capability</p>
-                <h3 className="font-editorial text-heading font-bold text-white mb-3">
+                <h3 className="text-safe mb-3 font-editorial text-[clamp(1.4rem,2.8vw,2.35rem)] font-bold leading-tight text-white">
                   {items[activeProject].title}
                 </h3>
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="mb-4 flex flex-wrap gap-2">
                   {items[activeProject].tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border border-white/30 bg-white/12 px-3 py-1 font-utility text-sm text-white backdrop-blur-sm"
+                      className="text-safe border border-white/30 bg-white/12 px-3 py-1 font-utility text-sm leading-tight text-white backdrop-blur-sm"
                     >
                       {tag}
                     </span>

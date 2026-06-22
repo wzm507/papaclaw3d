@@ -116,11 +116,11 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 pt-24 pb-8">
           {/* Title */}
-          <div ref={titleRef} className="relative z-20 text-center mb-10 max-w-6xl">
+          <div ref={titleRef} className="relative z-20 mb-8 w-full max-w-6xl text-center">
             <p className="hero-title-line editorial-kicker mb-5 text-white/80">
               政企资源赋能 / AI务实出海
             </p>
-            <h1 className="text-display font-bold text-white">
+            <h1 className="mx-auto max-w-full whitespace-nowrap text-[clamp(3rem,10vw,8.25rem)] font-bold leading-[0.86] text-white">
               {title.split('').map((letter, i) => (
                 <span
                   key={i}
@@ -131,11 +131,11 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
                 </span>
               ))}
             </h1>
-            <div className="mx-auto mt-6 max-w-4xl space-y-3 border-y border-white/25 py-5">
-              <p className="hero-title-line font-editorial text-heading font-bold text-white/95 text-balance">
+            <div className="mx-auto mt-6 max-w-4xl space-y-3 border-y border-white/25 py-4 md:py-5">
+              <p className="hero-title-line text-safe font-editorial text-[clamp(1.45rem,3.2vw,2.6rem)] font-bold leading-tight text-white/95 text-balance">
                 {subtitle1}
               </p>
-              <p className="hero-title-line font-utility text-subheading font-semibold text-white/78">
+              <p className="hero-title-line text-safe font-utility text-subheading font-semibold text-white/78">
                 {subtitle2}
               </p>
             </div>

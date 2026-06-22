@@ -7,16 +7,23 @@ import Team from './sections/Team'
 import Projects from './sections/Projects'
 import Manifest from './sections/Manifest'
 import Expertises from './sections/Expertises'
-import Process from './sections/Process'
 import Why from './sections/Why'
+import News from './sections/News'
 import FAQ from './sections/FAQ'
 import Footer from './sections/Footer'
 import SmoothScrollProvider from './components/SmoothScrollProvider'
+import { listNewsArticles } from './lib/news-store'
 
-export default function Home() {
+export const dynamic = 'force-dynamic'
+
+export default async function Home() {
   const configPath = path.join(process.cwd(), 'data', 'site-config.json')
   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+  const headerMenuItems = config.header.menuItems.filter(
+    (item: string) => !item.includes('落地流程') && !item.includes('路径')
+  )
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com'
+  const newsArticles = await listNewsArticles()
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -83,7 +90,7 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
         />
-        <Header menuItems={config.header.menuItems} whatsappUrl={config.header.whatsappUrl} />
+        <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
         <div id="home">
           <Hero title={config.hero.title} subtitle1={config.hero.subtitle1} subtitle2={config.hero.subtitle2} backgroundImage={config.hero.backgroundImage} cards={config.hero.cards} />
         </div>
@@ -100,11 +107,11 @@ export default function Home() {
         <div id="ai-source">
           <Expertises title={config.expertises.title} subtitle={config.expertises.subtitle} items={config.expertises.items} />
         </div>
-        <div id="process">
-          <Process title={config.process.title} subtitle={config.process.subtitle} steps={config.process.steps} />
-        </div>
         <div id="advantages">
           <Why title={config.why.title} subtitle={config.why.subtitle} reasons={config.why.reasons} />
+        </div>
+        <div id="news">
+          <News articles={newsArticles} />
         </div>
         <div id="faq">
           <FAQ title={config.faq.title} subtitle={config.faq.subtitle} items={config.faq.items} />
