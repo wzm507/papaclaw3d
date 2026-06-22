@@ -8,7 +8,7 @@ export interface IndexNowSubmitResult {
 }
 
 function siteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com').replace(/\/$/, '')
+  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
 }
 
 function indexNowEndpoint() {

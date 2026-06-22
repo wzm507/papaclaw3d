@@ -17,7 +17,7 @@ interface NewsDetailPageProps {
 }
 
 function siteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com'
+  return process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
 }
 
 function formatDate(date: string) {

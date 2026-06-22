@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { listNewsArticles } from './lib/news-store'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
   const now = new Date()
   const articles = await listNewsArticles()
 

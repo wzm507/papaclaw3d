@@ -1,5 +1,5 @@
 const DEFAULT_KEY = 'd9b1f6a2c8e74f30b5a19d6c42e8f0ab'
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.papaclaw.com').replace(/\/$/, '')
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
 const key = process.env.INDEXNOW_KEY || DEFAULT_KEY
 const endpoint = process.env.INDEXNOW_ENDPOINT || 'https://www.bing.com/indexnow'
 const dryRun = process.argv.includes('--dry-run')
@@ -8,9 +8,9 @@ const explicitUrls = process.argv.slice(2).filter((arg) => !arg.startsWith('--')
 function usage() {
   console.log(`
 Usage:
-  SITE_URL=https://www.papaclaw.com npm run indexnow:submit
-  SITE_URL=https://www.papaclaw.com npm run indexnow:submit -- /news /ai-news-feed
-  SITE_URL=https://www.papaclaw.com npm run indexnow:submit -- --dry-run
+  SITE_URL=https://www.papaclaw.cn npm run indexnow:submit
+  SITE_URL=https://www.papaclaw.cn npm run indexnow:submit -- /news /ai-news-feed
+  SITE_URL=https://www.papaclaw.cn npm run indexnow:submit -- --dry-run
 
 Environment:
   SITE_URL or NEXT_PUBLIC_SITE_URL  Website origin.

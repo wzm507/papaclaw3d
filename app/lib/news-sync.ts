@@ -36,7 +36,7 @@ export async function syncWechatNews(): Promise<NewsSyncResult> {
   )
 
   const stored = await upsertNewsArticles(enhanced)
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com').replace(/\/$/, '')
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
   let indexNow: NewsSyncResult['indexNow']
 
   try {

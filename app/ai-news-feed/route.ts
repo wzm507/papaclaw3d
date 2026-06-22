@@ -16,7 +16,7 @@ export async function GET() {
       '',
       `发布时间：${article.publishedAt}`,
       `来源：${article.sourceName}`,
-      `官网链接：${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com'}/news/${article.slug}`,
+      `官网链接：${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'}/news/${article.slug}`,
       article.sourceUrl ? `公众号原文：${article.sourceUrl}` : '',
       `关键词：${article.keywords.join('、')}`,
       '',

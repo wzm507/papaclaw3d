@@ -1,4 +1,4 @@
-# Papa Claw 新闻自动化上线说明
+﻿# Papa Claw 新闻自动化上线说明
 
 本文用于把“凯勒斐KLF”微信公众号文章自动同步到 Papa Claw 爬爬虾官网新闻中心，并生成可被搜索引擎、豆包、千问、Kimi 等问答类 AI 读取的公开文本。
 
@@ -28,7 +28,7 @@
 
 | 变量名 | 用途 | 是否必填 |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | 官网正式域名，例如 `https://www.papaclaw.com` | 是 |
+| `NEXT_PUBLIC_SITE_URL` | 官网正式域名，例如 `https://www.papaclaw.cn` | 是 |
 | `WECHAT_APP_ID` | 微信公众号 AppID，当前为 `wx4331c2eca38d85e7` | 是 |
 | `WECHAT_APP_SECRET` | 微信公众号 AppSecret | 是 |
 | `WECHAT_ACCOUNT_NAME` | 公众号名称，当前为 `凯勒斐KLF` | 是 |
@@ -54,7 +54,7 @@
 上线并配置环境变量后，可手动触发同步：
 
 ```bash
-curl -X POST https://www.papaclaw.com/api/news/sync \
+curl -X POST https://www.papaclaw.cn/api/news/sync \
   -H "Authorization: Bearer <CRON_SECRET>"
 ```
 

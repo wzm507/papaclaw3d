@@ -22,7 +22,7 @@ export default async function Home() {
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')
   )
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.com'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
   const newsArticles = await listNewsArticles()
   const organizationJsonLd = {
     '@context': 'https://schema.org',
