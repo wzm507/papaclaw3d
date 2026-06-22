@@ -6,196 +6,44 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 2.5s
- ○ Compiling /api/news ...
- ✓ Compiled /api/news in 665ms (60 modules)
- GET /api/news 200 in 805ms
- ○ Compiling /ai-news-feed ...
- ✓ Compiled /sitemap.xml in 3.4s (601 modules)
- GET /ai-news-feed 200 in 3625ms
- GET /news 200 in 3724ms
- GET /sitemap.xml 200 in 3350ms
- ○ Compiling / ...
- ✓ Compiled / in 749ms (600 modules)
- GET / 200 in 973ms
- GET / 200 in 74ms
- ✓ Compiled /news in 258ms (305 modules)
- GET / 200 in 243ms
- ✓ Compiled /ai-news-feed in 143ms (335 modules)
- GET /news 200 in 308ms
- GET /ai-news-feed 200 in 311ms
- GET / 200 in 67ms
- GET /ai-news-feed 200 in 17ms
- GET /news 200 in 22ms
- GET / 200 in 47ms
- GET /news 200 in 44ms
- GET /ai-news-feed 200 in 46ms
- GET / 200 in 62ms
- GET /ai-news-feed 200 in 15ms
- GET /news 200 in 49ms
- GET / 200 in 103ms
- GET /ai-news-feed 200 in 51ms
- GET /news 200 in 66ms
-  ▲ Next.js 14.2.35
-  - Local:        http://localhost:3000
-
- ✓ Starting...
- ✓ Ready in 3.7s
-  ▲ Next.js 14.2.35
-  - Local:        http://localhost:3000
-
- ✓ Starting...
  ✓ Ready in 2.7s
- ○ Compiling /news ...
- ✓ Compiled /news in 7.2s (602 modules)
- GET / 200 in 8004ms
- GET /news 200 in 7813ms
- GET / 200 in 93ms
- GET / 200 in 100ms
- GET / 200 in 88ms
- ✓ Compiled in 1281ms (597 modules)
- ✓ Compiled in 327ms (299 modules)
- ✓ Compiled in 386ms (299 modules)
- GET / 200 in 470ms
- GET / 200 in 86ms
- GET / 200 in 69ms
- GET / 200 in 116ms
- ✓ Compiled /news in 478ms (303 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 3.1s (619 modules)
+ GET /admin 200 in 3341ms
+ GET /_next/static/webpack/b89ea05d1f246a34.webpack.hot-update.json 404 in 3485ms
+ GET / 200 in 3460ms
+ GET /admin 200 in 157ms
+ ○ Compiling /[topic] ...
+ ✓ Compiled /[topic] in 554ms (628 modules)
+ GET /middle-east-government-resources 200 in 1219ms
+ GET /foreign-trade-factory-global-sales 200 in 1218ms
+ GET /cross-border-finance 200 in 1207ms
+ GET /ai-global-expansion 200 in 1255ms
+ GET / 200 in 107ms
+ ✓ Compiled in 446ms (305 modules)
  ○ Compiling /_error ...
- ✓ Compiled /_error in 3.6s (776 modules)
- GET /news 500 in 4455ms
- ✓ Compiled / in 120ms (343 modules)
- GET / 200 in 372ms
- ✓ Compiled /_not-found in 421ms (817 modules)
- GET /_next/static/css/app/layout.css?v=1781682331701 404 in 522ms
- GET /_next/static/chunks/main-app.js?v=1781682331701 404 in 508ms
- GET /_next/static/chunks/app/page.js 404 in 508ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 507ms
- GET / 200 in 156ms
- GET /_next/static/css/app/layout.css?v=1781682334850 404 in 57ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 76ms
- GET /_next/static/chunks/app/page.js 404 in 78ms
- GET /_next/static/chunks/main-app.js?v=1781682334850 404 in 81ms
- GET / 200 in 69ms
- GET /_next/static/css/app/layout.css?v=1781682335591 404 in 50ms
- GET /_next/static/chunks/main-app.js?v=1781682335591 404 in 46ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 46ms
- GET /_next/static/chunks/app/page.js 404 in 47ms
- GET / 200 in 67ms
- GET /_next/static/chunks/app/page.js 404 in 40ms
- GET /_next/static/css/app/layout.css?v=1781682338451 404 in 46ms
- GET /_next/static/chunks/main-app.js?v=1781682338451 404 in 43ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 44ms
- GET / 200 in 93ms
- GET /_next/static/chunks/main-app.js?v=1781682339194 404 in 45ms
- GET /_next/static/css/app/layout.css?v=1781682339194 404 in 48ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 47ms
- GET /_next/static/chunks/app/page.js 404 in 47ms
- GET / 200 in 85ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 56ms
- GET /_next/static/chunks/main-app.js?v=1781682339939 404 in 57ms
- GET /_next/static/css/app/layout.css?v=1781682339939 404 in 61ms
- GET /_next/static/chunks/app/page.js 404 in 60ms
- GET / 200 in 98ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
- GET /_next/static/css/app/layout.css?v=1781682340699 404 in 41ms
- GET /_next/static/chunks/app/page.js 404 in 39ms
- GET /_next/static/chunks/main-app.js?v=1781682340699 404 in 40ms
- GET / 200 in 76ms
- GET /_next/static/css/app/layout.css?v=1781682785374 404 in 37ms
- GET /_next/static/chunks/main-app.js?v=1781682785374 404 in 33ms
- GET /_next/static/chunks/app/page.js 404 in 35ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
- GET / 200 in 88ms
- GET /_next/static/chunks/main-app.js?v=1781682792641 404 in 28ms
- GET /_next/static/chunks/app/page.js 404 in 28ms
- GET /_next/static/css/app/layout.css?v=1781682792641 404 in 31ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 28ms
- GET / 200 in 77ms
- GET /_next/static/css/app/layout.css?v=1781682818040 404 in 71ms
- GET /_next/static/chunks/main-app.js?v=1781682818040 404 in 31ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
- GET /_next/static/chunks/app/page.js 404 in 32ms
- ✓ Compiled /admin in 471ms (768 modules)
- GET /admin 200 in 582ms
- ✓ Compiled /_not-found in 162ms (771 modules)
- GET /_next/static/css/app/layout.css?v=1781682909703 404 in 275ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 281ms
- GET /_next/static/chunks/main-app.js?v=1781682909703 404 in 282ms
- GET /admin 200 in 87ms
- GET /_next/static/css/app/layout.css?v=1781682918961 404 in 19ms
- GET /_next/static/chunks/main-app.js?v=1781682918961 404 in 30ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 31ms
- GET /admin 200 in 46ms
- GET /_next/static/css/app/layout.css?v=1781682919951 404 in 32ms
- GET /_next/static/chunks/main-app.js?v=1781682919951 404 in 40ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 42ms
- GET /admin 200 in 77ms
- GET /_next/static/css/app/layout.css?v=1781682920256 404 in 27ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 27ms
- GET /_next/static/chunks/main-app.js?v=1781682920256 404 in 30ms
- GET /admin 200 in 80ms
- GET /_next/static/css/app/layout.css?v=1781682920728 404 in 21ms
- GET /_next/static/chunks/main-app.js?v=1781682920728 404 in 19ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 21ms
- GET /admin 200 in 81ms
- GET /_next/static/css/app/layout.css?v=1781682921026 404 in 78ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 76ms
- GET /_next/static/chunks/main-app.js?v=1781682921026 404 in 78ms
- GET /admin 200 in 78ms
- GET /_next/static/chunks/main-app.js?v=1781682921496 404 in 17ms
- GET /_next/static/css/app/layout.css?v=1781682921496 404 in 20ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 21ms
- GET /admin 200 in 93ms
- GET /_next/static/css/app/layout.css?v=1781682921886 404 in 39ms
- GET /_next/static/chunks/main-app.js?v=1781682921886 404 in 29ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 31ms
- GET /admin 200 in 82ms
- GET /_next/static/css/app/layout.css?v=1781682929004 404 in 29ms
- GET /_next/static/chunks/main-app.js?v=1781682929004 404 in 25ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 27ms
- GET /admin 200 in 59ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 17ms
- GET /_next/static/css/app/layout.css?v=1781682929309 404 in 20ms
- GET /_next/static/chunks/main-app.js?v=1781682929309 404 in 18ms
- GET /admin 200 in 79ms
- GET /_next/static/css/app/layout.css?v=1781682929636 404 in 18ms
- GET /_next/static/chunks/main-app.js?v=1781682929636 404 in 17ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 19ms
- GET /admin 200 in 68ms
- GET /_next/static/css/app/layout.css?v=1781682929991 404 in 70ms
- GET /_next/static/chunks/main-app.js?v=1781682929991 404 in 71ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 70ms
- GET /admin 200 in 78ms
- GET /_next/static/css/app/layout.css?v=1781682930505 404 in 25ms
- GET /_next/static/chunks/main-app.js?v=1781682930505 404 in 25ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 25ms
- GET /admin 200 in 77ms
- GET /_next/static/css/app/layout.css?v=1781682937883 404 in 24ms
- GET /_next/static/chunks/main-app.js?v=1781682937883 404 in 22ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 25ms
- GET /admin 200 in 74ms
- GET /_next/static/css/app/layout.css?v=1781682953293 404 in 23ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 23ms
- GET /_next/static/chunks/main-app.js?v=1781682953293 404 in 25ms
- GET /admin 200 in 83ms
- GET /_next/static/css/app/layout.css?v=1781682953604 404 in 19ms
- GET /_next/static/chunks/main-app.js?v=1781682953604 404 in 19ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 22ms
- GET /admin 200 in 70ms
- GET /_next/static/css/app/layout.css?v=1781682953934 404 in 24ms
- GET /_next/static/chunks/main-app.js?v=1781682953934 404 in 25ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 28ms
- GET /admin 200 in 68ms
- GET /_next/static/chunks/main-app.js?v=1781682954287 404 in 19ms
- GET /_next/static/css/app/layout.css?v=1781682954287 404 in 25ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 24ms
- GET /admin 200 in 69ms
- GET /_next/static/css/app/layout.css?v=1781682954644 404 in 28ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 26ms
- GET /_next/static/chunks/main-app.js?v=1781682954644 404 in 26ms
- ✓ Compiled in 539ms (491 modules)
- ✓ Compiled in 189ms (491 modules)
- ✓ Compiled in 169ms (526 modules)
- ✓ Compiled /sitemap.xml in 196ms (104 modules)
- GET /sitemap.xml 200 in 785ms
+ GET / 500 in 89ms
+ GET /admin 500 in 111ms
+ GET /_next/static/webpack/5905e76f47a70833.webpack.hot-update.json 404 in 1260ms
+ GET / 500 in 211ms
+ GET /_next/static/webpack/5905e76f47a70833.webpack.hot-update.json 404 in 379ms
+ GET /admin 200 in 423ms
+ GET / 500 in 130ms
+ GET / 500 in 515ms
+ GET / 500 in 93ms
+ GET / 500 in 80ms
+ GET / 500 in 59ms
+ ✓ Compiled /_not-found in 241ms (854 modules)
+ GET / 200 in 103ms
+ ✓ Compiled in 944ms (840 modules)
+ ✓ Compiled in 451ms (851 modules)
+ GET /admin 200 in 66ms
+ ✓ Compiled /_not-found in 215ms (840 modules)
+ GET /admin/seo-topics 404 in 76ms
+ ✓ Compiled in 140ms (493 modules)
+ ○ Compiling /admin/seo-topics ...
+ ✓ Compiled /admin/seo-topics in 658ms (854 modules)
+ GET /admin/seo-topics 404 in 734ms
+ GET /admin/seo-topics 200 in 66ms
+ ✓ Compiled /api/seo-topics in 274ms (399 modules)
+ GET /api/seo-topics 200 in 476ms

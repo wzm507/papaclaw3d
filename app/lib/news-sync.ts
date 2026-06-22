@@ -3,6 +3,7 @@ import { optimizeNewsWithOpenAI } from './openai-news-optimizer'
 import { upsertNewsArticles } from './news-store'
 import { fetchWechatPublishedArticles } from './wechat-news'
 import { submitIndexNowUrls } from './indexnow'
+import { listSeoTopics } from './seo-topics'
 import type { NewsArticle } from './news-types'
 
 export interface NewsSyncResult {
@@ -37,6 +38,7 @@ export async function syncWechatNews(): Promise<NewsSyncResult> {
 
   const stored = await upsertNewsArticles(enhanced)
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
+  const seoTopics = listSeoTopics()
   let indexNow: NewsSyncResult['indexNow']
 
   try {
@@ -44,6 +46,7 @@ export async function syncWechatNews(): Promise<NewsSyncResult> {
       siteUrl,
       `${siteUrl}/news`,
       `${siteUrl}/ai-news-feed`,
+      ...seoTopics.map((topic) => `${siteUrl}/${topic.slug}`),
       ...enhanced.map((article) => `${siteUrl}/news/${article.slug}`),
     ])
     indexNow = {

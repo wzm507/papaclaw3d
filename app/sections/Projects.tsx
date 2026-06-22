@@ -95,7 +95,7 @@ export default function Projects({ title, items }: ProjectsProps) {
     <section ref={sectionRef} className="relative w-full" style={{ height: '350vh' }}>
       <div
         ref={stickyRef}
-        className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden py-8 px-6"
+        className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden px-6 py-8"
         style={{ willChange: 'transform' }}
       >
         <div className="absolute inset-0 bg-pale-canvas" />

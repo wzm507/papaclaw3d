@@ -38,10 +38,10 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 px-5 md:px-8 py-4 flex items-center justify-between border-b border-deep-forest/18 bg-pale-canvas/88 backdrop-blur-md">
+      <header className="pointer-events-none fixed left-0 top-0 z-50 flex w-full items-center justify-between border-b border-transparent bg-transparent px-5 py-4 md:px-8">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="min-h-11 border-y border-deep-forest/30 px-3 font-utility text-sm font-semibold text-deep-forest hover:text-foudre-pink transition-colors"
+          className="pointer-events-auto min-h-11 border-y border-deep-forest/30 px-3 font-utility text-sm font-semibold text-deep-forest transition-colors hover:text-foudre-pink"
         >
           菜单
         </button>
@@ -54,7 +54,7 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="min-h-11 inline-flex items-center border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white hover:border-foudre-pink hover:bg-foudre-pink transition-colors"
+          className="pointer-events-auto inline-flex min-h-11 items-center border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink"
         >
           联系
         </a>

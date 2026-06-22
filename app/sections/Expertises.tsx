@@ -51,7 +51,7 @@ export default function Expertises(_props: ExpertisesProps) {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top top',
-            end: '+=180%',
+            end: '+=150%',
             pin: stickyRef.current,
             scrub: 0.5,
             pinSpacing: true,
@@ -72,11 +72,7 @@ export default function Expertises(_props: ExpertisesProps) {
           0.12
         )
 
-        tl.to(
-          [titleRef.current, cardsRef.current],
-          { y: -50, opacity: 0, ease: 'power2.in' },
-          0.72
-        )
+        tl.to([titleRef.current, cardsRef.current], { y: -18, ease: 'none' }, 0.78)
       })
 
       mm.add('(max-width: 767px)', () => {
@@ -124,12 +120,12 @@ export default function Expertises(_props: ExpertisesProps) {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-pale-canvas md:h-[280vh]">
-      <div ref={stickyRef} className="relative min-h-screen overflow-hidden px-6 py-24 md:flex md:h-screen md:items-center md:py-0">
+    <section ref={sectionRef} className="relative w-full bg-pale-canvas md:h-[250vh]">
+      <div ref={stickyRef} className="relative min-h-dvh overflow-hidden px-6 py-24 md:flex md:h-dvh md:items-center md:py-20">
         <Section3DBackground theme="pink" />
         <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+        <div className="relative z-20 mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div>
             <p className="editorial-kicker mb-4 text-center md:text-left">Company Strength</p>
             <h2 ref={titleRef} className="text-safe mx-auto max-w-[12ch] text-center font-editorial text-[clamp(2.35rem,5vw,4.6rem)] font-bold leading-[1.02] text-deep-forest opacity-0 md:mx-0 md:text-left">
@@ -140,7 +136,7 @@ export default function Expertises(_props: ExpertisesProps) {
             </p>
           </div>
 
-          <div ref={cardsRef} className="grid grid-cols-1 gap-px overflow-hidden rounded-content border border-deep-forest/20 bg-deep-forest/20 sm:grid-cols-2">
+          <div ref={cardsRef} className="grid grid-cols-1 gap-px overflow-hidden rounded-content border border-deep-forest/20 bg-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.12)] sm:grid-cols-2">
             {strengthItems.map((expertise) => (
               <div
                 key={expertise.icon}

@@ -74,12 +74,12 @@ export default function News({ articles }: NewsProps) {
       <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <p className="editorial-kicker mb-4 text-center">News Intelligence</p>
+        <p className="editorial-kicker mb-4 text-center">Enterprise Global News</p>
         <h2 ref={titleRef} className="editorial-heading mx-auto mb-6 max-w-5xl text-center opacity-0">
-          公众号文章同步为官网新闻资产
+          企业出海真实新闻与动态
         </h2>
         <p className="editorial-body editorial-measure mx-auto mb-14 text-center">
-          官网新闻中心会承接“凯勒斐KLF”公众号内容，将原文整理成搜索引擎和问答类 AI 更容易读取、引用和理解的公开文本。
+          新闻中心承接“凯勒斐KLF”公众号发布的真实企业出海文章，保留原文事实，并整理为搜索引擎和问答类 AI 更容易读取的官网新闻。
         </p>
 
         <div ref={cardsRef} className="border-y border-deep-forest/20">
@@ -92,7 +92,7 @@ export default function News({ articles }: NewsProps) {
                 <div>
                   <p className="editorial-meta mb-4">{formatDate(featured.publishedAt)}</p>
                   <p className="font-utility text-sm font-semibold uppercase tracking-[0.18em] text-foudre-pink">
-                    Latest from WeChat
+                    WeChat Enterprise News
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -116,7 +116,7 @@ export default function News({ articles }: NewsProps) {
             <div className="news-card bg-pale-canvas/55 p-8 text-center opacity-0">
               <h3 className="font-editorial text-heading font-bold text-deep-forest">新闻中心等待首次同步</h3>
               <p className="editorial-body mx-auto mt-4 max-w-2xl">
-                完成微信公众号密钥、Vercel KV 和定时任务配置后，系统会自动抓取公众号已发布文章并生成官网新闻详情页。
+                完成微信公众号密钥、Vercel KV 和定时任务配置后，系统会自动同步公众号发布的企业出海新闻，并生成官网新闻详情页。
               </p>
             </div>
           )}
@@ -144,7 +144,7 @@ export default function News({ articles }: NewsProps) {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-5 border-b border-deep-forest/20 pb-8 md:flex-row">
           <p className="editorial-body max-w-3xl">
-            新闻详情页会输出 Article 结构化数据、FAQ、关键词和纯文本摘要，帮助豆包、千问、Kimi 等问答类 AI 识别 Papa Claw 爬爬虾的最新官方内容。
+            新闻详情页会输出 Article 结构化数据、关键词和纯文本摘要，让企业出海新闻既能服务真实读者，也更容易被搜索引擎和问答类 AI 理解。
           </p>
           <Link
             href="/news"

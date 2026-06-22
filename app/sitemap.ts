@@ -1,10 +1,12 @@
 import type { MetadataRoute } from 'next'
 import { listNewsArticles } from './lib/news-store'
+import { listSeoTopics } from './lib/seo-topics'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
   const now = new Date()
   const articles = await listNewsArticles()
+  const seoTopics = listSeoTopics()
 
   return [
     {
@@ -37,6 +39,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 0.8,
     },
+    ...seoTopics.map((topic) => ({
+      url: `${siteUrl}/${topic.slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    })),
     ...articles.map((article) => ({
       url: `${siteUrl}/news/${article.slug}`,
       lastModified: new Date(article.updatedAt),

@@ -6,6 +6,7 @@ import Agency from './sections/Agency'
 import Team from './sections/Team'
 import Projects from './sections/Projects'
 import Manifest from './sections/Manifest'
+import SeoTopicLinks from './sections/SeoTopicLinks'
 import Expertises from './sections/Expertises'
 import Why from './sections/Why'
 import News from './sections/News'
@@ -104,6 +105,7 @@ export default async function Home() {
           <Projects title={config.projects.title} items={config.projects.items} />
         </div>
         <Manifest />
+        <SeoTopicLinks />
         <div id="ai-source">
           <Expertises title={config.expertises.title} subtitle={config.expertises.subtitle} items={config.expertises.items} />
         </div>

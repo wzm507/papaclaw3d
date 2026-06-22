@@ -28,7 +28,7 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top top',
-            end: '+=170%',
+            end: '+=150%',
             pin: stickyRef.current,
             scrub: 0.5,
             pinSpacing: true,
@@ -49,11 +49,7 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
           0.12
         )
 
-        tl.to(
-          [titleRef.current, cardsRef.current],
-          { y: -45, opacity: 0, ease: 'power2.in' },
-          0.78
-        )
+        tl.to([titleRef.current, cardsRef.current], { y: -16, ease: 'none' }, 0.8)
       })
 
       mm.add('(max-width: 767px)', () => {
@@ -101,12 +97,12 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-pale-canvas md:h-[270vh]">
-      <div ref={stickyRef} className="relative min-h-screen overflow-hidden px-6 py-24 md:flex md:h-screen md:items-center md:py-0">
+    <section ref={sectionRef} className="relative w-full bg-pale-canvas md:h-[250vh]">
+      <div ref={stickyRef} className="relative min-h-dvh overflow-hidden px-6 py-24 md:flex md:h-dvh md:items-center md:py-20">
         <Section3DBackground theme="blue" />
         <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="relative z-20 mx-auto w-full max-w-7xl">
           <p className="editorial-kicker text-center mb-4">Why Papa Claw</p>
           <h2 ref={titleRef} className="text-safe mx-auto mb-6 max-w-[14ch] text-center font-editorial text-[clamp(2.1rem,4.3vw,4.1rem)] font-bold leading-[1.03] text-deep-forest opacity-0 md:max-w-[18ch]">
             {title}
@@ -115,7 +111,7 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
             {subtitle}
           </p>
 
-          <div ref={cardsRef} className="grid grid-cols-1 border border-deep-forest/20 md:grid-cols-2">
+          <div ref={cardsRef} className="grid grid-cols-1 border border-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.12)] md:grid-cols-2">
             {reasons.map((reason, i) => (
               <div
                 key={i}

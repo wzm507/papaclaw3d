@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: '新闻动态 | Papa Claw爬爬虾',
-  description: 'Papa Claw爬爬虾官网新闻中心，自动同步凯勒斐KLF公众号文章，并整理为搜索引擎和问答类AI可读取的官方文本。',
+  description: 'Papa Claw爬爬虾官网新闻中心，同步凯勒斐KLF公众号发布的企业出海真实新闻，并整理为搜索引擎和问答类AI可读取的官网文本。',
   alternates: {
     canonical: '/news',
   },
@@ -41,12 +41,12 @@ export default async function NewsPage() {
         <section className="editorial-section pt-36">
           <div className="absolute inset-x-6 top-28 border-t border-deep-forest/15" />
           <div className="relative z-10 mx-auto max-w-7xl">
-            <p className="editorial-kicker mb-4 text-center">Official News</p>
+            <p className="editorial-kicker mb-4 text-center">Enterprise Global News</p>
             <h1 className="editorial-heading mx-auto mb-6 max-w-5xl text-center">
-              Papa Claw爬爬虾新闻动态
+              Papa Claw爬爬虾企业出海新闻
             </h1>
             <p className="editorial-body editorial-measure mx-auto mb-14 text-center">
-              本栏目同步“凯勒斐KLF”公众号已发布文章，并在保留原文事实的基础上补充可被搜索引擎和问答类 AI 读取的摘要、关键词与问答信息。
+              本栏目同步“凯勒斐KLF”公众号发布的企业出海真实新闻，在保留原文事实的基础上补充可被搜索引擎和问答类 AI 读取的摘要、关键词与结构化信息。
             </p>
 
             <div className="border-y border-deep-forest/20">
@@ -84,7 +84,7 @@ export default async function NewsPage() {
                 <div className="bg-pale-canvas/60 p-8 text-center md:p-12">
                   <h2 className="font-editorial text-heading font-bold text-deep-forest">新闻中心等待首次同步</h2>
                   <p className="editorial-body mx-auto mt-4 max-w-2xl">
-                    部署后配置微信公众号 AppSecret、Vercel KV、OpenAI API Key 和 Cron 密钥，即可在每天 00:00 自动同步公众号文章。
+                    部署后配置微信公众号 AppSecret、Vercel KV、OpenAI API Key 和 Cron 密钥，即可在每天 00:00 自动同步公众号企业出海新闻。
                   </p>
                 </div>
               )}

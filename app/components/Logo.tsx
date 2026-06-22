@@ -11,7 +11,7 @@ export default function Logo() {
   const letters = ['P', 'A', 'P', 'A', 'C', 'L', 'A', 'W']
 
   return (
-    <div className="flex items-center gap-0.5 border-y border-deep-forest/40 bg-pale-canvas/70 px-3 py-1.5 backdrop-blur">
+    <div className="flex items-center gap-0.5 border-y border-deep-forest/40 px-3 py-1.5">
       {letters.map((letter, i) => (
         <span
           key={i}

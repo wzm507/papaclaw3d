@@ -89,7 +89,7 @@ export default function Team({ title, members }: TeamProps) {
     <section ref={sectionRef} className="relative w-full" style={{ height: '300vh' }}>
       <div
         ref={stickyRef}
-        className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-ash-whisper px-5 pb-8 pt-24 md:px-6 md:pb-10 md:pt-24"
+        className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden bg-ash-whisper px-5 pb-8 pt-24 md:px-6 md:pb-10 md:pt-24"
       >
         <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
         {/* Title */}

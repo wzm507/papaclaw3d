@@ -9,6 +9,7 @@ const navItems = [
   { href: '/admin/hero', icon: '🎯', label: '首页配置' },
   { href: '/admin/team', icon: '👥', label: '团队管理' },
   { href: '/admin/projects', icon: '💼', label: '项目管理' },
+  { href: '/admin/seo-topics', icon: 'SEO', label: 'SEO专题页' },
   { href: '/admin/expertises', icon: '⚡', label: '专业服务' },
   { href: '/admin/process', icon: '📋', label: '工作流程' },
   { href: '/admin/why', icon: '💎', label: '优势理由' },

@@ -9,7 +9,8 @@
 - IndexNow key 文件：`https://www.papaclaw.cn/d9b1f6a2c8e74f30b5a19d6c42e8f0ab.txt`
 - IndexNow key：`d9b1f6a2c8e74f30b5a19d6c42e8f0ab`
 - 手动推送命令：`npm run indexnow:submit`
-- 公众号新闻同步后，会自动推送首页、新闻列表、AI 新闻 feed 和新闻详情页。
+- 公众号新闻同步后，会自动推送首页、新闻列表、AI 新闻 feed、SEO 专题页和新闻详情页。
+- Vercel Cron 每天北京时间 00:10 会请求 `/api/indexnow/submit`，主动推送 sitemap 核心 URL。
 
 ## 第一步：开通 Bing Webmaster Tools
 
@@ -34,6 +35,13 @@ https://www.papaclaw.cn/sitemap.xml
 - `/llms-full.txt`
 - `/news`
 - `/ai-news-feed`
+- `/ai-global-expansion`
+- `/foreign-trade-factory-global-sales`
+- `/middle-east-government-resources`
+- `/ai-tender-intelligence`
+- `/cross-border-finance`
+- `/overseas-social-media`
+- `/nansha-global-expansion`
 - 新闻详情页
 
 ## 第三步：确认 IndexNow key 文件

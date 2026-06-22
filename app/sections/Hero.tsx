@@ -91,7 +91,7 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
     <section ref={sectionRef} className="relative w-full" style={{ height: '400vh' }}>
       <div
         ref={stickyRef}
-        className="relative w-full h-screen overflow-hidden"
+        className="relative h-dvh w-full overflow-hidden"
         style={{ willChange: 'transform' }}
       >
         {/* Background Image with Parallax */}
@@ -114,7 +114,7 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 pt-24 pb-8">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pb-8 pt-24">
           {/* Title */}
           <div ref={titleRef} className="relative z-20 mb-8 w-full max-w-6xl text-center">
             <p className="hero-title-line editorial-kicker mb-5 text-white/80">
