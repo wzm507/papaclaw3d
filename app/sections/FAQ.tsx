@@ -44,9 +44,9 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
   }
 
   return (
-    <section ref={sectionRef} className="editorial-section bg-ash-whisper">
+    <section ref={sectionRef} className="editorial-section bg-pale-canvas">
       <Section3DBackground theme="orange" />
-      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <p className="editorial-kicker text-center mb-4">Standard Q&A</p>
@@ -57,18 +57,18 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
           {subtitle}
         </p>
 
-        <div className="border-y border-deep-forest/20">
+        <div className="space-y-3">
           {items.map((faq, i) => (
             <div
               key={i}
-              className={`overflow-hidden border-b border-deep-forest/15 last:border-b-0 transition-colors duration-300 ${openIndex === i ? 'bg-paper-white/85' : 'bg-transparent'}`}
+              className={`neo-panel overflow-hidden rounded-content transition-colors duration-300 ${openIndex === i ? 'bg-white/76' : 'bg-white/48'}`}
             >
               <button
                 onClick={() => toggleAccordion(i)}
                 className="w-full flex items-start justify-between gap-6 p-6 text-left md:p-7"
                 aria-expanded={openIndex === i}
               >
-                <span className={`font-editorial text-xl font-bold leading-snug transition-colors duration-300 ${openIndex === i ? 'text-foudre-pink' : 'text-deep-forest'}`}>
+                <span className={`font-utility text-xl font-semibold leading-snug transition-colors duration-300 ${openIndex === i ? 'text-foudre-pink' : 'text-deep-forest'}`}>
                   {faq.question}
                 </span>
                 <span

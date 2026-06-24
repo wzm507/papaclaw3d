@@ -6,55 +6,61 @@ import Link from 'next/link'
 const modules = [
   {
     href: '/admin/company',
-    icon: '🏢',
+    icon: 'CO',
     title: '企业信息',
     description: '管理公司基本信息、简介和联系方式',
   },
   {
     href: '/admin/hero',
-    icon: '🎯',
+    icon: 'HM',
     title: '首页配置',
     description: '配置首页横幅、标语和视觉展示',
   },
   {
     href: '/admin/team',
-    icon: '👥',
+    icon: 'TM',
     title: '团队管理',
     description: '管理团队成员信息和展示顺序',
   },
   {
     href: '/admin/projects',
-    icon: '💼',
+    icon: 'PR',
     title: '项目管理',
     description: '管理项目案例、图片和详情',
   },
   {
+    href: '/admin/seo-topics',
+    icon: 'SEO',
+    title: 'SEO专题页',
+    description: '管理关键词、专题页内容、FAQ和AI检索文本',
+  },
+  {
     href: '/admin/expertises',
-    icon: '⚡',
+    icon: 'SV',
     title: '专业服务',
     description: '管理专业服务领域和能力展示',
   },
   {
     href: '/admin/process',
-    icon: '📋',
+    icon: 'FL',
     title: '工作流程',
     description: '配置工作流程步骤和说明',
   },
   {
     href: '/admin/why',
-    icon: '💎',
+    icon: 'AD',
     title: '优势理由',
     description: '管理选择我们的理由和优势',
   },
   {
     href: '/admin/faq',
-    icon: '❓',
+    icon: 'QA',
     title: 'FAQ管理',
     description: '管理常见问题与解答内容',
   },
   {
     href: '/admin/footer',
-    icon: '📎',
+    icon: 'FT',
     title: '页脚配置',
     description: '配置页脚链接、版权和社交信息',
   },
@@ -83,55 +89,58 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-6 md:p-10">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-deep-forest font-clash">
-          PAPACLAW CMS 管理后台
+      <div className="mb-8 border-b border-ash-whisper pb-8">
+        <p className="editorial-meta mb-3">PAPACLAW Content Studio</p>
+        <h1 className="font-utility text-[clamp(2rem,4vw,4rem)] font-semibold leading-none text-deep-forest">
+          官网内容控制台
         </h1>
-        <p className="text-deep-forest/60 mt-2">
+        <p className="mt-4 max-w-2xl font-utility text-base leading-relaxed text-slate-tint">
           管理官网内容，实时预览并发布更新
         </p>
       </div>
 
       {/* Action Buttons */}
-      <div className="flex gap-3 mb-8">
+      <div className="mb-8 flex flex-wrap gap-3">
         <a
           href="/preview"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-badge bg-deep-forest text-white text-sm font-medium hover:bg-deep-forest/90 transition-colors"
+          className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink"
         >
-          👁 预览官网
+          预览官网
         </a>
         <button
           onClick={handlePublish}
           disabled={publishing}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-badge bg-foudre-pink text-white text-sm font-medium hover:bg-foudre-pink/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-paper-white px-5 font-utility text-sm font-semibold text-deep-forest transition-colors hover:border-foudre-pink hover:text-foudre-pink disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {publishing ? '发布中...' : '🚀 发布官网'}
+          {publishing ? '发布中...' : '发布官网'}
         </button>
         {publishStatus === 'success' && (
-          <span className="inline-flex items-center text-sm text-green-600 font-medium">✓ 发布成功</span>
+          <span className="inline-flex min-h-11 items-center font-utility text-sm font-semibold text-green-600">发布成功</span>
         )}
         {publishStatus === 'error' && (
-          <span className="inline-flex items-center text-sm text-red-600 font-medium">✗ 发布失败，请重试</span>
+          <span className="inline-flex min-h-11 items-center font-utility text-sm font-semibold text-red-600">发布失败，请重试</span>
         )}
       </div>
 
       {/* Module Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {modules.map((mod) => (
           <Link
             key={mod.href}
             href={mod.href}
-            className="group block bg-white rounded-card p-6 border border-ash-whisper hover:border-foudre-pink/40 hover:shadow-lg hover:shadow-foudre-pink/5 transition-all duration-200"
+            className="group block rounded-content border border-ash-whisper bg-paper-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-deep-forest hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
           >
-            <div className="text-3xl mb-3">{mod.icon}</div>
-            <h3 className="text-lg font-semibold text-deep-forest group-hover:text-foudre-pink transition-colors">
+            <div className="mb-8 flex h-9 w-12 items-center justify-center rounded-content border border-deep-forest bg-deep-forest font-utility text-xs font-semibold text-white">
+              {mod.icon}
+            </div>
+            <h3 className="font-utility text-lg font-semibold text-deep-forest transition-colors group-hover:text-foudre-pink">
               {mod.title}
             </h3>
-            <p className="text-sm text-deep-forest/50 mt-1.5 leading-relaxed">
+            <p className="mt-2 font-utility text-sm leading-relaxed text-slate-tint">
               {mod.description}
             </p>
           </Link>

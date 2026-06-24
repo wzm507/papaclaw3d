@@ -46,7 +46,7 @@ function commaText(items: string[]) {
 
 function parseCommaText(value: string) {
   return value
-    .split(',')
+    .split(/[,，]/)
     .map((item) => item.trim())
     .filter(Boolean)
 }
@@ -95,7 +95,10 @@ export default function SeoTopicsAdminPage() {
       const data = await response.json()
       if (!response.ok) throw new Error(data.error || '保存失败')
       setTopics(data.topics)
-      setMessage('SEO专题页已保存。重新部署后，专题页、sitemap、llms 和 IndexNow 会使用最新内容。')
+      const pushText = data.indexNow?.ok
+        ? `已同步推送 ${data.indexNow.submitted} 个 URL 到 IndexNow。`
+        : 'IndexNow 会在定时任务中继续推送。'
+      setMessage(`SEO专题页已保存。专题页、sitemap、llms 和 IndexNow 会使用最新内容。${pushText}`)
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '保存失败，请重试')
     } finally {
@@ -107,12 +110,12 @@ export default function SeoTopicsAdminPage() {
 
   return (
     <SectionEditor title="SEO专题页管理" onSave={handleSave} saving={saving}>
-      <div className="rounded-lg border border-ash-whisper bg-white p-4 text-sm leading-7 text-deep-forest/70">
+      <div className="rounded-content border border-ash-whisper bg-paper-white p-5 font-utility text-sm leading-7 text-slate-tint">
         管理这里会影响：专题页 URL、页面标题、关键词、FAQ、sitemap、llms.txt、llms-full.txt 和 IndexNow 推送。Slug 只能使用小写英文、数字和连字符，例如 <code>ai-global-expansion</code>。
       </div>
 
       {message && (
-        <div className="rounded-lg border border-foudre-pink/20 bg-foudre-pink/5 p-4 text-sm text-deep-forest">
+        <div className="rounded-content border border-foudre-pink/30 bg-paper-white p-5 font-utility text-sm font-semibold text-deep-forest">
           {message}
         </div>
       )}
@@ -202,7 +205,7 @@ export default function SeoTopicsAdminPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-deep-forest">FAQ问答</label>
+              <label className="block font-utility text-sm font-semibold text-deep-forest">FAQ问答</label>
               <ListEditor
                 items={topic.faq}
                 onChange={(faq) => onChange({ ...topic, faq })}
@@ -228,7 +231,7 @@ export default function SeoTopicsAdminPage() {
               />
             </div>
 
-            <div className="rounded-lg bg-ash-whisper/50 p-3 font-utility text-xs text-deep-forest/60">
+            <div className="rounded-content border border-ash-whisper bg-pale-canvas p-3 font-utility text-xs text-slate-tint">
               预览地址：/{topic.slug || `new-seo-topic-${index + 1}`}
             </div>
           </div>

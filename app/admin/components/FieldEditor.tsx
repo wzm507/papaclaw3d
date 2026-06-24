@@ -41,14 +41,14 @@ export default function FieldEditor({
     }
   }
 
-  const baseInputClasses = `w-full px-3 py-2 rounded-lg border bg-white text-deep-forest
-    placeholder:text-gray-400 text-sm transition-all duration-200
-    focus:outline-none focus:ring-2 focus:ring-foudre-pink/50 focus:border-foudre-pink
+  const baseInputClasses = `w-full rounded-content border bg-paper-white px-4 py-3 font-utility text-sm text-deep-forest
+    placeholder:text-slate-tint/60 transition-all duration-200
+    focus:outline-none focus:ring-2 focus:ring-foudre-pink/30 focus:border-foudre-pink
     ${urlError ? 'border-red-400' : 'border-ash-whisper'}`
 
   return (
-    <div className="space-y-1.5">
-      <label className="block text-sm font-medium text-deep-forest">
+    <div className="space-y-2">
+      <label className="block font-utility text-sm font-semibold text-deep-forest">
         {label}
         {required && <span className="text-foudre-pink ml-0.5">*</span>}
       </label>
@@ -60,7 +60,7 @@ export default function FieldEditor({
           placeholder={placeholder}
           required={required}
           rows={4}
-          className={`${baseInputClasses} resize-y min-h-[80px]`}
+          className={`${baseInputClasses} min-h-[112px] resize-y leading-relaxed`}
         />
       ) : (
         <input
@@ -74,9 +74,7 @@ export default function FieldEditor({
         />
       )}
 
-      {urlError && (
-        <p className="text-xs text-red-500">{urlError}</p>
-      )}
+      {urlError && <p className="font-utility text-xs text-red-500">{urlError}</p>}
     </div>
   )
 }

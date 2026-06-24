@@ -12,19 +12,19 @@ interface FooterProps {
 
 export default function Footer({ contactTitle, contactDescription, ctaText, socialLinks, copyright, legalLinks, credit }: FooterProps) {
   return (
-    <footer className="section py-24 px-6 bg-deep-forest text-white">
+    <footer className="section bg-midnight-ink px-6 py-20 text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="border-y border-white/18 py-12 text-center mb-14">
-          <p className="font-utility text-caption text-white/60 uppercase mb-5" style={{ letterSpacing: '0.08em' }}>
+        <div className="rounded-content border border-white/10 bg-white/[0.04] px-5 py-12 text-center mb-12 shadow-[0_28px_90px_rgba(0,0,0,0.22)] md:px-10">
+          <p className="mb-5 font-utility text-caption uppercase text-white/60">
             Contact
           </p>
-          <h2 className="font-editorial text-heading-lg font-bold mb-5 text-balance">
+          <h2 className="font-utility text-heading-lg font-semibold mb-5 text-balance">
             {contactTitle}
           </h2>
-          <p className="mx-auto max-w-3xl font-editorial text-body text-white/72 mb-9">
+          <p className="mx-auto max-w-3xl font-utility text-body text-white/72 mb-9">
             {contactDescription}
           </p>
-          <button className="min-h-12 border border-white/25 bg-foudre-pink px-8 py-4 font-utility text-sm font-semibold text-white hover:bg-paper-white hover:text-deep-forest transition-colors">
+          <button className="min-h-12 rounded-content border border-white/15 bg-paper-white px-8 py-4 font-utility text-sm font-semibold text-deep-forest shadow-[0_18px_40px_rgba(255,255,255,0.08)] transition-all hover:-translate-y-0.5 hover:border-bubblegum-blush hover:bg-bubblegum-blush">
             {ctaText}
           </button>
         </div>

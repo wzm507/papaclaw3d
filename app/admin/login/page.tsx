@@ -27,19 +27,19 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-deep-forest flex items-center justify-center px-4">
+    <div className="flex min-h-screen items-center justify-center bg-midnight-ink px-4">
       <div className="w-full max-w-sm">
         {/* Branding */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white tracking-tight font-clash">
+        <div className="mb-8 text-center">
+          <h1 className="font-utility text-4xl font-semibold tracking-tight text-white">
             PAPACLAW
           </h1>
-          <p className="text-white/40 text-sm mt-2">CMS 管理后台</p>
+          <p className="mt-2 font-utility text-sm text-white/45">Content Studio</p>
         </div>
 
         {/* Login Card */}
-        <div className="bg-white rounded-card p-8">
-          <h2 className="text-xl font-semibold text-deep-forest mb-6 text-center">
+        <div className="rounded-content border border-white/10 bg-white p-8 shadow-[0_30px_90px_rgba(0,0,0,0.28)]">
+          <h2 className="mb-6 text-center font-utility text-xl font-semibold text-deep-forest">
             登录
           </h2>
 
@@ -47,7 +47,7 @@ export default function AdminLoginPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-deep-forest/70 mb-1.5"
+                className="mb-1.5 block font-utility text-sm font-semibold text-deep-forest"
               >
                 管理密码
               </label>
@@ -60,13 +60,13 @@ export default function AdminLoginPage() {
                   setError('')
                 }}
                 placeholder="请输入管理密码"
-                className="w-full px-4 py-2.5 rounded-badge border border-ash-whisper bg-pale-canvas text-deep-forest text-sm placeholder:text-deep-forest/30 focus:outline-none focus:border-foudre-pink focus:ring-1 focus:ring-foudre-pink/30 transition-colors"
+                className="w-full rounded-content border border-ash-whisper bg-pale-canvas px-4 py-3 font-utility text-sm text-deep-forest transition-colors placeholder:text-slate-tint/60 focus:border-foudre-pink focus:outline-none focus:ring-2 focus:ring-foudre-pink/30"
                 autoFocus
               />
             </div>
 
             {error && (
-              <p className="text-sm text-foudre-pink bg-foudre-pink/10 px-3 py-2 rounded-badge">
+              <p className="rounded-content border border-red-200 bg-red-50 px-3 py-2 font-utility text-sm text-red-600">
                 {error}
               </p>
             )}
@@ -74,7 +74,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading || !password}
-              className="w-full py-2.5 rounded-badge bg-foudre-pink text-white text-sm font-medium hover:bg-foudre-pink/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="min-h-11 w-full rounded-content border border-deep-forest bg-deep-forest py-2.5 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? '验证中...' : '登录'}
             </button>

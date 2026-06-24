@@ -16,7 +16,7 @@ function isAuthorized(request: Request) {
 async function collectUrls() {
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
   const articles = await listNewsArticles()
-  const seoTopics = listSeoTopics()
+  const seoTopics = await listSeoTopics()
 
   return [
     siteUrl,

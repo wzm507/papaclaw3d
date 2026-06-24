@@ -18,17 +18,20 @@ export default function SectionEditor({
   saving = false,
 }: SectionEditorProps) {
   return (
-    <div className="min-h-full">
+    <div className="min-h-full p-6 md:p-10">
       {/* 顶部标题栏 */}
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-ash-whisper">
-        <h1 className="text-xl font-semibold text-deep-forest">{title}</h1>
-        <div className="flex items-center gap-3">
+      <div className="mb-8 flex flex-col gap-4 border-b border-ash-whisper pb-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p className="editorial-meta mb-2">Edit Content</p>
+          <h1 className="font-utility text-3xl font-semibold leading-tight text-deep-forest">{title}</h1>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
           {onPreview && (
             <button
               type="button"
               onClick={onPreview}
               disabled={saving}
-              className="px-4 py-2 rounded-lg border border-foudre-pink text-foudre-pink text-sm font-medium hover:bg-foudre-pink/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-paper-white px-5 font-utility text-sm font-semibold text-deep-forest transition-colors hover:border-foudre-pink hover:text-foudre-pink disabled:cursor-not-allowed disabled:opacity-50"
             >
               预览
             </button>

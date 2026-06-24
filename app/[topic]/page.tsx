@@ -9,7 +9,8 @@ import Footer from '../sections/Footer'
 import SmoothScrollProvider from '../components/SmoothScrollProvider'
 import { getSeoTopic, listSeoTopics } from '../lib/seo-topics'
 
-export const dynamicParams = false
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 interface TopicPageProps {
   params: {
@@ -26,14 +27,15 @@ function getConfig() {
   return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
 }
 
-export function generateStaticParams() {
-  return listSeoTopics().map((topic) => ({
+export async function generateStaticParams() {
+  const topics = await listSeoTopics()
+  return topics.map((topic) => ({
     topic: topic.slug,
   }))
 }
 
-export function generateMetadata({ params }: TopicPageProps): Metadata {
-  const topic = getSeoTopic(params.topic)
+export async function generateMetadata({ params }: TopicPageProps): Promise<Metadata> {
+  const topic = await getSeoTopic(params.topic)
 
   if (!topic) {
     return {
@@ -57,14 +59,15 @@ export function generateMetadata({ params }: TopicPageProps): Metadata {
   }
 }
 
-export default function SeoTopicPage({ params }: TopicPageProps) {
-  const topic = getSeoTopic(params.topic)
+export default async function SeoTopicPage({ params }: TopicPageProps) {
+  const topic = await getSeoTopic(params.topic)
 
   if (!topic) {
     notFound()
   }
 
   const config = getConfig()
+  const relatedTopics = await listSeoTopics()
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')
   )
@@ -103,7 +106,7 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
 
   return (
     <SmoothScrollProvider>
-      <main className="min-h-screen bg-paper-white">
+      <main className="min-h-screen bg-pale-canvas">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
@@ -115,10 +118,11 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
         <section className="relative overflow-hidden px-6 pb-16 pt-36 md:pb-24 md:pt-40">
-          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/15" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f5f5f7_100%)]" />
+          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/10" />
           <div className="relative z-10 mx-auto max-w-7xl">
             <p className="editorial-kicker mb-4 text-center">SEO Topic</p>
-            <h1 className="text-safe mx-auto max-w-5xl text-center font-editorial text-[clamp(2.8rem,7vw,6rem)] font-bold leading-[0.95] text-deep-forest">
+            <h1 className="text-safe mx-auto max-w-5xl text-center font-utility text-[clamp(2.25rem,5.6vw,4.8rem)] font-semibold leading-[1.05] text-deep-forest">
               {topic.title}
             </h1>
             <p className="editorial-body editorial-measure mx-auto mt-7 text-center text-lg">
@@ -126,7 +130,7 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-2">
               {topic.keywords.map((keyword) => (
-                <span key={keyword} className="border border-deep-forest/20 bg-pale-canvas px-3 py-1 font-utility text-xs text-deep-forest/75">
+                <span key={keyword} className="rounded-content border border-ash-whisper bg-paper-white px-3 py-1 font-utility text-xs text-slate-tint shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
                   {keyword}
                 </span>
               ))}
@@ -136,16 +140,16 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
 
         <section className="px-6 pb-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <aside className="border-y border-deep-forest/20 py-7 lg:sticky lg:top-24 lg:self-start">
+            <aside className="neo-panel rounded-content p-6 lg:sticky lg:top-24 lg:self-start">
               <p className="editorial-kicker mb-5">Topic Links</p>
               <nav className="space-y-3">
-                <Link href="/" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4">
+                <Link href="/" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4 hover:text-foudre-pink">
                   官网首页
                 </Link>
-                <Link href="/news" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4">
+                <Link href="/news" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4 hover:text-foudre-pink">
                   企业出海新闻
                 </Link>
-                <Link href="/#faq" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4">
+                <Link href="/#faq" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4 hover:text-foudre-pink">
                   标准问答
                 </Link>
               </nav>
@@ -153,11 +157,11 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
               <div className="mt-8">
                 <p className="editorial-kicker mb-4">Related Topics</p>
                 <div className="space-y-2">
-                  {listSeoTopics()
+                  {relatedTopics
                     .filter((item) => item.slug !== topic.slug)
                     .slice(0, 4)
                     .map((item) => (
-                      <Link key={item.slug} href={`/${item.slug}`} className="block font-editorial text-lg font-bold leading-snug text-deep-forest hover:text-foudre-pink">
+                      <Link key={item.slug} href={`/${item.slug}`} className="block font-utility text-lg font-semibold leading-snug text-deep-forest hover:text-foudre-pink">
                         {item.title}
                       </Link>
                     ))}
@@ -168,7 +172,7 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
             <article className="space-y-14">
               <TopicSection title="业务解释">
                 <p className="editorial-body text-pretty text-lg">
-                  {topic.serviceName}是 Papa Claw爬爬虾围绕企业真实出海需求提供的专题服务。它不是单点咨询，而是把AI数据、内容表达、资源对接、项目跟进和资金协同放进同一条执行链路。
+                        {topic.serviceName}是 Papa Claw爬爬虾围绕企业真实出海需求提供的专题服务。它不是单点咨询，而是把AI数据、内容表达、资源对接、项目跟进和资金协同放进同一条执行链路。
                 </p>
               </TopicSection>
 
@@ -181,7 +185,7 @@ export default function SeoTopicPage({ params }: TopicPageProps) {
                 <div className="border-y border-deep-forest/20">
                   {topic.faq.map((item) => (
                     <div key={item.question} className="border-b border-deep-forest/15 py-6 last:border-b-0">
-                      <h2 className="text-safe font-editorial text-2xl font-bold leading-snug text-deep-forest">
+                      <h2 className="text-safe font-utility text-2xl font-semibold leading-snug text-deep-forest">
                         {item.question}
                       </h2>
                       <p className="editorial-body mt-3">
@@ -221,11 +225,11 @@ function TopicSection({ title, children }: { title: string; children: ReactNode 
 function TopicGrid({ title, items }: { title: string; items: string[] }) {
   return (
     <TopicSection title={title}>
-      <div className="grid border border-deep-forest/20 md:grid-cols-2">
+      <div className="grid gap-3 md:grid-cols-2">
         {items.map((item, index) => (
-          <div key={item} className="border-b border-deep-forest/15 bg-pale-canvas/50 p-6 last:border-b-0 md:border-r md:even:border-r-0">
+          <div key={item} className="neo-panel rounded-content p-6">
             <p className="editorial-meta mb-4">{String(index + 1).padStart(2, '0')}</p>
-            <p className="text-safe font-editorial text-xl font-bold leading-snug text-deep-forest">
+            <p className="text-safe font-utility text-xl font-semibold leading-snug text-deep-forest">
               {item}
             </p>
           </div>

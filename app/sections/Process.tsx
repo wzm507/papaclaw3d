@@ -89,7 +89,7 @@ export default function Process({ title, subtitle, steps }: ProcessProps) {
             return (
               <div
                 key={i}
-                className="process-step grid gap-5 border-b border-deep-forest/15 bg-paper-white/45 p-6 opacity-0 backdrop-blur-sm last:border-b-0 md:grid-cols-[6rem_1fr] md:p-8"
+                className="process-step grid gap-5 border-b border-deep-forest/15 bg-paper-white p-6 opacity-0 last:border-b-0 md:grid-cols-[6rem_1fr] md:p-8"
               >
                 <span className="font-utility text-sm font-semibold text-foudre-pink">
                   {displayStep.number}

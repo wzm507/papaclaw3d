@@ -64,7 +64,7 @@ export default function ListEditor<T>({
       {items.map((item, index) => (
         <div
           key={index}
-          className="relative bg-white border border-ash-whisper rounded-lg p-4 transition-all duration-200 hover:border-bubblegum-blush"
+          className="relative rounded-content border border-ash-whisper bg-paper-white p-5 transition-all duration-200 hover:border-deep-forest hover:shadow-[0_18px_44px_rgba(0,0,0,0.06)]"
         >
           {/* 操作按钮组 */}
           <div className="absolute top-3 right-3 flex items-center gap-1">
@@ -72,7 +72,7 @@ export default function ListEditor<T>({
               type="button"
               onClick={() => handleMoveUp(index)}
               disabled={index === 0}
-              className="w-6 h-6 flex items-center justify-center rounded text-deep-forest/50 hover:text-deep-forest hover:bg-ash-whisper disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs"
+              className="flex h-8 w-8 items-center justify-center rounded-content border border-ash-whisper text-xs text-slate-tint transition-colors hover:border-deep-forest hover:text-deep-forest disabled:cursor-not-allowed disabled:opacity-30"
               title="上移"
             >
               ↑
@@ -81,7 +81,7 @@ export default function ListEditor<T>({
               type="button"
               onClick={() => handleMoveDown(index)}
               disabled={index === items.length - 1}
-              className="w-6 h-6 flex items-center justify-center rounded text-deep-forest/50 hover:text-deep-forest hover:bg-ash-whisper disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs"
+              className="flex h-8 w-8 items-center justify-center rounded-content border border-ash-whisper text-xs text-slate-tint transition-colors hover:border-deep-forest hover:text-deep-forest disabled:cursor-not-allowed disabled:opacity-30"
               title="下移"
             >
               ↓
@@ -89,7 +89,7 @@ export default function ListEditor<T>({
             <button
               type="button"
               onClick={() => handleRemove(index)}
-              className="w-6 h-6 flex items-center justify-center rounded text-red-400 hover:text-red-600 hover:bg-red-50 transition-colors text-sm"
+              className="flex h-8 w-8 items-center justify-center rounded-content border border-ash-whisper text-sm text-red-500 transition-colors hover:border-red-500 hover:bg-red-50"
               title="删除"
             >
               ✕
@@ -105,7 +105,7 @@ export default function ListEditor<T>({
       <button
         type="button"
         onClick={handleAdd}
-        className="w-full py-2.5 border-2 border-dashed border-ash-whisper rounded-lg text-sm text-deep-forest/60 hover:border-foudre-pink hover:text-foudre-pink transition-colors"
+        className="min-h-11 w-full rounded-content border border-dashed border-ash-whisper py-2.5 font-utility text-sm font-semibold text-slate-tint transition-colors hover:border-foudre-pink hover:text-foudre-pink"
       >
         + 添加{itemLabel}
       </button>

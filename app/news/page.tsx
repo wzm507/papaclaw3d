@@ -35,11 +35,12 @@ export default async function NewsPage() {
 
   return (
     <SmoothScrollProvider>
-      <main className="min-h-screen bg-paper-white">
+      <main className="min-h-screen bg-pale-canvas">
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
         <section className="editorial-section pt-36">
-          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/15" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f5f5f7_100%)]" />
+          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/10" />
           <div className="relative z-10 mx-auto max-w-7xl">
             <p className="editorial-kicker mb-4 text-center">Enterprise Global News</p>
             <h1 className="editorial-heading mx-auto mb-6 max-w-5xl text-center">
@@ -49,22 +50,22 @@ export default async function NewsPage() {
               本栏目同步“凯勒斐KLF”公众号发布的企业出海真实新闻，在保留原文事实的基础上补充可被搜索引擎和问答类 AI 读取的摘要、关键词与结构化信息。
             </p>
 
-            <div className="border-y border-deep-forest/20">
+            <div className="space-y-3">
               {articles.length > 0 ? (
                 articles.map((article) => (
                   <Link
                     key={article.id}
                     href={`/news/${article.slug}`}
-                    className="grid gap-6 border-b border-deep-forest/15 p-6 transition-colors last:border-b-0 hover:bg-ash-whisper/65 md:grid-cols-[10rem_1fr] md:p-8"
+                    className="neo-panel grid gap-6 rounded-content p-6 transition-transform hover:-translate-y-1 md:grid-cols-[10rem_1fr] md:p-8"
                   >
                     <div>
                       <p className="editorial-meta">{formatDate(article.publishedAt)}</p>
-                      <p className="mt-3 font-utility text-xs font-semibold uppercase tracking-[0.18em] text-foudre-pink">
+                      <p className="mt-3 font-utility text-xs font-semibold uppercase text-foudre-pink">
                         {article.sourceName}
                       </p>
                     </div>
                     <article>
-                      <h2 className="font-editorial text-3xl font-bold leading-tight text-deep-forest">
+                      <h2 className="font-utility text-3xl font-semibold leading-tight text-deep-forest">
                         {article.searchableTitle || article.title}
                       </h2>
                       <p className="editorial-body mt-4">
@@ -72,7 +73,7 @@ export default async function NewsPage() {
                       </p>
                       <div className="mt-5 flex flex-wrap gap-2">
                         {article.keywords.slice(0, 6).map((keyword) => (
-                          <span key={keyword} className="border border-deep-forest/20 px-3 py-1 font-utility text-xs text-deep-forest/75">
+                          <span key={keyword} className="rounded-content border border-ash-whisper bg-paper-white px-3 py-1 font-utility text-xs text-slate-tint">
                             {keyword}
                           </span>
                         ))}
@@ -81,8 +82,8 @@ export default async function NewsPage() {
                   </Link>
                 ))
               ) : (
-                <div className="bg-pale-canvas/60 p-8 text-center md:p-12">
-                  <h2 className="font-editorial text-heading font-bold text-deep-forest">新闻中心等待首次同步</h2>
+                <div className="neo-panel rounded-content p-8 text-center md:p-12">
+                  <h2 className="font-utility text-heading font-semibold text-deep-forest">新闻中心等待首次同步</h2>
                   <p className="editorial-body mx-auto mt-4 max-w-2xl">
                     部署后配置微信公众号 AppSecret、Vercel KV、OpenAI API Key 和 Cron 密钥，即可在每天 00:00 自动同步公众号企业出海新闻。
                   </p>

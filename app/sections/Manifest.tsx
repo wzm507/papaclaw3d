@@ -92,7 +92,7 @@ export default function Manifest() {
   return (
     <section
       ref={sectionRef}
-      className="section min-h-screen flex items-center justify-center py-24 px-6 overflow-hidden relative bg-pale-canvas"
+      className="section relative flex min-h-screen items-center justify-center overflow-hidden bg-midnight-ink px-6 py-24"
     >
       {/* 3D Background */}
       <ErrorBoundary>
@@ -102,17 +102,17 @@ export default function Manifest() {
       </ErrorBoundary>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.035] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L35 25L60 30L35 35L30 60L25 35L0 30L25 25Z' fill='%2300522d'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px',
+          backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px)`,
+          backgroundSize: '56px 56px',
         }} />
       </div>
 
       {/* Left Lightning */}
       <svg
         ref={lightningLeftRef}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-48 h-96 text-foudre-pink/20 pointer-events-none"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-48 h-96 text-bubblegum-blush/12 pointer-events-none"
         viewBox="0 0 100 200"
         fill="currentColor"
       >
@@ -122,7 +122,7 @@ export default function Manifest() {
       {/* Right Lightning */}
       <svg
         ref={lightningRightRef}
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-48 h-96 text-foudre-pink/20 pointer-events-none"
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-48 h-96 text-bubblegum-blush/12 pointer-events-none"
         viewBox="0 0 100 200"
         fill="currentColor"
       >
@@ -130,19 +130,19 @@ export default function Manifest() {
       </svg>
 
       {/* Text Content */}
-      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+      <div className="absolute inset-x-6 top-10 border-t border-white/12" />
       <div ref={textRef} className="relative z-10 text-center max-w-5xl mx-auto">
-        <p className="editorial-kicker mb-6">Editorial Manifesto</p>
-        <p className="font-editorial text-heading text-deep-forest mb-5 overflow-hidden">
+        <p className="font-utility text-caption font-semibold uppercase text-white/55 mb-6">Operating Manifesto</p>
+        <p className="font-utility text-heading text-white mb-5 overflow-hidden">
           <span className="manifest-word inline-block">不靠直觉做判断。</span>
         </p>
-        <p className="font-editorial text-heading text-deep-forest mb-5 overflow-hidden">
+        <p className="font-utility text-heading text-white mb-5 overflow-hidden">
           <span className="manifest-word inline-block">数据在哪里，市场就在哪里。</span>
         </p>
-        <h2 className="text-display font-bold text-foudre-pink overflow-hidden my-8">
+        <h2 className="overflow-hidden my-8 font-utility text-display font-semibold text-bubblegum-blush">
           <span className="manifest-word inline-block">AI务实出海</span>
         </h2>
-        <h2 className="text-display font-bold text-deep-forest overflow-hidden">
+        <h2 className="overflow-hidden font-utility text-display font-semibold text-white">
           <span className="manifest-word inline-block">结果落地</span>
         </h2>
       </div>

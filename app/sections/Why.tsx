@@ -100,26 +100,26 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
     <section ref={sectionRef} className="relative w-full bg-pale-canvas md:h-[250vh]">
       <div ref={stickyRef} className="relative min-h-dvh overflow-hidden px-6 py-24 md:flex md:h-dvh md:items-center md:py-20">
         <Section3DBackground theme="blue" />
-        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
 
         <div className="relative z-20 mx-auto w-full max-w-7xl">
           <p className="editorial-kicker text-center mb-4">Why Papa Claw</p>
-          <h2 ref={titleRef} className="text-safe mx-auto mb-6 max-w-[14ch] text-center font-editorial text-[clamp(2.1rem,4.3vw,4.1rem)] font-bold leading-[1.03] text-deep-forest opacity-0 md:max-w-[18ch]">
+          <h2 ref={titleRef} className="text-safe mx-auto mb-6 max-w-[16ch] text-center font-utility text-[clamp(1.9rem,3.8vw,3.4rem)] font-semibold leading-[1.1] text-deep-forest opacity-0 md:max-w-[20ch]">
             {title}
           </h2>
           <p className="editorial-body text-pretty text-center mb-10 editorial-measure mx-auto md:mb-12">
             {subtitle}
           </p>
 
-          <div ref={cardsRef} className="grid grid-cols-1 border border-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.12)] md:grid-cols-2">
+          <div ref={cardsRef} className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {reasons.map((reason, i) => (
               <div
                 key={i}
-                className="why-card relative overflow-hidden border-b border-deep-forest/15 bg-paper-white/82 p-6 opacity-0 transition-colors duration-300 last:border-b-0 md:border-r md:p-7 md:even:border-r-0"
+                className="why-card neo-panel relative overflow-hidden rounded-content p-6 opacity-0 transition-transform duration-300 hover:-translate-y-1 md:p-7"
               >
                 <div className="relative z-10">
                   <p className="editorial-meta mb-4">0{i + 1}</p>
-                  <h3 className="text-safe mb-3 font-editorial text-[clamp(1.45rem,2.3vw,2.2rem)] font-bold leading-tight text-deep-forest">
+                  <h3 className="text-safe mb-3 font-utility text-[clamp(1.25rem,2vw,1.8rem)] font-semibold leading-tight text-deep-forest">
                     {reason.title}
                   </h3>
                   <p className="editorial-body text-pretty">
@@ -131,9 +131,9 @@ export default function Why({ title, subtitle, reasons }: WhyProps) {
           </div>
 
           <div className="mt-10 flex items-center justify-center gap-4">
-            <div className="w-16 h-px bg-foudre-pink/35" />
+            <div className="w-16 h-px bg-foudre-pink/28" />
             <div className="h-1.5 w-1.5 bg-foudre-pink/45" />
-            <div className="w-16 h-px bg-foudre-pink/35" />
+            <div className="w-16 h-px bg-foudre-pink/28" />
           </div>
         </div>
       </div>

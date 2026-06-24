@@ -38,15 +38,15 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
 
   return (
     <>
-      <header className="pointer-events-none fixed left-0 top-0 z-50 flex w-full items-center justify-between border-b border-transparent bg-transparent px-5 py-4 md:px-8">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-50 h-20 w-screen max-w-[100vw] bg-transparent px-4 py-4 md:px-8">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="pointer-events-auto min-h-11 border-y border-deep-forest/30 px-3 font-utility text-sm font-semibold text-deep-forest transition-colors hover:text-foudre-pink"
+          className="pointer-events-auto absolute left-4 top-4 min-h-11 shrink-0 rounded-content border border-current bg-transparent px-4 font-utility text-sm font-semibold text-white mix-blend-difference transition-all duration-300 hover:-translate-y-0.5 md:left-8"
         >
           菜单
         </button>
 
-        <div className={`transition-all duration-500 ${isScrolled ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        <div className={`absolute left-1/2 top-4 -translate-x-1/2 transition-all duration-500 ${isScrolled ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}`}>
           <Logo />
         </div>
 
@@ -54,7 +54,7 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="pointer-events-auto inline-flex min-h-11 items-center border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink"
+          className="pointer-events-auto absolute right-4 top-4 inline-flex min-h-11 shrink-0 items-center rounded-content border border-current bg-transparent px-4 font-utility text-sm font-semibold text-white mix-blend-difference transition-all duration-300 hover:-translate-y-0.5 md:right-8 md:px-5"
         >
           联系
         </a>
@@ -63,29 +63,29 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
       {/* Full Screen Menu */}
       <div className={`fixed inset-0 z-[100] transition-all duration-500 ${isMenuOpen ? 'visible' : 'invisible'}`}>
         <div
-          className={`absolute inset-0 bg-pale-canvas transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+          className={`absolute inset-0 bg-midnight-ink transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
           style={{ transitionTimingFunction: 'cubic-bezier(.23,1,.32,1)' }}
         />
         <div
-          className={`absolute inset-0 bg-ash-whisper transition-transform duration-500 delay-75 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+          className={`absolute inset-0 bg-midnight-ink transition-transform duration-500 delay-75 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
           style={{ transitionTimingFunction: 'cubic-bezier(.23,1,.32,1)' }}
         />
 
         <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-16">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 min-h-11 border-y border-deep-forest/30 px-3 font-utility text-sm font-semibold text-deep-forest hover:text-foudre-pink transition-colors"
+            className="absolute top-6 right-6 min-h-11 rounded-content border border-white/25 bg-transparent px-4 font-utility text-sm font-semibold text-white transition-colors hover:border-white"
           >
             关闭
           </button>
 
-          <nav className="max-w-5xl border-y border-deep-forest/20 py-8 space-y-3">
+          <nav className="max-w-5xl space-y-3">
             {normalizedMenuItems.map((item, i) => (
               <a
                 key={item}
                 href={hrefFor(item, i)}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block font-editorial text-4xl md:text-heading-lg font-bold text-deep-forest hover:text-foudre-pink transition-colors transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                className={`block font-utility text-4xl font-semibold leading-tight text-white transition-colors hover:text-bubblegum-blush md:text-display transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                 style={{
                   transitionDelay: `${150 + i * 50}ms`,
                   transitionDuration: '500ms',

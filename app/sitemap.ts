@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
   const now = new Date()
   const articles = await listNewsArticles()
-  const seoTopics = listSeoTopics()
+  const seoTopics = await listSeoTopics()
 
   return [
     {

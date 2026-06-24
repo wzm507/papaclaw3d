@@ -89,11 +89,12 @@ export default function Team({ title, members }: TeamProps) {
     <section ref={sectionRef} className="relative w-full" style={{ height: '300vh' }}>
       <div
         ref={stickyRef}
-        className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden bg-ash-whisper px-5 pb-8 pt-24 md:px-6 md:pb-10 md:pt-24"
+        className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden bg-pale-canvas px-5 pb-8 pt-24 md:px-6 md:pb-10 md:pt-24"
       >
-        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#f5f5f7_0%,#ffffff_54%,#f5f5f7_100%)]" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
         {/* Title */}
-        <h2 ref={titleRef} className="text-safe mx-auto mb-5 max-w-[13ch] text-center font-editorial text-[clamp(2.35rem,5.4vw,4.9rem)] font-bold leading-[0.98] text-deep-forest opacity-0 md:max-w-[14ch]">
+        <h2 ref={titleRef} className="text-safe mx-auto mb-5 max-w-[15ch] text-center font-utility text-[clamp(2rem,4.4vw,3.9rem)] font-semibold leading-[1.08] text-deep-forest opacity-0 md:max-w-[18ch]">
           {title}
         </h2>
 
@@ -102,7 +103,7 @@ export default function Team({ title, members }: TeamProps) {
           {['AI数据', '政企资源', '务实落地'].map((label, i) => (
             <div
               key={i}
-              className="border border-deep-forest/20 bg-paper-white px-4 py-2 font-utility text-sm font-semibold text-deep-forest transition-transform hover:-translate-y-0.5"
+              className="rounded-content border border-ash-whisper bg-paper-white px-4 py-2 font-utility text-sm font-semibold text-deep-forest shadow-[0_12px_34px_rgba(0,0,0,0.05)] transition-transform hover:-translate-y-0.5"
               style={{ animationDelay: `${i * 0.2}s` }}
             >
               {label}
@@ -113,7 +114,7 @@ export default function Team({ title, members }: TeamProps) {
         {/* Team Photo */}
         <div
           ref={imageContainerRef}
-          className="relative mx-auto mb-5 aspect-[4/5] w-full max-w-sm flex-shrink overflow-hidden rounded-card border border-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.18)] md:max-w-md"
+          className="neo-surface relative mx-auto mb-5 aspect-[4/5] w-full max-w-sm flex-shrink overflow-hidden rounded-content md:max-w-md"
           style={{ willChange: 'transform, opacity', maxHeight: '42vh' }}
         >
           {members.map((member, i) => (
@@ -142,8 +143,8 @@ export default function Team({ title, members }: TeamProps) {
             <button
               key={i}
               onClick={() => setActiveMember(i)}
-              className={`text-safe min-h-11 border px-5 py-3 font-utility text-sm font-semibold leading-tight transition-all duration-300 md:px-6 ${
-                i === activeMember ? 'border-foudre-pink bg-foudre-pink text-white' : 'border-deep-forest/20 bg-paper-white text-deep-forest hover:border-deep-forest'
+              className={`text-safe min-h-11 rounded-content border px-5 py-3 font-utility text-sm font-semibold leading-tight transition-all duration-300 md:px-6 ${
+                i === activeMember ? 'border-deep-forest bg-deep-forest text-white shadow-[0_14px_34px_rgba(0,0,0,0.18)]' : 'border-ash-whisper bg-paper-white text-deep-forest hover:border-foudre-pink/40'
               }`}
             >
               {member.name}

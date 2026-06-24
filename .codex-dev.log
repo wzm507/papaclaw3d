@@ -6,44 +6,49 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 2.7s
+ ✓ Ready in 4s
  ○ Compiling / ...
- ✓ Compiled / in 3.1s (619 modules)
- GET /admin 200 in 3341ms
- GET /_next/static/webpack/b89ea05d1f246a34.webpack.hot-update.json 404 in 3485ms
- GET / 200 in 3460ms
- GET /admin 200 in 157ms
- ○ Compiling /[topic] ...
- ✓ Compiled /[topic] in 554ms (628 modules)
- GET /middle-east-government-resources 200 in 1219ms
- GET /foreign-trade-factory-global-sales 200 in 1218ms
- GET /cross-border-finance 200 in 1207ms
- GET /ai-global-expansion 200 in 1255ms
- GET / 200 in 107ms
- ✓ Compiled in 446ms (305 modules)
- ○ Compiling /_error ...
- GET / 500 in 89ms
- GET /admin 500 in 111ms
- GET /_next/static/webpack/5905e76f47a70833.webpack.hot-update.json 404 in 1260ms
- GET / 500 in 211ms
- GET /_next/static/webpack/5905e76f47a70833.webpack.hot-update.json 404 in 379ms
- GET /admin 200 in 423ms
- GET / 500 in 130ms
- GET / 500 in 515ms
- GET / 500 in 93ms
- GET / 500 in 80ms
- GET / 500 in 59ms
- ✓ Compiled /_not-found in 241ms (854 modules)
- GET / 200 in 103ms
- ✓ Compiled in 944ms (840 modules)
- ✓ Compiled in 451ms (851 modules)
- GET /admin 200 in 66ms
- ✓ Compiled /_not-found in 215ms (840 modules)
- GET /admin/seo-topics 404 in 76ms
- ✓ Compiled in 140ms (493 modules)
- ○ Compiling /admin/seo-topics ...
- ✓ Compiled /admin/seo-topics in 658ms (854 modules)
- GET /admin/seo-topics 404 in 734ms
- GET /admin/seo-topics 200 in 66ms
- ✓ Compiled /api/seo-topics in 274ms (399 modules)
- GET /api/seo-topics 200 in 476ms
+ ✓ Compiled / in 1445ms (587 modules)
+ GET / 200 in 1896ms
+ ○ Compiling /admin/login ...
+ ✓ Compiled /admin/login in 1158ms (602 modules)
+ GET /admin/login 200 in 1353ms
+ ✓ Compiled /admin/seo-topics in 268ms (616 modules)
+ GET /admin/seo-topics 200 in 384ms
+ ✓ Compiled /news in 430ms (620 modules)
+ GET /news 200 in 555ms
+ ✓ Compiled /[topic] in 372ms (627 modules)
+ GET /ai-global-expansion 200 in 998ms
+ ✓ Compiled /llms.txt in 146ms (361 modules)
+ GET /llms.txt 200 in 805ms
+ ✓ Compiled /sitemap.xml in 292ms (396 modules)
+ GET /sitemap.xml 200 in 1525ms
+ GET / 200 in 286ms
+ GET /admin/login 200 in 43ms
+ GET /admin/seo-topics 200 in 58ms
+ GET /news 200 in 82ms
+ GET /ai-global-expansion 200 in 79ms
+ GET /llms.txt 200 in 29ms
+ GET /sitemap.xml 200 in 39ms
+ GET / 200 in 118ms
+ GET / 200 in 85ms
+ ✓ Compiled /[topic] in 168ms (336 modules)
+ ✓ Compiled (388 modules)
+ GET /llms-full.txt 200 in 1852ms
+ GET /llms.txt 200 in 1853ms
+ GET /ai-global-expansion 200 in 1850ms
+ GET /api/seo-topics 200 in 1854ms
+ GET /sitemap.xml 200 in 1851ms
+ GET /api/news 200 in 1856ms
+ GET /ai-news-feed 200 in 1858ms
+ GET /news 200 in 1858ms
+ GET / 200 in 259ms
+ GET / 200 in 272ms
+ GET /ai-news-feed 200 in 160ms
+ GET /llms.txt 200 in 154ms
+ GET /news 200 in 178ms
+ GET /api/seo-topics 200 in 155ms
+ GET /llms-full.txt 200 in 153ms
+ GET /api/news 200 in 160ms
+ GET /sitemap.xml 200 in 126ms
+ GET /ai-global-expansion 200 in 141ms

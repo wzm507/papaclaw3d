@@ -98,15 +98,15 @@ export default function Projects({ title, items }: ProjectsProps) {
         className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden px-6 py-8"
         style={{ willChange: 'transform' }}
       >
-        <div className="absolute inset-0 bg-pale-canvas" />
-        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
-        <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/15" />
+        <div className="absolute inset-0 bg-paper-white" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
+        <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/10" />
 
         <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-center">
           <p className="editorial-kicker text-center mb-4">Five Service Lines</p>
           <h2
             ref={titleRef}
-            className="text-safe mx-auto mb-6 max-w-[14ch] text-center font-editorial text-[clamp(2.1rem,4.6vw,4.3rem)] font-bold leading-[1.02] text-deep-forest md:max-w-[16ch]"
+            className="text-safe mx-auto mb-6 max-w-[16ch] text-center font-utility text-[clamp(1.9rem,4vw,3.6rem)] font-semibold leading-[1.08] text-deep-forest md:max-w-[20ch]"
             style={{ willChange: 'transform, opacity' }}
           >
             {title}
@@ -121,8 +121,8 @@ export default function Projects({ title, items }: ProjectsProps) {
               <button
                 key={project.id}
                 onClick={() => setActiveProject(i)}
-                className={`project-thumb relative h-20 w-20 overflow-hidden rounded-card border transition-all duration-300 md:h-24 md:w-24 ${
-                  i === activeProject ? 'border-foudre-pink opacity-100 scale-105 shadow-[0_12px_32px_rgba(17,17,15,0.16)]' : 'border-deep-forest/15 opacity-55 hover:opacity-100'
+                className={`project-thumb relative h-20 w-20 overflow-hidden rounded-content border bg-white transition-all duration-300 md:h-24 md:w-24 ${
+                  i === activeProject ? 'border-deep-forest opacity-100 scale-105 shadow-[0_14px_34px_rgba(0,0,0,0.18)]' : 'border-ash-whisper opacity-60 shadow-[0_10px_28px_rgba(0,0,0,0.06)] hover:opacity-100'
                 }`}
                 aria-label={`查看${project.title}`}
               >
@@ -143,7 +143,7 @@ export default function Projects({ title, items }: ProjectsProps) {
             className="relative w-full"
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="relative aspect-[16/9] max-h-[48vh] overflow-hidden rounded-content border border-deep-forest/20 mx-auto shadow-[0_28px_80px_rgba(17,17,15,0.18)]">
+            <div className="neo-surface relative mx-auto aspect-[16/9] max-h-[48vh] overflow-hidden rounded-content p-1">
               <img
                 src={items[activeProject].thumbnail}
                 alt={items[activeProject].title}
@@ -153,16 +153,16 @@ export default function Projects({ title, items }: ProjectsProps) {
                 loading="eager"
               />
 
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/82 via-black/45 to-transparent p-5 md:p-7">
+              <div className="absolute bottom-1 left-1 right-1 rounded-b-[6px] bg-gradient-to-t from-midnight-ink/88 via-midnight-ink/54 to-transparent p-5 md:p-7">
                 <p className="font-utility text-xs uppercase text-white/65 mb-2">Papa Claw Capability</p>
-                <h3 className="text-safe mb-3 font-editorial text-[clamp(1.4rem,2.8vw,2.35rem)] font-bold leading-tight text-white">
+                <h3 className="text-safe mb-3 font-utility text-[clamp(1.35rem,2.5vw,2.1rem)] font-semibold leading-tight text-white">
                   {items[activeProject].title}
                 </h3>
                 <div className="mb-4 flex flex-wrap gap-2">
                   {items[activeProject].tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-safe border border-white/30 bg-white/12 px-3 py-1 font-utility text-sm leading-tight text-white backdrop-blur-sm"
+                      className="text-safe rounded-content border border-white/22 bg-white/12 px-3 py-1 font-utility text-sm leading-tight text-white"
                     >
                       {tag}
                     </span>
@@ -172,16 +172,16 @@ export default function Projects({ title, items }: ProjectsProps) {
                   href="#ai-source"
                   className="font-utility text-sm font-semibold text-white underline underline-offset-4 hover:text-bubblegum-blush transition-colors"
                 >
-                  查看AI可读官方事实
+                  查看业务专题
                 </a>
               </div>
 
               <button
                 onClick={() => toggleLike(items[activeProject].id)}
-                className={`absolute top-4 right-4 min-h-11 min-w-12 border px-3 flex items-center justify-center font-utility text-sm font-semibold transition-all duration-300 ${
+                className={`absolute right-4 top-4 flex min-h-11 min-w-12 items-center justify-center rounded-content border px-3 font-utility text-sm font-semibold transition-all duration-300 ${
                   liked.includes(items[activeProject].id)
-                    ? 'border-foudre-pink bg-foudre-pink text-white'
-                    : 'border-white/30 bg-black/20 backdrop-blur-sm text-white'
+                    ? 'border-bubblegum-blush bg-bubblegum-blush text-deep-forest'
+                    : 'border-white/30 bg-black/20 text-white'
                 }`}
               >
                 {liked.includes(items[activeProject].id) ? '已选' : '关注'}
@@ -191,7 +191,7 @@ export default function Projects({ title, items }: ProjectsProps) {
             <div className="flex justify-center items-center gap-4 mt-4">
               <button
                 onClick={() => setActiveProject((prev) => (prev - 1 + items.length) % items.length)}
-                className="w-12 h-12 border border-deep-forest bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink hover:border-foudre-pink transition-colors"
+                className="flex h-12 w-12 items-center justify-center rounded-content border border-deep-forest/10 bg-deep-forest text-white shadow-[0_14px_34px_rgba(16,35,31,0.14)] transition-colors hover:bg-foudre-pink"
                 aria-label="上一个业务板块"
               >
                 ←
@@ -202,7 +202,7 @@ export default function Projects({ title, items }: ProjectsProps) {
                     key={i}
                     onClick={() => setActiveProject(i)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      i === activeProject ? 'bg-foudre-pink w-6' : 'bg-deep-forest/30'
+                      i === activeProject ? 'bg-foudre-pink w-6' : 'bg-deep-forest/24'
                     }`}
                     aria-label={`切换到第${i + 1}个业务板块`}
                   />
@@ -210,7 +210,7 @@ export default function Projects({ title, items }: ProjectsProps) {
               </div>
               <button
                 onClick={() => setActiveProject((prev) => (prev + 1) % items.length)}
-                className="w-12 h-12 border border-deep-forest bg-deep-forest text-white flex items-center justify-center hover:bg-foudre-pink hover:border-foudre-pink transition-colors"
+                className="flex h-12 w-12 items-center justify-center rounded-content border border-deep-forest/10 bg-deep-forest text-white shadow-[0_14px_34px_rgba(16,35,31,0.14)] transition-colors hover:bg-foudre-pink"
                 aria-label="下一个业务板块"
               >
                 →

@@ -42,10 +42,9 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
         0
       )
 
-      tl.fromTo(
+      tl.set(
         titleRef.current?.querySelectorAll('.hero-title-line') || [],
-        { y: 80, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.05, ease: 'power2.out' },
+        { y: 0, opacity: 1 },
         0
       )
 
@@ -109,18 +108,17 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
             loading="eager"
             style={{ transform: 'scale(1.15)' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/65" />
-          <div className="absolute inset-0 bg-deep-forest/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-b from-midnight-ink/70 via-midnight-ink/18 to-midnight-ink/82" />
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pb-8 pt-24">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 pb-8 pt-24">
           {/* Title */}
-          <div ref={titleRef} className="relative z-20 mb-8 w-full max-w-6xl text-center">
-            <p className="hero-title-line editorial-kicker mb-5 text-white/80">
+          <div ref={titleRef} className="relative z-20 mb-8 w-full max-w-7xl text-center">
+            <p className="hero-title-line mb-5 font-utility text-xs font-semibold uppercase text-white drop-shadow-[0_8px_22px_rgba(0,0,0,0.45)]">
               政企资源赋能 / AI务实出海
             </p>
-            <h1 className="mx-auto max-w-full whitespace-nowrap text-[clamp(3rem,10vw,8.25rem)] font-bold leading-[0.86] text-white">
+            <h1 className="mx-auto flex max-w-full flex-wrap justify-center font-utility text-[clamp(2.6rem,9.5vw,8.6rem)] font-semibold leading-[0.9] text-white drop-shadow-[0_22px_48px_rgba(0,0,0,0.28)]">
               {title.split('').map((letter, i) => (
                 <span
                   key={i}
@@ -131,11 +129,11 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
                 </span>
               ))}
             </h1>
-            <div className="mx-auto mt-6 max-w-4xl space-y-3 border-y border-white/25 py-4 md:py-5">
-              <p className="hero-title-line text-safe font-editorial text-[clamp(1.45rem,3.2vw,2.6rem)] font-bold leading-tight text-white/95 text-balance">
+            <div className="mx-auto mt-7 max-w-4xl space-y-3">
+              <p className="hero-title-line text-safe mx-auto max-w-[min(42rem,88vw)] font-utility text-[clamp(1rem,4.8vw,2.25rem)] font-semibold leading-tight text-white text-balance drop-shadow-[0_10px_28px_rgba(0,0,0,0.5)]">
                 {subtitle1}
               </p>
-              <p className="hero-title-line text-safe font-utility text-subheading font-semibold text-white/78">
+              <p className="hero-title-line text-safe mx-auto max-w-[min(38rem,86vw)] font-utility text-[clamp(0.95rem,3.8vw,1.3rem)] font-medium leading-relaxed text-white drop-shadow-[0_8px_22px_rgba(0,0,0,0.45)]">
                 {subtitle2}
               </p>
             </div>
@@ -144,7 +142,7 @@ export default function Hero({ title, subtitle1, subtitle2, backgroundImage, car
           {/* Cards */}
           <div
             ref={cardsRef}
-            className="relative w-full max-w-md mx-auto aspect-[3/4] mb-8 perspective-1000"
+            className="relative mx-auto mb-8 aspect-[3/4] w-full max-w-[min(22rem,74vw)] perspective-1000"
             style={{ willChange: 'transform, opacity' }}
           >
             {cards.map((card, i) => (

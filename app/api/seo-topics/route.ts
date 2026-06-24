@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { submitIndexNowUrls } from '../../lib/indexnow'
+import { listSeoTopics, saveSeoTopics } from '../../lib/seo-topics'
 import type { SeoTopic } from '../../lib/seo-topics'
 
-const SEO_TOPICS_PATH = path.join(process.cwd(), 'data', 'seo-topics.json')
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 function normalizeSlug(value: string) {
   return value
@@ -16,6 +17,10 @@ function normalizeSlug(value: string) {
 function normalizeList(value: unknown): string[] {
   if (!Array.isArray(value)) return []
   return value.map((item) => String(item).trim()).filter(Boolean)
+}
+
+function siteUrl() {
+  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
 }
 
 function normalizeTopics(topics: Partial<SeoTopic>[]): SeoTopic[] {
@@ -45,8 +50,7 @@ function normalizeTopics(topics: Partial<SeoTopic>[]): SeoTopic[] {
 
 export async function GET() {
   try {
-    const fileContent = fs.readFileSync(SEO_TOPICS_PATH, 'utf-8')
-    return NextResponse.json(JSON.parse(fileContent))
+    return NextResponse.json(await listSeoTopics())
   } catch (error) {
     return NextResponse.json(
       { error: 'Failed to read SEO topics', details: String(error) },
@@ -71,13 +75,32 @@ export async function POST(request: Request) {
       slugs.add(topic.slug)
     }
 
-    const dataDir = path.dirname(SEO_TOPICS_PATH)
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true })
+    await saveSeoTopics(normalized)
+
+    let indexNow: { ok: boolean; status: number; submitted: number } | null = null
+    try {
+      const baseUrl = siteUrl()
+      const result = await submitIndexNowUrls([
+        baseUrl,
+        `${baseUrl}/sitemap.xml`,
+        `${baseUrl}/llms.txt`,
+        `${baseUrl}/llms-full.txt`,
+        ...normalized.map((topic) => `${baseUrl}/${topic.slug}`),
+      ])
+      indexNow = {
+        ok: result.ok,
+        status: result.status,
+        submitted: result.submitted,
+      }
+    } catch {
+      indexNow = {
+        ok: false,
+        status: 0,
+        submitted: 0,
+      }
     }
 
-    fs.writeFileSync(SEO_TOPICS_PATH, `${JSON.stringify(normalized, null, 2)}\n`, 'utf-8')
-    return NextResponse.json({ success: true, topics: normalized })
+    return NextResponse.json({ success: true, topics: normalized, indexNow })
   } catch (error) {
     return NextResponse.json(
       { error: 'Failed to write SEO topics', details: String(error) },

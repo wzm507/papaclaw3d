@@ -108,17 +108,17 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
         className="relative w-full h-screen flex items-center justify-center overflow-hidden"
         style={{ willChange: 'transform' }}
       >
-        {/* Background Transition Overlay - 保持 ash-whisper 以匹配 Team section */}
+        {/* Background Transition Overlay */}
         <div
           ref={bgTransitionRef}
-          className="absolute inset-0 bg-ash-whisper"
+          className="absolute inset-0 bg-pale-canvas"
           style={{ opacity: 0 }}
         />
 
         {/* Original Background */}
-        <div className="absolute inset-0 bg-ash-whisper" />
-        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
-        <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/15" />
+        <div className="absolute inset-0 bg-pale-canvas" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
+        <div className="absolute inset-x-6 bottom-10 border-t border-deep-forest/10" />
 
         {/* Red Overlay */}
         <div
@@ -135,8 +135,8 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
             className="max-w-xs"
             style={{ willChange: 'transform, opacity' }}
           >
-            <p className="editorial-kicker mb-3">Editorial Thesis</p>
-            <p className="font-editorial text-heading font-bold text-deep-forest text-balance">
+            <p className="editorial-kicker mb-3">Operating Thesis</p>
+            <p className="font-utility text-heading font-semibold text-deep-forest text-balance">
               {leftText}
             </p>
           </div>
@@ -147,10 +147,10 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
             className="relative"
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="relative aspect-video overflow-hidden rounded-content border border-deep-forest/25 bg-black shadow-[0_26px_80px_rgba(17,17,15,0.18)]">
+            <div className="neo-surface relative aspect-video overflow-hidden rounded-content bg-black p-1 shadow-[0_30px_90px_rgba(16,35,31,0.16)]">
               <iframe
                 src={videoUrl}
-                className="w-full h-full"
+                className="h-full w-full rounded-[6px]"
                 allow="autoplay; fullscreen"
                 allowFullScreen
                 title="Company Video"
@@ -164,7 +164,7 @@ export default function Agency({ leftText, rightText, videoUrl }: AgencyProps) {
             className="ml-auto max-w-xs"
             style={{ willChange: 'transform, opacity' }}
           >
-            <p className="font-editorial text-heading font-bold text-foudre-pink text-right text-balance">
+            <p className="font-utility text-heading font-semibold text-deep-forest text-right text-balance">
               {rightText}
             </p>
           </div>

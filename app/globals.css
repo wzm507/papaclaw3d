@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --color-pale-canvas: #f7f3ea;
-    --color-deep-forest: #153827;
-    --color-foudre-pink: #9f1748;
-    --color-ash-whisper: #ebe5da;
-    --color-bubblegum-blush: #cfa699;
-    --color-slate-tint: #70786f;
-    --color-midnight-ink: #11110f;
+    --color-pale-canvas: #f5f5f7;
+    --color-deep-forest: #111111;
+    --color-foudre-pink: #0071e3;
+    --color-ash-whisper: #e8e8ed;
+    --color-bubblegum-blush: #d7ff38;
+    --color-slate-tint: #6e6e73;
+    --color-midnight-ink: #000000;
   }
 
   html {
@@ -19,25 +19,23 @@
 
   body {
     @apply bg-pale-canvas text-deep-forest;
-    font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
+    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
     overflow-x: hidden;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    background-image:
-      linear-gradient(rgba(17, 17, 15, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(17, 17, 15, 0.018) 1px, transparent 1px);
-    background-size: 28px 28px, 28px 28px;
+    background: #f5f5f7;
+    background-attachment: fixed;
   }
 
   ::selection {
-    background: rgba(176, 24, 77, 0.18);
+    background: rgba(0, 113, 227, 0.18);
   }
 
   h1,
   h2,
   h3 {
-    font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
+    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
     letter-spacing: 0;
     overflow-wrap: anywhere;
     word-break: break-word;
@@ -69,16 +67,16 @@
   }
 
   .editorial-kicker {
-    @apply font-utility text-caption uppercase text-foudre-pink;
-    letter-spacing: 0.08em;
+    @apply font-utility text-caption uppercase text-slate-tint;
+    letter-spacing: 0;
   }
 
   .editorial-rule {
-    @apply border-t border-deep-forest/20;
+    @apply border-t border-deep-forest/10;
   }
 
   .editorial-card {
-    @apply rounded-content border border-deep-forest/20 bg-paper-white/80 shadow-none;
+    @apply rounded-content border border-ash-whisper bg-paper-white shadow-[0_22px_60px_rgba(0,0,0,0.06)];
   }
 
   .editorial-measure {
@@ -86,25 +84,37 @@
   }
 
   .editorial-section {
-    @apply relative overflow-hidden px-6 py-24 md:py-32;
+    @apply relative overflow-hidden px-5 py-20 md:px-6 md:py-28;
   }
 
   .editorial-heading {
-    @apply font-editorial text-heading-lg font-bold text-deep-forest text-balance;
+    @apply font-utility text-heading-lg font-semibold text-deep-forest text-balance;
     max-width: 100%;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
   .editorial-body {
-    @apply font-editorial text-body text-deep-forest/75;
+    @apply font-utility text-body text-slate-tint;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
   .editorial-meta {
-    @apply font-utility text-caption uppercase text-deep-forest/55;
-    letter-spacing: 0.08em;
+    @apply font-utility text-caption uppercase text-slate-tint;
+    letter-spacing: 0;
+  }
+
+  .neo-surface {
+    @apply border border-white/70 bg-paper-white shadow-[0_30px_80px_rgba(0,0,0,0.12)];
+  }
+
+  .neo-panel {
+    @apply border border-ash-whisper bg-paper-white shadow-[0_18px_44px_rgba(0,0,0,0.06)];
+  }
+
+  .neo-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-content border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-foudre-pink hover:bg-foudre-pink;
   }
 
   .is-inview {

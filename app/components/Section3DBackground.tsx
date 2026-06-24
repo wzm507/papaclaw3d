@@ -36,24 +36,24 @@ export type SectionTheme = 'pink' | 'green' | 'blue' | 'orange'
 
 const themeColors: Record<SectionTheme, { primary: string; secondary: string; accent: string }> = {
   pink: {
-    primary: '#db3c8a',
-    secondary: '#ff85c0',
-    accent: '#ffc4e1',
+    primary: '#0071e3',
+    secondary: '#d7ff38',
+    accent: '#ffffff',
   },
   green: {
-    primary: '#00522d',
-    secondary: '#2d8a5e',
-    accent: '#7bc49a',
+    primary: '#111111',
+    secondary: '#0071e3',
+    accent: '#f5f5f7',
   },
   blue: {
-    primary: '#1e40af',
-    secondary: '#3b82f6',
-    accent: '#93c5fd',
+    primary: '#0071e3',
+    secondary: '#7ab8ff',
+    accent: '#ffffff',
   },
   orange: {
-    primary: '#c2410c',
-    secondary: '#f97316',
-    accent: '#fdba74',
+    primary: '#111111',
+    secondary: '#d7ff38',
+    accent: '#ffffff',
   },
 }
 
@@ -164,9 +164,9 @@ function FloatingShape({
       <meshStandardMaterial
         color={color}
         transparent
-        opacity={0.25}
-        roughness={0.3}
-        metalness={0.4}
+        opacity={0.14}
+        roughness={0.35}
+        metalness={0.42}
       />
     </mesh>
   )
@@ -189,11 +189,11 @@ function ParticleField({
   const config = useMemo(() => {
     switch (layer) {
       case 'near':
-        return { count: 80, zRange: [-2, 2], size: 0.06, opacity: 0.6, speed: 0.4 }
+        return { count: 32, zRange: [-2, 2], size: 0.035, opacity: 0.2, speed: 0.32 }
       case 'mid':
-        return { count: 120, zRange: [-5, -2], size: 0.04, opacity: 0.45, speed: 0.25 }
+        return { count: 48, zRange: [-5, -2], size: 0.026, opacity: 0.16, speed: 0.2 }
       case 'far':
-        return { count: 160, zRange: [-10, -5], size: 0.025, opacity: 0.3, speed: 0.08 }
+        return { count: 64, zRange: [-10, -5], size: 0.018, opacity: 0.1, speed: 0.08 }
     }
   }, [layer])
 
@@ -269,7 +269,7 @@ function SceneContent({
     const geometries: Array<'box' | 'sphere' | 'torus'> = ['box', 'sphere', 'torus']
     const result = []
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       const geo = geometries[i % 3]
       const x = (rng(i) - 0.5) * 12
       const y = (rng(i + 10) - 0.5) * 8

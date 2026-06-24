@@ -111,7 +111,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
 
   return (
     <SmoothScrollProvider>
-      <main className="min-h-screen bg-paper-white">
+      <main className="min-h-screen bg-pale-canvas">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -123,9 +123,10 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
         <article className="editorial-section pt-36">
-          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/15" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f5f5f7_100%)]" />
+          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/10" />
           <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
-            <aside className="space-y-8 border-y border-deep-forest/20 py-6 lg:sticky lg:top-28 lg:self-start">
+            <aside className="neo-panel space-y-8 rounded-content p-6 lg:sticky lg:top-28 lg:self-start">
               <div>
                 <p className="editorial-meta mb-2">Published</p>
                 <p className="font-utility text-sm font-semibold text-deep-forest">{formatDate(article.publishedAt)}</p>
@@ -148,7 +149,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
                 <p className="editorial-meta mb-3">AI Keywords</p>
                 <div className="flex flex-wrap gap-2">
                   {article.keywords.map((keyword) => (
-                    <span key={keyword} className="border border-deep-forest/20 px-3 py-1 font-utility text-xs text-deep-forest/75">
+                    <span key={keyword} className="rounded-content border border-ash-whisper bg-paper-white px-3 py-1 font-utility text-xs text-slate-tint">
                       {keyword}
                     </span>
                   ))}
@@ -156,7 +157,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
               </div>
               <Link
                 href="/news"
-                className="inline-flex min-h-11 items-center border border-deep-forest px-4 font-utility text-sm font-semibold text-deep-forest transition-colors hover:border-foudre-pink hover:text-foudre-pink"
+                className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-deep-forest px-4 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink"
               >
                 返回新闻列表
               </Link>
@@ -164,28 +165,28 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
 
             <div className="max-w-4xl">
               <p className="editorial-kicker mb-4">Papa Claw News</p>
-              <h1 className="font-editorial text-[clamp(2.5rem,8vw,5.75rem)] font-bold leading-[0.94] text-deep-forest">
+              <h1 className="font-utility text-[clamp(2.1rem,5.8vw,4.6rem)] font-semibold leading-[1.05] text-deep-forest">
                 {article.searchableTitle || article.title}
               </h1>
-              <p className="editorial-body mt-8 border-y border-deep-forest/20 py-6 text-xl leading-relaxed">
+              <p className="editorial-body neo-panel mt-8 rounded-content p-6 text-xl leading-relaxed">
                 {article.aiSummary}
               </p>
 
               <section className="mt-12 space-y-6">
                 {paragraphs.map((paragraph, index) => (
-                  <p key={index} className="font-editorial text-xl leading-relaxed text-deep-forest md:text-2xl">
+                  <p key={index} className="font-utility text-lg leading-relaxed text-deep-forest md:text-xl">
                     {paragraph}
                   </p>
                 ))}
               </section>
 
               {article.faq.length > 0 && (
-                <section className="mt-16 border-y border-deep-forest/20 py-8">
+                <section className="neo-panel mt-16 rounded-content p-7">
                   <p className="editorial-kicker mb-6">AI Ready Q&A</p>
                   <div className="space-y-7">
                     {article.faq.map((item) => (
                       <div key={item.question}>
-                        <h2 className="font-editorial text-2xl font-bold leading-snug text-deep-forest">
+                        <h2 className="font-utility text-2xl font-semibold leading-snug text-deep-forest">
                           {item.question}
                         </h2>
                         <p className="editorial-body mt-3">

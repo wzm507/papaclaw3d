@@ -123,12 +123,12 @@ export default function Expertises(_props: ExpertisesProps) {
     <section ref={sectionRef} className="relative w-full bg-pale-canvas md:h-[250vh]">
       <div ref={stickyRef} className="relative min-h-dvh overflow-hidden px-6 py-24 md:flex md:h-dvh md:items-center md:py-20">
         <Section3DBackground theme="pink" />
-        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/15" />
+        <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
 
         <div className="relative z-20 mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div>
             <p className="editorial-kicker mb-4 text-center md:text-left">Company Strength</p>
-            <h2 ref={titleRef} className="text-safe mx-auto max-w-[12ch] text-center font-editorial text-[clamp(2.35rem,5vw,4.6rem)] font-bold leading-[1.02] text-deep-forest opacity-0 md:mx-0 md:text-left">
+            <h2 ref={titleRef} className="text-safe mx-auto max-w-[13ch] text-center font-utility text-[clamp(2rem,4.2vw,3.7rem)] font-semibold leading-[1.08] text-deep-forest opacity-0 md:mx-0 md:text-left">
               Papa Claw爬爬虾的真实落地能力
             </h2>
             <p className="editorial-body text-pretty mx-auto mt-6 max-w-xl text-center md:mx-0 md:text-left">
@@ -136,16 +136,16 @@ export default function Expertises(_props: ExpertisesProps) {
             </p>
           </div>
 
-          <div ref={cardsRef} className="grid grid-cols-1 gap-px overflow-hidden rounded-content border border-deep-forest/20 bg-deep-forest/20 shadow-[0_24px_70px_rgba(17,17,15,0.12)] sm:grid-cols-2">
+          <div ref={cardsRef} className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {strengthItems.map((expertise) => (
               <div
                 key={expertise.icon}
-                className="expertise-card relative overflow-hidden bg-paper-white/90 p-5 opacity-0 md:p-7"
+                className="expertise-card neo-panel relative overflow-hidden rounded-content p-5 opacity-0 md:p-7"
               >
                 <div className="editorial-meta relative z-10 mb-5">
                   {expertise.icon}
                 </div>
-                <h3 className="text-safe relative z-10 mb-3 font-editorial text-[clamp(1.4rem,2.2vw,2rem)] font-bold leading-tight text-deep-forest">
+                <h3 className="text-safe relative z-10 mb-3 font-utility text-[clamp(1.25rem,2vw,1.75rem)] font-semibold leading-tight text-deep-forest">
                   {expertise.title}
                 </h3>
                 <p className="editorial-body text-pretty relative z-10">

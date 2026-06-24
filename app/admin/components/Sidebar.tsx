@@ -4,17 +4,17 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 
 const navItems = [
-  { href: '/admin', icon: '🏠', label: '仪表盘' },
-  { href: '/admin/company', icon: '🏢', label: '企业信息' },
-  { href: '/admin/hero', icon: '🎯', label: '首页配置' },
-  { href: '/admin/team', icon: '👥', label: '团队管理' },
-  { href: '/admin/projects', icon: '💼', label: '项目管理' },
+  { href: '/admin', icon: 'DS', label: '仪表盘' },
+  { href: '/admin/company', icon: 'CO', label: '企业信息' },
+  { href: '/admin/hero', icon: 'HM', label: '首页配置' },
+  { href: '/admin/team', icon: 'TM', label: '团队管理' },
+  { href: '/admin/projects', icon: 'PR', label: '项目管理' },
   { href: '/admin/seo-topics', icon: 'SEO', label: 'SEO专题页' },
-  { href: '/admin/expertises', icon: '⚡', label: '专业服务' },
-  { href: '/admin/process', icon: '📋', label: '工作流程' },
-  { href: '/admin/why', icon: '💎', label: '优势理由' },
-  { href: '/admin/faq', icon: '❓', label: 'FAQ管理' },
-  { href: '/admin/footer', icon: '📎', label: '页脚配置' },
+  { href: '/admin/expertises', icon: 'SV', label: '专业服务' },
+  { href: '/admin/process', icon: 'FL', label: '工作流程' },
+  { href: '/admin/why', icon: 'AD', label: '优势理由' },
+  { href: '/admin/faq', icon: 'QA', label: 'FAQ管理' },
+  { href: '/admin/footer', icon: 'FT', label: '页脚配置' },
 ]
 
 export default function Sidebar() {
@@ -32,31 +32,35 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="w-[260px] min-h-screen bg-deep-forest flex flex-col shrink-0">
+    <aside className="flex min-h-screen w-[280px] shrink-0 flex-col bg-midnight-ink">
       {/* Logo */}
-      <div className="px-6 py-6 border-b border-white/10">
+      <div className="border-b border-white/10 px-6 py-7">
         <Link href="/admin" className="block">
-          <h1 className="text-2xl font-bold text-white tracking-tight font-clash">
+          <h1 className="font-utility text-2xl font-semibold tracking-tight text-white">
             PAPACLAW
           </h1>
-          <p className="text-white/40 text-xs mt-1">CMS 管理后台</p>
+          <p className="mt-1 font-utility text-xs text-white/45">Content Studio</p>
         </Link>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 py-4 px-3 overflow-y-auto">
-        <ul className="space-y-1">
+      <nav className="flex-1 overflow-y-auto px-3 py-4">
+        <ul className="space-y-1.5">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-badge text-sm transition-colors duration-150 ${
+                className={`flex min-h-11 items-center gap-3 rounded-content px-3 py-2.5 font-utility text-sm transition-colors duration-150 ${
                   isActive(item.href)
-                    ? 'bg-foudre-pink text-white font-medium'
-                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                    ? 'bg-white text-midnight-ink font-semibold'
+                    : 'text-white/62 hover:bg-white/10 hover:text-white'
                 }`}
               >
-                <span className="text-base">{item.icon}</span>
+                <span className={`flex h-7 w-9 items-center justify-center rounded-content border text-[10px] font-semibold ${
+                  isActive(item.href) ? 'border-midnight-ink/10 bg-midnight-ink text-white' : 'border-white/12 bg-white/5 text-white/62'
+                }`}>
+                  {item.icon}
+                </span>
                 <span>{item.label}</span>
               </Link>
             </li>
@@ -65,12 +69,12 @@ export default function Sidebar() {
       </nav>
 
       {/* Logout */}
-      <div className="px-3 py-4 border-t border-white/10">
+      <div className="border-t border-white/10 px-3 py-4">
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-badge text-sm text-white/60 hover:text-white hover:bg-white/10 transition-colors duration-150 w-full"
+          className="flex min-h-11 w-full items-center gap-3 rounded-content px-3 py-2.5 font-utility text-sm text-white/60 transition-colors duration-150 hover:bg-white/10 hover:text-white"
         >
-          <span className="text-base">🚪</span>
+          <span className="flex h-7 w-9 items-center justify-center rounded-content border border-white/12 bg-white/5 text-[10px] font-semibold">OUT</span>
           <span>退出登录</span>
         </button>
       </div>
