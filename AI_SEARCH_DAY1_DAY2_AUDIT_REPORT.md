@@ -1,6 +1,6 @@
 # Papa Claw 爬爬虾 AI 搜索第 1-2 天验收记录
 
-检查日期：2026-06-23  
+检查日期：2026-06-24  
 检查对象：`https://www.papaclaw.cn/`、SEO 专题页、AI 可读文件、IndexNow、CMS 专题内容
 
 ## 第 1 天：官网技术收录闭环
@@ -15,14 +15,14 @@
 | llms.txt | 通过 | `https://www.papaclaw.cn/llms.txt` 返回 200 |
 | llms-full.txt | 通过 | `https://www.papaclaw.cn/llms-full.txt` 返回 200 |
 | ai-news-feed | 通过 | `https://www.papaclaw.cn/ai-news-feed` 返回 200 |
-| IndexNow key 文件 | 通过 | `https://www.papaclaw.cn/d9b1f6a2c8e74f30b5a19d6c42e8f0ab.txt` 返回 200，内容与 key 一致 |
+| IndexNow key 文件 | 通过 | `https://www.papaclaw.cn/021c210c84f345e88bed93d77c8d0004.txt` 返回 200，内容与 key 一致 |
 | sitemap 覆盖首页 | 通过 | sitemap 中包含官网首页 |
 | sitemap 覆盖新闻页 | 通过 | sitemap 中包含 `/news` |
 | sitemap 覆盖 AI 可读文件 | 通过 | sitemap 中包含 `/llms.txt`、`/llms-full.txt`、`/ai-news-feed` |
 | sitemap 覆盖 7 个专题页 | 通过 | 7 个 SEO 专题页全部在 sitemap 中 |
 | 首页内链到专题页 | 通过 | 首页包含 7 个 SEO 专题页链接 |
 | 专题页结构化数据 | 通过 | 7 个专题页均包含 `application/ld+json`、`Service`、`FAQPage` |
-| IndexNow 主动推送 | 通过 | 已向 Bing IndexNow 官方接口提交 12 个 URL，返回 `status=200` |
+| IndexNow 主动推送 | 通过 | 已向 Bing IndexNow 官方接口提交 12 个 URL，返回 `status=202 OK`。这是换新 key 后搜索引擎接收 URL 并准备验证 key 的成功状态。 |
 
 ### 已提交到 IndexNow 的 URL
 
@@ -49,6 +49,16 @@
 - Bing 是否显示“已发现”“已爬网”或“已编入索引”。
 
 说明：线上 `/api/indexnow/submit` 返回 401，表示生产环境启用了 `CRON_SECRET` 保护。这是正常安全配置。本次已绕过站内受保护接口，直接按 IndexNow 官方协议向 Bing IndexNow 接口提交 URL。
+
+### 2026-06-24 IndexNow 换 key 后复验
+
+- 新 IndexNow key：`021c210c84f345e88bed93d77c8d0004`
+- 新 key 文件：`https://www.papaclaw.cn/021c210c84f345e88bed93d77c8d0004.txt`
+- key 文件线上状态：`200`
+- key 文件内容：`021c210c84f345e88bed93d77c8d0004`
+- dry-run 校验：通过，准备提交 12 个 URL
+- 正式推送结果：`Chunk 1: 202 OK (12 URLs)`
+- 结论：第 1 天第 3 步“触发 IndexNow 推送”已完成；第 1 天公开技术验收项已完成。Bing Webmaster Tools 后台里的 sitemap 处理状态和 URL 检查状态仍需在已登录后台中查看，不能通过公开网页替代。
 
 ## 第 2 天：CMS 关键词专题页完善
 
@@ -103,4 +113,3 @@
 - Bing Webmaster Tools 的索引状态必须在后台持续观察。
 - 豆包、千问、Kimi 是否引用官网，取决于它们各自的数据更新和信源策略，不能保证 7 天内必然出现。
 - 下一步应优先发布 10 篇外部文章中的 3-5 篇，并让每篇自然引用官网首页和对应专题页。
-
