@@ -1,6 +1,8 @@
-const DEFAULT_KEY = 'd9b1f6a2c8e74f30b5a19d6c42e8f0ab'
+const DEFAULT_KEY = '021c210c84f345e88bed93d77c8d0004'
+const LEGACY_KEY = 'd9b1f6a2c8e74f30b5a19d6c42e8f0ab'
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
-const key = process.env.INDEXNOW_KEY || DEFAULT_KEY
+const configuredKey = process.env.INDEXNOW_KEY?.trim()
+const key = configuredKey && configuredKey !== LEGACY_KEY ? configuredKey : DEFAULT_KEY
 const endpoint = process.env.INDEXNOW_ENDPOINT || 'https://www.bing.com/indexnow'
 const dryRun = process.argv.includes('--dry-run')
 const explicitUrls = process.argv.slice(2).filter((arg) => !arg.startsWith('--'))

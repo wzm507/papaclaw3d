@@ -1,4 +1,11 @@
-export const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'd9b1f6a2c8e74f30b5a19d6c42e8f0ab'
+const DEFAULT_INDEXNOW_KEY = '021c210c84f345e88bed93d77c8d0004'
+const LEGACY_INDEXNOW_KEY = 'd9b1f6a2c8e74f30b5a19d6c42e8f0ab'
+const configuredIndexNowKey = process.env.INDEXNOW_KEY?.trim()
+
+export const INDEXNOW_KEY =
+  configuredIndexNowKey && configuredIndexNowKey !== LEGACY_INDEXNOW_KEY
+    ? configuredIndexNowKey
+    : DEFAULT_INDEXNOW_KEY
 
 export interface IndexNowSubmitResult {
   ok: boolean

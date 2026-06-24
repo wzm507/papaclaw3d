@@ -15,7 +15,7 @@
 - 打开 `https://www.papaclaw.cn/robots.txt`，确认允许抓取，并包含 `Sitemap: https://www.papaclaw.cn/sitemap.xml`。
 - 打开 `https://www.papaclaw.cn/sitemap.xml`，确认包含首页、新闻页、7 个 SEO 专题页、`llms.txt`、`llms-full.txt`、`ai-news-feed`。
 - 打开 `https://www.papaclaw.cn/llms.txt` 和 `https://www.papaclaw.cn/llms-full.txt`，确认不是 404，并且能看到 Papa Claw 爬爬虾、业务定位、专题页矩阵。
-- 打开 `https://www.papaclaw.cn/d9b1f6a2c8e74f30b5a19d6c42e8f0ab.txt`，确认页面只显示 IndexNow key：`d9b1f6a2c8e74f30b5a19d6c42e8f0ab`。
+- 打开 `https://www.papaclaw.cn/021c210c84f345e88bed93d77c8d0004.txt`，确认页面只显示 IndexNow key：`021c210c84f345e88bed93d77c8d0004`。
 
 ### 2. Bing Webmaster Tools 操作
 

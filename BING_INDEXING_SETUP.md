@@ -6,8 +6,8 @@
 
 - Sitemap：`https://www.papaclaw.cn/sitemap.xml`
 - Robots：`https://www.papaclaw.cn/robots.txt`
-- IndexNow key 文件：`https://www.papaclaw.cn/d9b1f6a2c8e74f30b5a19d6c42e8f0ab.txt`
-- IndexNow key：`d9b1f6a2c8e74f30b5a19d6c42e8f0ab`
+- IndexNow key 文件：`https://www.papaclaw.cn/021c210c84f345e88bed93d77c8d0004.txt`
+- IndexNow key：`021c210c84f345e88bed93d77c8d0004`
 - 手动推送命令：`npm run indexnow:submit`
 - 公众号新闻同步后，会自动推送首页、新闻列表、AI 新闻 feed、SEO 专题页和新闻详情页。
 - Vercel Cron 每天北京时间 00:10 会请求 `/api/indexnow/submit`，主动推送 sitemap 核心 URL。
@@ -49,13 +49,13 @@ https://www.papaclaw.cn/sitemap.xml
 上线后在浏览器打开：
 
 ```text
-https://www.papaclaw.cn/d9b1f6a2c8e74f30b5a19d6c42e8f0ab.txt
+https://www.papaclaw.cn/021c210c84f345e88bed93d77c8d0004.txt
 ```
 
 页面内容必须只有这一行：
 
 ```text
-d9b1f6a2c8e74f30b5a19d6c42e8f0ab
+021c210c84f345e88bed93d77c8d0004
 ```
 
 如果返回 404，说明部署还没有包含 `public` 里的 key 文件，需要重新部署。
@@ -93,7 +93,7 @@ SITE_URL=https://www.papaclaw.cn npm run indexnow:submit -- --dry-run
 建议在 Vercel 中配置：
 
 ```text
-INDEXNOW_KEY=d9b1f6a2c8e74f30b5a19d6c42e8f0ab
+INDEXNOW_KEY=021c210c84f345e88bed93d77c8d0004
 INDEXNOW_ENDPOINT=https://www.bing.com/indexnow
 NEXT_PUBLIC_SITE_URL=https://www.papaclaw.cn
 ```
