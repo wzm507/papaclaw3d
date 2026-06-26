@@ -21,6 +21,15 @@ export default function FieldEditor({
 }: FieldEditorProps) {
   const [urlError, setUrlError] = useState('')
 
+  const isValidUrl = (url: string) => {
+    try {
+      new URL(url)
+      return true
+    } catch {
+      return false
+    }
+  }
+
   const handleChange = (newValue: string) => {
     if (type === 'url') {
       if (newValue && !isValidUrl(newValue)) {
@@ -32,25 +41,16 @@ export default function FieldEditor({
     onChange(newValue)
   }
 
-  const isValidUrl = (url: string) => {
-    try {
-      new URL(url)
-      return true
-    } catch {
-      return false
-    }
-  }
-
-  const baseInputClasses = `w-full rounded-content border bg-paper-white px-4 py-3 font-sans text-sm text-deep-forest
-    placeholder:text-slate-tint/60 transition-all duration-200
-    focus:outline-none focus:ring-2 focus:ring-foudre-pink/30 focus:border-foudre-pink
-    ${urlError ? 'border-red-400' : 'border-ash-whisper'}`
+  const baseInputClasses = `w-full border bg-white px-4 py-3 text-sm text-[#0F1C1A]
+    placeholder:text-[#737373]/60 transition-all duration-200
+    focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30 focus:border-[#B08D57]
+    ${urlError ? 'border-red-400' : 'border-[#E5E5E0]'}`
 
   return (
     <div className="space-y-2">
-      <label className="block font-sans text-sm font-semibold text-deep-forest">
+      <label className="block text-sm font-semibold text-[#0F1C1A]">
         {label}
-        {required && <span className="text-foudre-pink ml-0.5">*</span>}
+        {required && <span className="ml-0.5 text-[#B08D57]">*</span>}
       </label>
 
       {type === 'textarea' ? (
@@ -74,7 +74,7 @@ export default function FieldEditor({
         />
       )}
 
-      {urlError && <p className="font-sans text-xs text-red-500">{urlError}</p>}
+      {urlError && <p className="text-xs text-red-500">{urlError}</p>}
     </div>
   )
 }

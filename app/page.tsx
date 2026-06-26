@@ -11,7 +11,6 @@ import Audiences from './sections/Audiences'
 import News from './sections/News'
 import FAQ from './sections/FAQ'
 import Footer from './sections/Footer'
-import CursorSpotlight from './components/CursorSpotlight'
 import SmoothScrollProvider from './components/SmoothScrollProvider'
 import { listNewsArticles } from './lib/news-store'
 
@@ -80,23 +79,13 @@ export default async function Home() {
 
   return (
     <SmoothScrollProvider>
-      <CursorSpotlight />
       <main className="relative">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
         <Header menuItems={config.header.menuItems} whatsappUrl={config.header.whatsappUrl} />
-        <Hero
-          title="我们不靠赚方案的钱活着。"
-          subtitle1="我们靠你赚到钱活着。"
-          subtitle2="先付出，先交朋友，用成本价帮你出海。你不赚钱，我们只收工时费。"
-          backgroundImage={config.hero.backgroundImage}
-          cards={config.hero.cards}
-        />
-        <About
-          leftText="爬爬虾不是一家从零开始的公司。我们是把 14 年海外踩过的坑、赚过的钱、认识过的人，全部打包带回了南沙。"
-          rightText="别人出海是摸着石头过河。我们是开着直升机过河。我们不租大办公室，不堆人，不撑排场。我们在南沙政府补贴的共享办公室里开会，把省下来的钱全砸在业务上。"
-        />
+        <Hero />
+        <About />
         <Pillars />
         <Quote />
         <Cases />
@@ -105,9 +94,9 @@ export default async function Home() {
         <News articles={newsArticles} />
         <FAQ title={config.faq.title} subtitle={config.faq.subtitle} items={config.faq.items} />
         <Footer
-          contactTitle="把出海需求推进到可落地项目"
-          contactDescription="欢迎联系 Papa Claw 爬爬虾，了解 AI 科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。"
-          ctaText="联系我们"
+          contactTitle={config.footer.contactTitle}
+          contactDescription={config.footer.contactDescription}
+          ctaText={config.footer.ctaText}
           socialLinks={config.footer.socialLinks}
           copyright={config.footer.copyright}
           legalLinks={config.footer.legalLinks}

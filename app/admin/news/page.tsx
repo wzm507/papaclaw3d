@@ -112,12 +112,12 @@ export default function AdminNewsPage() {
 
   return (
     <div className="p-6 md:p-10">
-      <div className="mb-8 border-b border-ash-whisper pb-8">
-        <p className="kicker mb-3">News CMS</p>
-        <h1 className="font-sans text-[clamp(2rem,4vw,4rem)] font-semibold leading-none text-deep-forest">
+      <div className="mb-8 border-b border-[#E5E5E0] pb-8">
+        <p className="p-kicker mb-3">News CMS</p>
+        <h1 className="text-[clamp(2rem,4vw,4rem)] font-semibold leading-none text-[#0F1C1A]">
           真实新闻管理
         </h1>
-        <p className="mt-4 max-w-3xl font-sans text-base leading-relaxed text-slate-tint">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#737373]">
           新闻按 7 个 SEO 专题分类展示。自动抓取必须拿到全文才会发布；抓不到全文的内容会进入失败记录。
         </p>
       </div>
@@ -126,7 +126,7 @@ export default function AdminNewsPage() {
         <select
           value={category}
           onChange={(event) => handleCategoryChange(event.target.value)}
-          className="min-h-11 rounded-content border border-ash-whisper bg-paper-white px-4 font-sans text-sm text-deep-forest"
+          className="min-h-11 border border-[#E5E5E0] bg-white px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
         >
           {categoryOptions.map((item) => (
             <option key={item.slug || 'all'} value={item.slug}>
@@ -137,37 +137,37 @@ export default function AdminNewsPage() {
         <button
           onClick={handleSync}
           disabled={syncing}
-          className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-deep-forest px-5 font-sans text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink disabled:opacity-50"
+          className="inline-flex min-h-11 items-center border border-[#0F1C1A] bg-[#0F1C1A] px-5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {syncing ? '同步中...' : '立即抓取新闻'}
         </button>
         <Link
           href="/admin/news-sources"
-          className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-paper-white px-5 font-sans text-sm font-semibold text-deep-forest"
+          className="inline-flex min-h-11 items-center border border-[#0F1C1A] bg-white px-5 text-sm font-semibold text-[#0F1C1A] transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:text-[#B08D57]"
         >
           管理新闻源
         </Link>
-        {message && <span className="font-sans text-sm font-semibold text-foudre-pink">{message}</span>}
+        {message && <span className="text-sm font-semibold text-[#B08D57]">{message}</span>}
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1fr_28rem]">
-        <section className="rounded-content border border-ash-whisper bg-paper-white p-5 md:p-6">
-          <h2 className="font-sans text-xl font-semibold text-deep-forest">已发布新闻</h2>
+        <section className="border border-[#E5E5E0] bg-white p-5 md:p-6">
+          <h2 className="text-xl font-semibold text-[#0F1C1A]">已发布新闻</h2>
           <div className="mt-5 space-y-3">
             {loading ? (
-              <p className="font-sans text-sm text-slate-tint">加载中...</p>
+              <p className="text-sm text-[#737373]">加载中...</p>
             ) : articles.length > 0 ? (
               articles.map((article) => (
-                <div key={article.id} className="rounded-content border border-ash-whisper p-4">
+                <div key={article.id} className="border border-[#E5E5E0] p-4">
                   <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                     <div>
-                      <p className="font-sans text-xs font-semibold uppercase text-foudre-pink">
+                      <p className="text-xs font-semibold uppercase text-[#B08D57]">
                         {article.categoryName} · {article.sourceName}
                       </p>
-                      <h3 className="mt-2 font-sans text-lg font-semibold leading-snug text-deep-forest">
+                      <h3 className="mt-2 text-lg font-semibold leading-snug text-[#0F1C1A]">
                         {article.searchableTitle || article.title}
                       </h3>
-                      <p className="mt-2 font-sans text-sm leading-relaxed text-slate-tint">
+                      <p className="mt-2 text-sm leading-relaxed text-[#737373]">
                         正文 {article.contentLength} 字符 · 状态 {article.crawlStatus}
                       </p>
                     </div>
@@ -175,13 +175,13 @@ export default function AdminNewsPage() {
                       <Link
                         href={`/news/${article.slug}`}
                         target="_blank"
-                        className="rounded-content border border-ash-whisper px-3 py-2 font-sans text-xs font-semibold text-deep-forest"
+                        className="border border-[#E5E5E0] px-3 py-2 text-xs font-semibold text-[#0F1C1A] transition-colors hover:border-[#0F1C1A]"
                       >
                         查看
                       </Link>
                       <button
                         onClick={() => handleDelete(article.slug)}
-                        className="rounded-content border border-red-200 px-3 py-2 font-sans text-xs font-semibold text-red-600"
+                        className="border border-red-200 px-3 py-2 text-xs font-semibold text-red-600 transition-colors hover:border-red-500"
                       >
                         删除
                       </button>
@@ -190,43 +190,43 @@ export default function AdminNewsPage() {
                 </div>
               ))
             ) : (
-              <p className="font-sans text-sm text-slate-tint">当前分类暂无新闻。</p>
+              <p className="text-sm text-[#737373]">当前分类暂无新闻。</p>
             )}
           </div>
         </section>
 
         <aside className="space-y-6">
-          <section className="rounded-content border border-ash-whisper bg-paper-white p-5 md:p-6">
-            <h2 className="font-sans text-xl font-semibold text-deep-forest">手动新增新闻</h2>
+          <section className="border border-[#E5E5E0] bg-white p-5 md:p-6">
+            <h2 className="text-xl font-semibold text-[#0F1C1A]">手动新增新闻</h2>
             <div className="mt-5 space-y-3">
               <input
                 value={form.title}
                 onChange={(event) => setForm({ ...form, title: event.target.value })}
                 placeholder="新闻标题"
-                className="min-h-11 w-full rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
               />
               <input
                 value={form.sourceName}
                 onChange={(event) => setForm({ ...form, sourceName: event.target.value })}
                 placeholder="来源名称，例如 36氪"
-                className="min-h-11 w-full rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
               />
               <input
                 value={form.sourceUrl}
                 onChange={(event) => setForm({ ...form, sourceUrl: event.target.value })}
                 placeholder="原文链接"
-                className="min-h-11 w-full rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
               />
               <input
                 type="date"
                 value={form.publishedAt}
                 onChange={(event) => setForm({ ...form, publishedAt: event.target.value })}
-                className="min-h-11 w-full rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
               />
               <select
                 value={form.categorySlug}
                 onChange={(event) => setForm({ ...form, categorySlug: event.target.value })}
-                className="min-h-11 w-full rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                className="min-h-11 w-full border border-[#E5E5E0] bg-white px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
               >
                 {topics.map((topic) => (
                   <option key={topic.slug} value={topic.slug}>
@@ -239,31 +239,31 @@ export default function AdminNewsPage() {
                 onChange={(event) => setForm({ ...form, contentText: event.target.value })}
                 placeholder="粘贴新闻全文。建议保留来源事实，不添加未经确认的数据。"
                 rows={10}
-                className="w-full rounded-content border border-ash-whisper p-4 font-sans text-sm leading-relaxed"
+                className="w-full border border-[#E5E5E0] p-4 text-sm leading-relaxed text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
               />
               <button
                 onClick={handleManualSubmit}
                 disabled={saving}
-                className="inline-flex min-h-11 w-full items-center justify-center rounded-content border border-deep-forest bg-deep-forest px-5 font-sans text-sm font-semibold text-white disabled:opacity-50"
+                className="inline-flex min-h-11 w-full items-center justify-center border border-[#0F1C1A] bg-[#0F1C1A] px-5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {saving ? '发布中...' : '发布到官网新闻'}
               </button>
             </div>
           </section>
 
-          <section className="rounded-content border border-ash-whisper bg-paper-white p-5 md:p-6">
-            <h2 className="font-sans text-xl font-semibold text-deep-forest">最近抓取记录</h2>
+          <section className="border border-[#E5E5E0] bg-white p-5 md:p-6">
+            <h2 className="text-xl font-semibold text-[#0F1C1A]">最近抓取记录</h2>
             <div className="mt-5 space-y-3">
               {logs.slice(0, 8).map((log) => (
-                <div key={log.id} className="rounded-content border border-ash-whisper p-3">
-                  <p className={`font-sans text-xs font-semibold ${log.status === 'failed' ? 'text-red-600' : 'text-green-700'}`}>
+                <div key={log.id} className="border border-[#E5E5E0] p-3">
+                  <p className={`text-xs font-semibold ${log.status === 'failed' ? 'text-red-600' : 'text-green-700'}`}>
                     {log.status} · {log.sourceName}
                   </p>
-                  <p className="mt-1 line-clamp-2 font-sans text-sm text-deep-forest">{log.title || log.url}</p>
-                  <p className="mt-1 font-sans text-xs text-slate-tint">{log.message}</p>
+                  <p className="mt-1 line-clamp-2 text-sm text-[#0F1C1A]">{log.title || log.url}</p>
+                  <p className="mt-1 text-xs text-[#737373]">{log.message}</p>
                 </div>
               ))}
-              {logs.length === 0 && <p className="font-sans text-sm text-slate-tint">暂无抓取记录。</p>}
+              {logs.length === 0 && <p className="text-sm text-[#737373]">暂无抓取记录。</p>}
             </div>
           </section>
         </aside>

@@ -68,12 +68,12 @@ export default function AdminNewsSourcesPage() {
 
   return (
     <div className="p-6 md:p-10">
-      <div className="mb-8 border-b border-ash-whisper pb-8">
-        <p className="kicker mb-3">News Sources</p>
-        <h1 className="font-sans text-[clamp(2rem,4vw,4rem)] font-semibold leading-none text-deep-forest">
+      <div className="mb-8 border-b border-[#E5E5E0] pb-8">
+        <p className="p-kicker mb-3">News Sources</p>
+        <h1 className="text-[clamp(2rem,4vw,4rem)] font-semibold leading-none text-[#0F1C1A]">
           新闻源管理
         </h1>
-        <p className="mt-4 max-w-3xl font-sans text-base leading-relaxed text-slate-tint">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#737373]">
           默认新闻源是公开页面。不同网站会有反爬、登录墙或结构变化；系统会只发布能抓到全文的新闻。
         </p>
       </div>
@@ -81,26 +81,26 @@ export default function AdminNewsSourcesPage() {
       <div className="mb-6 flex flex-wrap gap-3">
         <button
           onClick={() => setSources([...sources, { ...emptySource, id: `source-${Date.now()}` }])}
-          className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-paper-white px-5 font-sans text-sm font-semibold text-deep-forest"
+          className="inline-flex min-h-11 items-center border border-[#0F1C1A] bg-white px-5 text-sm font-semibold text-[#0F1C1A] transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:text-[#B08D57]"
         >
           新增新闻源
         </button>
         <button
           onClick={saveSources}
           disabled={saving}
-          className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-deep-forest px-5 font-sans text-sm font-semibold text-white disabled:opacity-50"
+          className="inline-flex min-h-11 items-center border border-[#0F1C1A] bg-[#0F1C1A] px-5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {saving ? '保存中...' : '保存新闻源'}
         </button>
-        {message && <span className="inline-flex min-h-11 items-center font-sans text-sm font-semibold text-foudre-pink">{message}</span>}
+        {message && <span className="inline-flex min-h-11 items-center text-sm font-semibold text-[#B08D57]">{message}</span>}
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1fr_24rem]">
         <section className="space-y-4">
           {sources.map((source, index) => (
-            <div key={source.id || index} className="rounded-content border border-ash-whisper bg-paper-white p-5 md:p-6">
+            <div key={source.id || index} className="border border-[#E5E5E0] bg-white p-5 md:p-6">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <label className="flex items-center gap-2 font-sans text-sm font-semibold text-deep-forest">
+                <label className="flex items-center gap-2 text-sm font-semibold text-[#0F1C1A]">
                   <input
                     type="checkbox"
                     checked={source.enabled}
@@ -110,7 +110,7 @@ export default function AdminNewsSourcesPage() {
                 </label>
                 <button
                   onClick={() => setSources((current) => current.filter((_, itemIndex) => itemIndex !== index))}
-                  className="font-sans text-sm font-semibold text-red-600"
+                  className="text-sm font-semibold text-red-600"
                 >
                   删除
                 </button>
@@ -121,24 +121,24 @@ export default function AdminNewsSourcesPage() {
                   value={source.name}
                   onChange={(event) => updateSource(index, { name: event.target.value })}
                   placeholder="新闻源名称"
-                  className="min-h-11 rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                  className="min-h-11 border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
                 />
                 <input
                   value={source.id}
                   onChange={(event) => updateSource(index, { id: event.target.value })}
                   placeholder="ID，例如 36kr-global"
-                  className="min-h-11 rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                  className="min-h-11 border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
                 />
                 <input
                   value={source.url}
                   onChange={(event) => updateSource(index, { url: event.target.value })}
                   placeholder="新闻源 URL"
-                  className="min-h-11 rounded-content border border-ash-whisper px-4 font-sans text-sm md:col-span-2"
+                  className="min-h-11 border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30 md:col-span-2"
                 />
                 <select
                   value={source.defaultCategorySlug}
                   onChange={(event) => updateSource(index, { defaultCategorySlug: event.target.value })}
-                  className="min-h-11 rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                  className="min-h-11 border border-[#E5E5E0] bg-white px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
                 >
                   {topics.map((topic) => (
                     <option key={topic.slug} value={topic.slug}>
@@ -150,33 +150,33 @@ export default function AdminNewsSourcesPage() {
                   value={source.articleSelector || ''}
                   onChange={(event) => updateSource(index, { articleSelector: event.target.value })}
                   placeholder="正文选择器，可选，例如 article-content"
-                  className="min-h-11 rounded-content border border-ash-whisper px-4 font-sans text-sm"
+                  className="min-h-11 border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
                 />
                 <textarea
                   value={source.keywords.join('\n')}
                   onChange={(event) => updateSource(index, { keywords: event.target.value.split('\n') })}
                   placeholder="关键词，每行一个"
                   rows={5}
-                  className="rounded-content border border-ash-whisper p-4 font-sans text-sm md:col-span-2"
+                  className="border border-[#E5E5E0] p-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30 md:col-span-2"
                 />
               </div>
             </div>
           ))}
         </section>
 
-        <aside className="rounded-content border border-ash-whisper bg-paper-white p-5 md:p-6">
-          <h2 className="font-sans text-xl font-semibold text-deep-forest">失败与跳过记录</h2>
+        <aside className="border border-[#E5E5E0] bg-white p-5 md:p-6">
+          <h2 className="text-xl font-semibold text-[#0F1C1A]">失败与跳过记录</h2>
           <div className="mt-5 space-y-3">
             {logs.slice(0, 12).map((log) => (
-              <div key={log.id} className="rounded-content border border-ash-whisper p-3">
-                <p className={`font-sans text-xs font-semibold ${log.status === 'failed' ? 'text-red-600' : 'text-green-700'}`}>
+              <div key={log.id} className="border border-[#E5E5E0] p-3">
+                <p className={`text-xs font-semibold ${log.status === 'failed' ? 'text-red-600' : 'text-green-700'}`}>
                   {log.status} · {log.sourceName}
                 </p>
-                <p className="mt-1 line-clamp-2 font-sans text-sm text-deep-forest">{log.title || log.url}</p>
-                <p className="mt-1 font-sans text-xs text-slate-tint">{log.message}</p>
+                <p className="mt-1 line-clamp-2 text-sm text-[#0F1C1A]">{log.title || log.url}</p>
+                <p className="mt-1 text-xs text-[#737373]">{log.message}</p>
               </div>
             ))}
-            {logs.length === 0 && <p className="font-sans text-sm text-slate-tint">暂无记录。</p>}
+            {logs.length === 0 && <p className="text-sm text-[#737373]">暂无记录。</p>}
           </div>
         </aside>
       </div>

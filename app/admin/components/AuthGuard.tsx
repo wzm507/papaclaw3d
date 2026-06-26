@@ -20,8 +20,8 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
 
   if (checking) {
     return (
-      <div className="flex items-center justify-center h-screen bg-pale-canvas">
-        <div className="text-deep-forest/60 text-sm">验证中...</div>
+      <div className="flex h-screen items-center justify-center bg-[#F7F7F5]">
+        <div className="text-sm text-[#0F1C1A]/60">验证中...</div>
       </div>
     )
   }

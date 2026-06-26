@@ -4,46 +4,46 @@ import Reveal from '../components/Reveal'
 import AnimatedText from '../components/AnimatedText'
 import Counter from '../components/Counter'
 
-interface AboutProps {
-  leftText: string
-  rightText: string
-  videoUrl?: string
-}
+export default function About() {
+  const stats = [
+    { value: 14, suffix: '年', label: '中东深耕经验' },
+    { value: 3, suffix: '亿', prefix: '¥', label: '9 个月协助客户成交' },
+    { value: 6, suffix: '人', label: '精干团队 · 低成本运营' },
+  ]
 
-export default function About({ leftText, rightText }: AboutProps) {
   return (
-    <section id="about" className="section bg-pale-canvas py-24 md:py-32">
-      <div className="section-inner">
-        <Reveal>
-          <p className="kicker mb-6">Positioning</p>
-        </Reveal>
-
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+    <section id="about" className="p-section border-t border-[#E5E5E0] bg-[#F7F7F5] py-24 md:py-32">
+      <div className="p-inner">
+        <div className="mb-20 grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
-            <AnimatedText as="h2" className="heading-lg">
-              出海不是先组队。是先拿到第一个订单。
+            <Reveal>
+              <p className="p-kicker mb-6">Positioning</p>
+            </Reveal>
+            <AnimatedText as="h2" className="p-heading-xl">
+              出海不是先组队，是先拿到第一张订单。
             </AnimatedText>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal delay={0.2}>
-              <p className="body-text text-lg leading-relaxed">{leftText}</p>
-              <p className="body-text mt-6 text-lg leading-relaxed">{rightText}</p>
+              <p className="p-body-lg">
+                我们这支队伍在海外待了 14 年，中东的坑踩过，楼卖过，十几亿的盘也操过。现在把这些经验和人脉搬回了南沙。
+              </p>
+              <p className="p-body-lg mt-6">
+                别人出海是摸着石头过河，我们是直接开直升机过去。办公室不大，人不堆，排场不撑，钱全花在帮客户拿订单这件事上。
+              </p>
             </Reveal>
           </div>
         </div>
 
-        <div className="mt-24 grid gap-px bg-ash-whisper md:grid-cols-3">
-          {[
-            { value: 14, suffix: '年', label: '中东深耕经验' },
-            { value: 3, suffix: '亿', prefix: '¥', label: '9 个月协助客户成交' },
-            { value: 6, suffix: '人', label: '精干团队 · 低成本运营' },
-          ].map((stat) => (
+        <div className="p-rule mb-0" />
+        <div className="grid divide-y divide-[#E5E5E0] md:grid-cols-3 md:divide-x md:divide-y-0">
+          {stats.map((stat) => (
             <Reveal key={stat.label} delay={0.1}>
-              <div className="group relative bg-pale-canvas p-8 transition-colors duration-500 hover:bg-warm-gray md:p-12">
-                <p className="font-display text-5xl font-semibold text-deep-forest md:text-6xl">
+              <div className="group bg-[#F7F7F5] p-8 transition-colors duration-500 hover:bg-[#F0EFEC] md:p-12">
+                <p className="p-display-sm text-[#0F1C1A]">
                   <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} duration={1.8} />
                 </p>
-                <p className="mt-3 font-sans text-sm text-slate-tint">{stat.label}</p>
+                <p className="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-[#737373]">{stat.label}</p>
               </div>
             </Reveal>
           ))}

@@ -41,7 +41,7 @@ export default function Reveal({
           ease: 'expo.out',
           scrollTrigger: {
             trigger: el,
-            start: 'top 85%',
+            start: 'top 88%',
             once,
           },
         }

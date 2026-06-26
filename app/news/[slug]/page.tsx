@@ -110,81 +110,81 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
 
   return (
     <SmoothScrollProvider>
-      <main className="min-h-screen bg-pale-canvas">
+      <main className="min-h-screen bg-[#F7F7F5]">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
-        <article className="section pt-36">
-          <div className="section-inner">
+        <article className="p-section pt-36">
+          <div className="p-inner">
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[16rem_1fr]">
-              <aside className="space-y-8 card-surface p-6 lg:sticky lg:top-28 lg:self-start">
+              <aside className="space-y-8 border border-[#E5E5E0] bg-white p-6 lg:sticky lg:top-28 lg:self-start">
                 <div>
-                  <p className="kicker mb-2">Published</p>
-                  <p className="font-sans text-sm font-semibold text-deep-forest">{formatDate(article.publishedAt)}</p>
+                  <p className="p-kicker mb-2">Published</p>
+                  <p className="text-sm font-semibold text-[#0F1C1A]">{formatDate(article.publishedAt)}</p>
                 </div>
                 <div>
-                  <p className="kicker mb-3">Category</p>
-                  <Link href={`/news?category=${article.categorySlug}`} className="font-sans text-sm font-semibold text-foudre-pink">
+                  <p className="p-kicker mb-3">Category</p>
+                  <Link href={`/news?category=${article.categorySlug}`} className="text-sm font-semibold text-[#B08D57]">
                     {article.categoryName}
                   </Link>
                 </div>
                 <div>
-                  <p className="kicker mb-3">Source</p>
-                  <p className="font-sans text-sm font-semibold text-deep-forest">{article.sourceName}</p>
+                  <p className="p-kicker mb-3">Source</p>
+                  <p className="text-sm font-semibold text-[#0F1C1A]">{article.sourceName}</p>
                   {(article.originalUrl || article.sourceUrl) && (
                     <a
                       href={article.originalUrl || article.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-flex font-sans text-sm font-semibold text-foudre-pink"
+                      className="mt-3 inline-flex text-sm font-semibold text-[#B08D57]"
                     >
                       查看原文来源 →
                     </a>
                   )}
                 </div>
                 <div>
-                  <p className="kicker mb-3">Keywords</p>
+                  <p className="p-kicker mb-3">Keywords</p>
                   <div className="flex flex-wrap gap-2">
                     {article.keywords.map((keyword: string) => (
-                      <span key={keyword} className="chip">
+                      <span key={keyword} className="p-chip">
                         {keyword}
                       </span>
                     ))}
                   </div>
                 </div>
-                <Link href="/news" className="btn-secondary w-full">
+                <Link href="/news" className="p-btn-ghost block w-full text-center">
                   返回新闻列表
                 </Link>
               </aside>
 
               <div className="max-w-4xl">
-                <p className="kicker mb-4">Papa Claw News</p>
-                <h1 className="font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.05] text-deep-forest">
+                <p className="p-kicker mb-4">Papa Claw News</p>
+                <h1 className="p-heading-xl text-[#0F1C1A]">
                   {article.searchableTitle || article.title}
                 </h1>
-                <p className="body-text mt-8 card-surface p-6 text-lg leading-relaxed md:text-xl">
+                <p className="p-body-lg mt-8 border border-[#E5E5E0] bg-white p-6">
                   {article.aiSummary}
                 </p>
 
                 <section className="mt-12 space-y-6">
                   {paragraphs.map((paragraph: string, index: number) => (
-                    <p key={index} className="font-sans text-lg leading-relaxed text-deep-forest md:text-xl">
+                    <p key={index} className="p-body text-lg text-[#0F1C1A] md:text-xl">
                       {paragraph}
                     </p>
                   ))}
                 </section>
 
                 {article.faq.length > 0 && (
-                  <section className="mt-16 card-surface p-7">
-                    <p className="kicker mb-6">Q&A</p>
+                  <section className="mt-16 border border-[#E5E5E0] bg-white p-7">
+                    <p className="p-kicker mb-6">Q&A</p>
                     <div className="space-y-7">
                       {article.faq.map((item: { question: string; answer: string }) => (
                         <div key={item.question}>
-                          <h2 className="font-display text-xl font-semibold leading-snug text-deep-forest md:text-2xl">
+                          <h2 className="p-heading text-xl md:text-2xl">
                             {item.question}
                           </h2>
-                          <p className="body-text mt-3">{item.answer}</p>
+                          <p className="p-body mt-3">{item.answer}</p>
                         </div>
                       ))}
                     </div>
@@ -196,9 +196,9 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
         </article>
 
         <Footer
-          contactTitle="把出海需求推进到可落地项目"
-          contactDescription="欢迎联系 Papa Claw 爬爬虾，了解 AI 科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。"
-          ctaText="联系我们"
+          contactTitle={config.footer.contactTitle}
+          contactDescription={config.footer.contactDescription}
+          ctaText={config.footer.ctaText}
           socialLinks={config.footer.socialLinks}
           copyright={config.footer.copyright}
           legalLinks={config.footer.legalLinks}

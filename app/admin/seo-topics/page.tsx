@@ -106,16 +106,16 @@ export default function SeoTopicsAdminPage() {
     }
   }
 
-  if (loading) return <div className="rounded-card border border-ash-whisper bg-paper-white p-10 text-center font-sans text-sm text-slate-tint">加载中...</div>
+  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
 
   return (
     <SectionEditor title="SEO专题页管理" onSave={handleSave} saving={saving}>
-      <div className="rounded-content border border-ash-whisper bg-paper-white p-5 font-sans text-sm leading-7 text-slate-tint">
+      <div className="border border-[#E5E5E0] bg-white p-5 text-sm leading-7 text-[#737373]">
         管理这里会影响：专题页 URL、页面标题、关键词、FAQ、sitemap、llms.txt、llms-full.txt 和 IndexNow 推送。Slug 只能使用小写英文、数字和连字符，例如 <code>ai-global-expansion</code>。
       </div>
 
       {message && (
-        <div className="rounded-content border border-foudre-pink/30 bg-paper-white p-5 font-sans text-sm font-semibold text-deep-forest">
+        <div className="border border-[#B08D57]/30 bg-white p-5 text-sm font-semibold text-[#0F1C1A]">
           {message}
         </div>
       )}
@@ -205,7 +205,7 @@ export default function SeoTopicsAdminPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="block font-sans text-sm font-semibold text-deep-forest">FAQ问答</label>
+              <label className="block text-sm font-semibold text-[#0F1C1A]">FAQ问答</label>
               <ListEditor
                 items={topic.faq}
                 onChange={(faq) => onChange({ ...topic, faq })}
@@ -231,7 +231,7 @@ export default function SeoTopicsAdminPage() {
               />
             </div>
 
-            <div className="rounded-content border border-ash-whisper bg-pale-canvas p-3 font-sans text-xs text-slate-tint">
+            <div className="border border-[#E5E5E0] bg-[#F7F7F5] p-3 text-xs text-[#737373]">
               预览地址：/{topic.slug || `new-seo-topic-${index + 1}`}
             </div>
           </div>

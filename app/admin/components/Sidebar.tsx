@@ -34,11 +34,11 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="flex min-h-screen w-[280px] shrink-0 flex-col bg-midnight-ink">
+    <aside className="flex min-h-screen w-[280px] shrink-0 flex-col bg-[#0F1C1A]">
       <div className="border-b border-white/10 px-6 py-7">
         <Link href="/admin" className="block">
-          <h1 className="font-sans text-2xl font-semibold tracking-tight text-white">PAPACLAW</h1>
-          <p className="mt-1 font-sans text-xs text-white/45">Content Studio</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-white">PAPACLAW</h1>
+          <p className="mt-1 text-xs text-white/45">Content Studio</p>
         </Link>
       </div>
 
@@ -48,16 +48,16 @@ export default function Sidebar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`flex min-h-11 items-center gap-3 rounded-content px-3 py-2.5 font-sans text-sm transition-colors duration-150 ${
+                className={`flex min-h-11 items-center gap-3 px-3 py-2.5 text-sm transition-colors duration-150 ${
                   isActive(item.href)
-                    ? 'bg-white font-semibold text-midnight-ink'
+                    ? 'bg-white font-semibold text-[#0F1C1A]'
                     : 'text-white/62 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 <span
-                  className={`flex h-7 w-9 items-center justify-center rounded-content border text-[10px] font-semibold ${
+                  className={`flex h-7 w-9 items-center justify-center border text-[10px] font-semibold ${
                     isActive(item.href)
-                      ? 'border-midnight-ink/10 bg-midnight-ink text-white'
+                      ? 'border-[#0F1C1A]/10 bg-[#0F1C1A] text-white'
                       : 'border-white/12 bg-white/5 text-white/62'
                   }`}
                 >
@@ -73,9 +73,9 @@ export default function Sidebar() {
       <div className="border-t border-white/10 px-3 py-4">
         <button
           onClick={handleLogout}
-          className="flex min-h-11 w-full items-center gap-3 rounded-content px-3 py-2.5 font-sans text-sm text-white/60 transition-colors duration-150 hover:bg-white/10 hover:text-white"
+          className="flex min-h-11 w-full items-center gap-3 px-3 py-2.5 text-sm text-white/60 transition-colors duration-150 hover:bg-white/10 hover:text-white"
         >
-          <span className="flex h-7 w-9 items-center justify-center rounded-content border border-white/12 bg-white/5 text-[10px] font-semibold">
+          <span className="flex h-7 w-9 items-center justify-center border border-white/12 bg-white/5 text-[10px] font-semibold">
             OUT
           </span>
           <span>退出登录</span>

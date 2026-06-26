@@ -18,9 +18,9 @@ export default function AdminLayout({
 
   return (
     <AuthGuard>
-      <div className="flex min-h-screen bg-pale-canvas">
+      <div className="flex min-h-screen bg-[#F7F7F5]">
         <Sidebar />
-        <main className="flex-1 overflow-y-auto bg-pale-canvas">
+        <main className="flex-1 overflow-y-auto bg-[#F7F7F5]">
           {children}
         </main>
       </div>

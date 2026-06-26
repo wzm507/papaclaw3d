@@ -58,9 +58,9 @@ export default function ImageUploader({
 
   return (
     <div className="space-y-1.5">
-      <label className="block text-sm font-medium text-deep-forest">
+      <label className="block text-sm font-semibold text-[#0F1C1A]">
         {label}
-        {required && <span className="text-foudre-pink ml-0.5">*</span>}
+        {required && <span className="ml-0.5 text-[#B08D57]">*</span>}
       </label>
 
       {/* Mode Toggle */}
@@ -68,10 +68,10 @@ export default function ImageUploader({
         <button
           type="button"
           onClick={() => setMode('url')}
-          className={`rounded-content px-3 py-1 text-xs font-semibold transition-colors ${
+          className={`px-3 py-1 text-xs font-semibold transition-colors ${
             mode === 'url'
-              ? 'bg-deep-forest text-paper-white'
-              : 'bg-ash-whisper text-deep-forest/70 hover:bg-deep-forest/10'
+              ? 'bg-[#0F1C1A] text-white'
+              : 'bg-[#E5E5E0] text-[#0F1C1A]/70 hover:bg-[#0F1C1A]/10'
           }`}
         >
           URL 链接
@@ -79,10 +79,10 @@ export default function ImageUploader({
         <button
           type="button"
           onClick={() => setMode('upload')}
-          className={`rounded-content px-3 py-1 text-xs font-semibold transition-colors ${
+          className={`px-3 py-1 text-xs font-semibold transition-colors ${
             mode === 'upload'
-              ? 'bg-deep-forest text-paper-white'
-              : 'bg-ash-whisper text-deep-forest/70 hover:bg-deep-forest/10'
+              ? 'bg-[#0F1C1A] text-white'
+              : 'bg-[#E5E5E0] text-[#0F1C1A]/70 hover:bg-[#0F1C1A]/10'
           }`}
         >
           本地上传
@@ -98,9 +98,9 @@ export default function ImageUploader({
               onChange={(e) => onChange(e.target.value)}
               placeholder="https://example.com/image.jpg"
               required={required}
-              className="w-full rounded-content border border-ash-whisper bg-paper-white px-3 py-2 font-sans text-sm text-deep-forest
-                placeholder:text-slate-tint/60 transition-all duration-200
-                focus:border-foudre-pink focus:outline-none focus:ring-2 focus:ring-foudre-pink/30"
+              className="w-full border border-[#E5E5E0] bg-white px-3 py-2 text-sm text-[#0F1C1A]
+                placeholder:text-[#737373]/60 transition-all duration-200
+                focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
             />
           </div>
         ) : (
@@ -111,15 +111,15 @@ export default function ImageUploader({
               accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml"
               onChange={handleFileUpload}
               disabled={uploading}
-              className="w-full font-sans text-sm text-deep-forest
-                file:mr-3 file:rounded-content file:border-0 file:bg-foudre-pink/10 file:px-4 file:py-2
-                file:font-sans file:text-sm file:font-semibold file:text-foudre-pink
-                hover:file:bg-foudre-pink/20
+              className="w-full text-sm text-[#0F1C1A]
+                file:mr-3 file:border-0 file:bg-[#B08D57]/10 file:px-4 file:py-2
+                file:text-sm file:font-semibold file:text-[#B08D57]
+                hover:file:bg-[#B08D57]/20
                 file:cursor-pointer file:transition-colors
                 disabled:cursor-not-allowed disabled:opacity-50"
             />
             {value && value.startsWith('/uploads/') && (
-              <p className="mt-1 font-sans text-xs text-slate-tint">已上传: {value}</p>
+              <p className="mt-1 text-xs text-[#737373]">已上传: {value}</p>
             )}
           </div>
         )}
@@ -128,10 +128,10 @@ export default function ImageUploader({
       </div>
 
       {uploading && (
-        <p className="font-sans text-xs text-foudre-pink">上传中...</p>
+        <p className="text-xs text-[#B08D57]">上传中...</p>
       )}
       {error && (
-        <p className="font-sans text-xs text-red-600">{error}</p>
+        <p className="text-xs text-red-600">{error}</p>
       )}
     </div>
   )

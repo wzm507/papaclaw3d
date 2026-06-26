@@ -1,94 +1,88 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import MagneticButton from '../components/MagneticButton'
-import TextMarquee from '../components/TextMarquee'
 
-interface HeroProps {
-  title: string
-  subtitle1: string
-  subtitle2: string
-  backgroundImage: string
-  cards: { image: string; bubble: string }[]
-}
-
-export default function Hero({ title, subtitle1, subtitle2 }: HeroProps) {
+export default function Hero() {
   const heroRef = useRef<HTMLElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
+  const hasAnimated = useRef(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (hasAnimated.current) return
+    hasAnimated.current = true
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.hero-word',
-        { y: '110%', opacity: 0, rotateX: -60 },
-        { y: '0%', opacity: 1, rotateX: 0, duration: 1.1, stagger: 0.08, ease: 'expo.out', delay: 0.3 }
+        '.hero-line',
+        { y: '110%', opacity: 0, rotateX: -55 },
+        { y: '0%', opacity: 1, rotateX: 0, duration: 1.2, stagger: 0.12, ease: 'expo.out', delay: 0.2 }
       )
-      gsap.fromTo('.hero-sub', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'expo.out', delay: 1 })
-      gsap.fromTo('.hero-cta', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'expo.out', delay: 1.4 })
+      gsap.fromTo('.hero-sub', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'expo.out', delay: 0.9 })
+      gsap.fromTo('.hero-cta', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'expo.out', delay: 1.2 })
+      gsap.fromTo('.hero-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'expo.out', delay: 1.0 })
     }, heroRef)
 
     return () => ctx.revert()
   }, [])
 
-  const titleWords = title.split('')
-
   return (
-    <section ref={heroRef} id="home" className="section relative min-h-screen overflow-hidden bg-pale-canvas pt-32 md:pt-40">
-      <div className="section-inner relative z-10 pb-20">
+    <section ref={heroRef} id="home" className="p-section relative min-h-screen overflow-hidden bg-[#F7F7F5] pt-32 md:pt-40">
+      <div className="p-inner relative z-10 pb-24">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-8">
-            <p className="hero-sub kicker mb-6 opacity-0">Papa Claw · 爬爬虾</p>
-            <h1
-              ref={titleRef}
-              className="display-text mb-8 overflow-hidden text-deep-forest"
-              style={{ perspective: '800px' }}
-            >
-              {titleWords.map((char, i) => (
-                <span key={i} className="hero-word inline-block will-change-transform" style={{ transformOrigin: 'center bottom' }}>
-                  {char === ' ' ? '\u00A0' : char}
-                </span>
-              ))}
-            </h1>
-            <p className="hero-sub body-text max-w-xl opacity-0">{subtitle1}</p>
-            <p className="hero-sub body-text mt-4 max-w-xl opacity-0">{subtitle2}</p>
+            <p className="hero-sub p-kicker mb-8">Papa Claw · 爬爬虾</p>
 
-            <div className="hero-cta mt-10 flex flex-wrap gap-4 opacity-0">
-              <MagneticButton href="#contact">
-                <span className="btn-primary">免费咨询 →</span>
-              </MagneticButton>
-              <MagneticButton href="#about">
-                <span className="btn-secondary">了解我们</span>
-              </MagneticButton>
+            <div className="overflow-hidden" style={{ perspective: '800px' }}>
+              <h1 className="hero-line p-display mb-2 text-[#0F1C1A] will-change-transform" style={{ transformOrigin: 'center bottom' }}>
+                我们不靠赚方案的钱活着。
+              </h1>
+            </div>
+            <div className="overflow-hidden" style={{ perspective: '800px' }}>
+              <h1 className="hero-line p-display mb-12 text-[#0F1C1A] will-change-transform" style={{ transformOrigin: 'center bottom' }}>
+                我们靠你赚到钱活着。
+              </h1>
+            </div>
+
+            <div className="max-w-2xl">
+              <p className="hero-sub p-body-lg">先付出，先交朋友，用成本价帮你出海。</p>
+              <p className="hero-sub p-body-lg mt-2">你不赚钱，我们只收工时费。</p>
+            </div>
+
+            <div className="hero-cta mt-12 flex flex-wrap gap-4">
+              <a href="#contact" className="p-btn">免费咨询 →</a>
+              <a href="#about" className="p-btn-ghost">了解我们</a>
             </div>
           </div>
 
           <div className="flex items-end lg:col-span-4">
-            <div className="hero-sub w-full card-surface p-6 opacity-0">
-              <p className="mb-3 font-mono text-xs uppercase tracking-widest text-slate-tint"> operating model </p>
-              <p className="font-display text-2xl font-semibold leading-tight text-deep-forest">先付出。</p>
-              <p className="font-display text-2xl font-semibold leading-tight text-deep-forest">你先赚钱。</p>
-              <div className="mt-6 flex items-center gap-3">
-                <span className="chip-accent">不中标不收费</span>
-                <span className="chip">成本价起步</span>
+            <div className="hero-card w-full border border-[#E5E5E0] bg-white p-6 md:p-8">
+              <p className="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#737373]">Operating Model</p>
+              <p className="p-heading-lg mb-1">先付出。</p>
+              <p className="p-heading-lg mb-6">你先赚钱。</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="p-chip p-chip-accent">不中标不收费</span>
+                <span className="p-chip">成本价起步</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-ash-whisper bg-pale-canvas py-4">
-        <TextMarquee
-          text="我们不靠赚方案的钱活着 · 我们靠你赚到钱活着 · 先付出 · 先交朋友 · 成本价帮你出海"
-          className="font-mono text-xs uppercase tracking-widest text-slate-tint"
-          speed={40}
-        />
+      <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-[#E5E5E0] bg-[#F7F7F5]">
+        <div className="p-inner flex items-center justify-between py-4">
+          <p className="hidden font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#737373] md:block">
+            14 年中东 · 南沙港澳政企 · 6 人精干团队
+          </p>
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#737373]">
+            Scroll to explore
+          </p>
+        </div>
       </div>
 
       <div
-        className="pointer-events-none absolute right-0 top-0 h-full w-1/3 opacity-[0.03]"
+        className="pointer-events-none absolute right-0 top-0 h-full w-1/3 opacity-[0.04]"
         style={{
-          backgroundImage: 'repeating-linear-gradient(90deg, currentColor 0, currentColor 1px, transparent 1px, transparent 40px)',
+          backgroundImage: 'repeating-linear-gradient(90deg, currentColor 0, currentColor 1px, transparent 1px, transparent 48px)',
         }}
       />
     </section>

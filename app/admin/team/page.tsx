@@ -27,8 +27,8 @@ export default function TeamPage() {
     }
   }, [config])
 
-  if (loading) return <div className="rounded-card border border-ash-whisper bg-paper-white p-10 text-center font-sans text-sm text-slate-tint">加载中...</div>
-  if (!config || !localData) return <div className="rounded-card border border-ash-whisper bg-paper-white p-10 text-center font-sans text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
+  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
 
   const updateField = (key: keyof TeamData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -52,7 +52,7 @@ export default function TeamPage() {
       />
 
       <div className="space-y-1.5">
-        <label className="block text-sm font-medium text-deep-forest">团队成员列表</label>
+        <label className="block text-sm font-semibold text-[#0F1C1A]">团队成员列表</label>
         <ListEditor
           items={localData.members}
           onChange={updateMembers}

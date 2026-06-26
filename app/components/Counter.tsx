@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -8,32 +8,35 @@ gsap.registerPlugin(ScrollTrigger)
 
 interface CounterProps {
   value: number
-  suffix?: string
   prefix?: string
-  className?: string
+  suffix?: string
   duration?: number
+  className?: string
 }
 
-export default function Counter({ value, suffix = '', prefix = '', className = '', duration = 2 }: CounterProps) {
+export default function Counter({ value, prefix = '', suffix = '', duration = 1.8, className = '' }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null)
-  const [display, setDisplay] = useState(0)
+  const valueRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     const el = ref.current
-    if (!el) return
+    const valueEl = valueRef.current
+    if (!el || !valueEl) return
 
-    const obj = { val: 0 }
     const ctx = gsap.context(() => {
+      const obj = { value: 0 }
       gsap.to(obj, {
-        val: value,
+        value,
         duration,
-        ease: 'power2.out',
+        ease: 'expo.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 85%',
+          start: 'top 90%',
           once: true,
         },
-        onUpdate: () => setDisplay(Math.round(obj.val)),
+        onUpdate: () => {
+          valueEl.textContent = String(Math.round(obj.value))
+        },
       })
     }, el)
 
@@ -43,7 +46,7 @@ export default function Counter({ value, suffix = '', prefix = '', className = '
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display.toLocaleString('zh-CN')}
+      <span ref={valueRef}>{value}</span>
       {suffix}
     </span>
   )
