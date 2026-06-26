@@ -2,16 +2,16 @@ import fs from 'fs'
 import path from 'path'
 import Header from './components/Header'
 import Hero from './sections/Hero'
-import Agency from './sections/Agency'
-import Team from './sections/Team'
-import Projects from './sections/Projects'
-import Manifest from './sections/Manifest'
-import SeoTopicLinks from './sections/SeoTopicLinks'
-import Expertises from './sections/Expertises'
-import Why from './sections/Why'
+import About from './sections/About'
+import Pillars from './sections/Pillars'
+import Quote from './sections/Quote'
+import Cases from './sections/Cases'
+import Services from './sections/Services'
+import Audiences from './sections/Audiences'
 import News from './sections/News'
 import FAQ from './sections/FAQ'
 import Footer from './sections/Footer'
+import CursorSpotlight from './components/CursorSpotlight'
 import SmoothScrollProvider from './components/SmoothScrollProvider'
 import { listNewsArticles } from './lib/news-store'
 
@@ -20,11 +20,9 @@ export const dynamic = 'force-dynamic'
 export default async function Home() {
   const configPath = path.join(process.cwd(), 'data', 'site-config.json')
   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
-  const headerMenuItems = config.header.menuItems.filter(
-    (item: string) => !item.includes('落地流程') && !item.includes('路径')
-  )
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
   const newsArticles = await listNewsArticles()
+
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -45,6 +43,7 @@ export default async function Home() {
     ],
     sameAs: Object.values(config.company.socialLinks).filter((url) => url && url !== '#'),
   }
+
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -57,70 +56,63 @@ export default async function Home() {
       },
     })),
   }
+
   const servicesJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Papa Claw爬爬虾五大核心业务板块',
-    itemListElement: config.projects.items.map((item: { title: string; tags: string[] }, index: number) => ({
+    itemListElement: [
+      'VIBE MARKETING 出海媒体',
+      'CROSS-BORDER INTELLIGENCE 跨境智库',
+      'STRATEGIC ADVISORY 品牌战略咨询',
+      'GOVERNMENT & ENTERPRISE 政企对接',
+      'FINANCIAL SERVICES 跨境金融',
+    ].map((name, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
         '@type': 'Service',
-        name: item.title,
-        provider: {
-          '@type': 'Organization',
-          name: config.company.name,
-        },
-        description: item.tags.join('、'),
+        name,
+        provider: { '@type': 'Organization', name: config.company.name },
       },
     })),
   }
 
   return (
     <SmoothScrollProvider>
+      <CursorSpotlight />
       <main className="relative">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
+        <Header menuItems={config.header.menuItems} whatsappUrl={config.header.whatsappUrl} />
+        <Hero
+          title="我们不靠赚方案的钱活着。"
+          subtitle1="我们靠你赚到钱活着。"
+          subtitle2="先付出，先交朋友，用成本价帮你出海。你不赚钱，我们只收工时费。"
+          backgroundImage={config.hero.backgroundImage}
+          cards={config.hero.cards}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        <About
+          leftText="爬爬虾不是一家从零开始的公司。我们是把 14 年海外踩过的坑、赚过的钱、认识过的人，全部打包带回了南沙。"
+          rightText="别人出海是摸着石头过河。我们是开着直升机过河。我们不租大办公室，不堆人，不撑排场。我们在南沙政府补贴的共享办公室里开会，把省下来的钱全砸在业务上。"
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+        <Pillars />
+        <Quote />
+        <Cases />
+        <Services />
+        <Audiences />
+        <News articles={newsArticles} />
+        <FAQ title={config.faq.title} subtitle={config.faq.subtitle} items={config.faq.items} />
+        <Footer
+          contactTitle="把出海需求推进到可落地项目"
+          contactDescription="欢迎联系 Papa Claw 爬爬虾，了解 AI 科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。"
+          ctaText="联系我们"
+          socialLinks={config.footer.socialLinks}
+          copyright={config.footer.copyright}
+          legalLinks={config.footer.legalLinks}
+          credit={config.footer.credit}
         />
-        <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
-        <div id="home">
-          <Hero title={config.hero.title} subtitle1={config.hero.subtitle1} subtitle2={config.hero.subtitle2} backgroundImage={config.hero.backgroundImage} cards={config.hero.cards} />
-        </div>
-        <div id="about">
-          <Agency leftText={config.agency.leftText} rightText={config.agency.rightText} videoUrl={config.agency.videoUrl} />
-        </div>
-        <div id="audience">
-          <Team title={config.team.title} members={config.team.members} />
-        </div>
-        <div id="services">
-          <Projects title={config.projects.title} items={config.projects.items} />
-        </div>
-        <Manifest />
-        <SeoTopicLinks />
-        <div id="ai-source">
-          <Expertises title={config.expertises.title} subtitle={config.expertises.subtitle} items={config.expertises.items} />
-        </div>
-        <div id="advantages">
-          <Why title={config.why.title} subtitle={config.why.subtitle} reasons={config.why.reasons} />
-        </div>
-        <div id="news">
-          <News articles={newsArticles} />
-        </div>
-        <div id="faq">
-          <FAQ title={config.faq.title} subtitle={config.faq.subtitle} items={config.faq.items} />
-        </div>
-        <div id="contact">
-          <Footer contactTitle={config.footer.contactTitle} contactDescription={config.footer.contactDescription} ctaText={config.footer.ctaText} socialLinks={config.footer.socialLinks} copyright={config.footer.copyright} legalLinks={config.footer.legalLinks} credit={config.footer.credit} />
-        </div>
       </main>
     </SmoothScrollProvider>
   )

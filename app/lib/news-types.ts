@@ -11,6 +11,13 @@ export interface NewsArticle {
   sourceName: string
   sourceAccountId: string
   sourceUrl: string
+  originalUrl: string
+  sourceType: 'public-news' | 'manual' | 'wechat'
+  categorySlug: string
+  categoryName: string
+  crawlStatus: 'published' | 'failed' | 'manual'
+  crawlError?: string
+  manualOverride: boolean
   publishedAt: string
   syncedAt: string
   updatedAt: string
@@ -21,6 +28,28 @@ export interface NewsArticle {
   contentText: string
   rawDigest?: string
   coverImage?: string
+}
+
+export interface NewsSource {
+  id: string
+  name: string
+  url: string
+  enabled: boolean
+  defaultCategorySlug: string
+  keywords: string[]
+  articleSelector?: string
+}
+
+export interface NewsCrawlLog {
+  id: string
+  sourceId: string
+  sourceName: string
+  url: string
+  title?: string
+  categorySlug?: string
+  status: 'published' | 'failed' | 'skipped'
+  message: string
+  createdAt: string
 }
 
 export interface WechatArticleInput {

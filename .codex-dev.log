@@ -52,3 +52,93 @@
  GET /api/news 200 in 160ms
  GET /sitemap.xml 200 in 126ms
  GET /ai-global-expansion 200 in 141ms
+ ✓ Compiled in 2.4s (614 modules)
+ ✓ Compiled in 356ms (311 modules)
+ ✓ Compiled in 787ms (311 modules)
+ ✓ Compiled in 165ms (311 modules)
+ ✓ Compiled in 100ms (311 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 625ms (603 modules)
+ GET /_next/static/css/app/layout.css?v=1782356362857 404 in 756ms
+ ○ Compiling /_error ...
+ GET / 500 in 20ms
+ ✓ Compiled /_error in 394ms (829 modules)
+ GET /_next/static/webpack/5905e76f47a70833.webpack.hot-update.json 404 in 485ms
+ GET / 200 in 300ms
+ GET /_next/static/css/app/layout.css?v=1782356420926 404 in 17ms
+ GET /_next/static/chunks/main-app.js?v=1782356420926 404 in 46ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 24ms
+ GET /_next/static/chunks/app/page.js 404 in 21ms
+ ✓ Compiled in 157ms (498 modules)
+ ✓ Compiled in 127ms (498 modules)
+ ✓ Compiled in 348ms (838 modules)
+ ✓ Compiled in 237ms (496 modules)
+ ✓ Compiled in 236ms (496 modules)
+ ✓ Compiled in 133ms (496 modules)
+ ✓ Compiled in 123ms (496 modules)
+ ✓ Compiled in 128ms (496 modules)
+ ✓ Compiled in 121ms (496 modules)
+ ✓ Compiled in 352ms (824 modules)
+ ✓ Compiled in 122ms (496 modules)
+ ✓ Compiled in 186ms (824 modules)
+ ✓ Compiled in 175ms (496 modules)
+ ✓ Compiled in 138ms (496 modules)
+ ✓ Compiled in 153ms (496 modules)
+ ✓ Compiled in 141ms (496 modules)
+ ✓ Compiled in 506ms (824 modules)
+ ✓ Compiled in 140ms (496 modules)
+ ✓ Compiled in 243ms (824 modules)
+ ✓ Compiled in 310ms (838 modules)
+ ✓ Compiled in 181ms (496 modules)
+ ✓ Compiled in 268ms (824 modules)
+ ✓ Compiled in 198ms (496 modules)
+ ✓ Compiled in 165ms (824 modules)
+ ✓ Compiled in 131ms (496 modules)
+ ✓ Compiled in 190ms (824 modules)
+ ✓ Compiled in 527ms (824 modules)
+ ✓ Compiled in 966ms (824 modules)
+ ✓ Compiled in 1453ms (824 modules)
+ ✓ Compiled in 967ms (824 modules)
+ GET / 200 in 260ms
+ ✓ Compiled /_not-found in 381ms (827 modules)
+ GET /_next/static/chunks/main-app.js?v=1782357131641 404 in 458ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 457ms
+ ✓ Compiled in 1832ms (496 modules)
+ ✓ Compiled in 1077ms (824 modules)
+ ✓ Compiled in 1289ms (838 modules)
+ ✓ Compiled in 187ms (496 modules)
+ ✓ Compiled in 653ms (496 modules)
+ ✓ Compiled in 770ms (838 modules)
+ ✓ Compiled in 329ms (496 modules)
+ ✓ Compiled in 855ms (824 modules)
+ GET / 200 in 2130ms
+ ✓ Compiled in 3.3s (838 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 563ms (827 modules)
+ GET /_next/static/webpack/6b3d198402970f0d.webpack.hot-update.json 404 in 660ms
+ GET / 200 in 205ms
+ ✓ Compiled in 184ms (498 modules)
+ ✓ Compiled in 466ms (841 modules)
+ GET /_next/static/webpack/bceb537165922bd0.webpack.hot-update.json 404 in 503ms
+ GET / 200 in 124ms
+ ✓ Compiled in 407ms (498 modules)
+ ✓ Compiled in 193ms (498 modules)
+ ✓ Compiled in 176ms (498 modules)
+ ✓ Compiled in 210ms (498 modules)
+ ✓ Compiled in 161ms (498 modules)
+ ✓ Compiled in 185ms (498 modules)
+ ✓ Compiled in 362ms (498 modules)
+ ✓ Compiled in 151ms (498 modules)
+ ✓ Compiled in 128ms (498 modules)
+ ✓ Compiled /_error in 228ms (829 modules)
+ GET / 200 in 98ms
+ ✓ Compiled in 540ms (838 modules)
+ ✓ Compiled in 175ms (496 modules)
+ ✓ Compiled in 106ms (261 modules)
+ GET / 500 in 15ms
+ ○ Compiling /_not-found ...
+ GET /_next/static/chunks/fallback/main.js 500 in 385ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 384ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 383ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 164ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 159ms

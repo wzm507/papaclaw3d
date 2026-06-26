@@ -27,8 +27,8 @@ export default function WhyPage() {
     }
   }, [config])
 
-  if (loading) return <div className="p-8 text-center">加载中...</div>
-  if (!config || !localData) return <div className="p-8 text-center">加载失败</div>
+  if (loading) return <div className="rounded-card border border-ash-whisper bg-paper-white p-10 text-center font-sans text-sm text-slate-tint">加载中...</div>
+  if (!config || !localData) return <div className="rounded-card border border-ash-whisper bg-paper-white p-10 text-center font-sans text-sm text-red-600">加载失败，请刷新重试</div>
 
   const updateField = (key: keyof WhyData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)

@@ -6,15 +6,23 @@ import Header from '../components/Header'
 import Footer from '../sections/Footer'
 import SmoothScrollProvider from '../components/SmoothScrollProvider'
 import { listNewsArticles } from '../lib/news-store'
+import { listSeoTopics } from '../lib/seo-topics'
 
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: '新闻动态 | Papa Claw爬爬虾',
-  description: 'Papa Claw爬爬虾官网新闻中心，同步凯勒斐KLF公众号发布的企业出海真实新闻，并整理为搜索引擎和问答类AI可读取的官网文本。',
+  title: '企业出海真实新闻 | Papa Claw爬爬虾',
+  description:
+    'Papa Claw爬爬虾官网新闻中心，抓取并整理企业出海、AI科技出海、外贸工厂获客、中东政企资源、跨境金融和海外社媒相关真实新闻。',
   alternates: {
     canonical: '/news',
   },
+}
+
+interface NewsPageProps {
+  searchParams?: {
+    category?: string
+  }
 }
 
 function formatDate(date: string) {
@@ -25,55 +33,80 @@ function formatDate(date: string) {
   }).format(new Date(date))
 }
 
-export default async function NewsPage() {
+export default async function NewsPage({ searchParams }: NewsPageProps) {
   const configPath = path.join(process.cwd(), 'data', 'site-config.json')
   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')
   )
-  const articles = await listNewsArticles()
+  const [articles, topics] = await Promise.all([listNewsArticles(), listSeoTopics()])
+  const activeCategory = searchParams?.category || ''
+  const filteredArticles = activeCategory
+    ? articles.filter((article) => article.categorySlug === activeCategory)
+    : articles
 
   return (
     <SmoothScrollProvider>
       <main className="min-h-screen bg-pale-canvas">
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
-        <section className="editorial-section pt-36">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f5f5f7_100%)]" />
-          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/10" />
-          <div className="relative z-10 mx-auto max-w-7xl">
-            <p className="editorial-kicker mb-4 text-center">Enterprise Global News</p>
-            <h1 className="editorial-heading mx-auto mb-6 max-w-5xl text-center">
-              Papa Claw爬爬虾企业出海新闻
-            </h1>
-            <p className="editorial-body editorial-measure mx-auto mb-14 text-center">
-              本栏目同步“凯勒斐KLF”公众号发布的企业出海真实新闻，在保留原文事实的基础上补充可被搜索引擎和问答类 AI 读取的摘要、关键词与结构化信息。
+        <section className="section pt-36">
+          <div className="section-inner">
+            <p className="kicker mb-4 text-center">Enterprise Global News</p>
+            <h1 className="heading-lg mx-auto mb-6 max-w-4xl text-center">企业出海真实新闻</h1>
+            <p className="body-text mx-auto mb-12 max-w-2xl text-center">
+              这里收录公开新闻源中与企业出海相关的内容。系统只发布已抓取到全文的新闻，并按 SEO 专题整理为可检索、可引用的官网文本。
             </p>
 
-            <div className="space-y-3">
-              {articles.length > 0 ? (
-                articles.map((article) => (
+            <div className="mb-10 flex flex-wrap justify-center gap-2">
+              <Link
+                href="/news"
+                className={`rounded-content border px-4 py-2 font-sans text-sm font-semibold transition-all ${
+                  !activeCategory
+                    ? 'border-deep-forest bg-deep-forest text-paper-white'
+                    : 'border-ash-whisper bg-paper-white text-deep-forest hover:border-deep-forest'
+                }`}
+              >
+                全部
+              </Link>
+              {topics.map((topic) => (
+                <Link
+                  key={topic.slug}
+                  href={`/news?category=${topic.slug}`}
+                  className={`rounded-content border px-4 py-2 font-sans text-sm font-semibold transition-all ${
+                    activeCategory === topic.slug
+                      ? 'border-deep-forest bg-deep-forest text-paper-white'
+                      : 'border-ash-whisper bg-paper-white text-deep-forest hover:border-deep-forest'
+                  }`}
+                >
+                  {topic.title}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-4">
+              {filteredArticles.length > 0 ? (
+                filteredArticles.map((article) => (
                   <Link
                     key={article.id}
                     href={`/news/${article.slug}`}
-                    className="neo-panel grid gap-6 rounded-content p-6 transition-transform hover:-translate-y-1 md:grid-cols-[10rem_1fr] md:p-8"
+                    className="group grid gap-6 card-surface p-6 transition-all duration-500 hover:-translate-y-1 hover:border-deep-forest md:grid-cols-[12rem_1fr] md:p-8"
                   >
                     <div>
-                      <p className="editorial-meta">{formatDate(article.publishedAt)}</p>
-                      <p className="mt-3 font-utility text-xs font-semibold uppercase text-foudre-pink">
-                        {article.sourceName}
+                      <p className="font-mono text-xs uppercase tracking-widest text-slate-tint">{formatDate(article.publishedAt)}</p>
+                      <p className="mt-3 font-sans text-xs font-semibold uppercase tracking-widest text-foudre-pink">
+                        {article.categoryName}
                       </p>
+                      <p className="mt-3 font-sans text-sm font-semibold text-deep-forest">{article.sourceName}</p>
                     </div>
                     <article>
-                      <h2 className="font-utility text-3xl font-semibold leading-tight text-deep-forest">
+                      <h2 className="font-display text-2xl font-semibold leading-tight text-deep-forest transition-colors group-hover:text-foudre-pink md:text-3xl">
                         {article.searchableTitle || article.title}
                       </h2>
-                      <p className="editorial-body mt-4">
-                        {article.aiSummary}
-                      </p>
+                      <p className="body-text mt-4">{article.aiSummary}</p>
                       <div className="mt-5 flex flex-wrap gap-2">
-                        {article.keywords.slice(0, 6).map((keyword) => (
-                          <span key={keyword} className="rounded-content border border-ash-whisper bg-paper-white px-3 py-1 font-utility text-xs text-slate-tint">
+                        {article.keywords.slice(0, 6).map((keyword: string) => (
+                          <span key={keyword} className="chip">
                             {keyword}
                           </span>
                         ))}
@@ -82,10 +115,10 @@ export default async function NewsPage() {
                   </Link>
                 ))
               ) : (
-                <div className="neo-panel rounded-content p-8 text-center md:p-12">
-                  <h2 className="font-utility text-heading font-semibold text-deep-forest">新闻中心等待首次同步</h2>
-                  <p className="editorial-body mx-auto mt-4 max-w-2xl">
-                    部署后配置微信公众号 AppSecret、Vercel KV、OpenAI API Key 和 Cron 密钥，即可在每天 00:00 自动同步公众号企业出海新闻。
+                <div className="card-surface p-8 text-center md:p-12">
+                  <h2 className="heading text-deep-forest">新闻中心还在等第一批内容</h2>
+                  <p className="body-text mx-auto mt-4 max-w-2xl">
+                    点上方按钮就能触发抓取，也可以手动上传新闻全文。抓不到全文的不会发出来。
                   </p>
                 </div>
               )}
@@ -94,9 +127,9 @@ export default async function NewsPage() {
         </section>
 
         <Footer
-          contactTitle={config.footer.contactTitle}
-          contactDescription={config.footer.contactDescription}
-          ctaText={config.footer.ctaText}
+          contactTitle="把出海需求推进到可落地项目"
+          contactDescription="欢迎联系 Papa Claw 爬爬虾，了解 AI 科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。"
+          ctaText="联系我们"
           socialLinks={config.footer.socialLinks}
           copyright={config.footer.copyright}
           legalLinks={config.footer.legalLinks}

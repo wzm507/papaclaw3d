@@ -1,0 +1,2261 @@
+ ⨯ ./app/lib/news-content.ts
+Error: Failed to read source code from E:\工作\papaclaw\app\lib\news-content.ts
+
+Caused by:
+    系统找不到指定的文件。 (os error 2)
+
+Import trace for requested module:
+./app/lib/news-content.ts
+./app/lib/news-store.ts
+./app/page.tsx
+ ⨯ ./app/lib/news-content.ts
+Error: Failed to read source code from E:\工作\papaclaw\app\lib\news-content.ts
+
+Caused by:
+    系统找不到指定的文件。 (os error 2)
+
+Import trace for requested module:
+./app/lib/news-content.ts
+./app/lib/news-store.ts
+./app/page.tsx
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\vendor-chunks\@swc.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@swc' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\@swc.js', but to 'Error: Can't resolve './vendor-chunks/@swc' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@swc (expected E:\工作\papaclaw\.next\server\vendor-chunks\@swc.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js
+<w>  at file E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/next' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\next.js', but to 'Error: Can't resolve './vendor-chunks/next' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/next (expected E:\工作\papaclaw\.next\server\vendor-chunks\next.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js
+<w>  at file E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\_ssr_app_components_Manifest3D_tsx.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './_ssr_app_components_Manifest3D_tsx' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\_ssr_app_components_Manifest3D_tsx.js', but to 'Error: Can't resolve './_ssr_app_components_Manifest3D_tsx' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./_ssr_app_components_Manifest3D_tsx (expected E:\工作\papaclaw\.next\server\_ssr_app_components_Manifest3D_tsx.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/suspend-react' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\suspend-react.js', but to 'Error: Can't resolve './vendor-chunks/suspend-react' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/suspend-react (expected E:\工作\papaclaw\.next\server\vendor-chunks\suspend-react.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/its-fine' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\its-fine.js', but to 'Error: Can't resolve './vendor-chunks/its-fine' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/its-fine (expected E:\工作\papaclaw\.next\server\vendor-chunks\its-fine.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lenis' in E:\工作\papaclaw\.next\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\vendor-chunks\lenis.js', but to 'Error: Can't resolve './vendor-chunks/lenis' in 'E:\工作\papaclaw\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lenis (expected E:\工作\papaclaw\.next\server\vendor-chunks\lenis.js)
+<w>  at file dependencies E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file E:\工作\papaclaw\.next\server\webpack-runtime.js
+<w>  at file dependencies E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file E:\工作\papaclaw\.next\server\app\[topic]\page.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⨯ ./app/admin/components/Sidebar.tsx
+Error: Failed to read source code from E:\工作\papaclaw\app\admin\components\Sidebar.tsx
+
+Caused by:
+    系统找不到指定的文件。 (os error 2)
+
+Import trace for requested module:
+./app/admin/components/Sidebar.tsx
+./app/admin/layout.tsx
+ ⨯ ./app/components/Header.tsx
+Error: Failed to read source code from E:\工作\papaclaw\app\components\Header.tsx
+
+Caused by:
+    系统找不到指定的文件。 (os error 2)
+
+Import trace for requested module:
+./app/components/Header.tsx
+ ⨯ ./app/components/Header.tsx
+Error: Failed to read source code from E:\工作\papaclaw\app\components\Header.tsx
+
+Caused by:
+    系统找不到指定的文件。 (os error 2)
+
+Import trace for requested module:
+./app/components/Header.tsx
+ ⨯ ./app/sections/News.tsx
+Error: Failed to read source code from E:\工作\papaclaw\app\sections\News.tsx
+
+Caused by:
+    系统找不到指定的文件。 (os error 2)
+
+Import trace for requested module:
+./app/sections/News.tsx
+./app/page.tsx
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/_not-found/page' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\_not-found\page.js', but to 'Error: Can't resolve '../../../../.next/server/app/_not-found/page' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/_not-found/page (expected E:\工作\papaclaw\.next\server\app\_not-found\page.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/[topic]/page' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\[topic]\page.js', but to 'Error: Can't resolve '../../../../.next/server/app/[topic]/page' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/[topic]/page (expected E:\工作\papaclaw\.next\server\app\[topic]\page.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\_not-found\page.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/_not-found/page' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\_not-found\page.js', but to 'Error: Can't resolve '../../../../.next/server/app/_not-found/page' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/_not-found/page (expected E:\工作\papaclaw\.next\server\app\_not-found\page.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/llms-full.txt/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/llms-full.txt/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/llms-full.txt/route (expected E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/news/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\news\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/news/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/news/route (expected E:\工作\papaclaw\.next\server\app\api\news\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at loadManifest (E:\工作\papaclaw\node_modules\next\dist\server\load-manifest.js:36:25)
+    at DevServer.getNextFontManifest (E:\工作\papaclaw\node_modules\next\dist\server\next-server.js:750:47)
+    at DevServer.findPageComponents (E:\工作\papaclaw\node_modules\next\dist\server\dev\next-dev-server.js:571:43)
+    at async DevServer.renderPageComponent (E:\工作\papaclaw\node_modules\next\dist\server\base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (E:\工作\papaclaw\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (E:\工作\papaclaw\node_modules\next\dist\server\base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (E:\工作\papaclaw\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (E:\工作\papaclaw\node_modules\next\dist\server\base-server.js:818:17)
+    at async E:\工作\papaclaw\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (E:\工作\papaclaw\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (E:\工作\papaclaw\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (E:\工作\papaclaw\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (E:\工作\papaclaw\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (E:\工作\papaclaw\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (E:\工作\papaclaw\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  page: '/'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\api'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/llms-full.txt/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/llms-full.txt/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/llms-full.txt/route (expected E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/ai-news-feed/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\ai-news-feed\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/ai-news-feed/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/ai-news-feed/route (expected E:\工作\papaclaw\.next\server\app\ai-news-feed\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/news/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\news\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/news/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/news/route (expected E:\工作\papaclaw\.next\server\app\api\news\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⨯ ./app/globals.css:75:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 73 | [39m
+ [90m 74 | [39m  [33m.heading-lg[39m [33m{[39m
+[1m[31m>[39m[22m[90m 75 | [39m    [36m@apply[39m font-display text-heading-lg font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 76 | [39m  [33m}[39m
+ [90m 77 | [39m
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\api'
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+   ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:2:1]
+ [2m2[0m | import path from 'path'
+ [2m3[0m | import Header from './components/Header'
+ [2m4[0m | import Hero from './sections/Hero'
+ [2m5[0m | import About from './sections/
+   : [31;1m                  ^^^^^^^^^^^^[0m
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+   ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:4:1]
+ [2m4[0m | import Hero from './sections/Hero'
+ [2m5[0m | import About from './sections/About'
+ [2m6[0m | import Pillars from './sections/Pillars'
+ [2m7[0m | import Quote from './sections/
+   : [31;1m                  ^^^^^^^^^^^^[0m
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:7:1]
+ [2m 7[0m | import Quote from './sections/Quote'
+ [2m 8[0m | import Cases from './sections/Cases'
+ [2m 9[0m | import Services from './sections/Services'
+ [2m10[0m | import Audiences from './sections/Audiences
+    : [31;1m                      ^^^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Expected 'from', got '<eof>'
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:11:1]
+ [2m11[0m | import News from './sections/News'
+ [2m12[0m | import FAQ from './sections/FAQ'
+ [2m13[0m | import Footer from './sections/Footer'
+ [2m14[0m | import
+    : [31;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:12:1]
+ [2m12[0m | import FAQ from './sections/FAQ'
+ [2m13[0m | import Footer from './sections/Footer'
+ [2m14[0m | import CursorSpotlight from './components/CursorSpotlight'
+ [2m15[0m | import SmoothScrollProvider from './components/S
+    : [31;1m                                 ^^^^^^^^^^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:18:1]
+ [2m18[0m | export const dynamic = 'force-dynamic'
+ [2m19[0m | 
+ [2m20[0m | export default async function Home() {
+ [2m21[0m |   const configPath = path.join(process.cwd(), 'data
+    : [31;1m                                              ^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:18:1]
+ [2m18[0m | export const dynamic = 'force-dynamic'
+ [2m19[0m | 
+ [2m20[0m | export default async function Home() {
+ [2m21[0m |   const configPath = path.join(process.cwd(), 'data
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:20:1]
+ [2m20[0m | export default async function Home() {
+ [2m21[0m |   const configPath = path.join(process.cwd(), 'data', 'site-config.json')
+ [2m22[0m |   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+ [2m23[0m |   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ||
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:24:1]
+ [2m24[0m |   const newsArticles = await listNewsArticles()
+ [2m25[0m | 
+ [2m26[0m |   const organizationJsonLd = {
+ [2m27[0m |     '@context': 'https://schema.org
+    : [31;1m                ^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:24:1]
+ [2m24[0m |   const newsArticles = await listNewsArticles()
+ [2m25[0m | 
+ [2m26[0m |   const organizationJsonLd = {
+ [2m27[0m |     '@context': 'https://schema.org
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Expected a semicolon
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:27:1]
+ [2m27[0m |     '@context': 'https://schema.org',
+ [2m28[0m |     '@type': 'Organization',
+ [2m29[0m |     name: config.company.name,
+ [2m30[0m |     legal
+    : [31;1m    ^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:27:1]
+ [2m27[0m |     '@context': 'https://schema.org',
+ [2m28[0m |     '@type': 'Organization',
+ [2m29[0m |     name: config.company.name,
+ [2m30[0m |     legal
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:28:1]
+ [2m28[0m |     '@type': 'Organization',
+ [2m29[0m |     name: config.company.name,
+ [2m30[0m |     legalName: config.company.legalName,
+ [2m31[0m |     alternateName: ['Papa Claw', '
+    : [31;1m                                 ^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:28:1]
+ [2m28[0m |     '@type': 'Organization',
+ [2m29[0m |     name: config.company.name,
+ [2m30[0m |     legalName: config.company.legalName,
+ [2m31[0m |     alternateName: ['Papa Claw', '
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:30:1]
+ [2m30[0m |     legalName: config.company.legalName,
+ [2m31[0m |     alternateName: ['Papa Claw', '爬爬虾', 'Papa Claw爬爬虾'],
+ [2m32[0m |     url: siteUrl,
+ [2m33[0m |     slogan: config.company.tagline,
+    : [31;1m                                   ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:32:1]
+ [2m32[0m |     url: siteUrl,
+ [2m33[0m |     slogan: config.company.tagline,
+ [2m34[0m |     description: config.company.description,
+ [2m35[0m |     areaServed: ['中国', '南沙', '
+    : [31;1m                                     ^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:32:1]
+ [2m32[0m |     url: siteUrl,
+ [2m33[0m |     slogan: config.company.tagline,
+ [2m34[0m |     description: config.company.description,
+ [2m35[0m |     areaServed: ['中国', '南沙', '
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:34:1]
+ [2m34[0m |     description: config.company.description,
+ [2m35[0m |     areaServed: ['中国', '南沙', '港澳', '中东', '东南亚', '非洲'],
+ [2m36[0m |     knowsAbout: [
+ [2m37[0m |       '
+    : [31;1m      ^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:34:1]
+ [2m34[0m |     description: config.company.description,
+ [2m35[0m |     areaServed: ['中国', '南沙', '港澳', '中东', '东南亚', '非洲'],
+ [2m36[0m |     knowsAbout: [
+ [2m37[0m |       '
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:37:1]
+ [2m37[0m |       'AI科技出海',
+ [2m38[0m |       '政企资源对接',
+ [2m39[0m |       '跨境智库',
+ [2m40[0m |       '
+    : [31;1m      ^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:37:1]
+ [2m37[0m |       'AI科技出海',
+ [2m38[0m |       '政企资源对接',
+ [2m39[0m |       '跨境智库',
+ [2m40[0m |       '
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:38:1]
+ [2m38[0m |       '政企资源对接',
+ [2m39[0m |       '跨境智库',
+ [2m40[0m |       '海外社媒运营',
+ [2m41[0m |       'AI标
+    : [31;1m      ^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:38:1]
+ [2m38[0m |       '政企资源对接',
+ [2m39[0m |       '跨境智库',
+ [2m40[0m |       '海外社媒运营',
+ [2m41[0m |       'AI标
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:41:1]
+ [2m41[0m |       'AI标书代投',
+ [2m42[0m |       '跨境金融服务',
+ [2m43[0m |     ],
+ [2m44[0m |     sameAs: Object
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:45:1]
+ [2m45[0m |   }
+ [2m46[0m | 
+ [2m47[0m |   const faqJsonLd = {
+ [2m48[0m |     '@context': 'https://schema.org
+    : [31;1m                ^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:45:1]
+ [2m45[0m |   }
+ [2m46[0m | 
+ [2m47[0m |   const faqJsonLd = {
+ [2m48[0m |     '@context': 'https://schema.org
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:47:1]
+ [2m47[0m |   const faqJsonLd = {
+ [2m48[0m |     '@context': 'https://schema.org',
+ [2m49[0m |     '@type': 'FAQPage',
+ [2m50[0m |     mainEntity: config.faq.items.map
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:48:1]
+ [2m48[0m |     '@context': 'https://schema.org',
+ [2m49[0m |     '@type': 'FAQPage',
+ [2m50[0m |     mainEntity: config.faq.items.map((item: { question: string; answer: string }) => ({
+ [2m51[0m |       '@type':
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:51:1]
+ [2m51[0m |       '@type': 'Question',
+ [2m52[0m |       name: item.question,
+ [2m53[0m |       acceptedAnswer: {
+ [2m54[0m |         '@type
+    : [31;1m        ^^^^^^[0m
+    `----
+
+  [31mx[0m Expected a semicolon
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:51:1]
+ [2m51[0m |       '@type': 'Question',
+ [2m52[0m |       name: item.question,
+ [2m53[0m |       acceptedAnswer: {
+ [2m54[0m |         '@type
+    : [31;1m        ^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:51:1]
+ [2m51[0m |       '@type': 'Question',
+ [2m52[0m |       name: item.question,
+ [2m53[0m |       acceptedAnswer: {
+ [2m54[0m |         '@type
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m 'const' declarations must be initialized
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:57:1]
+ [2m57[0m |     })),
+ [2m58[0m |   }
+ [2m59[0m | 
+ [2m60[0m |   const servicesJsonLd
+    : [31;1m        ^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:57:1]
+ [2m57[0m |     })),
+ [2m58[0m |   }
+ [2m59[0m | 
+ [2m60[0m |   const servicesJsonLd
+    : [31;1m        ^^^^^^^^^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:59:1]
+ [2m59[0m | 
+ [2m60[0m |   const servicesJsonLd = {
+ [2m61[0m |     '@context': 'https://schema.org',
+ [2m62[0m |     '@type': 'Item
+    : [31;1m             ^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:59:1]
+ [2m59[0m | 
+ [2m60[0m |   const servicesJsonLd = {
+ [2m61[0m |     '@context': 'https://schema.org',
+ [2m62[0m |     '@type': 'Item
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:60:1]
+ [2m60[0m |   const servicesJsonLd = {
+ [2m61[0m |     '@context': 'https://schema.org',
+ [2m62[0m |     '@type': 'ItemList',
+ [2m63[0m |     name: 'Papa Cl
+    : [31;1m          ^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:60:1]
+ [2m60[0m |   const servicesJsonLd = {
+ [2m61[0m |     '@context': 'https://schema.org',
+ [2m62[0m |     '@type': 'ItemList',
+ [2m63[0m |     name: 'Papa Cl
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:62:1]
+ [2m62[0m |     '@type': 'ItemList',
+ [2m63[0m |     name: 'Papa Claw爬爬虾五大核心业务板块',
+ [2m64[0m |     itemListElement: [
+ [2m65[0m |       'VIBE
+    : [31;1m      ^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:62:1]
+ [2m62[0m |     '@type': 'ItemList',
+ [2m63[0m |     name: 'Papa Claw爬爬虾五大核心业务板块',
+ [2m64[0m |     itemListElement: [
+ [2m65[0m |       'VIBE
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:64:1]
+ [2m64[0m |     itemListElement: [
+ [2m65[0m |       'VIBE MARKETING 出海媒体',
+ [2m66[0m |       'CROSS-BORDER INTELLIGENCE 跨境智库',
+ [2m67[0m |       'STRATEGIC ADVISORY
+    : [31;1m      ^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:64:1]
+ [2m64[0m |     itemListElement: [
+ [2m65[0m |       'VIBE MARKETING 出海媒体',
+ [2m66[0m |       'CROSS-BORDER INTELLIGENCE 跨境智库',
+ [2m67[0m |       'STRATEGIC ADVISORY
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:65:1]
+ [2m65[0m |       'VIBE MARKETING 出海媒体',
+ [2m66[0m |       'CROSS-BORDER INTELLIGENCE 跨境智库',
+ [2m67[0m |       'STRATEGIC ADVISORY 品牌战略咨询',
+ [2m68[0m |       'GOVERNMENT & ENTERPRISE 政企对接',
+    : [31;1m                                             ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:67:1]
+ [2m67[0m |       'STRATEGIC ADVISORY 品牌战略咨询',
+ [2m68[0m |       'GOVERNMENT & ENTERPRISE 政企对接',
+ [2m69[0m |       'FINANCIAL SERVICES 跨境金融',
+ [2m70[0m |     ].map((name, index) => (
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:69:1]
+ [2m69[0m |       'FINANCIAL SERVICES 跨境金融',
+ [2m70[0m |     ].map((name, index) => ({
+ [2m71[0m |       '@type': 'ListItem',
+ [2m72[0m |       position: index + 1,
+    : [31;1m                          ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:73:1]
+ [2m73[0m |       item: {
+ [2m74[0m |         '@type': 'Service',
+ [2m75[0m |         name,
+ [2m76[0m |         provider:
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:74:1]
+ [2m74[0m |         '@type': 'Service',
+ [2m75[0m |         name,
+ [2m76[0m |         provider: { '@type': 'Organization', name: config.company.name },
+ [2m77[0m |       },
+    : [31;1m        ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:78:1]
+ [2m78[0m |     })),
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return
+    : [31;1m  ^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd)
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/page.tsx
+Error: 
+  [31mx[0m Unexpected token `SmoothScrollProvider`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\page.tsx[0m:79:1]
+ [2m79[0m |   }
+ [2m80[0m | 
+ [2m81[0m |   return (
+ [2m82[0m |     <SmoothScrollProvider>
+    : [31;1m     ^^^^^^^^^^^^^^^^^^^^[0m
+ [2m83[0m |       <CursorSpotlight />
+ [2m84[0m |       <main className="relative">
+ [2m85[0m |         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/page.tsx
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\api'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/llms-full.txt/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/llms-full.txt/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/llms-full.txt/route (expected E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+   ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:4:1]
+ [2m4[0m | export const metadata: Metadata = {
+ [2m5[0m |   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'),
+ [2m6[0m |   title: {
+ [2m7[0m |     default: 'Papa Claw爬爬
+   : [31;1m             ^^^^^^^^^^^^^^^^[0m
+   `----
+
+  [31mx[0m Unexpected eof
+   ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:4:1]
+ [2m4[0m | export const metadata: Metadata = {
+ [2m5[0m |   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'),
+ [2m6[0m |   title: {
+ [2m7[0m |     default: 'Papa Claw爬爬
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+   ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:5:1]
+ [2m5[0m |   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'),
+ [2m6[0m |   title: {
+ [2m7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m8[0m |     template: '%s｜Papa Cl
+   : [31;1m              ^^^^^^^^^^^^^[0m
+   `----
+
+  [31mx[0m Unexpected eof
+   ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:5:1]
+ [2m5[0m |   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'),
+ [2m6[0m |   title: {
+ [2m7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m8[0m |     template: '%s｜Papa Cl
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:7:1]
+ [2m 7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m 8[0m |     template: '%s｜Papa Claw爬爬虾',
+ [2m 9[0m |   },
+ [2m10[0m |   description: 'Papa Claw 爬
+    : [31;1m               ^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:7:1]
+ [2m 7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m 8[0m |     template: '%s｜Papa Claw爬爬虾',
+ [2m 9[0m |   },
+ [2m10[0m |   description: 'Papa Claw 爬
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:7:1]
+ [2m 7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m 8[0m |     template: '%s｜Papa Claw爬爬虾',
+ [2m 9[0m |   },
+ [2m10[0m |   description: 'Papa Claw 爬爬虾，先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收
+    : [31;1m               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:7:1]
+ [2m 7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m 8[0m |     template: '%s｜Papa Claw爬爬虾',
+ [2m 9[0m |   },
+ [2m10[0m |   description: 'Papa Claw 爬爬虾，先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:7:1]
+ [2m 7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m 8[0m |     template: '%s｜Papa Claw爬爬虾',
+ [2m 9[0m |   },
+ [2m10[0m |   description: 'Papa Claw 爬爬虾，先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收工时费。14 年中东政企资源 + 全链路 AI 数据能力，服务实体
+    : [31;1m               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:7:1]
+ [2m 7[0m |     default: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m 8[0m |     template: '%s｜Papa Claw爬爬虾',
+ [2m 9[0m |   },
+ [2m10[0m |   description: 'Papa Claw 爬爬虾，先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收工时费。14 年中东政企资源 + 全链路 AI 数据能力，服务实体
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:10:1]
+ [2m10[0m |   description: 'Papa Claw 爬爬虾，先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收工时费。14 年中东政企资源 + 全链路 AI 数据能力，服务实体外贸工厂与政府及政企出海项目。',
+ [2m11[0m |   keywords: [
+ [2m12[0m |     'Papa Claw',
+ [2m13[0m |     '爬爬虾',
+    : [31;1m                ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:13:1]
+ [2m13[0m |     '爬爬虾',
+ [2m14[0m |     'Papa Claw爬爬虾',
+ [2m15[0m |     'AI科技出海',
+ [2m16[0m |     '
+    : [31;1m    ^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:13:1]
+ [2m13[0m |     '爬爬虾',
+ [2m14[0m |     'Papa Claw爬爬虾',
+ [2m15[0m |     'AI科技出海',
+ [2m16[0m |     '
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:15:1]
+ [2m15[0m |     'AI科技出海',
+ [2m16[0m |     '政企资源出海',
+ [2m17[0m |     '中东出海服务',
+ [2m18[0m |     '外贸工厂出海获客',
+    : [31;1m                               ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:18:1]
+ [2m18[0m |     '外贸工厂出海获客',
+ [2m19[0m |     'AI标书代投',
+ [2m20[0m |     '海外社媒运营',
+ [2m21[0m |     '跨境
+    : [31;1m    ^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:18:1]
+ [2m18[0m |     '外贸工厂出海获客',
+ [2m19[0m |     'AI标书代投',
+ [2m20[0m |     '海外社媒运营',
+ [2m21[0m |     '跨境
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:21:1]
+ [2m21[0m |     '跨境金融服务',
+ [2m22[0m |     '南沙企业出海',
+ [2m23[0m |   ],
+ [2m24[0m |   alternates: {
+    : [31;1m               ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:25:1]
+ [2m25[0m |     canonical: '/',
+ [2m26[0m |   },
+ [2m27[0m |   openGraph: {
+ [2m28[0m |     title: 'Papa Claw爬爬虾｜不铺
+    : [31;1m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:25:1]
+ [2m25[0m |     canonical: '/',
+ [2m26[0m |   },
+ [2m27[0m |   openGraph: {
+ [2m28[0m |     title: 'Papa Claw爬爬虾｜不铺
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:26:1]
+ [2m26[0m |   },
+ [2m27[0m |   openGraph: {
+ [2m28[0m |     title: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m29[0m |     description:
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:27:1]
+ [2m27[0m |   openGraph: {
+ [2m28[0m |     title: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m29[0m |     description: '先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收工时费。',
+ [2m30[0m |     url: '/',
+    : [31;1m             ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:28:1]
+ [2m28[0m |     title: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m29[0m |     description: '先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收工时费。',
+ [2m30[0m |     url: '/',
+ [2m31[0m |     siteName: 'Papa Claw爬爬
+    : [31;1m              ^^^^^^^^^^^^^^^^[0m
+    `----
+
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:28:1]
+ [2m28[0m |     title: 'Papa Claw爬爬虾｜不铺摊子，只铺结果',
+ [2m29[0m |     description: '先付出、先交朋友、用成本价帮你出海。你不赚钱，我们只收工时费。',
+ [2m30[0m |     url: '/',
+ [2m31[0m |     siteName: 'Papa Claw爬爬
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:33:1]
+ [2m33[0m |     type: 'website',
+ [2m34[0m |   },
+ [2m35[0m |   robots: {
+ [2m36[0m |     index:
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:42:1]
+ [2m42[0m |   },
+ [2m43[0m | }
+ [2m44[0m | 
+ [2m45[0m | export default
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `html`. Expected jsx identifier
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:48:1]
+ [2m48[0m |   children: React.ReactNode
+ [2m49[0m | }) {
+ [2m50[0m |   return (
+ [2m51[0m |     <html lang="zh-CN">
+    : [31;1m     ^^^^[0m
+ [2m52[0m |       <body>{
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected eof
+    ,-[[36;1;4mE:\工作\papaclaw\app\layout.tsx[0m:50:1]
+ [2m50[0m |   return (
+ [2m51[0m |     <html lang="zh-CN">
+ [2m52[0m |       <body>{children}</body>
+ [2m53[0m |     </html>
+    : [31;1m           ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+ ⨯ ./app/globals.css:71:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `font-display` class does not exist. If `font-display` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 69 | [39m
+ [90m 70 | [39m  [33m.display-text[39m [33m{[39m
+[1m[31m>[39m[22m[90m 71 | [39m    [36m@apply[39m font-display text-display font-semibold tracking-tight text-deep-forest text-balance[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 72 | [39m  [33m}[39m
+ [90m 73 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\api'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/llms-full.txt/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/llms-full.txt/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/llms-full.txt/route (expected E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/news/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\news\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/news/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/news/route (expected E:\工作\papaclaw\.next\server\app\api\news\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/[topic]/page' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\[topic]\page.js', but to 'Error: Can't resolve '../../../../.next/server/app/[topic]/page' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/[topic]/page (expected E:\工作\papaclaw\.next\server\app\[topic]\page.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\api'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/llms-full.txt/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/llms-full.txt/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/llms-full.txt/route (expected E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/news/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\news\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/news/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/news/route (expected E:\工作\papaclaw\.next\server\app\api\news\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/sitemap.xml/[[...__metadata_id__]]/route (expected E:\工作\papaclaw\.next\server\app\sitemap.xml\[[...__metadata_id__]]\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'E:\工作\papaclaw\.next\cache\webpack\server-development\2.pack.gz_' -> 'E:\工作\papaclaw\.next\cache\webpack\server-development\2.pack.gz'
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+ ⨯ ./app/globals.css:111:5
+Syntax error: E:\工作\papaclaw\app\globals.css The `rounded-button` class does not exist. If `rounded-button` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 109 | [39m
+ [90m 110 | [39m  [33m.btn-primary[39m [33m{[39m
+[1m[31m>[39m[22m[90m 111 | [39m    [36m@apply[39m inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover[33m:[39m-translate-y-0.5 hover[33m:[39mbg-foudre-pink hover[33m:[39mborder-foudre-pink[33m;[39m
+ [90m     | [39m    [1m[31m^[39m[22m
+ [90m 112 | [39m  [33m}[39m
+ [90m 113 | [39m
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[2]!E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[12].use[3]!E:\工作\papaclaw\app\globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'picomatch/lib/utils' in E:\工作\papaclaw\node_modules\micromatch for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\node_modules\picomatch\lib\utils.js', but to 'E:\工作\papaclaw\node_modules\micromatch\node_modules\picomatch\lib\utils.js' instead. Resolving dependencies are ignored for this path.
+<w>  at unknown 4 picomatch/lib/utils
+<w>  at file dependencies E:\工作\papaclaw\node_modules\micromatch\index.js
+<w>  at file E:\工作\papaclaw\node_modules\micromatch\index.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\content.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\content.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\setupTrackingContext.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\setupTrackingContext.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\plugin.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\plugin.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\index.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\index.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack-config.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack-config.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'picomatch/index' in E:\工作\papaclaw\node_modules\micromatch for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\node_modules\picomatch\index.js', but to 'E:\工作\papaclaw\node_modules\micromatch\node_modules\picomatch\index.js' instead. Resolving dependencies are ignored for this path.
+<w>  at unknown 4 picomatch/index
+<w>  at file dependencies E:\工作\papaclaw\node_modules\micromatch\index.js
+<w>  at file E:\工作\papaclaw\node_modules\micromatch\index.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\content.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\content.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\setupTrackingContext.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\lib\setupTrackingContext.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\plugin.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\plugin.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\tailwindcss\lib\index.js
+<w>  at file E:\工作\papaclaw\node_modules\tailwindcss\lib\index.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack-config.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack-config.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\工作\papaclaw\.next\server\app\[topic]\page.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/[topic]/page' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\[topic]\page.js', but to 'Error: Can't resolve '../../../../.next/server/app/[topic]/page' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/[topic]/page (expected E:\工作\papaclaw\.next\server\app\[topic]\page.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/seo-topics/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/seo-topics/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/seo-topics/route (expected E:\工作\papaclaw\.next\server\app\api\seo-topics\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/llms-full.txt/route' in E:\工作\papaclaw\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js', but to 'Error: Can't resolve '../../../../.next/server/app/llms-full.txt/route' in 'E:\工作\papaclaw\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/llms-full.txt/route (expected E:\工作\papaclaw\.next\server\app\llms-full.txt\route.js)
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\工作\papaclaw\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js

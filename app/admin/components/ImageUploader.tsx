@@ -68,10 +68,10 @@ export default function ImageUploader({
         <button
           type="button"
           onClick={() => setMode('url')}
-          className={`px-3 py-1 text-xs rounded-md transition-colors ${
+          className={`rounded-content px-3 py-1 text-xs font-semibold transition-colors ${
             mode === 'url'
-              ? 'bg-foudre-pink text-white'
-              : 'bg-ash-whisper text-deep-forest/60 hover:bg-ash-whisper/80'
+              ? 'bg-deep-forest text-paper-white'
+              : 'bg-ash-whisper text-deep-forest/70 hover:bg-deep-forest/10'
           }`}
         >
           URL 链接
@@ -79,10 +79,10 @@ export default function ImageUploader({
         <button
           type="button"
           onClick={() => setMode('upload')}
-          className={`px-3 py-1 text-xs rounded-md transition-colors ${
+          className={`rounded-content px-3 py-1 text-xs font-semibold transition-colors ${
             mode === 'upload'
-              ? 'bg-foudre-pink text-white'
-              : 'bg-ash-whisper text-deep-forest/60 hover:bg-ash-whisper/80'
+              ? 'bg-deep-forest text-paper-white'
+              : 'bg-ash-whisper text-deep-forest/70 hover:bg-deep-forest/10'
           }`}
         >
           本地上传
@@ -98,9 +98,9 @@ export default function ImageUploader({
               onChange={(e) => onChange(e.target.value)}
               placeholder="https://example.com/image.jpg"
               required={required}
-              className="w-full px-3 py-2 rounded-lg border border-ash-whisper bg-white text-deep-forest
-                placeholder:text-gray-400 text-sm transition-all duration-200
-                focus:outline-none focus:ring-2 focus:ring-foudre-pink/50 focus:border-foudre-pink"
+              className="w-full rounded-content border border-ash-whisper bg-paper-white px-3 py-2 font-sans text-sm text-deep-forest
+                placeholder:text-slate-tint/60 transition-all duration-200
+                focus:border-foudre-pink focus:outline-none focus:ring-2 focus:ring-foudre-pink/30"
             />
           </div>
         ) : (
@@ -111,17 +111,15 @@ export default function ImageUploader({
               accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml"
               onChange={handleFileUpload}
               disabled={uploading}
-              className="w-full text-sm text-deep-forest
-                file:mr-3 file:py-2 file:px-4
-                file:rounded-md file:border-0
-                file:text-sm file:font-medium
-                file:bg-foudre-pink/10 file:text-foudre-pink
+              className="w-full font-sans text-sm text-deep-forest
+                file:mr-3 file:rounded-content file:border-0 file:bg-foudre-pink/10 file:px-4 file:py-2
+                file:font-sans file:text-sm file:font-semibold file:text-foudre-pink
                 hover:file:bg-foudre-pink/20
                 file:cursor-pointer file:transition-colors
-                disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled:cursor-not-allowed disabled:opacity-50"
             />
             {value && value.startsWith('/uploads/') && (
-              <p className="text-xs text-deep-forest/50 mt-1">已上传: {value}</p>
+              <p className="mt-1 font-sans text-xs text-slate-tint">已上传: {value}</p>
             )}
           </div>
         )}
@@ -130,10 +128,10 @@ export default function ImageUploader({
       </div>
 
       {uploading && (
-        <p className="text-xs text-foudre-pink">上传中...</p>
+        <p className="font-sans text-xs text-foudre-pink">上传中...</p>
       )}
       {error && (
-        <p className="text-xs text-red-500">{error}</p>
+        <p className="font-sans text-xs text-red-600">{error}</p>
       )}
     </div>
   )

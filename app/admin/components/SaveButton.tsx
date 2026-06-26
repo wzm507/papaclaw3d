@@ -16,7 +16,7 @@ export default function SaveButton({
       type="button"
       onClick={onSave}
       disabled={saving}
-      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-content border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink disabled:cursor-not-allowed disabled:opacity-60"
+      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-content border border-deep-forest bg-deep-forest px-5 font-sans text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink disabled:cursor-not-allowed disabled:opacity-60"
     >
       {saving && (
         <svg

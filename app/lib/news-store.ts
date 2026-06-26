@@ -34,7 +34,7 @@ async function kvCommand<T>(command: unknown[]): Promise<T | null> {
 async function readLocalArticles(): Promise<NewsArticle[]> {
   try {
     const content = await fs.readFile(localNewsPath, 'utf-8')
-    return JSON.parse(content) as NewsArticle[]
+    return (JSON.parse(content) as Partial<NewsArticle>[]).map(normalizeArticle)
   } catch {
     return []
   }
@@ -49,7 +49,7 @@ export async function listNewsArticles(): Promise<NewsArticle[]> {
   if (hasKvConfig()) {
     const stored = await kvCommand<string>(['GET', NEWS_KEY])
     if (!stored) return []
-    return JSON.parse(stored) as NewsArticle[]
+    return (JSON.parse(stored) as Partial<NewsArticle>[]).map(normalizeArticle)
   }
 
   return readLocalArticles()
@@ -77,3 +77,51 @@ export async function upsertNewsArticles(incoming: NewsArticle[]): Promise<NewsA
   return merged
 }
 
+export async function deleteNewsArticle(slug: string): Promise<NewsArticle[]> {
+  if (process.env.VERCEL && !hasKvConfig()) {
+    throw new Error('Vercel deployment requires KV_REST_API_URL and KV_REST_API_TOKEN for news persistence.')
+  }
+
+  const existing = await listNewsArticles()
+  const next = existing.filter((article) => article.slug !== slug)
+
+  if (hasKvConfig()) {
+    await kvCommand<string>(['SET', NEWS_KEY, JSON.stringify(next)])
+  } else {
+    await writeLocalArticles(next)
+  }
+
+  return next
+}
+
+function normalizeArticle(article: Partial<NewsArticle>): NewsArticle {
+  const now = new Date().toISOString()
+  const sourceUrl = article.sourceUrl || article.originalUrl || ''
+
+  return {
+    id: article.id || article.slug || sourceUrl || `${Date.now()}`,
+    slug: article.slug || article.id || 'news',
+    title: article.title || '',
+    searchableTitle: article.searchableTitle || article.title || '',
+    sourceName: article.sourceName || '公开新闻源',
+    sourceAccountId: article.sourceAccountId || '',
+    sourceUrl,
+    originalUrl: article.originalUrl || sourceUrl,
+    sourceType: article.sourceType || 'public-news',
+    categorySlug: article.categorySlug || 'ai-global-expansion',
+    categoryName: article.categoryName || 'AI 科技出海服务',
+    crawlStatus: article.crawlStatus || 'published',
+    crawlError: article.crawlError,
+    manualOverride: Boolean(article.manualOverride),
+    publishedAt: article.publishedAt || now,
+    syncedAt: article.syncedAt || now,
+    updatedAt: article.updatedAt || article.syncedAt || now,
+    summary: article.summary || '',
+    aiSummary: article.aiSummary || article.summary || '',
+    keywords: Array.isArray(article.keywords) ? article.keywords : [],
+    faq: Array.isArray(article.faq) ? article.faq : [],
+    contentText: article.contentText || '',
+    rawDigest: article.rawDigest,
+    coverImage: article.coverImage,
+  }
+}

@@ -34,15 +34,16 @@ export async function optimizeNewsWithOpenAI(article: NewsArticle): Promise<News
         {
           role: 'system',
           content:
-            '你是Papa Claw爬爬虾官网新闻编辑。保留原文事实，不夸大承诺，不宣称百分百中标或保证订单。只输出JSON。',
+            '你是 Papa Claw爬爬虾官网新闻编辑。保留原文事实，不夸大承诺，不宣称百分百中标、保证订单或保证收录。只输出 JSON。',
         },
         {
           role: 'user',
           content: JSON.stringify({
-            task: '为官网新闻生成便于搜索引擎和问答类AI理解的标题、摘要和关键词。不要改写原文正文。',
-            brand: 'Papa Claw爬爬虾，AI数据+独家政企资源双驱动的出海结果型落地服务商。',
+            task: '为官网新闻生成便于搜索引擎和问答类 AI 理解的标题、摘要和关键词。不要改写原文正文。',
+            brand: 'Papa Claw爬爬虾，结合 AI 数据能力、南沙港澳资源和中东经验，服务企业出海落地。',
             article: {
               title: article.title,
+              categoryName: article.categoryName,
               summary: article.summary,
               contentText: article.contentText.slice(0, 6000),
             },
@@ -89,10 +90,9 @@ export async function optimizeNewsWithOpenAI(article: NewsArticle): Promise<News
       ...article,
       searchableTitle: optimized.searchableTitle || article.searchableTitle,
       aiSummary: optimized.aiSummary || article.aiSummary,
-      keywords: Array.from(new Set([...(optimized.keywords || []), ...article.keywords])).slice(0, 12),
+      keywords: Array.from(new Set([...(optimized.keywords || []), ...article.keywords])).slice(0, 14),
     }
   } catch {
     return article
   }
 }
-

@@ -12,7 +12,7 @@ export default function ImagePreview({ url, alt = '预览图片' }: ImagePreview
 
   if (!url || error) {
     return (
-      <div className="w-16 h-16 rounded-lg bg-ash-whisper flex items-center justify-center text-deep-forest/30 text-xs shrink-0">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-content bg-ash-whisper font-sans text-xs text-slate-tint">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -32,7 +32,7 @@ export default function ImagePreview({ url, alt = '预览图片' }: ImagePreview
   }
 
   return (
-    <div className="w-16 h-16 rounded-lg overflow-hidden bg-ash-whisper shrink-0">
+    <div className="h-16 w-16 shrink-0 overflow-hidden rounded-content bg-ash-whisper">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={url}

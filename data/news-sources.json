@@ -1,0 +1,34 @@
+[
+  {
+    "id": "36kr-global",
+    "name": "36氪出海",
+    "url": "https://www.36kr.com/search/articles/%E5%87%BA%E6%B5%B7",
+    "enabled": true,
+    "defaultCategorySlug": "ai-global-expansion",
+    "keywords": ["出海", "企业出海", "跨境", "中东", "AI", "外贸", "品牌全球化"]
+  },
+  {
+    "id": "ebrun-cross-border",
+    "name": "亿邦动力跨境",
+    "url": "https://www.ebrun.com/",
+    "enabled": true,
+    "defaultCategorySlug": "foreign-trade-factory-global-sales",
+    "keywords": ["跨境", "外贸", "出海", "电商", "品牌", "供应链"]
+  },
+  {
+    "id": "equalocean-global",
+    "name": "EqualOcean 出海",
+    "url": "https://www.equalocean.com/",
+    "enabled": true,
+    "defaultCategorySlug": "middle-east-government-resources",
+    "keywords": ["出海", "中东", "全球化", "企业服务", "投资", "科技"]
+  },
+  {
+    "id": "tmtpost-global",
+    "name": "钛媒体出海",
+    "url": "https://www.tmtpost.com/search?keyword=%E5%87%BA%E6%B5%B7",
+    "enabled": true,
+    "defaultCategorySlug": "ai-global-expansion",
+    "keywords": ["出海", "AI", "科技", "跨境", "全球化"]
+  }
+]

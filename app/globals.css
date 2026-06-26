@@ -4,13 +4,15 @@
 
 @layer base {
   :root {
-    --color-pale-canvas: #f5f5f7;
-    --color-deep-forest: #111111;
-    --color-foudre-pink: #0071e3;
-    --color-ash-whisper: #e8e8ed;
-    --color-bubblegum-blush: #d7ff38;
-    --color-slate-tint: #6e6e73;
-    --color-midnight-ink: #000000;
+    --color-pale-canvas: #F7F7F5;
+    --color-deep-forest: #0F1C1A;
+    --color-foudre-pink: #B08D57;
+    --color-ash-whisper: #E5E5E0;
+    --color-bubblegum-blush: #C8FF00;
+    --color-slate-tint: #737373;
+    --color-midnight-ink: #0A0A0A;
+    --color-paper-white: #FFFFFF;
+    --color-rule-ink: #151515;
   }
 
   html {
@@ -21,37 +23,28 @@
     @apply bg-pale-canvas text-deep-forest;
     font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
     overflow-x: hidden;
-    letter-spacing: 0;
+    letter-spacing: -0.01em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    background: #f5f5f7;
-    background-attachment: fixed;
   }
 
   ::selection {
-    background: rgba(0, 113, 227, 0.18);
+    background: rgba(176, 141, 87, 0.2);
   }
 
-  h1,
-  h2,
-  h3 {
-    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
-    letter-spacing: 0;
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.03em;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
-  p,
-  a,
-  button,
-  span {
-    letter-spacing: 0;
+  p, a, button, span {
     overflow-wrap: anywhere;
   }
 
-  button,
-  a {
+  button, a {
     touch-action: manipulation;
+    cursor: pointer;
   }
 
   button:focus-visible,
@@ -66,60 +59,81 @@
     @apply relative w-full;
   }
 
-  .editorial-kicker {
-    @apply font-utility text-caption uppercase text-slate-tint;
-    letter-spacing: 0;
+  .section-inner {
+    @apply relative mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12;
   }
 
-  .editorial-rule {
-    @apply border-t border-deep-forest/10;
+  .kicker {
+    @apply font-sans text-caption uppercase tracking-widest text-slate-tint;
   }
 
-  .editorial-card {
-    @apply rounded-content border border-ash-whisper bg-paper-white shadow-[0_22px_60px_rgba(0,0,0,0.06)];
+  .display-text {
+    @apply text-display font-semibold tracking-tight text-deep-forest text-balance;
+    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
   }
 
-  .editorial-measure {
-    max-width: 68ch;
+  .heading-lg {
+    @apply text-heading-lg font-semibold tracking-tight text-deep-forest text-balance;
+    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
   }
 
-  .editorial-section {
-    @apply relative overflow-hidden px-5 py-20 md:px-6 md:py-28;
+  .heading {
+    @apply text-heading font-semibold tracking-tight text-deep-forest text-balance;
+    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
   }
 
-  .editorial-heading {
-    @apply font-utility text-heading-lg font-semibold text-deep-forest text-balance;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+  .body-text {
+    @apply text-body leading-relaxed text-slate-tint;
   }
 
-  .editorial-body {
-    @apply font-utility text-body text-slate-tint;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+  .rule {
+    @apply h-px w-full origin-left scale-x-0 bg-ash-whisper;
   }
 
-  .editorial-meta {
-    @apply font-utility text-caption uppercase text-slate-tint;
-    letter-spacing: 0;
+  .rule-visible {
+    @apply scale-x-100;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .neo-surface {
-    @apply border border-white/70 bg-paper-white shadow-[0_30px_80px_rgba(0,0,0,0.12)];
+  .card-surface {
+    @apply rounded-card border border-ash-whisper bg-paper-white;
   }
 
-  .neo-panel {
-    @apply border border-ash-whisper bg-paper-white shadow-[0_18px_44px_rgba(0,0,0,0.06)];
+  .chip {
+    @apply inline-flex items-center rounded-badge border border-ash-whisper bg-paper-white px-3 py-1 text-caption uppercase tracking-widest text-slate-tint;
   }
 
-  .neo-button {
-    @apply inline-flex min-h-11 items-center justify-center rounded-content border border-deep-forest bg-deep-forest px-5 font-utility text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-foudre-pink hover:bg-foudre-pink;
+  .chip-accent {
+    @apply inline-flex items-center rounded-badge bg-bubblegum-blush px-3 py-1 text-caption font-semibold uppercase tracking-widest text-deep-forest;
   }
 
-  .is-inview {
-    opacity: 1;
-    transform: translateY(0);
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-deep-forest px-7 font-sans text-sm font-semibold text-paper-white transition-all duration-300 ease-expo hover:-translate-y-0.5 hover:bg-foudre-pink hover:border-foudre-pink;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-button border border-deep-forest bg-transparent px-7 font-sans text-sm font-semibold text-deep-forest transition-all duration-300 ease-expo hover:-translate-y-0.5 hover:bg-deep-forest hover:text-paper-white;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-12 items-center justify-center rounded-button border border-ash-whisper bg-transparent px-7 font-sans text-sm font-semibold text-deep-forest transition-all duration-300 ease-expo hover:-translate-y-0.5 hover:border-deep-forest;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-500 ease-expo;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-deep-forest via-foudre-pink to-deep-forest bg-clip-text text-transparent;
   }
 }
 
@@ -138,6 +152,10 @@
     word-break: break-word;
   }
 
+  .will-change-transform {
+    will-change: transform;
+  }
+
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -147,12 +165,7 @@
   }
 }
 
-/* Pin Spacing Fix */
-.pin-spacer {
-  background: transparent !important;
-}
-
-/* Smooth Scroll Optimization */
+/* Lenis Smooth Scroll */
 html.lenis {
   height: auto;
 }
@@ -171,4 +184,22 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-pale-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ash-whisper);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-tint);
 }

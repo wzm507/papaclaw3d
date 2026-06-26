@@ -85,7 +85,7 @@ export default async function SeoTopicPage({ params }: TopicPageProps) {
       url: siteUrl(),
     },
     areaServed: ['中国', '南沙', '港澳', '中东', '东南亚', '非洲'],
-    audience: topic.audience.map((name) => ({
+    audience: topic.audience.map((name: string) => ({
       '@type': 'Audience',
       audienceType: name,
     })),
@@ -94,7 +94,7 @@ export default async function SeoTopicPage({ params }: TopicPageProps) {
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: topic.faq.map((item) => ({
+    mainEntity: topic.faq.map((item: { question: string; answer: string }) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -107,30 +107,18 @@ export default async function SeoTopicPage({ params }: TopicPageProps) {
   return (
     <SmoothScrollProvider>
       <main className="min-h-screen bg-pale-canvas">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
-        <section className="relative overflow-hidden px-6 pb-16 pt-36 md:pb-24 md:pt-40">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f5f5f7_100%)]" />
-          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/10" />
-          <div className="relative z-10 mx-auto max-w-7xl">
-            <p className="editorial-kicker mb-4 text-center">SEO Topic</p>
-            <h1 className="text-safe mx-auto max-w-5xl text-center font-utility text-[clamp(2.25rem,5.6vw,4.8rem)] font-semibold leading-[1.05] text-deep-forest">
-              {topic.title}
-            </h1>
-            <p className="editorial-body editorial-measure mx-auto mt-7 text-center text-lg">
-              {topic.description}
-            </p>
+        <section className="section overflow-hidden pt-36 md:pt-40">
+          <div className="section-inner text-center">
+            <p className="kicker mb-4">SEO Topic</p>
+            <h1 className="heading-lg mx-auto max-w-4xl">{topic.title}</h1>
+            <p className="body-text mx-auto mt-6 max-w-2xl text-lg">{topic.description}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-2">
-              {topic.keywords.map((keyword) => (
-                <span key={keyword} className="rounded-content border border-ash-whisper bg-paper-white px-3 py-1 font-utility text-xs text-slate-tint shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+              {topic.keywords.map((keyword: string) => (
+                <span key={keyword} className="chip">
                   {keyword}
                 </span>
               ))}
@@ -138,71 +126,71 @@ export default async function SeoTopicPage({ params }: TopicPageProps) {
           </div>
         </section>
 
-        <section className="px-6 pb-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <aside className="neo-panel rounded-content p-6 lg:sticky lg:top-24 lg:self-start">
-              <p className="editorial-kicker mb-5">Topic Links</p>
-              <nav className="space-y-3">
-                <Link href="/" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4 hover:text-foudre-pink">
-                  官网首页
-                </Link>
-                <Link href="/news" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4 hover:text-foudre-pink">
-                  企业出海新闻
-                </Link>
-                <Link href="/#faq" className="block font-utility text-sm font-semibold text-deep-forest underline underline-offset-4 hover:text-foudre-pink">
-                  标准问答
-                </Link>
-              </nav>
+        <section className="section pb-24">
+          <div className="section-inner">
+            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+              <aside className="card-surface p-6 lg:sticky lg:top-24 lg:self-start">
+                <p className="kicker mb-5">Topic Links</p>
+                <nav className="space-y-3">
+                  <Link href="/" className="link-underline block font-sans text-sm font-semibold text-deep-forest">
+                    官网首页
+                  </Link>
+                  <Link href="/news" className="link-underline block font-sans text-sm font-semibold text-deep-forest">
+                    企业出海新闻
+                  </Link>
+                  <Link href="/#faq" className="link-underline block font-sans text-sm font-semibold text-deep-forest">
+                    标准问答
+                  </Link>
+                </nav>
 
-              <div className="mt-8">
-                <p className="editorial-kicker mb-4">Related Topics</p>
-                <div className="space-y-2">
-                  {relatedTopics
-                    .filter((item) => item.slug !== topic.slug)
-                    .slice(0, 4)
-                    .map((item) => (
-                      <Link key={item.slug} href={`/${item.slug}`} className="block font-utility text-lg font-semibold leading-snug text-deep-forest hover:text-foudre-pink">
-                        {item.title}
-                      </Link>
+                <div className="mt-8">
+                  <p className="kicker mb-4">Related Topics</p>
+                  <div className="space-y-2">
+                    {relatedTopics
+                      .filter((item) => item.slug !== topic.slug)
+                      .slice(0, 4)
+                      .map((item) => (
+                        <Link key={item.slug} href={`/${item.slug}`} className="link-underline block font-sans text-lg font-semibold text-deep-forest">
+                          {item.title}
+                        </Link>
+                      ))}
+                  </div>
+                </div>
+              </aside>
+
+              <article className="space-y-14">
+                <TopicSection title="业务解释">
+                  <p className="body-text text-pretty text-lg">
+                    {topic.serviceName}是我们围绕真实出海需求做的专题服务。不是只给一份咨询，而是把 AI 数据、内容表达、资源对接、项目跟进和资金协同串成一条可执行的链路。
+                  </p>
+                </TopicSection>
+
+                <TopicGrid title="服务对象" items={topic.audience} />
+                <TopicGrid title="解决什么问题" items={topic.problems} />
+                <TopicGrid title="Papa Claw 为什么能做" items={topic.papaClawAdvantages} />
+                <TopicGrid title="服务推进路径" items={topic.process} />
+
+                <TopicSection title="FAQ 问答">
+                  <div className="border-y border-ash-whisper">
+                    {topic.faq.map((item: { question: string; answer: string }) => (
+                      <div key={item.question} className="border-b border-ash-whisper py-6 last:border-b-0">
+                        <h2 className="font-display text-xl font-semibold leading-snug text-deep-forest md:text-2xl">
+                          {item.question}
+                        </h2>
+                        <p className="body-text mt-3">{item.answer}</p>
+                      </div>
                     ))}
-                </div>
-              </div>
-            </aside>
-
-            <article className="space-y-14">
-              <TopicSection title="业务解释">
-                <p className="editorial-body text-pretty text-lg">
-                        {topic.serviceName}是 Papa Claw爬爬虾围绕企业真实出海需求提供的专题服务。它不是单点咨询，而是把AI数据、内容表达、资源对接、项目跟进和资金协同放进同一条执行链路。
-                </p>
-              </TopicSection>
-
-              <TopicGrid title="服务对象" items={topic.audience} />
-              <TopicGrid title="解决什么问题" items={topic.problems} />
-              <TopicGrid title="Papa Claw 为什么能做" items={topic.papaClawAdvantages} />
-              <TopicGrid title="服务推进路径" items={topic.process} />
-
-              <TopicSection title="FAQ 问答">
-                <div className="border-y border-deep-forest/20">
-                  {topic.faq.map((item) => (
-                    <div key={item.question} className="border-b border-deep-forest/15 py-6 last:border-b-0">
-                      <h2 className="text-safe font-utility text-2xl font-semibold leading-snug text-deep-forest">
-                        {item.question}
-                      </h2>
-                      <p className="editorial-body mt-3">
-                        {item.answer}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </TopicSection>
-            </article>
+                  </div>
+                </TopicSection>
+              </article>
+            </div>
           </div>
         </section>
 
         <Footer
-          contactTitle={config.footer.contactTitle}
-          contactDescription={config.footer.contactDescription}
-          ctaText={config.footer.ctaText}
+          contactTitle="把出海需求推进到可落地项目"
+          contactDescription="欢迎联系 Papa Claw 爬爬虾，了解 AI 科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。"
+          ctaText="联系我们"
           socialLinks={config.footer.socialLinks}
           copyright={config.footer.copyright}
           legalLinks={config.footer.legalLinks}
@@ -216,7 +204,7 @@ export default async function SeoTopicPage({ params }: TopicPageProps) {
 function TopicSection({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section>
-      <p className="editorial-kicker mb-4">{title}</p>
+      <p className="kicker mb-4">{title}</p>
       {children}
     </section>
   )
@@ -227,11 +215,9 @@ function TopicGrid({ title, items }: { title: string; items: string[] }) {
     <TopicSection title={title}>
       <div className="grid gap-3 md:grid-cols-2">
         {items.map((item, index) => (
-          <div key={item} className="neo-panel rounded-content p-6">
-            <p className="editorial-meta mb-4">{String(index + 1).padStart(2, '0')}</p>
-            <p className="text-safe font-utility text-xl font-semibold leading-snug text-deep-forest">
-              {item}
-            </p>
+          <div key={item} className="card-surface p-6 transition-colors hover:bg-warm-gray">
+            <p className="kicker mb-4">{String(index + 1).padStart(2, '0')}</p>
+            <p className="font-display text-lg font-semibold leading-snug text-deep-forest">{item}</p>
           </div>
         ))}
       </div>

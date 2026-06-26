@@ -41,14 +41,14 @@ export default function FieldEditor({
     }
   }
 
-  const baseInputClasses = `w-full rounded-content border bg-paper-white px-4 py-3 font-utility text-sm text-deep-forest
+  const baseInputClasses = `w-full rounded-content border bg-paper-white px-4 py-3 font-sans text-sm text-deep-forest
     placeholder:text-slate-tint/60 transition-all duration-200
     focus:outline-none focus:ring-2 focus:ring-foudre-pink/30 focus:border-foudre-pink
     ${urlError ? 'border-red-400' : 'border-ash-whisper'}`
 
   return (
     <div className="space-y-2">
-      <label className="block font-utility text-sm font-semibold text-deep-forest">
+      <label className="block font-sans text-sm font-semibold text-deep-forest">
         {label}
         {required && <span className="text-foudre-pink ml-0.5">*</span>}
       </label>
@@ -74,7 +74,7 @@ export default function FieldEditor({
         />
       )}
 
-      {urlError && <p className="font-utility text-xs text-red-500">{urlError}</p>}
+      {urlError && <p className="font-sans text-xs text-red-500">{urlError}</p>}
     </div>
   )
 }

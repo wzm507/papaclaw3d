@@ -1,91 +1,67 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Section3DBackground from '../components/Section3DBackground'
+import { useState } from 'react'
+import Reveal from '../components/Reveal'
+import AnimatedText from '../components/AnimatedText'
 
-gsap.registerPlugin(ScrollTrigger)
+interface FAQItem {
+  question: string
+  answer: string
+}
 
 interface FAQProps {
   title: string
   subtitle: string
-  items: { question: string; answer: string }[]
+  items: FAQItem[]
 }
 
 export default function FAQ({ title, subtitle, items }: FAQProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        titleRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          },
-        }
-      )
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section ref={sectionRef} className="editorial-section bg-pale-canvas">
-      <Section3DBackground theme="orange" />
-      <div className="absolute inset-x-6 top-10 border-t border-deep-forest/10" />
+    <section id="faq" className="section bg-warm-gray py-24 md:py-32">
+      <div className="section-inner">
+        <div className="mb-16 grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <Reveal>
+              <p className="kicker mb-6">Standard Q&A</p>
+            </Reveal>
+            <AnimatedText as="h2" className="heading-lg">
+              {title}
+            </AnimatedText>
+            <Reveal delay={0.2}>
+              <p className="body-text mt-6">{subtitle}</p>
+            </Reveal>
+          </div>
+        </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        <p className="editorial-kicker text-center mb-4">Standard Q&A</p>
-        <h2 ref={titleRef} className="editorial-heading text-center mb-6 opacity-0">
-          {title}
-        </h2>
-        <p className="editorial-body text-center mb-16 editorial-measure mx-auto">
-          {subtitle}
-        </p>
-
-        <div className="space-y-3">
-          {items.map((faq, i) => (
-            <div
-              key={i}
-              className={`neo-panel overflow-hidden rounded-content transition-colors duration-300 ${openIndex === i ? 'bg-white/76' : 'bg-white/48'}`}
-            >
-              <button
-                onClick={() => toggleAccordion(i)}
-                className="w-full flex items-start justify-between gap-6 p-6 text-left md:p-7"
-                aria-expanded={openIndex === i}
-              >
-                <span className={`font-utility text-xl font-semibold leading-snug transition-colors duration-300 ${openIndex === i ? 'text-foudre-pink' : 'text-deep-forest'}`}>
-                  {faq.question}
-                </span>
-                <span
-                  className={`font-utility text-2xl leading-none transition-transform duration-300 ${openIndex === i ? 'rotate-45 text-foudre-pink' : 'rotate-0 text-deep-forest/60'}`}
+        <div className="grid gap-0 divide-y divide-ash-whisper border-t border-ash-whisper">
+          {items.map((item, index) => (
+            <Reveal key={index} delay={index * 0.05}>
+              <div className="bg-paper-white transition-colors duration-300 hover:bg-warm-gray">
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="flex w-full items-start justify-between px-6 py-6 text-left md:px-8 md:py-8"
                 >
-                  +
-                </span>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-500 ${openIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                style={{ transitionTimingFunction: 'cubic-bezier(.23,1,.32,1)' }}
-              >
-                <p className="editorial-body px-6 pb-7 md:px-7">
-                  {faq.answer}
-                </p>
+                  <span className="font-display text-lg font-semibold text-deep-forest md:text-xl">{item.question}</span>
+                  <span className="ml-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-deep-forest text-deep-forest transition-transform duration-300 md:ml-8">
+                    <svg
+                      className={`h-3 w-3 transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`}
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <path d="M6 1V11M1 6H11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  className="overflow-hidden transition-all duration-500 ease-expo"
+                  style={{ maxHeight: openIndex === index ? '300px' : '0px', opacity: openIndex === index ? 1 : 0 }}
+                >
+                  <p className="body-text px-6 pb-6 md:px-8 md:pb-8">{item.answer}</p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

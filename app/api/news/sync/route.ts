@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { syncWechatNews } from '../../../lib/news-sync'
+import { syncPublicNews } from '../../../lib/public-news-crawler'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -19,7 +19,7 @@ async function handleSync(request: Request) {
   }
 
   try {
-    const result = await syncWechatNews()
+    const result = await syncPublicNews()
     return NextResponse.json(result)
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown news sync error'
@@ -34,4 +34,3 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   return handleSync(request)
 }
-

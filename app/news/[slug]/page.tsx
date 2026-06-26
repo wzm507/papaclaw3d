@@ -11,13 +11,13 @@ import { getNewsArticle, listNewsArticles } from '../../lib/news-store'
 export const dynamic = 'force-dynamic'
 
 interface NewsDetailPageProps {
-  params: Promise<{
+  params: {
     slug: string
-  }>
+  }
 }
 
 function siteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
+  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
 }
 
 function formatDate(date: string) {
@@ -29,8 +29,7 @@ function formatDate(date: string) {
 }
 
 export async function generateMetadata({ params }: NewsDetailPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const article = await getNewsArticle(slug)
+  const article = await getNewsArticle(params.slug)
 
   if (!article) {
     return {
@@ -57,8 +56,7 @@ export async function generateMetadata({ params }: NewsDetailPageProps): Promise
 }
 
 export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
-  const { slug } = await params
-  const article = await getNewsArticle(slug)
+  const article = await getNewsArticle(params.slug)
 
   if (!article) {
     notFound()
@@ -71,8 +69,8 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
   )
   const articleUrl = `${siteUrl()}/news/${article.slug}`
   const paragraphs = article.contentText
-    .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
+    .split(/\n{2,}|\n/)
+    .map((paragraph: string) => paragraph.trim())
     .filter(Boolean)
 
   const articleJsonLd = {
@@ -85,21 +83,22 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
     mainEntityOfPage: articleUrl,
     author: {
       '@type': 'Organization',
-      name: '凯勒斐KLF',
+      name: article.sourceName,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Papa Claw爬爬虾',
       url: siteUrl(),
     },
+    articleSection: article.categoryName,
     keywords: article.keywords.join(', '),
-    isBasedOn: article.sourceUrl || undefined,
+    isBasedOn: article.originalUrl || article.sourceUrl || undefined,
   }
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: article.faq.map((item) => ({
+    mainEntity: article.faq.map((item: { question: string; answer: string }) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -112,99 +111,94 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
   return (
     <SmoothScrollProvider>
       <main className="min-h-screen bg-pale-canvas">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
-        <article className="editorial-section pt-36">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f5f5f7_100%)]" />
-          <div className="absolute inset-x-6 top-28 border-t border-deep-forest/10" />
-          <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
-            <aside className="neo-panel space-y-8 rounded-content p-6 lg:sticky lg:top-28 lg:self-start">
-              <div>
-                <p className="editorial-meta mb-2">Published</p>
-                <p className="font-utility text-sm font-semibold text-deep-forest">{formatDate(article.publishedAt)}</p>
-              </div>
-              <div>
-                <p className="editorial-meta mb-3">Source</p>
-                <p className="font-utility text-sm font-semibold text-deep-forest">{article.sourceName}</p>
-                {article.sourceUrl && (
-                  <a
-                    href={article.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex font-utility text-sm font-semibold text-foudre-pink"
-                  >
-                    查看公众号原文
-                  </a>
-                )}
-              </div>
-              <div>
-                <p className="editorial-meta mb-3">AI Keywords</p>
-                <div className="flex flex-wrap gap-2">
-                  {article.keywords.map((keyword) => (
-                    <span key={keyword} className="rounded-content border border-ash-whisper bg-paper-white px-3 py-1 font-utility text-xs text-slate-tint">
-                      {keyword}
-                    </span>
-                  ))}
+        <article className="section pt-36">
+          <div className="section-inner">
+            <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[16rem_1fr]">
+              <aside className="space-y-8 card-surface p-6 lg:sticky lg:top-28 lg:self-start">
+                <div>
+                  <p className="kicker mb-2">Published</p>
+                  <p className="font-sans text-sm font-semibold text-deep-forest">{formatDate(article.publishedAt)}</p>
                 </div>
-              </div>
-              <Link
-                href="/news"
-                className="inline-flex min-h-11 items-center rounded-content border border-deep-forest bg-deep-forest px-4 font-utility text-sm font-semibold text-white transition-colors hover:border-foudre-pink hover:bg-foudre-pink"
-              >
-                返回新闻列表
-              </Link>
-            </aside>
-
-            <div className="max-w-4xl">
-              <p className="editorial-kicker mb-4">Papa Claw News</p>
-              <h1 className="font-utility text-[clamp(2.1rem,5.8vw,4.6rem)] font-semibold leading-[1.05] text-deep-forest">
-                {article.searchableTitle || article.title}
-              </h1>
-              <p className="editorial-body neo-panel mt-8 rounded-content p-6 text-xl leading-relaxed">
-                {article.aiSummary}
-              </p>
-
-              <section className="mt-12 space-y-6">
-                {paragraphs.map((paragraph, index) => (
-                  <p key={index} className="font-utility text-lg leading-relaxed text-deep-forest md:text-xl">
-                    {paragraph}
-                  </p>
-                ))}
-              </section>
-
-              {article.faq.length > 0 && (
-                <section className="neo-panel mt-16 rounded-content p-7">
-                  <p className="editorial-kicker mb-6">AI Ready Q&A</p>
-                  <div className="space-y-7">
-                    {article.faq.map((item) => (
-                      <div key={item.question}>
-                        <h2 className="font-utility text-2xl font-semibold leading-snug text-deep-forest">
-                          {item.question}
-                        </h2>
-                        <p className="editorial-body mt-3">
-                          {item.answer}
-                        </p>
-                      </div>
+                <div>
+                  <p className="kicker mb-3">Category</p>
+                  <Link href={`/news?category=${article.categorySlug}`} className="font-sans text-sm font-semibold text-foudre-pink">
+                    {article.categoryName}
+                  </Link>
+                </div>
+                <div>
+                  <p className="kicker mb-3">Source</p>
+                  <p className="font-sans text-sm font-semibold text-deep-forest">{article.sourceName}</p>
+                  {(article.originalUrl || article.sourceUrl) && (
+                    <a
+                      href={article.originalUrl || article.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex font-sans text-sm font-semibold text-foudre-pink"
+                    >
+                      查看原文来源 →
+                    </a>
+                  )}
+                </div>
+                <div>
+                  <p className="kicker mb-3">Keywords</p>
+                  <div className="flex flex-wrap gap-2">
+                    {article.keywords.map((keyword: string) => (
+                      <span key={keyword} className="chip">
+                        {keyword}
+                      </span>
                     ))}
                   </div>
+                </div>
+                <Link href="/news" className="btn-secondary w-full">
+                  返回新闻列表
+                </Link>
+              </aside>
+
+              <div className="max-w-4xl">
+                <p className="kicker mb-4">Papa Claw News</p>
+                <h1 className="font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.05] text-deep-forest">
+                  {article.searchableTitle || article.title}
+                </h1>
+                <p className="body-text mt-8 card-surface p-6 text-lg leading-relaxed md:text-xl">
+                  {article.aiSummary}
+                </p>
+
+                <section className="mt-12 space-y-6">
+                  {paragraphs.map((paragraph: string, index: number) => (
+                    <p key={index} className="font-sans text-lg leading-relaxed text-deep-forest md:text-xl">
+                      {paragraph}
+                    </p>
+                  ))}
                 </section>
-              )}
+
+                {article.faq.length > 0 && (
+                  <section className="mt-16 card-surface p-7">
+                    <p className="kicker mb-6">Q&A</p>
+                    <div className="space-y-7">
+                      {article.faq.map((item: { question: string; answer: string }) => (
+                        <div key={item.question}>
+                          <h2 className="font-display text-xl font-semibold leading-snug text-deep-forest md:text-2xl">
+                            {item.question}
+                          </h2>
+                          <p className="body-text mt-3">{item.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </div>
             </div>
           </div>
         </article>
 
         <Footer
-          contactTitle={config.footer.contactTitle}
-          contactDescription={config.footer.contactDescription}
-          ctaText={config.footer.ctaText}
+          contactTitle="把出海需求推进到可落地项目"
+          contactDescription="欢迎联系 Papa Claw 爬爬虾，了解 AI 科技出海、政企资源对接、全球标书商机挖掘、海外社媒运营与跨境金融服务。"
+          ctaText="联系我们"
           socialLinks={config.footer.socialLinks}
           copyright={config.footer.copyright}
           legalLinks={config.footer.legalLinks}

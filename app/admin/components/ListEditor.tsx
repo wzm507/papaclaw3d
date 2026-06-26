@@ -105,7 +105,7 @@ export default function ListEditor<T>({
       <button
         type="button"
         onClick={handleAdd}
-        className="min-h-11 w-full rounded-content border border-dashed border-ash-whisper py-2.5 font-utility text-sm font-semibold text-slate-tint transition-colors hover:border-foudre-pink hover:text-foudre-pink"
+        className="min-h-11 w-full rounded-content border border-dashed border-ash-whisper py-2.5 font-sans text-sm font-semibold text-slate-tint transition-colors hover:border-foudre-pink hover:text-foudre-pink"
       >
         + 添加{itemLabel}
       </button>
