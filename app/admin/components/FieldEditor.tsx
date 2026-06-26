@@ -17,6 +17,8 @@ interface FieldEditorProps {
   helpText?: string
   maxLength?: number
   options?: FieldOption[]
+  size?: 'sm' | 'md'
+  rows?: number
 }
 
 export default function FieldEditor({
@@ -29,6 +31,8 @@ export default function FieldEditor({
   helpText,
   maxLength,
   options = [],
+  size = 'md',
+  rows,
 }: FieldEditorProps) {
   const id = useId()
   const [urlError, setUrlError] = useState('')
@@ -53,7 +57,9 @@ export default function FieldEditor({
     onChange(newValue)
   }
 
-  const baseInputClasses = `w-full border bg-white px-3 py-2.5 text-sm text-[#0F1C1A]
+  const sizeClasses = size === 'sm' ? 'px-2.5 py-2 text-sm' : 'px-3 py-2.5 text-sm'
+
+  const baseInputClasses = `w-full rounded-sm border bg-white ${sizeClasses} text-[#0F1C1A]
     placeholder:text-[#737373]/60 transition-all duration-200
     focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30 focus:border-[#B08D57]
     ${urlError ? 'border-red-400' : 'border-[#E5E5E0]'}`
@@ -77,7 +83,7 @@ export default function FieldEditor({
             placeholder={placeholder}
             required={required}
             maxLength={maxLength}
-            rows={type === 'lines' ? 5 : 4}
+            rows={rows ?? (type === 'lines' ? 5 : 4)}
             className={`${baseInputClasses} min-h-[96px] resize-y leading-relaxed`}
             aria-describedby={helpText || urlError ? `${id}-hint` : undefined}
           />

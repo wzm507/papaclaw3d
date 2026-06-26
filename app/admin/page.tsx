@@ -4,7 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import AdminPageHeader from './components/AdminPageHeader'
 import AdminButton from './components/AdminButton'
-import StatusBadge from './components/StatusBadge'
+import AdminPanel from './components/AdminPanel'
+import AdminMessage from './components/AdminMessage'
 
 const modules = [
   { href: '/admin/company', icon: 'CO', title: '企业信息', description: '公司名字、口号、联系方式和导航菜单' },
@@ -64,24 +65,41 @@ export default function AdminDashboard() {
       </AdminPageHeader>
 
       {publishStatus === 'success' && (
-        <div className="mb-5 border border-green-200 bg-green-50 px-4 py-3">
-          <StatusBadge variant="success">发布成功</StatusBadge>
-        </div>
+        <AdminMessage variant="success" onClose={() => setPublishStatus('idle')}>
+          发布成功，官网已更新。
+        </AdminMessage>
       )}
       {publishStatus === 'error' && (
-        <div className="mb-5 border border-red-200 bg-red-50 px-4 py-3">
-          <StatusBadge variant="error">发布失败，请重试</StatusBadge>
-        </div>
+        <AdminMessage variant="error" onClose={() => setPublishStatus('idle')}>
+          发布失败，请重试。
+        </AdminMessage>
       )}
+
+      <div className="mb-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <AdminPanel padding="sm">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#737373]">管理模块</p>
+          <p className="mt-1 text-2xl font-semibold text-[#0F1C1A]">{modules.length}</p>
+        </AdminPanel>
+        <AdminPanel padding="sm">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#737373]">发布状态</p>
+          <p className="mt-1 text-sm font-semibold text-[#0F1C1A]">
+            {publishStatus === 'success'
+              ? '已发布'
+              : publishStatus === 'error'
+              ? '发布失败'
+              : '未发布'}
+          </p>
+        </AdminPanel>
+      </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {modules.map((mod) => (
           <Link
             key={mod.href}
             href={mod.href}
-            className="group flex items-start gap-3 border border-[#E5E5E0] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0F1C1A]"
+            className="group flex items-start gap-3 rounded-sm border border-[#E5E5E0] bg-white p-4 transition-colors duration-200 hover:border-[#0F1C1A]"
           >
-            <span className="flex h-8 w-10 shrink-0 items-center justify-center border border-[#0F1C1A] bg-[#0F1C1A] text-[10px] font-semibold text-white transition-colors group-hover:bg-[#B08D57] group-hover:border-[#B08D57]">
+            <span className="flex h-8 w-10 shrink-0 items-center justify-center rounded-sm border border-[#0F1C1A] bg-[#0F1C1A] text-[10px] font-semibold text-white transition-colors group-hover:bg-[#B08D57] group-hover:border-[#B08D57]">
               {mod.icon}
             </span>
             <div className="min-w-0">

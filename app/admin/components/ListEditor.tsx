@@ -100,7 +100,7 @@ export default function ListEditor<T>({
           onDragOver={handleDragOver(index)}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop(index)}
-          className={`relative border bg-white p-4 transition-all duration-200 hover:border-[#0F1C1A] ${
+          className={`relative rounded-sm border bg-white p-4 transition-all duration-200 hover:border-[#0F1C1A] ${
             dragOverIndex === index ? 'border-[#B08D57] bg-[#F7F7F5]' : 'border-[#E5E5E0]'
           }`}
         >
@@ -153,7 +153,7 @@ export default function ListEditor<T>({
       <button
         type="button"
         onClick={handleAdd}
-        className="min-h-10 w-full border border-dashed border-[#E5E5E0] py-2 text-sm font-semibold text-[#737373] transition-colors hover:border-[#B08D57] hover:text-[#B08D57]"
+        className="min-h-10 w-full rounded-sm border border-dashed border-[#E5E5E0] py-2 text-sm font-semibold text-[#737373] transition-colors hover:border-[#B08D57] hover:text-[#B08D57]"
       >
         + 添加{itemLabel}
       </button>

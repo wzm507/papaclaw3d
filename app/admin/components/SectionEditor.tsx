@@ -2,6 +2,7 @@
 
 import AdminPageHeader from './AdminPageHeader'
 import AdminButton from './AdminButton'
+import AdminPanel from './AdminPanel'
 
 interface SectionEditorProps {
   title: string
@@ -35,7 +36,9 @@ export default function SectionEditor({
         </AdminButton>
       </AdminPageHeader>
 
-      <div className="space-y-5">{children}</div>
+      <AdminPanel padding="md">
+        <div className="space-y-4">{children}</div>
+      </AdminPanel>
     </div>
   )
 }

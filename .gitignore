@@ -34,7 +34,16 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.codex-dev*.log
+data/news-crawl-logs.json
 
 # Cache
 .cache/
 *.pack.gz
+
+# Trae AI agent artifacts
+.trae/documents/
+
+# Temporary push/preparation scripts
+tmp-*.json
+tmp-*.mjs

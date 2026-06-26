@@ -197,7 +197,7 @@ export async function fetchNewsByKeywords(options: KeywordCrawlOptions): Promise
   articles: NewsArticle[]
   failures: { sourceName: string; url: string; message: string }[]
 }> {
-  const { keywords, maxResults = 10, categorySlug, fetchFullText = false } = options
+  const { keywords, maxResults = 10, categorySlug, fetchFullText: fetchFullTextEnabled = false } = options
   const failures: { sourceName: string; url: string; message: string }[] = []
 
   if (!keywords.length) {
@@ -230,7 +230,7 @@ export async function fetchNewsByKeywords(options: KeywordCrawlOptions): Promise
     try {
       let contentText = candidate.summary
 
-      if (fetchFullText) {
+      if (fetchFullTextEnabled) {
         const fullText = await fetchFullText(candidate.url)
         if (fullText) {
           contentText = fullText
