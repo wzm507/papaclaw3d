@@ -5,6 +5,8 @@ import { useConfig } from '../hooks/useConfig'
 import SectionEditor from '../components/SectionEditor'
 import FieldEditor from '../components/FieldEditor'
 import ListEditor from '../components/ListEditor'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
 
 interface FaqItem {
   question: string
@@ -18,7 +20,7 @@ interface FaqData {
 }
 
 export default function FaqPage() {
-  const { config, loading, saving, saveConfig } = useConfig()
+  const { config, loading, saving, saveConfig, refetch } = useConfig()
   const [localData, setLocalData] = useState<FaqData | null>(null)
 
   useEffect(() => {
@@ -27,8 +29,8 @@ export default function FaqPage() {
     }
   }, [config])
 
-  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
-  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <AdminLoading />
+  if (!config || !localData) return <AdminError text="加载失败，请刷新重试" onRetry={refetch} />
 
   const updateField = (key: keyof FaqData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -43,7 +45,7 @@ export default function FaqPage() {
   }
 
   return (
-    <SectionEditor title="FAQ 管理" onSave={handleSave} saving={saving}>
+    <SectionEditor title="FAQ 管理" kicker="FAQ" onSave={handleSave} saving={saving}>
       <FieldEditor
         label="区域标题"
         value={localData.title}
@@ -64,7 +66,7 @@ export default function FaqPage() {
           addItem={() => ({ question: '', answer: '' })}
           itemLabel="问答"
           renderItem={(item, _index, onChange) => (
-            <div className="space-y-3 pr-20">
+            <div className="space-y-3">
               <FieldEditor
                 label="问题"
                 value={item.question}

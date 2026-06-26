@@ -29,7 +29,7 @@ export default function Hero() {
     <section ref={heroRef} id="home" className="p-section relative min-h-screen overflow-hidden bg-[#F7F7F5] pt-32 md:pt-40">
       <div className="p-inner relative z-10 pb-24">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-12">
             <p className="hero-sub p-kicker mb-8">Papa Claw · 爬爬虾</p>
 
             <div className="overflow-hidden" style={{ perspective: '800px' }}>
@@ -42,7 +42,9 @@ export default function Hero() {
                 我们靠你赚到钱活着。
               </h1>
             </div>
+          </div>
 
+          <div className="lg:col-span-8">
             <div className="max-w-2xl">
               <p className="hero-sub p-body-lg">先付出，先交朋友，用成本价帮你出海。</p>
               <p className="hero-sub p-body-lg mt-2">你不赚钱，我们只收工时费。</p>
@@ -54,7 +56,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex items-end lg:col-span-4">
+          <div className="flex items-start lg:col-span-4">
             <div className="hero-card w-full border border-[#E5E5E0] bg-white p-6 md:p-8">
               <p className="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#737373]">Operating Model</p>
               <p className="p-heading-lg mb-1">先付出。</p>

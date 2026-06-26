@@ -5,6 +5,8 @@ import { useConfig } from '../hooks/useConfig'
 import SectionEditor from '../components/SectionEditor'
 import FieldEditor from '../components/FieldEditor'
 import ListEditor from '../components/ListEditor'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
 
 interface SocialLink {
   platform: string
@@ -21,7 +23,7 @@ interface CompanyData {
 }
 
 export default function CompanyPage() {
-  const { config, loading, saving, saveConfig } = useConfig()
+  const { config, loading, saving, saveConfig, refetch } = useConfig()
   const [localData, setLocalData] = useState<CompanyData | null>(null)
 
   useEffect(() => {
@@ -32,8 +34,8 @@ export default function CompanyPage() {
     }
   }, [config])
 
-  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
-  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <AdminLoading />
+  if (!config || !localData) return <AdminError text="加载失败，请刷新重试" onRetry={refetch} />
 
   const updateField = (key: keyof CompanyData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -43,7 +45,6 @@ export default function CompanyPage() {
     setLocalData(prev => prev ? { ...prev, menuItems: items } : prev)
   }
 
-  // Convert socialLinks object to array for editing
   const socialLinksArray: SocialLink[] = Object.entries(localData.socialLinks || {}).map(
     ([platform, url]) => ({ platform, url })
   )
@@ -63,7 +64,7 @@ export default function CompanyPage() {
   }
 
   return (
-    <SectionEditor title="企业信息配置" onSave={handleSave} saving={saving}>
+    <SectionEditor title="企业信息配置" kicker="Company" onSave={handleSave} saving={saving}>
       <FieldEditor
         label="企业名称"
         value={localData.name}
@@ -96,14 +97,12 @@ export default function CompanyPage() {
           addItem={() => ''}
           itemLabel="菜单项"
           renderItem={(item, _index, onChange) => (
-            <div className="pr-20">
-              <FieldEditor
-                label="菜单名称"
-                value={item}
-                onChange={(v) => onChange(v)}
-                required
-              />
-            </div>
+            <FieldEditor
+              label="菜单名称"
+              value={item}
+              onChange={(v) => onChange(v)}
+              required
+            />
           )}
         />
       </div>
@@ -116,12 +115,13 @@ export default function CompanyPage() {
           addItem={() => ({ platform: '', url: '' })}
           itemLabel="社交媒体"
           renderItem={(item, _index, onChange) => (
-            <div className="flex items-start gap-3 pr-20">
+            <div className="flex gap-3">
               <div className="flex-1">
                 <FieldEditor
                   label="平台名称"
                   value={item.platform}
                   onChange={(v) => onChange({ ...item, platform: v })}
+                  helpText="如 WeChat、LinkedIn"
                 />
               </div>
               <div className="flex-1">

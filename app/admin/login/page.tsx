@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import StatusBadge from '../components/StatusBadge'
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -35,9 +36,9 @@ export default function AdminLoginPage() {
           <p className="mt-2 text-sm text-white/45">Content Studio</p>
         </div>
 
-        <div className="border border-white/10 bg-white p-8 shadow-[0_30px_90px_rgba(0,0,0,0.28)]">
-          <h2 className="mb-6 text-center text-xl font-semibold text-[#0F1C1A]">
-            登录
+        <div className="border border-white/10 bg-white p-6 shadow-[0_30px_90px_rgba(0,0,0,0.28)]">
+          <h2 className="mb-6 text-center text-lg font-semibold text-[#0F1C1A]">
+            登录 CMS
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -57,21 +58,23 @@ export default function AdminLoginPage() {
                   setError('')
                 }}
                 placeholder="请输入管理密码"
-                className="w-full border border-[#E5E5E0] bg-[#F7F7F5] px-4 py-3 text-sm text-[#0F1C1A] transition-colors placeholder:text-[#737373]/60 focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
+                className="w-full border border-[#E5E5E0] bg-[#F7F7F5] px-3 py-2.5 text-sm text-[#0F1C1A] transition-colors placeholder:text-[#737373]/60 focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
                 autoFocus
+                aria-invalid={error ? 'true' : 'false'}
+                aria-describedby={error ? 'login-error' : undefined}
               />
             </div>
 
             {error && (
-              <p className="border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600">
-                {error}
-              </p>
+              <div id="login-error" className="border border-red-200 bg-red-50 px-3 py-2">
+                <StatusBadge variant="error">{error}</StatusBadge>
+              </div>
             )}
 
             <button
               type="submit"
               disabled={loading || !password}
-              className="min-h-11 w-full border border-[#0F1C1A] bg-[#0F1C1A] py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
+              className="min-h-10 w-full border border-[#0F1C1A] bg-[#0F1C1A] py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? '验证中...' : '登录'}
             </button>

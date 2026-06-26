@@ -18,7 +18,9 @@ export default function ImageUploader({
 }: ImageUploaderProps) {
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
-  const [mode, setMode] = useState<'url' | 'upload'>(value ? (value.startsWith('/uploads/') ? 'upload' : 'url') : 'url')
+  const [mode, setMode] = useState<'url' | 'upload'>(
+    value ? (value.startsWith('/uploads/') ? 'upload' : 'url') : 'url'
+  )
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +51,6 @@ export default function ImageUploader({
       setError('上传失败，请重试')
     } finally {
       setUploading(false)
-      // Reset file input
       if (fileInputRef.current) {
         fileInputRef.current.value = ''
       }
@@ -63,15 +64,14 @@ export default function ImageUploader({
         {required && <span className="ml-0.5 text-[#B08D57]">*</span>}
       </label>
 
-      {/* Mode Toggle */}
-      <div className="flex gap-1 mb-2">
+      <div className="mb-2 flex gap-1">
         <button
           type="button"
           onClick={() => setMode('url')}
-          className={`px-3 py-1 text-xs font-semibold transition-colors ${
+          className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
             mode === 'url'
               ? 'bg-[#0F1C1A] text-white'
-              : 'bg-[#E5E5E0] text-[#0F1C1A]/70 hover:bg-[#0F1C1A]/10'
+              : 'border border-[#E5E5E0] bg-white text-[#737373] hover:border-[#0F1C1A] hover:text-[#0F1C1A]'
           }`}
         >
           URL 链接
@@ -79,10 +79,10 @@ export default function ImageUploader({
         <button
           type="button"
           onClick={() => setMode('upload')}
-          className={`px-3 py-1 text-xs font-semibold transition-colors ${
+          className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
             mode === 'upload'
               ? 'bg-[#0F1C1A] text-white'
-              : 'bg-[#E5E5E0] text-[#0F1C1A]/70 hover:bg-[#0F1C1A]/10'
+              : 'border border-[#E5E5E0] bg-white text-[#737373] hover:border-[#0F1C1A] hover:text-[#0F1C1A]'
           }`}
         >
           本地上传
@@ -112,8 +112,8 @@ export default function ImageUploader({
               onChange={handleFileUpload}
               disabled={uploading}
               className="w-full text-sm text-[#0F1C1A]
-                file:mr-3 file:border-0 file:bg-[#B08D57]/10 file:px-4 file:py-2
-                file:text-sm file:font-semibold file:text-[#B08D57]
+                file:mr-3 file:border-0 file:bg-[#B08D57]/10 file:px-3 file:py-2
+                file:text-xs file:font-semibold file:text-[#B08D57]
                 hover:file:bg-[#B08D57]/20
                 file:cursor-pointer file:transition-colors
                 disabled:cursor-not-allowed disabled:opacity-50"
@@ -127,12 +127,8 @@ export default function ImageUploader({
         <ImagePreview url={value} />
       </div>
 
-      {uploading && (
-        <p className="text-xs text-[#B08D57]">上传中...</p>
-      )}
-      {error && (
-        <p className="text-xs text-red-600">{error}</p>
-      )}
+      {uploading && <p className="text-xs text-[#B08D57]">上传中...</p>}
+      {error && <p className="text-xs text-red-600">{error}</p>}
     </div>
   )
 }

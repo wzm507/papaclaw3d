@@ -5,6 +5,8 @@ import { useConfig } from '../hooks/useConfig'
 import SectionEditor from '../components/SectionEditor'
 import FieldEditor from '../components/FieldEditor'
 import ListEditor from '../components/ListEditor'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
 
 interface ExpertiseItem {
   icon: string
@@ -19,7 +21,7 @@ interface ExpertisesData {
 }
 
 export default function ExpertisesPage() {
-  const { config, loading, saving, saveConfig } = useConfig()
+  const { config, loading, saving, saveConfig, refetch } = useConfig()
   const [localData, setLocalData] = useState<ExpertisesData | null>(null)
 
   useEffect(() => {
@@ -28,8 +30,8 @@ export default function ExpertisesPage() {
     }
   }, [config])
 
-  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
-  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <AdminLoading />
+  if (!config || !localData) return <AdminError text="加载失败，请刷新重试" onRetry={refetch} />
 
   const updateField = (key: keyof ExpertisesData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -44,7 +46,7 @@ export default function ExpertisesPage() {
   }
 
   return (
-    <SectionEditor title="专业服务管理" onSave={handleSave} saving={saving}>
+    <SectionEditor title="专业服务管理" kicker="Expertises" onSave={handleSave} saving={saving}>
       <FieldEditor
         label="区域标题"
         value={localData.title}
@@ -65,16 +67,15 @@ export default function ExpertisesPage() {
           addItem={() => ({ icon: '', title: '', description: '' })}
           itemLabel="服务"
           renderItem={(item, _index, onChange) => (
-            <div className="space-y-3 pr-20">
+            <div className="space-y-3">
               <div className="flex gap-3">
-                <div>
-                  <FieldEditor
-                    label="图标"
-                    value={item.icon}
-                    onChange={(v) => onChange({ ...item, icon: v })}
-                    type="emoji"
-                  />
-                </div>
+                <FieldEditor
+                  label="图标"
+                  value={item.icon}
+                  onChange={(v) => onChange({ ...item, icon: v })}
+                  type="emoji"
+                  helpText="单个 emoji"
+                />
                 <div className="flex-1">
                   <FieldEditor
                     label="标题"

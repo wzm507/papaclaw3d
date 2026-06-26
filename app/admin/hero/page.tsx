@@ -6,6 +6,8 @@ import SectionEditor from '../components/SectionEditor'
 import FieldEditor from '../components/FieldEditor'
 import ListEditor from '../components/ListEditor'
 import ImageUploader from '../components/ImageUploader'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
 
 interface HeroCard {
   image: string
@@ -21,7 +23,7 @@ interface HeroData {
 }
 
 export default function HeroPage() {
-  const { config, loading, saving, saveConfig } = useConfig()
+  const { config, loading, saving, saveConfig, refetch } = useConfig()
   const [localData, setLocalData] = useState<HeroData | null>(null)
 
   useEffect(() => {
@@ -30,8 +32,8 @@ export default function HeroPage() {
     }
   }, [config])
 
-  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
-  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <AdminLoading />
+  if (!config || !localData) return <AdminError text="加载失败，请刷新重试" onRetry={refetch} />
 
   const updateField = (key: keyof HeroData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -46,7 +48,7 @@ export default function HeroPage() {
   }
 
   return (
-    <SectionEditor title="首页 Hero 配置" onSave={handleSave} saving={saving}>
+    <SectionEditor title="首页 Hero 配置" kicker="Hero" onSave={handleSave} saving={saving}>
       <FieldEditor
         label="主标题"
         value={localData.title}
@@ -77,7 +79,7 @@ export default function HeroPage() {
           addItem={() => ({ image: '', bubble: '' })}
           itemLabel="卡片"
           renderItem={(item, _index, onChange) => (
-            <div className="space-y-3 pr-20">
+            <div className="space-y-3">
               <ImageUploader
                 label="卡片图片"
                 value={item.image}
@@ -88,6 +90,7 @@ export default function HeroPage() {
                 value={item.bubble}
                 onChange={(v) => onChange({ ...item, bubble: v })}
                 type="emoji"
+                helpText="输入单个 emoji"
               />
             </div>
           )}

@@ -5,6 +5,8 @@ import { useConfig } from '../hooks/useConfig'
 import SectionEditor from '../components/SectionEditor'
 import FieldEditor from '../components/FieldEditor'
 import ListEditor from '../components/ListEditor'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
 
 interface WhyReason {
   title: string
@@ -18,7 +20,7 @@ interface WhyData {
 }
 
 export default function WhyPage() {
-  const { config, loading, saving, saveConfig } = useConfig()
+  const { config, loading, saving, saveConfig, refetch } = useConfig()
   const [localData, setLocalData] = useState<WhyData | null>(null)
 
   useEffect(() => {
@@ -27,8 +29,8 @@ export default function WhyPage() {
     }
   }, [config])
 
-  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
-  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <AdminLoading />
+  if (!config || !localData) return <AdminError text="加载失败，请刷新重试" onRetry={refetch} />
 
   const updateField = (key: keyof WhyData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -43,7 +45,7 @@ export default function WhyPage() {
   }
 
   return (
-    <SectionEditor title="优势理由管理" onSave={handleSave} saving={saving}>
+    <SectionEditor title="优势理由管理" kicker="Why Us" onSave={handleSave} saving={saving}>
       <FieldEditor
         label="区域标题"
         value={localData.title}
@@ -64,7 +66,7 @@ export default function WhyPage() {
           addItem={() => ({ title: '', description: '' })}
           itemLabel="理由"
           renderItem={(item, _index, onChange) => (
-            <div className="space-y-3 pr-20">
+            <div className="space-y-3">
               <FieldEditor
                 label="标题"
                 value={item.title}

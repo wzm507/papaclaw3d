@@ -4,6 +4,15 @@ import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import type { NewsArticle, NewsCrawlLog } from '../../lib/news-types'
 import type { SeoTopic } from '../../lib/seo-topics'
+import AdminPageHeader from '../components/AdminPageHeader'
+import AdminButton from '../components/AdminButton'
+import Toolbar from '../components/Toolbar'
+import DataTable from '../components/DataTable'
+import StatusBadge from '../components/StatusBadge'
+import FieldEditor from '../components/FieldEditor'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
+import ConfirmDialog from '../components/ConfirmDialog'
 
 interface NewsApiItem extends Omit<NewsArticle, 'contentText'> {
   contentLength: number
@@ -15,9 +24,14 @@ export default function AdminNewsPage() {
   const [topics, setTopics] = useState<SeoTopic[]>([])
   const [category, setCategory] = useState('')
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState('')
   const [saving, setSaving] = useState(false)
   const [syncing, setSyncing] = useState(false)
+  const [keywordSyncing, setKeywordSyncing] = useState(false)
+  const [reclassifying, setReclassifying] = useState(false)
+  const [keywordsInput, setKeywordsInput] = useState('')
   const [message, setMessage] = useState('')
+  const [deleteSlug, setDeleteSlug] = useState<string | null>(null)
   const [form, setForm] = useState({
     title: '',
     sourceName: '',
@@ -28,22 +42,27 @@ export default function AdminNewsPage() {
   })
 
   const categoryOptions = useMemo(
-    () => [{ slug: '', title: '全部新闻' }, ...topics.map((topic) => ({ slug: topic.slug, title: topic.title }))],
+    () => topics.map((topic) => ({ value: topic.slug, label: topic.title })),
     [topics]
   )
 
   const loadData = async (nextCategory = category) => {
     setLoading(true)
+    setLoadError('')
     try {
       const [newsRes, topicsRes] = await Promise.all([
         fetch(`/api/news${nextCategory ? `?category=${nextCategory}` : ''}`, { cache: 'no-store' }),
         fetch('/api/seo-topics', { cache: 'no-store' }),
       ])
+      if (!newsRes.ok) throw new Error('获取新闻失败')
+      if (!topicsRes.ok) throw new Error('获取专题失败')
       const newsJson = await newsRes.json()
       const topicsJson = await topicsRes.json()
       setArticles(newsJson.data || [])
       setLogs(newsJson.logs || [])
       setTopics(Array.isArray(topicsJson) ? topicsJson : [])
+    } catch (error) {
+      setLoadError(error instanceof Error ? error.message : '加载失败')
     } finally {
       setLoading(false)
     }
@@ -105,161 +124,251 @@ export default function AdminNewsPage() {
   }
 
   const handleDelete = async (slug: string) => {
-    if (!window.confirm('确认删除这条新闻？')) return
     await fetch(`/api/news?slug=${encodeURIComponent(slug)}`, { method: 'DELETE' })
+    setDeleteSlug(null)
     await loadData(category)
   }
 
+  const handleKeywordSync = async () => {
+    const keywords = keywordsInput
+      .split(/[,，\n]/)
+      .map((k) => k.trim())
+      .filter(Boolean)
+
+    if (keywords.length === 0) {
+      setMessage('请先输入关键词，多个关键词用逗号或换行分隔')
+      return
+    }
+
+    setKeywordSyncing(true)
+    setMessage('')
+    try {
+      const res = await fetch('/api/news/fetch-by-keywords', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ keywords, maxResults: 10, fetchFullText: false }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || '抓取失败')
+      setMessage(
+        `关键词抓取完成：候选 ${data.fetched || 0} 条，发布 ${data.published || 0} 条，失败 ${data.failures || 0} 条。`
+      )
+      setKeywordsInput('')
+      await loadData(category)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '抓取失败')
+    } finally {
+      setKeywordSyncing(false)
+    }
+  }
+
+  const handleReclassify = async () => {
+    setReclassifying(true)
+    setMessage('')
+    try {
+      const res = await fetch('/api/news/reclassify', { method: 'POST' })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || '重新分类失败')
+      setMessage(`重新分类完成：共 ${data.total} 条，更新 ${data.changed} 条。`)
+      await loadData(category)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '重新分类失败')
+    } finally {
+      setReclassifying(false)
+    }
+  }
+
+  if (loading && articles.length === 0 && logs.length === 0) return <AdminLoading />
+  if (loadError) return <AdminError text={loadError} onRetry={() => loadData(category)} />
+
   return (
-    <div className="p-6 md:p-10">
-      <div className="mb-8 border-b border-[#E5E5E0] pb-8">
-        <p className="p-kicker mb-3">News CMS</p>
-        <h1 className="text-[clamp(2rem,4vw,4rem)] font-semibold leading-none text-[#0F1C1A]">
-          真实新闻管理
-        </h1>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#737373]">
-          新闻按 7 个 SEO 专题分类展示。自动抓取必须拿到全文才会发布；抓不到全文的内容会进入失败记录。
-        </p>
-      </div>
+    <div className="p-5 md:p-6">
+      <AdminPageHeader
+        kicker="News CMS"
+        title="真实新闻管理"
+        description="新闻按 7 个 SEO 专题分类展示。自动抓取必须拿到全文才会发布；抓不到全文的内容会进入失败记录。"
+      >
+        <AdminButton variant="secondary" size="sm" asChild>
+          <Link href="/admin/news-sources">管理新闻源</Link>
+        </AdminButton>
+        <AdminButton variant="primary" size="sm" onClick={handleSync} loading={syncing}>
+          立即抓取
+        </AdminButton>
+      </AdminPageHeader>
 
-      <div className="mb-8 flex flex-wrap items-center gap-3">
-        <select
-          value={category}
-          onChange={(event) => handleCategoryChange(event.target.value)}
-          className="min-h-11 border border-[#E5E5E0] bg-white px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
-        >
-          {categoryOptions.map((item) => (
-            <option key={item.slug || 'all'} value={item.slug}>
-              {item.title}
-            </option>
-          ))}
-        </select>
-        <button
-          onClick={handleSync}
-          disabled={syncing}
-          className="inline-flex min-h-11 items-center border border-[#0F1C1A] bg-[#0F1C1A] px-5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {syncing ? '同步中...' : '立即抓取新闻'}
-        </button>
-        <Link
-          href="/admin/news-sources"
-          className="inline-flex min-h-11 items-center border border-[#0F1C1A] bg-white px-5 text-sm font-semibold text-[#0F1C1A] transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:text-[#B08D57]"
-        >
-          管理新闻源
-        </Link>
-        {message && <span className="text-sm font-semibold text-[#B08D57]">{message}</span>}
-      </div>
+      {message && (
+        <div className="mb-5 border border-[#B08D57]/30 bg-white px-4 py-3 text-sm font-semibold text-[#0F1C1A]">
+          {message}
+        </div>
+      )}
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_28rem]">
-        <section className="border border-[#E5E5E0] bg-white p-5 md:p-6">
-          <h2 className="text-xl font-semibold text-[#0F1C1A]">已发布新闻</h2>
-          <div className="mt-5 space-y-3">
-            {loading ? (
-              <p className="text-sm text-[#737373]">加载中...</p>
-            ) : articles.length > 0 ? (
-              articles.map((article) => (
-                <div key={article.id} className="border border-[#E5E5E0] p-4">
-                  <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-                    <div>
-                      <p className="text-xs font-semibold uppercase text-[#B08D57]">
-                        {article.categoryName} · {article.sourceName}
-                      </p>
-                      <h3 className="mt-2 text-lg font-semibold leading-snug text-[#0F1C1A]">
-                        {article.searchableTitle || article.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-[#737373]">
-                        正文 {article.contentLength} 字符 · 状态 {article.crawlStatus}
-                      </p>
-                    </div>
-                    <div className="flex gap-2">
-                      <Link
-                        href={`/news/${article.slug}`}
-                        target="_blank"
-                        className="border border-[#E5E5E0] px-3 py-2 text-xs font-semibold text-[#0F1C1A] transition-colors hover:border-[#0F1C1A]"
-                      >
-                        查看
-                      </Link>
-                      <button
-                        onClick={() => handleDelete(article.slug)}
-                        className="border border-red-200 px-3 py-2 text-xs font-semibold text-red-600 transition-colors hover:border-red-500"
-                      >
-                        删除
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="text-sm text-[#737373]">当前分类暂无新闻。</p>
-            )}
+      <section className="mb-5 grid gap-4 border border-[#E5E5E0] bg-white p-4 md:grid-cols-[1fr_auto_auto]">
+        <div>
+          <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#737373]">
+            按关键词抓取真实热点新闻
+          </label>
+          <input
+            value={keywordsInput}
+            onChange={(event) => setKeywordsInput(event.target.value)}
+            placeholder="例如：企业出海，中东，AI出海（多个关键词用逗号分隔）"
+            className="min-h-10 w-full border border-[#E5E5E0] px-3 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
+          />
+        </div>
+        <AdminButton
+          variant="primary"
+          className="self-end"
+          onClick={handleKeywordSync}
+          loading={keywordSyncing}
+        >
+          按关键词抓取
+        </AdminButton>
+        <AdminButton
+          variant="secondary"
+          className="self-end"
+          onClick={handleReclassify}
+          loading={reclassifying}
+        >
+          重新分类
+        </AdminButton>
+      </section>
+
+      <Toolbar className="mb-5">
+        <div className="w-48">
+          <FieldEditor
+            label=""
+            value={category}
+            onChange={handleCategoryChange}
+            type="select"
+            options={[{ value: '', label: '全部新闻' }, ...categoryOptions]}
+          />
+        </div>
+      </Toolbar>
+
+      <div className="grid gap-5 xl:grid-cols-[1fr_24rem]">
+        <section>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-[#737373]">
+              已发布新闻
+            </h2>
+            <span className="text-xs text-[#737373]">共 {articles.length} 条</span>
           </div>
+          <DataTable
+            columns={[
+              { key: 'title', label: '标题', className: 'min-w-[16rem]' },
+              { key: 'categoryName', label: '分类' },
+              { key: 'sourceName', label: '来源' },
+              {
+                key: 'status',
+                label: '状态',
+                render: (item) => (
+                  <StatusBadge variant={item.crawlStatus === 'published' ? 'success' : 'default'}>
+                    {item.crawlStatus}
+                  </StatusBadge>
+                ),
+              },
+              { key: 'contentLength', label: '字数', render: (item) => `${item.contentLength}` },
+              {
+                key: 'actions',
+                label: '操作',
+                className: 'w-32',
+                render: (item) => (
+                  <div className="flex gap-2">
+                    <Link
+                      href={`/news/${item.slug}`}
+                      target="_blank"
+                      className="inline-flex h-8 items-center border border-[#E5E5E0] px-2 text-xs font-semibold text-[#0F1C1A] transition-colors hover:border-[#0F1C1A]"
+                    >
+                      查看
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setDeleteSlug(item.slug)}
+                      className="inline-flex h-8 items-center border border-red-200 px-2 text-xs font-semibold text-red-600 transition-colors hover:border-red-500 hover:bg-red-50"
+                    >
+                      删除
+                    </button>
+                  </div>
+                ),
+              },
+            ]}
+            data={articles}
+            keyExtractor={(item) => item.id}
+            emptyText="当前分类暂无新闻。"
+          />
         </section>
 
-        <aside className="space-y-6">
-          <section className="border border-[#E5E5E0] bg-white p-5 md:p-6">
-            <h2 className="text-xl font-semibold text-[#0F1C1A]">手动新增新闻</h2>
-            <div className="mt-5 space-y-3">
-              <input
+        <aside className="space-y-5">
+          <section className="border border-[#E5E5E0] bg-white p-4">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#737373]">
+              手动新增新闻
+            </h2>
+            <div className="space-y-3">
+              <FieldEditor
+                label="标题"
                 value={form.title}
-                onChange={(event) => setForm({ ...form, title: event.target.value })}
-                placeholder="新闻标题"
-                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
+                onChange={(v) => setForm({ ...form, title: v })}
+                required
               />
-              <input
-                value={form.sourceName}
-                onChange={(event) => setForm({ ...form, sourceName: event.target.value })}
-                placeholder="来源名称，例如 36氪"
-                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
-              />
-              <input
+              <div className="grid gap-3 sm:grid-cols-2">
+                <FieldEditor
+                  label="来源名称"
+                  value={form.sourceName}
+                  onChange={(v) => setForm({ ...form, sourceName: v })}
+                  placeholder="例如 36氪"
+                />
+                <FieldEditor
+                  label="发布时间"
+                  value={form.publishedAt}
+                  onChange={(v) => setForm({ ...form, publishedAt: v })}
+                  type="date"
+                />
+              </div>
+              <FieldEditor
+                label="原文链接"
                 value={form.sourceUrl}
-                onChange={(event) => setForm({ ...form, sourceUrl: event.target.value })}
-                placeholder="原文链接"
-                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
+                onChange={(v) => setForm({ ...form, sourceUrl: v })}
+                type="url"
               />
-              <input
-                type="date"
-                value={form.publishedAt}
-                onChange={(event) => setForm({ ...form, publishedAt: event.target.value })}
-                className="min-h-11 w-full border border-[#E5E5E0] px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
-              />
-              <select
+              <FieldEditor
+                label="分类"
                 value={form.categorySlug}
-                onChange={(event) => setForm({ ...form, categorySlug: event.target.value })}
-                className="min-h-11 w-full border border-[#E5E5E0] bg-white px-4 text-sm text-[#0F1C1A] transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
-              >
-                {topics.map((topic) => (
-                  <option key={topic.slug} value={topic.slug}>
-                    {topic.title}
-                  </option>
-                ))}
-              </select>
-              <textarea
-                value={form.contentText}
-                onChange={(event) => setForm({ ...form, contentText: event.target.value })}
-                placeholder="粘贴新闻全文。建议保留来源事实，不添加未经确认的数据。"
-                rows={10}
-                className="w-full border border-[#E5E5E0] p-4 text-sm leading-relaxed text-[#0F1C1A] placeholder:text-[#737373]/60 transition-all focus:border-[#B08D57] focus:outline-none focus:ring-2 focus:ring-[#B08D57]/30"
+                onChange={(v) => setForm({ ...form, categorySlug: v })}
+                type="select"
+                options={categoryOptions}
               />
-              <button
+              <FieldEditor
+                label="正文"
+                value={form.contentText}
+                onChange={(v) => setForm({ ...form, contentText: v })}
+                type="textarea"
+                placeholder="粘贴新闻全文。建议保留来源事实，不添加未经确认的数据。"
+                rows={6}
+              />
+              <AdminButton
+                variant="primary"
+                className="w-full"
                 onClick={handleManualSubmit}
-                disabled={saving}
-                className="inline-flex min-h-11 w-full items-center justify-center border border-[#0F1C1A] bg-[#0F1C1A] px-5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#B08D57] hover:bg-[#B08D57] disabled:cursor-not-allowed disabled:opacity-50"
+                loading={saving}
               >
-                {saving ? '发布中...' : '发布到官网新闻'}
-              </button>
+                发布到官网
+              </AdminButton>
             </div>
           </section>
 
-          <section className="border border-[#E5E5E0] bg-white p-5 md:p-6">
-            <h2 className="text-xl font-semibold text-[#0F1C1A]">最近抓取记录</h2>
-            <div className="mt-5 space-y-3">
+          <section className="border border-[#E5E5E0] bg-white p-4">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#737373]">
+              最近抓取记录
+            </h2>
+            <div className="space-y-2">
               {logs.slice(0, 8).map((log) => (
                 <div key={log.id} className="border border-[#E5E5E0] p-3">
-                  <p className={`text-xs font-semibold ${log.status === 'failed' ? 'text-red-600' : 'text-green-700'}`}>
-                    {log.status} · {log.sourceName}
-                  </p>
-                  <p className="mt-1 line-clamp-2 text-sm text-[#0F1C1A]">{log.title || log.url}</p>
+                  <div className="flex items-center gap-2">
+                    <StatusBadge variant={log.status === 'failed' ? 'error' : 'default'}>
+                      {log.status}
+                    </StatusBadge>
+                    <span className="text-xs font-semibold text-[#737373]">{log.sourceName}</span>
+                  </div>
+                  <p className="mt-2 line-clamp-2 text-sm text-[#0F1C1A]">{log.title || log.url}</p>
                   <p className="mt-1 text-xs text-[#737373]">{log.message}</p>
                 </div>
               ))}
@@ -268,6 +377,17 @@ export default function AdminNewsPage() {
           </section>
         </aside>
       </div>
+
+      <ConfirmDialog
+        open={deleteSlug !== null}
+        title="确认删除"
+        description="确定要删除这条新闻吗？删除后无法恢复。"
+        confirmText="删除"
+        cancelText="取消"
+        variant="danger"
+        onConfirm={() => deleteSlug && handleDelete(deleteSlug)}
+        onCancel={() => setDeleteSlug(null)}
+      />
     </div>
   )
 }

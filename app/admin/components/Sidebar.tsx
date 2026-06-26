@@ -19,7 +19,12 @@ const navItems = [
   { href: '/admin/footer', icon: 'FT', label: '页脚配置' },
 ]
 
-export default function Sidebar() {
+interface SidebarProps {
+  mobileOpen?: boolean
+  onCloseMobile?: () => void
+}
+
+export default function Sidebar({ mobileOpen = false, onCloseMobile }: SidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -34,53 +39,74 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="flex min-h-screen w-[280px] shrink-0 flex-col bg-[#0F1C1A]">
-      <div className="border-b border-white/10 px-6 py-7">
-        <Link href="/admin" className="block">
-          <h1 className="text-2xl font-semibold tracking-tight text-white">PAPACLAW</h1>
-          <p className="mt-1 text-xs text-white/45">Content Studio</p>
-        </Link>
-      </div>
+    <>
+      <aside
+        className={`fixed inset-y-0 left-0 z-40 w-[260px] transform bg-[#0F1C1A] transition-transform duration-200 md:relative md:translate-x-0 ${
+          mobileOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="border-b border-white/10 px-5 py-5">
+          <Link href="/admin" className="block" onClick={onCloseMobile}>
+            <h1 className="text-xl font-semibold tracking-tight text-white">PAPACLAW</h1>
+            <p className="mt-0.5 text-[10px] uppercase tracking-widest text-white/40">Content Studio</p>
+          </Link>
+        </div>
 
-      <nav className="flex-1 overflow-y-auto px-3 py-4">
-        <ul className="space-y-1.5">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={`flex min-h-11 items-center gap-3 px-3 py-2.5 text-sm transition-colors duration-150 ${
-                  isActive(item.href)
-                    ? 'bg-white font-semibold text-[#0F1C1A]'
-                    : 'text-white/62 hover:bg-white/10 hover:text-white'
-                }`}
-              >
-                <span
-                  className={`flex h-7 w-9 items-center justify-center border text-[10px] font-semibold ${
-                    isActive(item.href)
-                      ? 'border-[#0F1C1A]/10 bg-[#0F1C1A] text-white'
-                      : 'border-white/12 bg-white/5 text-white/62'
-                  }`}
-                >
-                  {item.icon}
-                </span>
-                <span>{item.label}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <nav className="flex-1 overflow-y-auto px-3 py-3">
+          <ul className="space-y-0.5">
+            {navItems.map((item) => {
+              const active = isActive(item.href)
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    title={item.label}
+                    onClick={onCloseMobile}
+                    aria-current={active ? 'page' : undefined}
+                    className={`flex min-h-10 items-center gap-3 border-l-2 px-3 py-2 text-sm transition-colors duration-150 ${
+                      active
+                        ? 'border-[#B08D57] bg-white/5 font-semibold text-white'
+                        : 'border-transparent text-white/60 hover:bg-white/5 hover:text-white'
+                    }`}
+                  >
+                    <span
+                      className={`flex h-6 w-8 items-center justify-center border text-[10px] font-semibold ${
+                        active
+                          ? 'border-white/10 bg-[#B08D57] text-white'
+                          : 'border-white/10 bg-white/5 text-white/60'
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
 
-      <div className="border-t border-white/10 px-3 py-4">
-        <button
-          onClick={handleLogout}
-          className="flex min-h-11 w-full items-center gap-3 px-3 py-2.5 text-sm text-white/60 transition-colors duration-150 hover:bg-white/10 hover:text-white"
-        >
-          <span className="flex h-7 w-9 items-center justify-center border border-white/12 bg-white/5 text-[10px] font-semibold">
-            OUT
-          </span>
-          <span>退出登录</span>
-        </button>
-      </div>
-    </aside>
+        <div className="border-t border-white/10 px-3 py-3">
+          <button
+            onClick={handleLogout}
+            title="退出登录"
+            className="flex min-h-10 w-full items-center gap-3 border-l-2 border-transparent px-3 py-2 text-sm text-white/50 transition-colors duration-150 hover:bg-white/5 hover:text-white"
+          >
+            <span className="flex h-6 w-8 items-center justify-center border border-white/10 bg-white/5 text-[10px] font-semibold">
+              OUT
+            </span>
+            <span>退出登录</span>
+          </button>
+        </div>
+      </aside>
+
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-[#0F1C1A]/50 md:hidden"
+          onClick={onCloseMobile}
+          aria-hidden="true"
+        />
+      )}
+    </>
   )
 }

@@ -5,6 +5,8 @@ import { useConfig } from '../hooks/useConfig'
 import SectionEditor from '../components/SectionEditor'
 import FieldEditor from '../components/FieldEditor'
 import ListEditor from '../components/ListEditor'
+import AdminLoading from '../components/AdminLoading'
+import AdminError from '../components/AdminError'
 
 interface SocialLink {
   name: string
@@ -27,7 +29,7 @@ interface FooterData {
 }
 
 export default function FooterPage() {
-  const { config, loading, saving, saveConfig } = useConfig()
+  const { config, loading, saving, saveConfig, refetch } = useConfig()
   const [localData, setLocalData] = useState<FooterData | null>(null)
 
   useEffect(() => {
@@ -36,8 +38,8 @@ export default function FooterPage() {
     }
   }, [config])
 
-  if (loading) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-[#737373]">加载中...</div>
-  if (!config || !localData) return <div className="border border-[#E5E5E0] bg-white p-10 text-center text-sm text-red-600">加载失败，请刷新重试</div>
+  if (loading) return <AdminLoading />
+  if (!config || !localData) return <AdminError text="加载失败，请刷新重试" onRetry={refetch} />
 
   const updateField = (key: keyof FooterData, value: string) => {
     setLocalData(prev => prev ? { ...prev, [key]: value } : prev)
@@ -56,7 +58,7 @@ export default function FooterPage() {
   }
 
   return (
-    <SectionEditor title="页脚配置" onSave={handleSave} saving={saving}>
+    <SectionEditor title="页脚配置" kicker="Footer" onSave={handleSave} saving={saving}>
       <FieldEditor
         label="联系标题"
         value={localData.contactTitle}
@@ -83,7 +85,7 @@ export default function FooterPage() {
           addItem={() => ({ name: '', url: '' })}
           itemLabel="社交媒体"
           renderItem={(item, _index, onChange) => (
-            <div className="flex gap-3 pr-20">
+            <div className="flex gap-3">
               <div className="flex-1">
                 <FieldEditor
                   label="平台名称"
@@ -118,7 +120,7 @@ export default function FooterPage() {
           addItem={() => ({ label: '', url: '' })}
           itemLabel="法律链接"
           renderItem={(item, _index, onChange) => (
-            <div className="flex gap-3 pr-20">
+            <div className="flex gap-3">
               <div className="flex-1">
                 <FieldEditor
                   label="标签"

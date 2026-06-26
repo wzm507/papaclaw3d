@@ -53,8 +53,12 @@ function makeLog(
   }
 }
 
+function stripCdata(value: string): string {
+  return value.replace(/^<!\[CDATA\[/, '').replace(/\]\]>$/, '')
+}
+
 function decodeHtmlEntities(value: string): string {
-  return value
+  return stripCdata(value)
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -102,10 +106,11 @@ function parseXmlCandidates(xml: string, source: NewsSource): CandidateArticle[]
   return blocks
     .flatMap((block) => {
       const title = decodeHtmlEntities(stripHtml(block.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ''))
-      const link =
+      const rawLink =
         block.match(/<link[^>]*href=["']([^"']+)["'][^>]*>/i)?.[1] ||
         block.match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1] ||
         ''
+      const link = stripCdata(rawLink).trim()
       const summary = decodeHtmlEntities(stripHtml(block.match(/<description[^>]*>([\s\S]*?)<\/description>/i)?.[1] || ''))
       const publishedAt =
         block.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i)?.[1] ||
