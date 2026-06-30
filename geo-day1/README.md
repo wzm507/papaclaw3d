@@ -1,7 +1,7 @@
 # Papa Claw 七月 GEO 第一天执行包
 
 日期：2026-07-01  
-目标：建立 7 月基线，启动百度百科，发布知乎首篇，并保留可用于月底汇报的证据。
+目标：建立 7 月基线，启动百科词条和平台实体页，发布知乎首篇，并保留可用于月底汇报的证据。
 
 ## 今天优先级
 
@@ -13,14 +13,15 @@
 
 ## 我已直接完成
 
-- 已确认本地官网关键入口正常：`/`、`/news`、3 个核心专题页、`/sitemap.xml`、`/robots.txt`、`/llms.txt`、`/llms-full.txt`、`/ai-news-feed` 均返回 200。
-- 已确认线上官网关键入口正常：`https://www.papaclaw.cn/`、`/news`、3 个核心专题页、`/sitemap.xml`、`/robots.txt`、`/llms.txt`、`/llms-full.txt`、`/ai-news-feed` 均返回 200。
+- 已确认本地官网关键入口正常：`/`、`/news`、`/sitemap.xml`、`/robots.txt`、`/llms.txt`、`/llms-full.txt`、`/ai-news-feed` 均返回 200。
+- 已确认线上官网关键入口正常：`https://www.papaclaw.cn/`、`/news`、`/sitemap.xml`、`/robots.txt`、`/llms.txt`、`/llms-full.txt`、`/ai-news-feed` 均返回 200。
 - 已向 Bing IndexNow 推送线上 sitemap URL：`Chunk 1: 200 OK (21 URLs)`。
 - 已准备百度百科草稿、知乎首篇草稿、AI 基线测试表、截图清单和汇报模板。
 - 已准备各大百科平台词条包：`baike-platforms/`。
 - 已补充搜狗百科分类填写说明和更多平台词条/实体页清单。
 - 已补充抖音、小红书、头条的实体页替代打法。
 - 已生成双休不排班的七月工作日执行版：`2026-07-geo-execution-plan-workdays.md` 和 `2026-07-geo-workday-checklist.csv`。
+- 已根据 `E:/工作/seo优化/项目素材包.md` 重写业务口径：跨境营销、海外内容运营、销售运营支持、DABIE ERP、产业项目展示物料。
 
 ## 需要你亲自完成
 

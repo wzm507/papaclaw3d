@@ -37,7 +37,7 @@
 - [ ] `llms.txt` 截图
 - [ ] `llms-full.txt` 截图
 - [ ] `sitemap.xml` 截图
-- [ ] 3 个核心专题页截图：AI科技出海、外贸工厂出海获客、中东政企资源对接
+- [ ] 核心业务内容截图：跨境营销、海外账号矩阵运营、DABIE ERP、珠宝/服装出海、产业项目展示物料
 
 ## 文件命名建议
 
@@ -52,4 +52,3 @@
 - `20260701-baidu-baike-submit.png`
 - `20260701-zhihu-published.png`
 - `20260701-baidu-site-papaclaw.png`
-

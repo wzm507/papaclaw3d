@@ -1,36 +1,22 @@
 ﻿模块,事项,状态,可验证成果或链接,备注
+项目检查,本地项目构建,已完成,npm run build,通过；仅保留图片优化警告
+项目检查,本地lint,已完成,npm run lint,通过；同一条图片优化警告
 官网检查,线上首页可访问,已完成,https://www.papaclaw.cn/,2026-06-30复查返回200
 官网检查,新闻页可访问,已完成,https://www.papaclaw.cn/news,2026-06-30复查返回200
-官网检查,AI科技出海专题页可访问,已完成,https://www.papaclaw.cn/ai-global-expansion,2026-06-30复查返回200
-官网检查,外贸工厂出海获客专题页可访问,已完成,https://www.papaclaw.cn/foreign-trade-factory-global-sales,2026-06-30复查返回200
-官网检查,中东政企资源专题页可访问,已完成,https://www.papaclaw.cn/middle-east-government-resources,2026-06-30复查返回200
 AI可读入口,sitemap可访问,已完成,https://www.papaclaw.cn/sitemap.xml,2026-06-30复查返回200
 AI可读入口,robots可访问,已完成,https://www.papaclaw.cn/robots.txt,2026-06-30复查返回200
 AI可读入口,llms.txt可访问,已完成,https://www.papaclaw.cn/llms.txt,2026-06-30复查返回200
 AI可读入口,llms-full.txt可访问,已完成,https://www.papaclaw.cn/llms-full.txt,2026-06-30复查返回200
 AI可读入口,ai-news-feed可访问,已完成,https://www.papaclaw.cn/ai-news-feed,2026-06-30复查返回200
-搜索引擎推送,Bing IndexNow推送,已完成,Chunk 1: 200 OK (21 URLs),后续收录看搜索引擎
-执行材料,AI基线测试表,已完成,geo-day1/01-ai-baseline-test.csv,表头已改中文
-执行材料,AI基线测试TSV,已完成,geo-day1/01-ai-baseline-test.tsv,Excel打开更稳
-执行材料,15题问题库,已完成,geo-day1/02-ai-baseline-question-bank.md,可直接复制测试
-执行材料,百度百科草稿,已完成,geo-day1/03-baidu-baike-draft.md,后续以平台审核为准
-执行材料,知乎首篇草稿,已完成,geo-day1/04-zhihu-article-day1.md,可直接发布
-执行材料,截图留证清单,已完成,geo-day1/05-evidence-checklist.md,月底汇报证据
-执行材料,当天汇报模板,已完成,geo-day1/06-day1-report-template.md,填完即可汇报
-百科平台包,多平台百科草稿,已完成,geo-day1/baike-platforms/,百度/360/搜狗/头条快懂
-平台实体页包,抖音小红书头条打法,已完成,geo-day1/baike-platforms/08-douyin-xiaohongshu-entity-guide.md,企业号和搜索实体页
-月度计划,七月工作日执行版,已完成,geo-day1/2026-07-geo-execution-plan-workdays.md,周六日不排任务
-月度计划,七月工作日CSV执行表,已完成,geo-day1/2026-07-geo-workday-checklist.csv,可用Excel打开
-百度百科,提交词条,待你确认,待补,需要你登录平台提交或确认
-360百科,提交词条,待你确认,待补,需要你登录平台提交或确认
-搜狗百科,提交词条,待你确认,待补,需要你登录平台提交或确认
-快懂百科/头条百科,创建词条,待你确认,待补,有入口就建没有就记录
-天眼查,补企业信息,待你确认,待补,补官网品牌名简介
-企查查,补企业信息,待你确认,待补,补官网品牌名简介
-爱企查,补企业信息,待你确认,待补,能补则补
-小红书,企业号和品牌笔记,待你确认,待补,需要账号登录
-抖音,企业号和短视频,待你确认,待补,需要账号登录
-今日头条,账号和文章,待你确认,待补,需要账号登录
-百家号,账号和文章,待你确认,待补,需要账号登录
-知乎,首篇文章,待你确认,待补,需要账号登录
-AI基线测试,15题x4平台,未完成,待补,需要你逐平台测试截图
+搜索引擎推送,Bing IndexNow推送sitemap URL,已完成,Chunk 1: 200 OK (21 URLs),已推送；收录要继续观察
+业务口径,根据素材包重新整理业务主线,已完成,geo-day1/business-positioning-source.md,已改为真实业务口径
+第一天执行包,AI基线测试表,已完成,geo-day1/01-ai-baseline-test.csv 和 geo-day1/01-ai-baseline-test.tsv,表头中文；问题已改成真实业务问题
+第一天执行包,15题问题库,已完成,geo-day1/02-ai-baseline-question-bank.md,可直接复制测试
+第一天执行包,百度百科草稿,已完成,geo-day1/03-baidu-baike-draft.md,已改成跨境营销与数字化运营口径
+第一天执行包,知乎首篇草稿,已完成,geo-day1/04-zhihu-article-day1.md,已改成内容、销售和系统链路主题
+第一天执行包,截图留证清单,已完成,geo-day1/05-evidence-checklist.md,已改成新业务线
+第一天执行包,当天汇报模板,已完成,geo-day1/06-day1-report-template.md,已改成新业务线
+百科平台包,百度、360、搜狗、头条/快懂百科草稿,已完成,geo-day1/baike-platforms/,已按真实业务口径拆稿
+平台实体页包,抖音、小红书、头条替代打法,已完成,geo-day1/baike-platforms/08-douyin-xiaohongshu-entity-guide.md,这些平台更多是企业号/搜索实体页
+月度计划,七月工作日执行版,已完成,geo-day1/2026-07-geo-execution-plan-workdays.md,已去掉周六日任务；已换成真实业务主线
+月度计划,七月工作日CSV执行表,已完成,geo-day1/2026-07-geo-workday-checklist.csv,Excel可打开
