@@ -12,6 +12,7 @@ import News from './sections/News'
 import FAQ from './sections/FAQ'
 import Footer from './sections/Footer'
 import SmoothScrollProvider from './components/SmoothScrollProvider'
+import BreadcrumbJsonLd from './components/BreadcrumbJsonLd'
 import { listNewsArticles } from './lib/news-store'
 
 export const dynamic = 'force-dynamic'
@@ -80,6 +81,7 @@ export default async function Home() {
   return (
     <SmoothScrollProvider>
       <main className="relative">
+        <BreadcrumbJsonLd items={[{ name: '首页', url: siteUrl }]} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />

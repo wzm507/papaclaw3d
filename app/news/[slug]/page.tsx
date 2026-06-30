@@ -6,6 +6,7 @@ import path from 'path'
 import Header from '../../components/Header'
 import Footer from '../../sections/Footer'
 import SmoothScrollProvider from '../../components/SmoothScrollProvider'
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 import { getNewsArticle, listNewsArticles } from '../../lib/news-store'
 
 export const dynamic = 'force-dynamic'
@@ -111,6 +112,13 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
   return (
     <SmoothScrollProvider>
       <main className="min-h-screen bg-[#F7F7F5]">
+        <BreadcrumbJsonLd
+          items={[
+            { name: '首页', url: siteUrl() },
+            { name: '新闻中心', url: `${siteUrl()}/news` },
+            { name: article.searchableTitle || article.title, url: articleUrl },
+          ]}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />

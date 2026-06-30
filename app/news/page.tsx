@@ -5,6 +5,7 @@ import path from 'path'
 import Header from '../components/Header'
 import Footer from '../sections/Footer'
 import SmoothScrollProvider from '../components/SmoothScrollProvider'
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd'
 import { listNewsArticles } from '../lib/news-store'
 import { listSeoTopics } from '../lib/seo-topics'
 
@@ -33,6 +34,10 @@ function formatDate(date: string) {
   }).format(new Date(date))
 }
 
+function siteUrl() {
+  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn').replace(/\/$/, '')
+}
+
 export default async function NewsPage({ searchParams }: NewsPageProps) {
   const configPath = path.join(process.cwd(), 'data', 'site-config.json')
   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
@@ -48,17 +53,19 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   return (
     <SmoothScrollProvider>
       <main className="min-h-screen bg-[#F7F7F5]">
+        <BreadcrumbJsonLd
+          items={[
+            { name: '首页', url: siteUrl() },
+            { name: '新闻中心', url: `${siteUrl()}/news` },
+          ]}
+        />
         <Header menuItems={headerMenuItems} whatsappUrl={config.header.whatsappUrl} />
 
         <section className="p-section pt-36">
           <div className="p-inner">
             <p className="p-kicker mb-4 text-center">Enterprise Global News</p>
             <h1 className="p-heading-xl mx-auto mb-6 max-w-4xl text-center">企业出海真实新闻</h1>
-            <p className="p-body-lg mx-auto mb-12 max-w-2xl text-center">
-              这里收录公开新闻源中与企业出海相关的内容。系统只发布已抓取到全文的新闻，并按 SEO 专题整理为可检索、可引用的官网文本。
-            </p>
-
-            <div className="mb-10 flex flex-wrap justify-center gap-2">
+            <div className="mb-10 mt-12 flex flex-wrap justify-center gap-2">
               <Link
                 href="/news"
                 className={`border px-4 py-2 text-sm font-semibold transition-all ${

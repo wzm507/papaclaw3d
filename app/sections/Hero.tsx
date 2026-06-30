@@ -62,7 +62,7 @@ export default function Hero() {
               <p className="p-heading-lg mb-1">先付出。</p>
               <p className="p-heading-lg mb-6">你先赚钱。</p>
               <div className="flex flex-wrap gap-2">
-                <span className="p-chip p-chip-accent">不中标不收费</span>
+                <span className="p-chip p-chip-accent">按结果付费</span>
                 <span className="p-chip">成本价起步</span>
               </div>
             </div>

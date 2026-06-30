@@ -79,7 +79,6 @@ export default function Footer({ contactTitle, contactDescription, ctaText, soci
               <p className="mb-4 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-white/40">联系</p>
               <p className="text-sm text-white/60">hello@papaclaw.cn</p>
               <p className="mt-2 text-sm text-white/60">papaclaw.cn</p>
-              <p className="mt-2 text-sm text-white/60">南沙跨境贸易产业集聚区</p>
             </div>
           </Reveal>
         </div>
