@@ -81,7 +81,6 @@ export async function generateLlmsText() {
     ]),
     '',
     '## 新闻与公众号内容',
-    '官网新闻中心承接“凯勒斐KLF”微信公众号已发布的企业出海相关新闻，并整理为搜索引擎和问答类AI可读取的官网文本。',
     `新闻入口：${url}/news`,
     `AI可读新闻文本：${url}/ai-news-feed`,
     articles.length > 0 ? `最新新闻数量：${articles.length}` : '最新新闻数量：0',
