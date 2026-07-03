@@ -14,6 +14,7 @@ const cases = [
     title: '中东头部房地产开发商',
     desc: '从品牌视频到社媒日常，再到海外获客体系，整套新媒体营销跟着客户一起跑。',
     result: '9 个月，累计帮客户成交 ¥3 亿',
+    tags: ['获客转化', '跨境获客'],
     schema: {
       name: '迪拜房产获客项目',
       about: '用短视频和社媒获客，9个月帮迪拜房产客户成交3亿',
@@ -21,14 +22,15 @@ const cases = [
     },
   },
   {
-    category: '跨境直播 · 香港',
-    title: '香港跨境直播主播',
-    desc: '搭 ERP、做短视频、管 30 多个社媒账号，把直播这条链路跑通。',
-    result: '单条互动 5,000+，直播在线 1,000+，粉丝 4 万+',
+    category: '跨境直播 · 中国香港/韩国',
+    title: 'DABIE跨境直播带货',
+    desc: 'Facebook海外直播 + 自研DABIE ERP系统，覆盖选品到结算全链路。合作主播珠珠为香港大网红，直播7年。',
+    result: '单场3天直播营收约15.5万港币，100+款上新，持续运营中',
+    tags: ['跨境直播', '获客转化'],
     schema: {
-      name: '香港跨境直播项目',
-      about: '用短视频、社媒账号矩阵和DABIE ERP跑通香港跨境直播带货链路',
-      keywords: ['跨境直播', 'DABIE ERP', '直播带货', '账号矩阵'],
+      name: 'DABIE跨境直播带货项目',
+      about: 'Facebook海外直播 + 自研DABIE ERP系统，覆盖选品到结算全链路，单场3天直播营收约15.5万港币',
+      keywords: ['跨境直播', 'DABIE ERP', 'Facebook海外直播', '直播带货'],
     },
   },
   {
@@ -36,6 +38,7 @@ const cases = [
     title: '南油女装出海项目',
     desc: '帮客户把女装铺进香港市场，从渠道到销售完整跑通。',
     result: '成交数千单，GMV 100 万+',
+    tags: ['跨境获客', '多市场出海'],
     schema: {
       name: '南油女装出海项目',
       about: '帮助南油女装进入香港市场，完成渠道、销售和跨境运营落地',
@@ -47,6 +50,7 @@ const cases = [
     title: '番禺珠宝出海项目',
     desc: '珠宝卖到香港、迪拜、沙特、马来西亚，持续出单。',
     result: '成交数百单，持续运营中',
+    tags: ['多市场出海', '跨境获客'],
     schema: {
       name: '番禺珠宝出海项目',
       about: '帮助番禺珠宝进入香港、迪拜、沙特和马来西亚等海外市场',
@@ -55,11 +59,12 @@ const cases = [
   },
   {
     category: '政府项目 · 南沙',
-    title: '南沙跨境贸易产业集聚区',
+    title: '政府产业园区',
     desc: '宣传手册、展厅布置、营销策划、文件准备，全流程跟着项目落地。',
     result: '政府项目官方合作，持续服务中',
+    tags: ['政府合作', '多市场出海'],
     schema: {
-      name: '南沙跨境贸易产业集聚区项目',
+      name: '政府产业园区项目',
       about: '为南沙跨境贸易产业项目提供宣传手册、展厅布置、营销策划和招商材料支持',
       keywords: ['南沙出海', '跨境贸易', '政企项目', '产业集聚区'],
     },
@@ -69,6 +74,7 @@ const cases = [
     title: '传统非遗内容出海 · 非遗文化出海',
     desc: '用 AI 剪片子、做内容，把中国非遗推到海外社媒上。',
     result: '剪了 400 多条片子，管 30+ 账号，单条最高播放 10 万+',
+    tags: ['多市场出海', '跨境获客'],
     schema: {
       name: '传统非遗内容出海项目',
       about: '用AI剪辑和多平台账号分发，把传统非遗内容推向海外社媒',
@@ -144,6 +150,13 @@ export default function Cases() {
                 </div>
                 <div className="md:col-span-5">
                   <p className="p-body mb-3">{item.desc}</p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="p-chip bg-[#F7F7F5]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                   <p className={`text-sm font-semibold transition-colors ${active === index ? 'text-[#B08D57]' : 'text-[#0F1C1A]'}`}>
                     {item.result}
                   </p>
