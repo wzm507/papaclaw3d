@@ -51,8 +51,8 @@ export default function Hero() {
             </div>
 
             <div className="hero-cta mt-12 flex flex-wrap gap-4">
-              <a href="#contact" className="p-btn">免费咨询 →</a>
-              <a href="#about" className="p-btn-ghost">了解我们</a>
+              <a href="#contact" className="p-btn">获得你的出海诊断报告</a>
+              <a href="#cases" className="p-btn-ghost">看看我们怎么做到3亿成交</a>
             </div>
           </div>
 

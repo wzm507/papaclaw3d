@@ -22,7 +22,7 @@ export default function Footer({ contactTitle, contactDescription, ctaText, soci
             <p className="p-kicker mb-4 text-white/40">Contact</p>
             <h2 className="p-heading-xl mb-8 max-w-4xl text-white">{contactTitle}</h2>
             <p className="p-body mb-10 max-w-2xl text-white/60">{contactDescription}</p>
-            <a href="mailto:hello@papaclaw.cn" className="p-btn p-btn-light">
+            <a href="mailto:Robin@papaclaw.cn" className="p-btn p-btn-light">
               {ctaText}
             </a>
           </div>
@@ -77,8 +77,11 @@ export default function Footer({ contactTitle, contactDescription, ctaText, soci
           <Reveal delay={0.25}>
             <div>
               <p className="mb-4 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-white/40">联系</p>
-              <p className="text-sm text-white/60">hello@papaclaw.cn</p>
+              <p className="text-sm text-white/60">Robin@papaclaw.cn</p>
               <p className="mt-2 text-sm text-white/60">papaclaw.cn</p>
+              <a href="tel:+8615818861497" className="mt-2 block text-sm text-white/60 transition-colors hover:text-white">
+                +86 158-1886-1497
+              </a>
             </div>
           </Reveal>
         </div>

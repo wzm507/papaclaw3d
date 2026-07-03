@@ -68,7 +68,7 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
 
         <div className="flex items-center gap-4">
           <a
-            href={whatsappUrl || 'mailto:hello@papaclaw.cn'}
+            href={whatsappUrl || 'mailto:Robin@papaclaw.cn'}
             target={whatsappUrl ? '_blank' : undefined}
             rel={whatsappUrl ? 'noopener noreferrer' : undefined}
             className="relative z-10 hidden border border-[#0F1C1A] bg-[#0F1C1A] px-5 py-2 text-xs font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#B08D57] hover:border-[#B08D57] md:inline-flex"
@@ -119,11 +119,10 @@ export default function Header({ menuItems, whatsappUrl }: HeaderProps) {
             ))}
           </nav>
 
-          <div className="menu-link absolute bottom-10 left-8 right-8 flex flex-col justify-between gap-6 border-t border-white/10 pt-8 text-white/50 md:left-16 md:right-16 lg:left-24 lg:right-24 lg:flex-row lg:items-center">
-            <a href="mailto:hello@papaclaw.cn" className="text-sm transition-colors hover:text-white">
-              hello@papaclaw.cn
+          <div className="menu-link absolute bottom-10 left-8 right-8 flex justify-end border-t border-white/10 pt-8 text-white/50 md:left-16 md:right-16 lg:left-24 lg:right-24">
+            <a href="mailto:Robin@papaclaw.cn" className="text-right text-sm transition-colors hover:text-white">
+              Robin@papaclaw.cn
             </a>
-            <p className="text-sm">南沙跨境贸易产业集聚区</p>
           </div>
         </div>
       </div>

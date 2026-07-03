@@ -4,11 +4,11 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'),
   title: {
-    default: 'Papa Claw爬爬虾｜AI科技出海与政企资源落地服务商',
+    default: 'Papa Claw爬爬虾｜AI出海获客引擎 — 用AI帮出海企业拿订单',
     template: '%s｜Papa Claw爬爬虾',
   },
   description:
-    'Papa Claw爬爬虾是AI数据+独家政企资源双驱动的出海结果型落地服务商，服务实体外贸生产工厂与政府及政企出海项目。提供AI科技出海、外贸工厂海外获客、标书代投、跨境金融服务、海外社媒运营。',
+    '爬爬虾(Papa Claw)是做出海的AI获客引擎。用AI批量生产本土化内容、运营多平台账号矩阵、做AI搜索占位(GEO)，帮出海企业获取海外客户。创始人9个月帮客户成交3亿，跑通香港和韩国跨境直播带货，自研DABIE直播ERP系统。',
   keywords: [
     'Papa Claw',
     '爬爬虾',
@@ -33,28 +33,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Papa Claw爬爬虾｜AI科技出海与政企资源落地服务商',
+    title: 'AI出海获客引擎 — 用AI帮出海企业拿订单',
     description:
-      'Papa Claw爬爬虾是AI数据+独家政企资源双驱动的出海结果型落地服务商，服务实体外贸生产工厂与政府及政企出海项目。',
-    url: '/',
-    siteName: 'Papa Claw爬爬虾',
+      '爬爬虾是做出海的AI获客引擎。自己干过3亿成交，跑通香港和韩国跨境直播带货，自研DABIE直播ERP系统。',
+    url: 'https://www.papaclaw.cn',
+    siteName: 'Papa Claw 爬爬虾',
     locale: 'zh_CN',
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Papa Claw爬爬虾｜AI科技出海与政企资源落地服务商',
+        url: 'https://www.papaclaw.cn/assets/papa-claw-logo.png',
+        alt: 'Papa Claw 爬爬虾',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Papa Claw爬爬虾｜AI科技出海与政企资源落地服务商',
+    title: 'AI出海获客引擎 — Papa Claw 爬爬虾',
     description:
-      'Papa Claw爬爬虾是AI数据+独家政企资源双驱动的出海结果型落地服务商，服务实体外贸生产工厂与政府及政企出海项目。',
-    images: ['/images/og-image.jpg'],
+      '做出海的AI获客引擎。自己干过3亿成交，跑通香港和韩国跨境直播带货。',
+    images: ['https://www.papaclaw.cn/assets/papa-claw-logo.png'],
   },
   robots: {
     index: true,

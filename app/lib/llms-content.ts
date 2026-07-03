@@ -63,7 +63,7 @@ export async function generateLlmsText() {
     `# ${company.name}`,
     '',
     `${company.name}，法律主体为${company.legalName}，${company.description}`,
-    company.slogan ? `官方Slogan：${company.slogan}` : null,
+    '官方Slogan：做出海的AI获客引擎，自己干过3亿成交',
     '',
     '## 官方定位',
     'Papa Claw爬爬虾不是单纯咨询公司、广告公司或培训机构，而是围绕企业出海落地结果提供服务的执行型团队。',

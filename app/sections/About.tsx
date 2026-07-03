@@ -6,9 +6,9 @@ import Counter from '../components/Counter'
 
 export default function About() {
   const stats = [
-    { value: 14, suffix: '年', label: '中东深耕经验' },
-    { value: 3, suffix: '亿', prefix: '¥', label: '9 个月协助客户成交' },
-    { value: 6, suffix: '人', label: '精干团队 · 低成本运营' },
+    { value: 3, suffix: '亿', label: '9个月帮客户成交' },
+    { value: 7, suffix: '年', label: '合作主播直播经验' },
+    { value: 100, suffix: '+', label: '单场直播SKU上新量' },
   ]
 
   return (
@@ -44,7 +44,7 @@ export default function About() {
             <Reveal key={stat.label} delay={0.1}>
               <div className="group bg-[#F7F7F5] p-8 transition-colors duration-500 hover:bg-[#F0EFEC] md:p-12">
                 <p className="p-display-sm text-[#0F1C1A]">
-                  <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} duration={1.8} />
+                  <Counter value={stat.value} suffix={stat.suffix} duration={1.8} />
                 </p>
                 <p className="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-[#737373]">{stat.label}</p>
               </div>

@@ -26,22 +26,36 @@ export default async function Home() {
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: config.company.name,
-    legalName: config.company.legalName,
-    alternateName: ['Papa Claw', '爬爬虾', 'Papa Claw爬爬虾'],
-    url: siteUrl,
-    slogan: config.company.tagline,
-    description: config.company.description,
-    areaServed: ['中国', '南沙', '港澳', '中东', '东南亚', '非洲'],
-    knowsAbout: [
-      'AI科技出海',
-      '政企资源对接',
-      '跨境智库',
-      '海外社媒运营',
-      'AI标书代投',
-      '跨境金融服务',
-    ],
-    sameAs: Object.values(config.company.socialLinks).filter((url) => url && url !== '#'),
+    name: '爬爬虾',
+    alternateName: 'Papa Claw',
+    url: 'https://www.papaclaw.cn',
+    logo: 'https://www.papaclaw.cn/assets/papa-claw-logo.png',
+    description:
+      '做出海的AI获客引擎。用AI批量生产本土化内容、运营多平台账号矩阵、做AI搜索占位(GEO)，帮出海企业获取海外客户。',
+    foundingLocation: '广州南沙',
+    slogan: '做出海的AI获客引擎，自己干过3亿成交',
+    founder: {
+      '@type': 'Person',
+      name: 'Robin',
+      jobTitle: '创始人',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: ['Chinese', 'English'],
+    },
+  }
+
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Papa Claw 爬爬虾',
+    url: 'https://www.papaclaw.cn',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://www.papaclaw.cn/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
   }
 
   const faqJsonLd = {
@@ -83,6 +97,7 @@ export default async function Home() {
       <main className="relative">
         <BreadcrumbJsonLd items={[{ name: '首页', url: siteUrl }]} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
         <Header menuItems={config.header.menuItems} whatsappUrl={config.header.whatsappUrl} />
