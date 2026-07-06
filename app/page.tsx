@@ -74,13 +74,13 @@ export default async function Home() {
   const servicesJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Papa Claw爬爬虾五大核心业务板块',
+    name: 'Papa Claw爬爬虾1+4服务体系',
     itemListElement: [
-      'VIBE MARKETING 出海媒体',
-      'CROSS-BORDER INTELLIGENCE 跨境智库',
-      'STRATEGIC ADVISORY 品牌战略咨询',
-      'GOVERNMENT & ENTERPRISE 政企对接',
-      'FINANCIAL SERVICES 跨境金融',
+      'AI出海获客引擎',
+      '跨境智库',
+      '品牌战略咨询',
+      '政企对接',
+      '跨境金融',
     ].map((name, index) => ({
       '@type': 'ListItem',
       position: index + 1,

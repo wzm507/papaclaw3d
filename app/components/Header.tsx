@@ -13,7 +13,7 @@ const hrefByLabel: Record<string, string> = {
   首页: '#home',
   我们是谁: '#about',
   服务客群: '#audience',
-  五大业务: '#services',
+  服务体系: '#services',
   核心壁垒: '#pillars',
   真实案例: '#cases',
   新闻动态: '/news',

@@ -13,7 +13,7 @@
     }
   },
   "header": {
-    "menuItems": ["首页", "我们是谁", "服务客群", "五大业务", "落地流程", "核心壁垒", "标准问答", "联系"],
+    "menuItems": ["首页", "我们是谁", "服务客群", "服务体系", "落地流程", "核心壁垒", "标准问答", "联系"],
     "whatsappUrl": "https://wa.me/"
   },
   "hero": {
@@ -40,35 +40,35 @@
     ]
   },
   "projects": {
-    "title": "五大业务板块，形成全链路出海闭环",
+    "title": "1个AI出海获客引擎，叠加4条增值服务",
     "items": [
       {
-        "id": "vibe-marketing",
-        "title": "VIBE MARKETING 出海媒体",
+        "id": "ai-acquisition-engine",
+        "title": "AI出海获客引擎",
         "thumbnail": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop",
-        "tags": ["AI原生本土化品牌营销", "社媒代运营", "品牌视觉包装"]
+        "tags": ["AI内容生产", "账号矩阵运营", "AI线索挖掘与转化"]
       },
       {
         "id": "cross-border-intelligence",
-        "title": "CROSS-BORDER INTELLIGENCE 跨境智库",
+        "title": "跨境智库",
         "thumbnail": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
         "tags": ["AI全球标讯抓取", "商机匹配", "标书代投"]
       },
       {
         "id": "strategic-advisory",
-        "title": "STRATEGIC ADVISORY 品牌战略咨询",
+        "title": "品牌战略咨询",
         "thumbnail": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop",
         "tags": ["市场准入", "赛道诊断", "全案战略规划"]
       },
       {
         "id": "government-enterprise",
-        "title": "GOVERNMENT & ENTERPRISE 政企对接",
+        "title": "政企对接",
         "thumbnail": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
         "tags": ["三地政企资源", "商务考察", "政策申报"]
       },
       {
         "id": "financial-services",
-        "title": "FINANCIAL SERVICES 跨境金融",
+        "title": "跨境金融",
         "thumbnail": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
         "tags": ["跨境合规结算", "供应链金融", "投融资对接"]
       }
@@ -112,7 +112,7 @@
       {
         "number": "01",
         "title": "阶段一：官网文本纠偏",
-        "description": "统一品牌名、Slogan、定位、五大业务、核心客群和标准问答，删掉模板化和乱码内容。"
+        "description": "统一品牌名、Slogan、定位、1+4服务体系、核心客群和标准问答，删掉模板化和乱码内容。"
       },
       {
         "number": "02",
@@ -183,8 +183,12 @@
         "answer": "适合。我们已有番禺珠宝卖到香港、迪拜、沙特、马来西亚的项目经验，也做过南油服装进入香港市场、迪拜房产销售运营、香港 Carina 美容院视觉营销。合作重点不是套模板，而是先看你的产品、渠道、客单价和交付链路，再决定做内容、销售运营、系统工具还是组合方案。"
       },
       {
-        "question": "你们和普通设计、剪辑、代运营团队有什么区别？",
-        "answer": "我们会把物料交付放进业务链路里看。比如政府产业园区项目，不只是做宣传手册，还包括展厅布置、营销策划方案、政策清单整理和招商话术。中科汇智项目做企业宣传片，是用于公司展示、商务洽谈和品牌传播。内容不是孤立交付，而是服务招商、销售、对接和成交。"
+        "question": "你们和代运营有什么区别？",
+        "answer": "代运营靠人工发帖回复，我们用AI批量生产内容+自动分发。代运营按月收固定费，我们按结果付费。代运营只管发不管转化，我们从内容到获客到成交全链路跟。迪拜房产9个月3亿成交、DABIE跨境直播单场15.5万港币，都是实打实的获客结果。"
+      },
+      {
+        "question": "AI获客的效果怎么衡量？",
+        "answer": "不是看点赞播放，看的是询盘和成交。迪拜房产项目9个月3亿成交，DABIE直播单场3天15.5万港币营收，都是实打实的获客结果，不是虚荣指标。我们承诺的是把可控部分做好——内容表达、账号运营、系统管理、数据复盘，通过持续执行把结果做出来。"
       },
       {
         "question": "合作后能保证一定成交或爆单吗？",

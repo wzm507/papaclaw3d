@@ -40,10 +40,10 @@ export default function Footer({ contactTitle, contactDescription, ctaText, soci
             <div>
               <p className="mb-4 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-white/40">导航</p>
               <ul className="space-y-2">
-                {['首页', '我们是谁', '五大业务', '真实案例', '新闻动态', '标准问答'].map((item) => (
+                {['首页', '我们是谁', '服务体系', '真实案例', '新闻动态', '标准问答'].map((item) => (
                   <li key={item}>
                     <a
-                      href={item === '新闻动态' ? '/news' : `#${item === '首页' ? 'home' : item === '我们是谁' ? 'about' : item === '五大业务' ? 'services' : item === '真实案例' ? 'cases' : 'faq'}`}
+                      href={item === '新闻动态' ? '/news' : `#${item === '首页' ? 'home' : item === '我们是谁' ? 'about' : item === '服务体系' ? 'services' : item === '真实案例' ? 'cases' : 'faq'}`}
                       className="p-link text-sm text-white/60 transition-colors hover:text-white"
                     >
                       {item}
