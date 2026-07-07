@@ -133,7 +133,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
                 </div>
                 <div>
                   <p className="p-kicker mb-3">Category</p>
-                  <Link href={`/news?category=${article.categorySlug}`} className="text-sm font-semibold text-[#B08D57]">
+                  <Link href={`/news?tag=${encodeURIComponent(article.categoryName)}`} className="text-sm font-semibold text-[#B08D57]">
                     {article.categoryName}
                   </Link>
                 </div>

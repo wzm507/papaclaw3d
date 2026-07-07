@@ -7,14 +7,14 @@ import Footer from '../sections/Footer'
 import SmoothScrollProvider from '../components/SmoothScrollProvider'
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd'
 import { listNewsArticles } from '../lib/news-store'
-import { listSeoTopics } from '../lib/seo-topics'
+import { getArticleNewsTags, NEWS_TAGS } from '../lib/news-content'
 
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: '企业出海真实新闻 | Papa Claw爬爬虾',
   description:
-    'Papa Claw爬爬虾官网新闻中心，抓取并整理企业出海、AI科技出海、外贸工厂获客、中东政企资源、跨境金融和海外社媒相关真实新闻。',
+    'Papa Claw爬爬虾官网新闻中心，按AI出海获客、跨境直播、GEO优化、出海案例、企业出海统一标签整理真实新闻。',
   alternates: {
     canonical: '/news',
   },
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 interface NewsPageProps {
   searchParams?: {
     category?: string
+    tag?: string
   }
 }
 
@@ -44,10 +45,10 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')
   )
-  const [articles, topics] = await Promise.all([listNewsArticles(), listSeoTopics()])
-  const activeCategory = searchParams?.category || ''
-  const filteredArticles = activeCategory
-    ? articles.filter((article) => article.categorySlug === activeCategory)
+  const articles = await listNewsArticles()
+  const activeTag = searchParams?.tag || searchParams?.category || ''
+  const filteredArticles = activeTag
+    ? articles.filter((article) => getArticleNewsTags(article).includes(activeTag as (typeof NEWS_TAGS)[number]))
     : articles
 
   return (
@@ -69,24 +70,24 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
               <Link
                 href="/news"
                 className={`border px-4 py-2 text-sm font-semibold transition-all ${
-                  !activeCategory
+                  !activeTag
                     ? 'border-[#0F1C1A] bg-[#0F1C1A] text-white'
                     : 'border-[#E5E5E0] bg-white text-[#0F1C1A] hover:border-[#0F1C1A]'
                 }`}
               >
                 全部
               </Link>
-              {topics.map((topic) => (
+              {NEWS_TAGS.map((tag) => (
                 <Link
-                  key={topic.slug}
-                  href={`/news?category=${topic.slug}`}
+                  key={tag}
+                  href={`/news?tag=${encodeURIComponent(tag)}`}
                   className={`border px-4 py-2 text-sm font-semibold transition-all ${
-                    activeCategory === topic.slug
+                    activeTag === tag
                       ? 'border-[#0F1C1A] bg-[#0F1C1A] text-white'
                       : 'border-[#E5E5E0] bg-white text-[#0F1C1A] hover:border-[#0F1C1A]'
                   }`}
                 >
-                  {topic.title}
+                  {tag}
                 </Link>
               ))}
             </div>

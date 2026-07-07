@@ -20,7 +20,7 @@ export default function About() {
               <p className="p-kicker mb-6">Positioning</p>
             </Reveal>
             <AnimatedText as="h2" className="p-heading-xl">
-              出海不是先组队，是先拿到第一张订单。
+              获客不是先投广告，是先让客户找到你。
             </AnimatedText>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
@@ -32,7 +32,7 @@ export default function About() {
                 我们也在香港跑过直播带货。帮DABIE搭建自研 DABIE ERP 系统，管库存、管成本、管对账；直播间同时在线做到 1000+ 人，全网粉丝 4 万+，30 多个账号矩阵一起运营。出海不是只有一种打法，卖货这件事我们线上线下都趟过。
               </p>
               <p className="p-body-lg mt-6">
-                别人出海是摸着石头过河，我们是直接开直升机过去。办公室不大，人不堆，排场不撑，钱全花在帮客户拿订单这件事上。
+                别人做出海靠砸广告费，我们靠让AI和内容替你获客。办公室不大，人不堆，排场不撑，钱全花在帮客户拿订单这件事上。
               </p>
             </Reveal>
           </div>

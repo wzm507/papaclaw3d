@@ -1,7 +1,7 @@
 import fs from 'fs/promises'
 import path from 'path'
 import type { NewsArticle } from './news-types'
-import { mergeNewsArticles } from './news-content'
+import { getNewsTags, inferPrimaryNewsTag, mergeNewsArticles } from './news-content'
 
 const NEWS_KEY = 'papaclaw:news:articles'
 const localNewsPath = path.join(process.cwd(), 'data', 'news.json')
@@ -97,6 +97,21 @@ export async function deleteNewsArticle(slug: string): Promise<NewsArticle[]> {
 function normalizeArticle(article: Partial<NewsArticle>): NewsArticle {
   const now = new Date().toISOString()
   const sourceUrl = article.sourceUrl || article.originalUrl || ''
+  const newsText = article.contentText || article.summary || article.aiSummary || ''
+  const categoryName = inferPrimaryNewsTag({
+    title: article.title || '',
+    text: newsText,
+    categorySlug: article.categorySlug,
+    categoryName: article.categoryName,
+    keywords: article.keywords,
+  })
+  const keywords = getNewsTags({
+    title: article.title || '',
+    text: newsText,
+    categorySlug: article.categorySlug,
+    categoryName: article.categoryName,
+    keywords: Array.isArray(article.keywords) ? article.keywords : [],
+  })
 
   return {
     id: article.id || article.slug || sourceUrl || `${Date.now()}`,
@@ -109,7 +124,7 @@ function normalizeArticle(article: Partial<NewsArticle>): NewsArticle {
     originalUrl: article.originalUrl || sourceUrl,
     sourceType: article.sourceType || 'public-news',
     categorySlug: article.categorySlug || 'ai-global-expansion',
-    categoryName: article.categoryName || 'AI 科技出海服务',
+    categoryName,
     crawlStatus: article.crawlStatus || 'published',
     crawlError: article.crawlError,
     manualOverride: Boolean(article.manualOverride),
@@ -118,7 +133,7 @@ function normalizeArticle(article: Partial<NewsArticle>): NewsArticle {
     updatedAt: article.updatedAt || article.syncedAt || now,
     summary: article.summary || '',
     aiSummary: article.aiSummary || article.summary || '',
-    keywords: Array.isArray(article.keywords) ? article.keywords : [],
+    keywords,
     faq: Array.isArray(article.faq) ? article.faq : [],
     contentText: article.contentText || '',
     rawDigest: article.rawDigest,

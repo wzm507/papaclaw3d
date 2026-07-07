@@ -1,27 +1,114 @@
 import type { NewsArticle, NewsFaq, WechatArticleInput } from './news-types'
 import type { SeoTopic } from './seo-topics'
 
-const defaultKeywords = [
-  'Papa Claw爬爬虾',
-  '企业出海',
-  'AI科技出海',
-  '外贸工厂出海获客',
-  '中东政企资源',
-  'AI标书代投',
-  '全球标讯',
-  '跨境金融',
-  '海外社媒代运营',
-  '南沙企业出海',
-]
+export const NEWS_TAGS = ['AI出海获客', '跨境直播', 'GEO优化', '出海案例', '企业出海'] as const
+
+export type NewsTag = (typeof NEWS_TAGS)[number]
+
+interface NewsTagSource {
+  title?: string
+  text?: string
+  categorySlug?: string
+  categoryName?: string
+  keywords?: string[]
+}
 
 const topicFallbacks: Record<string, string[]> = {
-  'ai-global-expansion': ['AI出海', 'AI科技出海', '企业出海AI工具', '海外获客'],
-  'foreign-trade-factory-global-sales': ['外贸工厂', '制造业出海', '海外客户', '外贸获客'],
+  'ai-global-expansion': ['AI出海', 'AI科技出海', '企业出海AI工具', '海外获客', 'AI获客'],
+  'foreign-trade-factory-global-sales': ['外贸工厂', '制造业出海', '海外客户', '外贸获客', 'AI获客'],
   'middle-east-government-resources': ['中东市场', '政企资源', '商务考察', '项目落地'],
   'ai-tender-intelligence': ['全球标讯', 'AI标书', '海外投标', '采购需求'],
   'cross-border-finance': ['跨境金融', '跨境结算', '供应链金融', '资金合规'],
-  'overseas-social-media': ['海外社媒', '品牌本土化', 'TikTok', '内容运营'],
-  'nansha-global-expansion': ['南沙出海', '南沙企业', '港澳资源', '政策申报'],
+  'overseas-social-media': ['海外社媒', '品牌本土化', 'TikTok', '内容运营', 'AI内容获客'],
+  'nansha-global-expansion': ['南沙出海', '南沙企业', '港澳资源', '政策申报', 'AI出海获客'],
+}
+
+const categoryToPrimaryTag: Record<string, NewsTag> = {
+  'AI 科技出海服务': 'AI出海获客',
+  AI科技出海服务: 'AI出海获客',
+  AI出海获客: 'AI出海获客',
+  外贸工厂出海获客: '企业出海',
+  中东政企资源对接: '企业出海',
+  AI标书代投与全球标讯: '企业出海',
+  'AI 标书代投与全球标讯': '企业出海',
+  跨境金融服务: '企业出海',
+  海外社媒代运营: 'AI出海获客',
+  南沙企业出海服务: '企业出海',
+}
+
+const slugToPrimaryTag: Record<string, NewsTag> = {
+  'ai-global-expansion': 'AI出海获客',
+  'foreign-trade-factory-global-sales': '企业出海',
+  'middle-east-government-resources': '企业出海',
+  'ai-tender-intelligence': '企业出海',
+  'cross-border-finance': '企业出海',
+  'overseas-social-media': 'AI出海获客',
+  'nansha-global-expansion': '企业出海',
+}
+
+function compactValues<T extends string>(values: T[]): T[] {
+  return Array.from(new Set(values.map((value) => value.trim()).filter(Boolean) as T[]))
+}
+
+function hasAny(haystack: string, terms: string[]): boolean {
+  return terms.some((term) => haystack.includes(term.toLowerCase()))
+}
+
+export function normalizeNewsTag(value?: string): NewsTag | null {
+  if (!value) return null
+  if ((NEWS_TAGS as readonly string[]).includes(value)) return value as NewsTag
+  return categoryToPrimaryTag[value] || null
+}
+
+export function inferPrimaryNewsTag(source: NewsTagSource): NewsTag {
+  const normalizedCategory = normalizeNewsTag(source.categoryName)
+  if (normalizedCategory) return normalizedCategory
+
+  if (source.categorySlug && slugToPrimaryTag[source.categorySlug]) {
+    return slugToPrimaryTag[source.categorySlug]
+  }
+
+  const haystack = `${source.title || ''}\n${source.text || ''}\n${(source.keywords || []).join('\n')}`.toLowerCase()
+
+  if (hasAny(haystack, ['直播', 'DABIE', '带货', 'Facebook直播', '主播', '珠珠'])) return '跨境直播'
+  if (hasAny(haystack, ['GEO', 'AI搜索', '搜索占位', 'llms', 'AI可读'])) return 'GEO优化'
+  if (hasAny(haystack, ['案例', '成交', '迪拜', '南油', '番禺', '15.5万', '3亿'])) return '出海案例'
+  if (hasAny(haystack, ['工厂', '企业出海', '制造业', '南沙', '中东', '政企', '跨境金融'])) return '企业出海'
+
+  return 'AI出海获客'
+}
+
+export function getNewsTags(source: NewsTagSource): NewsTag[] {
+  const haystack = `${source.title || ''}\n${source.text || ''}\n${source.categoryName || ''}\n${(source.keywords || []).join('\n')}`.toLowerCase()
+  const tags: NewsTag[] = [inferPrimaryNewsTag(source)]
+
+  if (hasAny(haystack, ['ai获客', 'ai出海', '海外获客', 'AI 科技出海服务', 'AI科技出海服务', 'AI内容获客'])) {
+    tags.push('AI出海获客')
+  }
+  if (hasAny(haystack, ['直播', 'DABIE', '带货', 'Facebook直播', '主播', '珠珠'])) {
+    tags.push('跨境直播')
+  }
+  if (hasAny(haystack, ['GEO', 'AI搜索', '搜索占位', 'llms', 'AI可读', 'sitemap', 'SEO'])) {
+    tags.push('GEO优化')
+  }
+  if (hasAny(haystack, ['案例', '成交', '迪拜', '南油', '番禺', '15.5万', '3亿'])) {
+    tags.push('出海案例')
+  }
+  if (hasAny(haystack, ['企业出海', '外贸工厂', '制造业', '南沙', '中东', '政企', '跨境金融'])) {
+    tags.push('企业出海')
+  }
+
+  return compactValues(tags).filter((tag) => (NEWS_TAGS as readonly string[]).includes(tag))
+}
+
+export function getArticleNewsTags(article: Pick<NewsArticle, 'title' | 'contentText' | 'categorySlug' | 'categoryName' | 'keywords'>): NewsTag[] {
+  return getNewsTags({
+    title: article.title,
+    text: article.contentText,
+    categorySlug: article.categorySlug,
+    categoryName: article.categoryName,
+    keywords: article.keywords,
+  })
 }
 
 export function stripHtml(html: string): string {
@@ -84,16 +171,6 @@ function makeSummary(text: string, fallback: string): string {
   return `${source.slice(0, 166)}...`
 }
 
-function compactKeywords(values: string[]): string[] {
-  return Array.from(
-    new Set(
-      values
-        .map((keyword) => keyword.trim())
-        .filter(Boolean)
-    )
-  ).slice(0, 14)
-}
-
 export function chooseNewsCategory(
   title: string,
   text: string,
@@ -132,15 +209,16 @@ export function chooseNewsCategory(
 }
 
 export function pickNewsKeywords(title: string, text: string, topic?: SeoTopic | null): string[] {
-  const haystack = `${title}\n${text}`
-  const topicKeywords = topic ? [topic.title, topic.serviceName, ...topic.keywords, ...(topicFallbacks[topic.slug] || [])] : []
-  const matched = [...defaultKeywords, ...topicKeywords].filter((keyword) => haystack.includes(keyword))
-  return compactKeywords([...matched, ...(topicKeywords.length ? topicKeywords : defaultKeywords), ...defaultKeywords])
+  return getNewsTags({
+    title,
+    text,
+    categorySlug: topic?.slug,
+    categoryName: topic?.title,
+    keywords: topic ? [topic.serviceName, ...topic.keywords, ...(topicFallbacks[topic.slug] || [])] : [],
+  })
 }
 
-export function buildNewsFaq(title: string, summary: string, topic?: SeoTopic | null): NewsFaq[] {
-  const categoryName = topic?.title || '企业出海'
-
+export function buildNewsFaq(title: string, summary: string, categoryName: NewsTag = 'AI出海获客'): NewsFaq[] {
   return [
     {
       question: `这篇新闻和${categoryName}有什么关系？`,
@@ -177,12 +255,18 @@ export function enhancePublicNewsArticle(input: PublicNewsInput): NewsArticle {
   const summary = makeSummary(contentText, input.summary || '')
   const now = new Date().toISOString()
   const topic = input.topic
-  const categoryName = topic?.title || '企业出海'
+  const keywords = pickNewsKeywords(input.title, contentText, topic)
+  const categoryName = inferPrimaryNewsTag({
+    title: input.title,
+    text: contentText,
+    categorySlug: topic?.slug,
+    categoryName: topic?.title,
+    keywords,
+  })
   const categorySlug = topic?.slug || 'ai-global-expansion'
   const searchableTitle = input.title.includes('Papa Claw')
     ? input.title
     : `${input.title}｜${categoryName}观察`
-  const keywords = pickNewsKeywords(input.title, contentText, topic)
 
   return {
     id: hashString(`${input.sourceUrl}-${input.title}`),
@@ -203,9 +287,9 @@ export function enhancePublicNewsArticle(input: PublicNewsInput): NewsArticle {
     syncedAt: now,
     updatedAt: now,
     summary,
-    aiSummary: `${summary} 这条内容已整理为 Papa Claw爬爬虾官网新闻资产，便于按${categoryName}、企业出海、AI科技出海等关键词检索。`,
+    aiSummary: `${summary} 这条内容已整理为 Papa Claw爬爬虾官网新闻资产，便于按${keywords.join('、')}等统一新闻标签检索。`,
     keywords,
-    faq: buildNewsFaq(input.title, summary, topic),
+    faq: buildNewsFaq(input.title, summary, categoryName),
     contentText,
     coverImage: input.coverImage,
   }
