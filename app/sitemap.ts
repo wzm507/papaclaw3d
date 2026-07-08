@@ -39,6 +39,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${siteUrl}/legal-notice`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
     ...seoTopics.map((topic) => ({
       url: `${siteUrl}/${topic.slug}`,
       lastModified: now,

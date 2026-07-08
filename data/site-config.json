@@ -206,8 +206,8 @@
     ],
     "copyright": "© 2026 Papa Claw爬爬虾数据科技有限公司",
     "legalLinks": [
-      { "label": "隐私政策", "url": "#" },
-      { "label": "法律声明", "url": "#" }
+      { "label": "隐私政策", "url": "/privacy-policy" },
+      { "label": "法律声明", "url": "/legal-notice" }
     ],
     "credit": "政企资源赋能，AI务实出海"
   }
