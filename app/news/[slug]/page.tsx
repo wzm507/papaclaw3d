@@ -66,7 +66,13 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')
   )
-  const articleUrl = `${siteUrl()}/news/${article.slug}`
+  const siteBaseUrl = siteUrl()
+  const articleUrl = `${siteBaseUrl}/news/${article.slug}`
+  const publisherSameAs = Array.isArray(config.footer?.socialLinks)
+    ? config.footer.socialLinks
+        .map((link: { url?: string }) => link.url)
+        .filter((url: string | undefined) => url && url !== '#')
+    : []
   const paragraphs = article.contentText
     .split(/\n{2,}|\n/)
     .map((paragraph: string) => paragraph.trim())
@@ -86,8 +92,15 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${siteBaseUrl}/#organization`,
       name: 'Papa Claw爬爬虾',
-      url: siteUrl(),
+      alternateName: '爬爬虾',
+      url: siteBaseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteBaseUrl}/assets/papa-claw-logo.png`,
+      },
+      ...(publisherSameAs.length > 0 ? { sameAs: publisherSameAs } : {}),
     },
     articleSection: article.categoryName,
     keywords: article.keywords.join(', '),
