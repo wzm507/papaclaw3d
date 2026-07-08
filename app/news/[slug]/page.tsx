@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import fs from 'fs'
-import path from 'path'
 import Header from '../../components/Header'
 import Footer from '../../sections/Footer'
 import SmoothScrollProvider from '../../components/SmoothScrollProvider'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 import { getNewsArticle, listNewsArticles } from '../../lib/news-store'
+import { getSiteConfig } from '../../lib/site-config-store'
 
 export const dynamic = 'force-dynamic'
 
@@ -63,8 +62,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
     notFound()
   }
 
-  const configPath = path.join(process.cwd(), 'data', 'site-config.json')
-  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+  const config = await getSiteConfig() as any
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')
   )

@@ -2,12 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
-import fs from 'fs'
-import path from 'path'
 import Header from '../components/Header'
 import Footer from '../sections/Footer'
 import SmoothScrollProvider from '../components/SmoothScrollProvider'
 import { getSeoTopic, listSeoTopics } from '../lib/seo-topics'
+import { getSiteConfig } from '../lib/site-config-store'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -20,11 +19,6 @@ interface TopicPageProps {
 
 function siteUrl() {
   return process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
-}
-
-function getConfig() {
-  const configPath = path.join(process.cwd(), 'data', 'site-config.json')
-  return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
 }
 
 export async function generateStaticParams() {
@@ -66,7 +60,7 @@ export default async function SeoTopicPage({ params }: TopicPageProps) {
     notFound()
   }
 
-  const config = getConfig()
+  const config = await getSiteConfig() as any
   const relatedTopics = await listSeoTopics()
   const headerMenuItems = config.header.menuItems.filter(
     (item: string) => !item.includes('落地流程') && !item.includes('路径')

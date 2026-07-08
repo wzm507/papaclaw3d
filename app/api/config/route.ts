@@ -1,38 +1,30 @@
-import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { NextResponse } from 'next/server'
+import { getSiteConfig, saveSiteConfig } from '../../lib/site-config-store'
 
-const CONFIG_PATH = path.join(process.cwd(), "data", "site-config.json");
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function GET() {
   try {
-    const fileContent = fs.readFileSync(CONFIG_PATH, "utf-8");
-    const config = JSON.parse(fileContent);
-    return NextResponse.json(config);
+    return NextResponse.json(await getSiteConfig())
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to read config", details: String(error) },
+      { error: 'Failed to read config', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
-    );
+    )
   }
 }
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await request.json()
+    await saveSiteConfig(body)
 
-    const dataDir = path.join(process.cwd(), "data");
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(body, null, 2), "utf-8");
-
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true })
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to write config", details: String(error) },
+      { error: 'Failed to write config', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
-    );
+    )
   }
 }

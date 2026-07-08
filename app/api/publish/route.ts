@@ -1,15 +1,13 @@
 import { NextResponse } from "next/server";
 import { exec } from "child_process";
-import fs from "fs";
-import path from "path";
-
-const CONFIG_PATH = path.join(process.cwd(), "data", "site-config.json");
+import { getSiteConfig } from "../../lib/site-config-store";
 
 export async function POST() {
   try {
-    if (!fs.existsSync(CONFIG_PATH)) {
+    const config = await getSiteConfig().catch(() => null)
+    if (!config) {
       return NextResponse.json(
-        { error: "Config file not found" },
+        { error: "Config not found" },
         { status: 404 }
       );
     }

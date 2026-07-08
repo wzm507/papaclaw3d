@@ -1,7 +1,6 @@
-import fs from 'fs/promises'
-import path from 'path'
 import { listNewsArticles } from './news-store'
 import { listSeoTopics } from './seo-topics'
+import { getSiteConfig as readSiteConfig } from './site-config-store'
 
 interface SiteConfig {
   company?: {
@@ -39,8 +38,7 @@ function siteUrl() {
 
 async function getSiteConfig(): Promise<SiteConfig> {
   try {
-    const content = await fs.readFile(path.join(process.cwd(), 'data', 'site-config.json'), 'utf-8')
-    return JSON.parse(content) as SiteConfig
+    return (await readSiteConfig()) as SiteConfig
   } catch {
     return defaultConfig
   }

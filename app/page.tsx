@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import Header from './components/Header'
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -14,12 +12,12 @@ import Footer from './sections/Footer'
 import SmoothScrollProvider from './components/SmoothScrollProvider'
 import BreadcrumbJsonLd from './components/BreadcrumbJsonLd'
 import { listNewsArticles } from './lib/news-store'
+import { getSiteConfig } from './lib/site-config-store'
 
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-  const configPath = path.join(process.cwd(), 'data', 'site-config.json')
-  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+  const config = await getSiteConfig() as any
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.papaclaw.cn'
   const newsArticles = await listNewsArticles()
 

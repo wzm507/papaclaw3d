@@ -48,7 +48,7 @@ async function writeLocalArticles(articles: NewsArticle[]): Promise<void> {
 export async function listNewsArticles(): Promise<NewsArticle[]> {
   if (hasKvConfig()) {
     const stored = await kvCommand<string>(['GET', NEWS_KEY])
-    if (!stored) return []
+    if (!stored) return readLocalArticles()
     return (JSON.parse(stored) as Partial<NewsArticle>[]).map(normalizeArticle)
   }
 

@@ -21,7 +21,10 @@ export function useConfig(): UseConfigReturn {
     setLoading(true)
     try {
       const res = await fetch('/api/config')
-      if (!res.ok) throw new Error('获取配置失败')
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.details || data?.error || '获取配置失败')
+      }
       const data = await res.json()
       setConfig(data)
     } catch (err) {
@@ -44,12 +47,15 @@ export function useConfig(): UseConfigReturn {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newConfig),
       })
-      if (!res.ok) throw new Error('保存配置失败')
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.details || data?.error || '保存配置失败')
+      }
       setConfig(newConfig)
       showToast('保存成功', 'success')
     } catch (err) {
       console.error('保存配置失败:', err)
-      showToast('保存失败，请重试', 'error')
+      showToast(err instanceof Error ? err.message : '保存失败，请重试', 'error')
     } finally {
       setSaving(false)
     }
